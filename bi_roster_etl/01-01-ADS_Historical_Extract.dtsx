@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="01-01-ADS_Historical_Extract"
-  DTS:VersionBuild="173"
-  DTS:VersionGUID="{F7284EEE-7AB3-4A60-9B0B-C2C584C9FDF2}">
+  DTS:VersionBuild="178"
+  DTS:VersionGUID="{967BEC8C-FC4A-4149-8F57-EDCFADB9BB19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38330,21 +38330,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Incremental Load - Staging"
+      DTS:refId="Package\Update Audit Dimension"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
-      DTS:DTSID="{E67AA251-27FA-406B-BF6B-5AFDEB345F60}"
+      DTS:DTSID="{140DC588-243D-4A3A-BA2D-4E85E1675ABF}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Incremental Load - Staging">
+      DTS:ObjectName="Update Audit Dimension">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\Get Audit Parameters"
+          DTS:refId="Package\Update Audit Dimension\Get Audit Parameters"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{3A46417F-24D4-4FDB-B50B-FDABCD84B76A}"
+          DTS:DTSID="{b5033aa8-c599-4eed-afbe-c5397b0ed901}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Audit Parameters"
@@ -38355,30 +38354,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               version="1">
               <components>
                 <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName"
+                  refId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
                   componentClassID="Microsoft.Lineage"
                   contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Includes data about the environment in which the package runs. Map system variables to new output columns. For example, add the name of the computer and operator to the data flow."
                   name="Audit - Get PackageName">
                   <inputs>
                     <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
                       name="Audit Input 1">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]"
                       exclusionGroup="1"
                       name="Audit Output 1"
-                      synchronousInputId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]">
+                      synchronousInputId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]"
                           dataType="wstr"
                           length="64"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]"
                           name="PackageName">
                           <properties>
                             <property
@@ -38394,104 +38393,71 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="Get Inserts"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsInserted from cls.Staging_ADS where AuditID = ? and AuditDateCreated &gt; ?</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{A85B2B8C-D6DB-4C9E-BE55-A19B7B2FADEA};"Parameter1:Input",{BCE93DE9-E17A-455A-928F-38216AFA3E15};</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
+                  refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DC AuditID"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
                   <outputs>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output].Columns[RowsInserted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]"
                           dataType="i4"
-                          errorOrTruncationOperation="Conversion"
+                          errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output].Columns[RowsInserted]"
-                          name="RowsInserted"
-                          truncationRowDisposition="FailComponent" />
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                          name="AuditID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::AuditId]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::AuditId]</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
-                          dataType="i4"
-                          name="RowsInserted" />
-                      </externalMetadataColumns>
+                      <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
                       isErrorOut="true"
-                      name="OLE DB Source Error Output">
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
-                          name="RowsInserted" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -38500,113 +38466,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="Get Updates"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsUpdated from cls.Staging_ADS where AuditID = ? and AuditDateCreated &lt;= ?</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{A85B2B8C-D6DB-4C9E-BE55-A19B7B2FADEA};"Parameter1:Input",{BCE93DE9-E17A-455A-928F-38216AFA3E15};</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output].Columns[RowsUpdated]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output].ExternalColumns[RowsUpdated]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output].Columns[RowsUpdated]"
-                          name="RowsUpdated"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output].ExternalColumns[RowsUpdated]"
-                          dataType="i4"
-                          name="RowsUpdated" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[RowsUpdated]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[RowsUpdated]"
-                          name="RowsUpdated" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted"
+                  refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -38630,7 +38490,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.landing_ADS</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.landing_ADS_Historical</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -38655,7 +38515,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Connections[OleDbConnection]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
                       connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
                       description="The OLE DB runtime connection used to access the database."
@@ -38663,47 +38523,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
                           name="RowsExtracted"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
                           dataType="i4"
                           name="RowsExtracted" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
                           name="RowsExtracted" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -38712,110 +38572,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All"
-                  componentClassID="Microsoft.UnionAll"
-                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-                  name="Union All"
-                  version="1">
-                  <inputs>
-                    <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
-                      name="Union All Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 1].Columns[RowsUpdated]"
-                          cachedDataType="i4"
-                          cachedName="RowsUpdated"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output].Columns[RowsUpdated]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsUpdated]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 2].Columns[RowsInserted]"
-                          cachedDataType="i4"
-                          cachedName="RowsInserted"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output].Columns[RowsInserted]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 3]"
-                      hasSideEffects="true"
-                      name="Union All Input 3">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 3].Columns[RowsExtracted]"
-                          cachedDataType="i4"
-                          cachedName="RowsExtracted"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsExtracted]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 4]"
-                      dangling="true"
-                      hasSideEffects="true"
-                      name="Union All Input 4">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1]"
-                      name="Union All Output 1">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsUpdated]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsUpdated]"
-                          name="RowsUpdated" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]"
-                          name="RowsInserted" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsExtracted]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsExtracted]"
-                          name="RowsExtracted" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension"
+                  refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -38836,11 +38593,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
 
 set 
 PackageName = ?,
-RowsInserted = ?,
-RowsUpdated = ?,
 RowsExtracted = ?
 
-where PackageName is Null 
+where AuditID = ?
 </property>
                     <property
                       dataType="System.Int32"
@@ -38849,7 +38604,7 @@ where PackageName is Null
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Connections[OleDbConnection]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Connections[OleDbConnection]"
                       connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
                       connectionManagerRefId="Project.ConnectionManagers[NewRosterDW]"
                       description="The OLE DB runtime connection used to access the database."
@@ -38857,42 +38612,36 @@ where PackageName is Null
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[PackageName]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[PackageName]"
                           cachedDataType="wstr"
                           cachedLength="64"
                           cachedName="PackageName"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]" />
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]" />
                         <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsInserted]"
-                          cachedDataType="i4"
-                          cachedName="RowsInserted"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]" />
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsUpdated]"
-                          cachedDataType="i4"
-                          cachedName="RowsUpdated"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsUpdated]" />
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsExtracted]"
                           cachedDataType="i4"
                           cachedName="RowsExtracted"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsExtracted]" />
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]" />
+                        <inputColumn
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="wstr"
                           length="100"
                           name="Param_0">
@@ -38904,7 +38653,7 @@ where PackageName is Null
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="i4"
                           name="Param_1">
                           <properties>
@@ -38915,20 +38664,9 @@ where PackageName is Null
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="i4"
                           name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="i4"
-                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -38941,29 +38679,29 @@ where PackageName is Null
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Output]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -38974,60 +38712,29 @@ where PackageName is Null
               </components>
               <paths>
                 <path
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters.Paths[Audit Output 1]"
-                  endId="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
+                  refId="Package\Update Audit Dimension\Get Audit Parameters.Paths[Audit Output 1]"
+                  endId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]"
                   name="Audit Output 1"
-                  startId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]" />
+                  startId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]" />
                 <path
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output]"
-                  endId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
+                  refId="Package\Update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
+                  endId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
+                  endId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
                   name="OLE DB Source Output"
-                  startId="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output1]"
-                  endId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 2]"
-                  name="OLE DB Source Output"
-                  startId="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output2]"
-                  endId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Inputs[Union All Input 3]"
-                  name="OLE DB Source Output"
-                  startId="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Incremental Load - Staging\Get Audit Parameters.Paths[Union All Output 1]"
-                  endId="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
-                  name="Union All Output 1"
-                  startId="Package\Incremental Load - Staging\Get Audit Parameters\Union All.Outputs[Union All Output 1]" />
+                  startId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\Get Latest DateCreated"
+          DTS:refId="Package\Update Audit Dimension\Get LoadEndTime"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{BAA03BC9-D932-48DD-996E-29DD11BE98F6}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get Latest DateCreated"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
-              SQLTask:SqlStatementSource="select ISNULL(max(AuditDateCreated), '') from cls.staging_ADS;"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::LatestDateCreated" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\Get LoadEndTime"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7B2A2C6D-4C6E-4802-A665-29FDE0FA7C3D}"
+          DTS:DTSID="{9f26b7b4-8440-4a08-8ab8-1ccb948bc170}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadEndTime"
@@ -39045,26 +38752,10 @@ where PackageName is Null
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\SP IncrementalLoad"
+          DTS:refId="Package\Update Audit Dimension\Update AuditDimension"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{31CEB932-9C31-4AA0-8039-34962AC827D7}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SP IncrementalLoad"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
-              SQLTask:SqlStatementSource="Exec IncrementalLoad_ADS;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\Update AuditDimension"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E2F218C9-CB77-4FC2-A053-8DDFFC269122}"
+          DTS:DTSID="{40674990-5ef5-4efe-b887-1e5aa6b0b965}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update AuditDimension"
@@ -39092,67 +38783,22 @@ where PackageName is Null
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\Update Audit Dimension.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{83DD23F4-08BE-4D33-993E-C445F366D184}"
-          DTS:From="Package\Incremental Load - Staging\SP IncrementalLoad"
+          DTS:DTSID="{bc1e4596-d1f2-40a3-b295-632d4298b7a1}"
+          DTS:From="Package\Update Audit Dimension\Get Audit Parameters"
           DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Incremental Load - Staging\Get Audit Parameters" />
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Update Audit Dimension\Get LoadEndTime" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\Update Audit Dimension.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{2C17904E-3B8C-4811-9F05-CA632B80BA4E}"
-          DTS:From="Package\Incremental Load - Staging\Get Latest DateCreated"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Incremental Load - Staging\SP IncrementalLoad" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{38220607-282A-405E-A113-B3CE81502ADA}"
-          DTS:From="Package\Incremental Load - Staging\Get Audit Parameters"
+          DTS:DTSID="{b0eb2ed0-512d-495c-b27a-c584129ade6c}"
+          DTS:From="Package\Update Audit Dimension\Get LoadEndTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Incremental Load - Staging\Get LoadEndTime" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 4]"
-          DTS:CreationName=""
-          DTS:DTSID="{DD113C26-C891-4AF5-A899-C419F4B5F0D8}"
-          DTS:From="Package\Incremental Load - Staging\Get LoadEndTime"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 4"
-          DTS:To="Package\Incremental Load - Staging\Update AuditDimension" />
+          DTS:To="Package\Update Audit Dimension\Update AuditDimension" />
       </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Load Production Server"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:Disabled="True"
-      DTS:DTSID="{321EF41D-082A-4B6F-8797-CAB3AC56EF1E}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Load Production Server">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Load Production Server\Exec sp IncrementalLoad"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{63997209-1491-48B6-AA0D-4D6573E0B08D}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Exec sp IncrementalLoad"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="exec [cls].[sp_IncrementalLoad_ADS];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -39175,11 +38821,11 @@ where PackageName is Null
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{D1A4D5E4-6110-4292-97C3-904E6CF63DB2}"
-      DTS:From="Package\Incremental Load - Staging"
+      DTS:DTSID="{ACB3A1FD-6E6B-4FD0-9DA3-0C9C58C4DB2E}"
+      DTS:From="Package\FEL - load all historical exports Kenya"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Load Production Server" />
+      DTS:To="Package\Update Audit Dimension" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -39228,14 +38874,6 @@ where PackageName is Null
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\FEL - load all historical exports Myanmar" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
-      DTS:CreationName=""
-      DTS:DTSID="{6D2565E6-C697-4762-A309-BDD70196EF36}"
-      DTS:From="Package\FEL - load all historical exports Kenya"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Incremental Load - Staging" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -39781,198 +39419,6 @@ where PackageName is Null
           Size="158,42.6666666666667"
           Id="Package\Get the files"
           TopLeft="152.916664884736,18.6333330001431" />
-        <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters"
-          TopLeft="60.999994809429,233.433321160277" />
-        <NodeLayout
-          Size="189.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Latest DateCreated"
-          TopLeft="5.58332896853489,9.89999404132379" />
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get LoadEndTime"
-          TopLeft="101.916661780328,325.866655260722" />
-        <NodeLayout
-          Size="184.666666666667,42.6666666666667"
-          Id="Package\Incremental Load - Staging\SP IncrementalLoad"
-          TopLeft="53.5833279254536,139.599993367195" />
-        <NodeLayout
-          Size="189.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Update AuditDimension"
-          TopLeft="84.8333287015561,402.533321307501" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
-          TopLeft="148.458328034108,182.266660033862">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.1666611264154"
-              Start="0,0"
-              End="0,43.6666611264154">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.6666611264154" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
-          TopLeft="100.249995635202,52.5666607079905">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45.6666656235854,87.0333326592049"
-              Start="0,0"
-              End="45.6666656235854,79.5333326592049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5166663296024" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.5166663296024"
-                    Point2="0,43.5166663296024"
-                    Point3="4,43.5166663296024" />
-                  <mssgle:LineSegment
-                    End="41.6666656235854,43.5166663296024" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.6666656235854,43.5166663296024"
-                    Point2="45.6666656235854,43.5166663296024"
-                    Point3="45.6666656235854,47.5166663296024" />
-                  <mssgle:LineSegment
-                    End="45.6666656235854,79.5333326592049" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 3]"
-          TopLeft="150.999994809429,276.099987826944">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.2500003042323,49.7666674337782"
-              Start="0,0"
-              End="32.2500003042323,42.2666674337782">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.8833337168891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.8833337168891"
-                    Point2="0,24.8833337168891"
-                    Point3="4,24.8833337168891" />
-                  <mssgle:LineSegment
-                    End="28.2500003042323,24.8833337168891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.2500003042323,24.8833337168891"
-                    Point2="32.2500003042323,24.8833337168891"
-                    Point3="32.2500003042323,28.8833337168891" />
-                  <mssgle:LineSegment
-                    End="32.2500003042323,42.2666674337782" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 4]"
-          TopLeft="181.374995240942,368.533321927389">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.9999993801119"
-              Start="0,0"
-              End="0,26.4999993801119">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.4999993801119" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="600,500"
-          Size="230,42.6666666666667"
-          Id="Package\Incremental Load - Staging"
-          TopLeft="929.166652821004,158.866664791503" />
-        <NodeLayout
-          Size="197.333333333334,42.6666666666667"
-          Id="Package\Load Production Server\Exec sp IncrementalLoad"
-          TopLeft="72.7499924687049,57.7333241589866" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="377.333333333334,229.333333333334"
-          Size="211.333333333334,42.6666666666667"
-          Id="Package\Load Production Server"
-          TopLeft="913.333319723606,232.633329280814" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1044.166652821,201.53333145817">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25.166666430732,31.0999978226439"
-              Start="0,0"
-              End="-25.166666430732,23.5999978226439">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.5499989113219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.5499989113219"
-                    Point2="0,15.5499989113219"
-                    Point3="-4,15.5499989113219" />
-                  <mssgle:LineSegment
-                    End="-21.166666430732,15.5499989113219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.166666430732,15.5499989113219"
-                    Point2="-25.166666430732,15.5499989113219"
-                    Point3="-25.166666430732,19.549998911322" />
-                  <mssgle:LineSegment
-                    End="-25.166666430732,23.5999978226439" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="185.58333266899,235.833331822356">
@@ -40221,32 +39667,95 @@ where PackageName is Null
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Update Audit Dimension\Get Audit Parameters"
+          TopLeft="30.499985061586,8.83332926531648" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Update Audit Dimension\Get LoadEndTime"
+          TopLeft="35.9999858935678,98.6666634122531" />
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\Update Audit Dimension\Update AuditDimension"
+          TopLeft="23.0833194193743,194.833329110345" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="810.499992065132,140.499997869134">
+          Id="Package\Update Audit Dimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="118.916652144244,51.4999959319831">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.666660755873,39.7000002557032"
+              EndConnector="0,47.1666674802699"
               Start="0,0"
-              End="111.166660755873,39.7000002557032">
+              End="0,39.6666674802699">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.3333303779363,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.3333303779363,0"
-                    Point2="59.3333303779363,0"
-                    Point3="59.3333303779363,4" />
+                    End="0,39.6666674802699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Audit Dimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="117.541652656471,141.33333007892">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.4999990314253"
+              Start="0,0"
+              End="0,45.9999990314253">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="59.3333303779363,35.7000002557032" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.3333303779363,35.7000002557032"
-                    Point2="59.3333303779363,39.7000002557032"
-                    Point3="63.3333303779363,39.7000002557032" />
+                    End="0,45.9999990314253" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="236.666666666667,450"
+          Size="236.666666666667,492.666666666667"
+          Id="Package\Update Audit Dimension"
+          TopLeft="972.083318848163,175.9333301874" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="810.499992065132,140.499997869134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161.583326783031,281.7666656516"
+              Start="0,0"
+              End="154.083326783031,281.7666656516">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="111.166660755873,39.7000002557032" />
+                    End="76.7916633915157,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.7916633915157,0"
+                    Point2="80.7916633915157,0"
+                    Point3="80.7916633915157,4" />
+                  <mssgle:LineSegment
+                    End="80.7916633915157,277.7666656516" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80.7916633915157,277.7666656516"
+                    Point2="80.7916633915157,281.7666656516"
+                    Point3="84.7916633915157,281.7666656516" />
+                  <mssgle:LineSegment
+                    End="154.083326783031,281.7666656516" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42592,73 +42101,29 @@ where PackageName is Null
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Incremental Load - Staging\Get Audit Parameters">
+    design-time-name="Package\Update Audit Dimension\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Union All"
-          TopLeft="208.5,108.166666666667" />
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted"
-          TopLeft="395.833333333333,5.49999999999993" />
-        <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates"
-          TopLeft="5.50000000000001,5.49999999999993" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts"
-          TopLeft="203.166666666667,5.49999999999993" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Update AuditDimension"
-          TopLeft="174.5,313.5" />
+          Id="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension"
+          TopLeft="191.833333333333,416.166666666667" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID"
+          TopLeft="220.5,313.5" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Get Audit Parameters\Audit - Get PackageName"
-          TopLeft="168.833333333333,210.833333333333" />
+          Id="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
+          TopLeft="186.166666666667,210.833333333333" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted"
+          TopLeft="5.5,5.49999999999993" />
         <EdgeLayout
-          Id="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output2]"
-          TopLeft="471.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174.333333333333,60.0000000000001"
-              Start="0,0"
-              End="-174.333333333333,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.1397849462366" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.1397849462366"
-                    Point2="0,39.1397849462366"
-                    Point3="-4,39.1397849462366" />
-                  <mssgle:LineSegment
-                    End="-170.333333333333,39.1397849462366" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-170.333333333333,39.1397849462366"
-                    Point2="-174.333333333333,39.1397849462366"
-                    Point3="-174.333333333333,43.1397849462366" />
-                  <mssgle:LineSegment
-                    End="-174.333333333333,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output1]"
-          TopLeft="269.166666666667,48.1666666666666">
+          Id="Package\Update Audit Dimension\Get Audit Parameters.Paths[Audit Output 1]"
+          TopLeft="286.5,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -42675,116 +42140,70 @@ where PackageName is Null
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Incremental Load - Staging\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="74.1666666666667,48.1666666666666">
+          Id="Package\Update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
+          TopLeft="81.5,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="166.666666666667,60.0000000000001"
+              EndConnector="205,162.666666666666"
               Start="0,0"
-              End="166.666666666667,52.5000000000001">
+              End="205,155.166666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.1397849462366" />
+                    End="0,77.3333333333332" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.1397849462366"
-                    Point2="0,39.1397849462366"
-                    Point3="4,39.1397849462366" />
+                    Point1="0,77.3333333333332"
+                    Point2="0,81.3333333333332"
+                    Point3="4,81.3333333333332" />
                   <mssgle:LineSegment
-                    End="162.666666666667,39.1397849462366" />
+                    End="201,81.3333333333332" />
                   <mssgle:CubicBezierSegment
-                    Point1="162.666666666667,39.1397849462366"
-                    Point2="166.666666666667,39.1397849462366"
-                    Point3="166.666666666667,43.1397849462366" />
+                    Point1="201,81.3333333333332"
+                    Point2="205,81.3333333333332"
+                    Point3="205,85.3333333333332" />
                   <mssgle:LineSegment
-                    End="166.666666666667,52.5000000000001" />
+                    End="205,155.166666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Incremental Load - Staging\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="269.166666666667,253.5">
+          Id="Package\Update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
+          TopLeft="286.5,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,60.0000000000003"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Get Audit Parameters.Paths[Union All Output 1]"
-          TopLeft="269.166666666667,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Get Audit Parameters\Rows Extracted">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Get Audit Parameters\Get Updates">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Get Audit Parameters\Get Inserts">
+    design-time-name="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

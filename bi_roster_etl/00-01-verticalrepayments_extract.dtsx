@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-verticalrepayments_extract"
-  DTS:VersionBuild="144"
-  DTS:VersionGUID="{09F4D992-00E0-4EFB-BBAE-3C9A2DF3926E}">
+  DTS:VersionBuild="150"
+  DTS:VersionGUID="{3FD57FB6-F650-4E0D-9D7D-F34F0709B956}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21093,6 +21093,82 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="remove nulls"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Inputs[Derived Column Input].Columns[Amount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Amount"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Outputs[Union All Output 1].Columns[Amount]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)([TRIM](#{Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Outputs[Union All Output 1].Columns[Amount]}) == "" ? (DT_STR,50,1252)NULL(DT_STR,50,1252) : #{Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Outputs[Union All Output 1].Columns[Amount]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)(TRIM(Amount) == "" ? (DT_STR,50,1252)NULL(DT_STR,50,1252) : Amount)</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -24398,6 +24474,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Data Conversion Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
                   name="Derived Column Output"
@@ -24413,10 +24494,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Inputs[Data Conversion Input]"
                   name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 4]"
@@ -24437,16 +24518,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output7]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\MW.Inputs[Derived Column Input]"
-                  name="Flat File Source Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source MW.Outputs[Flat File Source Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW.Inputs[Derived Column Input]"
-                  name="Flat File Source Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source RW.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output1]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\KE.Inputs[Derived Column Input]"
@@ -24478,8 +24549,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Flat File Source Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source ZA.Outputs[Flat File Source Output]" />
                 <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output7]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\MW.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source MW.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source RW.Outputs[Flat File Source Output]" />
+                <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Union All Output 1]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Inputs[Data Conversion Input]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls.Inputs[Derived Column Input]"
                   name="Union All Output 1"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Outputs[Union All Output 1]" />
               </paths>
@@ -39239,9 +39320,9 @@ where AuditID = ?
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="600,500"
-          Size="600,542.666666666667"
+          Size="230,42.6666666666667"
           Id="Package\Incremental Load - Staging"
           TopLeft="438.333326801657,255.933329722483" />
         <NodeLayout
@@ -39583,12 +39664,12 @@ where AuditID = ?
               StartConnector="{assembly:Null}"
               EndConnector="0,103.799997380971"
               Start="0,0"
-              End="0,96.2999973809711">
+              End="0,96.299997380971">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,96.2999973809711" />
+                    End="0,96.299997380971" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39599,30 +39680,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="552.333326776822,195.199997272491">
+          TopLeft="552.833326789239,195.199997272491">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186.000000024835,60.7333324499923"
+              EndConnector="0,60.7333324499923"
               Start="0,0"
-              End="186.000000024835,53.2333324499923">
+              End="0,53.2333324499923">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.3666662249961" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.3666662249961"
-                    Point2="0,30.3666662249961"
-                    Point3="4,30.3666662249961" />
-                  <mssgle:LineSegment
-                    End="182.000000024835,30.3666662249961" />
-                  <mssgle:CubicBezierSegment
-                    Point1="182.000000024835,30.3666662249961"
-                    Point2="186.000000024835,30.3666662249961"
-                    Point3="186.000000024835,34.3666662249961" />
-                  <mssgle:LineSegment
-                    End="186.000000024835,53.2333324499923" />
+                    End="0,53.2333324499923" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39633,30 +39702,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="738.333326801657,798.59999638915">
+          TopLeft="553.333326801657,298.59999638915">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-207.666666716337,-333.20000471115"
+              EndConnector="-22.666666716337,166.79999528885"
               Start="0,0"
-              End="-207.666666716337,-325.70000471115">
+              End="-22.666666716337,159.29999528885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-162.600002355575" />
+                    End="0,79.3999976444252" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-162.600002355575"
-                    Point2="0,-166.600002355575"
-                    Point3="-4,-166.600002355575" />
+                    Point1="0,79.3999976444252"
+                    Point2="0,83.3999976444252"
+                    Point3="-4,83.3999976444252" />
                   <mssgle:LineSegment
-                    End="-203.666666716337,-166.600002355575" />
+                    End="-18.666666716337,83.3999976444252" />
                   <mssgle:CubicBezierSegment
-                    Point1="-203.666666716337,-166.600002355575"
-                    Point2="-207.666666716337,-166.600002355575"
-                    Point3="-207.666666716337,-170.600002355575" />
+                    Point1="-18.666666716337,83.3999976444252"
+                    Point2="-22.666666716337,83.3999976444252"
+                    Point3="-22.666666716337,87.3999976444252" />
                   <mssgle:LineSegment
-                    End="-207.666666716337,-325.70000471115" />
+                    End="-22.666666716337,159.29999528885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -40490,28 +40559,6 @@ where AuditID = ?
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All"
           TopLeft="926.833333333333,210.833333333333" />
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Union All Output 1]"
-          TopLeft="987.5,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,162.666666666666"
-              Start="0,0"
-              End="0,155.166666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,155.166666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output7]"
           TopLeft="1679.5,48.1666666666664">
           <EdgeLayout.Curve>
@@ -41045,6 +41092,78 @@ where AuditID = ?
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\remove nulls"
+          TopLeft="959.333333333333,322" />
+        <EdgeLayout
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Union All Output 1]"
+          TopLeft="987.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.8333333333334,68.5000000000003"
+              Start="0,0"
+              End="41.8333333333334,61.0000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.2500000000002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.2500000000002"
+                    Point2="0,34.2500000000002"
+                    Point3="4,34.2500000000002" />
+                  <mssgle:LineSegment
+                    End="37.8333333333334,34.2500000000002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.8333333333334,34.2500000000002"
+                    Point2="41.8333333333334,34.2500000000002"
+                    Point3="41.8333333333334,38.2500000000002" />
+                  <mssgle:LineSegment
+                    End="41.8333333333334,61.0000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
+          TopLeft="1029.33333333333,364.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.8333333333334,51.4999999999993"
+              Start="0,0"
+              End="-41.8333333333334,43.9999999999993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7499999999997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.7499999999997"
+                    Point2="0,25.7499999999997"
+                    Point3="-4,25.7499999999997" />
+                  <mssgle:LineSegment
+                    End="-37.8333333333334,25.7499999999997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.8333333333334,25.7499999999997"
+                    Point2="-41.8333333333334,25.7499999999997"
+                    Point3="-41.8333333333334,29.7499999999997" />
+                  <mssgle:LineSegment
+                    End="-41.8333333333334,43.9999999999993" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
