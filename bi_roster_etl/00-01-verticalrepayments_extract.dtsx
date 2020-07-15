@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-verticalrepayments_extract"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{E7828066-5F79-40F2-8631-300CC1E87CD3}">
+  DTS:VersionBuild="144"
+  DTS:VersionGUID="{09F4D992-00E0-4EFB-BBAE-3C9A2DF3926E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32333,7 +32333,7 @@ S.[District]
            ,S.[FirstName]
            ,cast(S.[OAFID] as bigint) as OAFID
            ,S.[Dropped]
-           ,cast(Isnull(S.[Amount], 0) as numeric(18,5)) as Amount
+           ,cast(Isnull(replace(S.Amount, ' ', ''), 0) as numeric(18,5)) as Amount 
            ,S.[ReceiptID]
            ,S.[Type]
            ,S.[RepaymentDate]
@@ -38943,9 +38943,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38979,9 +38977,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39015,9 +39011,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39051,9 +39045,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39087,9 +39079,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39123,9 +39113,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39159,9 +39147,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39195,9 +39181,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -39525,9 +39509,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39561,9 +39543,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39585,9 +39565,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -40436,21 +40414,21 @@ where AuditID = ?
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="97.3333333333334,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\MW"
-          TopLeft="1403.83333333333,108.166666666666" />
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source ZA"
+          TopLeft="1365.16666666667,5.4999999999997" />
         <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source"
-          TopLeft="5.5,5.49999999999993" />
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source MW"
-          TopLeft="1592.83333333333,5.4999999999997" />
+          Size="96,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\RW"
+          TopLeft="631.5,108.166666666666" />
         <NodeLayout
           Size="92,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\ZA"
           TopLeft="1251.5,108.166666666666" />
+        <NodeLayout
+          Size="278.666666666667,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments"
+          TopLeft="848.166666666667,724.166666666666" />
         <NodeLayout
           Size="96,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\MM"
@@ -40460,13 +40438,17 @@ where AuditID = ?
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\UG"
           TopLeft="940.833333333333,108.166666666666" />
         <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source UG"
-          TopLeft="902.833333333333,5.4999999999997" />
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source TZ"
+          TopLeft="675.166666666667,5.4999999999997" />
         <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source BI"
-          TopLeft="217.833333333333,5.49999999999993" />
+          Size="97.3333333333334,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\MW"
+          TopLeft="1403.83333333333,108.166666666666" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source"
+          TopLeft="5.5,5.49999999999993" />
         <NodeLayout
           Size="92,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\KE"
@@ -40476,41 +40458,37 @@ where AuditID = ?
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\TZ"
           TopLeft="788.5,108.166666666666" />
         <NodeLayout
-          Size="170.666666666667,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source RW"
-          TopLeft="444.166666666667,5.49999999999993" />
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source MW"
+          TopLeft="1592.83333333333,5.4999999999997" />
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source UG"
+          TopLeft="902.833333333333,5.4999999999997" />
         <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion"
           TopLeft="908.833333333333,416.166666666666" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source ZA"
-          TopLeft="1365.16666666667,5.4999999999997" />
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source BI"
+          TopLeft="217.833333333333,5.49999999999993" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All"
-          TopLeft="926.833333333333,210.833333333333" />
-        <NodeLayout
-          Size="96,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\RW"
-          TopLeft="631.5,108.166666666666" />
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source RW"
+          TopLeft="444.166666666667,5.49999999999993" />
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source MM"
           TopLeft="1132.5,5.4999999999997" />
         <NodeLayout
-          Size="278.666666666667,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments"
-          TopLeft="848.166666666667,724.166666666666" />
-        <NodeLayout
           Size="89.3333333333334,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments\BI"
           TopLeft="481.833333333333,108.166666666666" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Flat File Source TZ"
-          TopLeft="675.166666666667,5.4999999999997" />
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All"
+          TopLeft="926.833333333333,210.833333333333" />
         <EdgeLayout
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Union All Output 1]"
           TopLeft="987.5,253.5">
@@ -40794,6 +40772,40 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+          TopLeft="375.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="567.925925925926,59.9999999999996"
+              Start="0,0"
+              End="567.925925925926,52.4999999999996">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.1140939597312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.1140939597312"
+                    Point2="0,47.1140939597312"
+                    Point3="4,47.1140939597312" />
+                  <mssgle:LineSegment
+                    End="563.925925925926,47.1140939597312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="563.925925925926,47.1140939597312"
+                    Point2="567.925925925926,47.1140939597312"
+                    Point3="567.925925925926,51.1140939597312" />
+                  <mssgle:LineSegment
+                    End="567.925925925926,52.4999999999996" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
           TopLeft="990.648148148148,150.833333333333">
           <EdgeLayout.Curve>
@@ -41011,40 +41023,6 @@ where AuditID = ?
                     Point3="429.518518518519,44.5111294311621" />
                   <mssgle:LineSegment
                     End="429.518518518519,52.4999999999996" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-          TopLeft="375.5,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="567.925925925926,59.9999999999996"
-              Start="0,0"
-              End="567.925925925926,52.4999999999996">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.1140939597312" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.1140939597312"
-                    Point2="0,47.1140939597312"
-                    Point3="4,47.1140939597312" />
-                  <mssgle:LineSegment
-                    End="563.925925925926,47.1140939597312" />
-                  <mssgle:CubicBezierSegment
-                    Point1="563.925925925926,47.1140939597312"
-                    Point2="567.925925925926,47.1140939597312"
-                    Point3="567.925925925926,51.1140939597312" />
-                  <mssgle:LineSegment
-                    End="567.925925925926,52.4999999999996" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
