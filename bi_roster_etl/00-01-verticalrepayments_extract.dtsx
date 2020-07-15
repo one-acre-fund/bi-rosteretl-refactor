@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-verticalrepayments_extract"
-  DTS:VersionBuild="132"
-  DTS:VersionGUID="{89E350BB-A6E5-47BE-8579-6B1BA2D5D17D}">
+  DTS:VersionBuild="135"
+  DTS:VersionGUID="{04D5553E-7820-41BB-A3F6-EA0A6B58535F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33335,7 +33335,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SP IncrementalLoad"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -33343,7 +33343,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               SQLTask:SqlStatementSource="Exec IncrementalLoad_VerticalRepayments;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Incremental Load - Staging\Truncate Staging"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{48ac0380-46e8-4c48-8e4a-a490b1678a23}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Staging"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+              SQLTask:SqlStatementSource="Truncate table cls.staging_VerticalRepayments;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{760BB51D-B5A8-48B8-9102-374D8CD75575}"
+          DTS:From="Package\Incremental Load - Staging\Truncate Staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Incremental Load - Staging\Load Staging" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\junk"
@@ -37845,7 +37871,6 @@ from cls.Staging_VerticalRepayments</property>
           DTS:refId="Package\Load Production\Get Audit Parameters"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{320bab78-855c-41f3-bf21-880c55015e54}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -37896,6 +37921,79 @@ from cls.Staging_VerticalRepayments</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Load Production\Get Audit Parameters\DC AuditID"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DC AuditID"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load Production\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load Production\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                          name="AuditID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::AuditId]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::AuditId]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load Production\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Load Production\Get Audit Parameters\Get Inserts"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -37920,7 +38018,7 @@ from cls.Staging_VerticalRepayments</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsInserted from cls.staging_VerticalRepayments where AuditID = ? and AuditDateCreated &gt; ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsInserted from cls.VerticalRepayments where AuditID = ? and AuditDateCreated &gt; ?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -37946,8 +38044,8 @@ from cls.Staging_VerticalRepayments</property>
                   <connections>
                     <connection
                       refId="Package\Load Production\Get Audit Parameters\Get Inserts.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
+                      connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -38026,7 +38124,7 @@ from cls.Staging_VerticalRepayments</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsUpdated from cls.staging_VerticalRepayments where AuditID = ? and AuditDateCreated &lt;= ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Count(*) RowsUpdated from cls.VerticalRepayments where AuditID = ? and AuditDateCreated &lt;= ?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -38052,8 +38150,8 @@ from cls.Staging_VerticalRepayments</property>
                   <connections>
                     <connection
                       refId="Package\Load Production\Get Audit Parameters\Get Updates.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
+                      connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -38132,7 +38230,7 @@ from cls.Staging_VerticalRepayments</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.landing_VerticalRepayments</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.staging_VerticalRepayments</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -38158,8 +38256,8 @@ from cls.Staging_VerticalRepayments</property>
                   <connections>
                     <connection
                       refId="Package\Load Production\Get Audit Parameters\Rows Extracted.Connections[OleDbConnection]"
-                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -38342,7 +38440,7 @@ RowsInserted = ?,
 RowsUpdated = ?,
 RowsExtracted = ?
 
-where PackageName is Null 
+where AuditID = ?
 </property>
                     <property
                       dataType="System.Int32"
@@ -38390,6 +38488,12 @@ where PackageName is Null
                           cachedName="RowsExtracted"
                           externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Load Production\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsExtracted]" />
+                        <inputColumn
+                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -38438,6 +38542,17 @@ where PackageName is Null
                               name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="i4"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -38477,9 +38592,14 @@ where PackageName is Null
               <paths>
                 <path
                   refId="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
-                  endId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
+                  endId="Package\Load Production\Get Audit Parameters\DC AuditID.Inputs[Derived Column Input]"
                   name="Audit Output 1"
                   startId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]" />
+                <path
+                  refId="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
+                  endId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Production\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
                   endId="Package\Load Production\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
@@ -38508,7 +38628,6 @@ where PackageName is Null
           DTS:refId="Package\Load Production\Get Latest DateCreated"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{c473654c-da5f-479a-a97b-6aae264bfca6}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -39099,11 +39218,49 @@ where PackageName is Null
           Size="141.333333333334,42.6666666666667"
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="316.916655447334,116.766661157409" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Truncate Staging"
+          TopLeft="267.583322859059,23.300001681447" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="347.583322859059,65.9666683481136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.999999254942,50.7999928092958"
+              Start="0,0"
+              End="39.999999254942,43.2999928092958">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3999964046479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3999964046479"
+                    Point2="0,25.3999964046479"
+                    Point3="4,25.3999964046479" />
+                  <mssgle:LineSegment
+                    End="35.999999254942,25.3999964046479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.999999254942,25.3999964046479"
+                    Point2="39.999999254942,25.3999964046479"
+                    Point3="39.999999254942,29.3999964046479" />
+                  <mssgle:LineSegment
+                    End="39.999999254942,43.2999928092958" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="600,500"
-          Size="230,42.6666666666667"
+          Size="600,42.6666666666667"
           Id="Package\Incremental Load - Staging"
           TopLeft="438.333326801657,255.933329722483" />
         <NodeLayout
@@ -39459,18 +39616,30 @@ where PackageName is Null
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="552.833326789239,195.199997272491">
+          TopLeft="552.333326776822,195.199997272491">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.7333324499922"
+              EndConnector="186.000000024835,60.7333324499922"
               Start="0,0"
-              End="0,53.2333324499922">
+              End="186.000000024835,53.2333324499922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.2333324499922" />
+                    End="0,26.3666662249961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3666662249961"
+                    Point2="0,30.3666662249961"
+                    Point3="4,30.3666662249961" />
+                  <mssgle:LineSegment
+                    End="182.000000024835,30.3666662249961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182.000000024835,30.3666662249961"
+                    Point2="186.000000024835,30.3666662249961"
+                    Point3="186.000000024835,34.3666662249961" />
+                  <mssgle:LineSegment
+                    End="186.000000024835,53.2333324499922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39481,30 +39650,18 @@ where PackageName is Null
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="553.333326801657,298.59999638915">
+          TopLeft="737.499993443489,298.59999638915">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="183.333333283663,166.79999528885"
+              EndConnector="0,166.79999528885"
               Start="0,0"
-              End="183.333333283663,159.29999528885">
+              End="0,159.29999528885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.3999976444252" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,79.3999976444252"
-                    Point2="0,83.3999976444252"
-                    Point3="4,83.3999976444252" />
-                  <mssgle:LineSegment
-                    End="179.333333283663,83.3999976444252" />
-                  <mssgle:CubicBezierSegment
-                    Point1="179.333333283663,83.3999976444252"
-                    Point2="183.333333283663,83.3999976444252"
-                    Point3="183.333333283663,87.3999976444252" />
-                  <mssgle:LineSegment
-                    End="183.333333283663,159.29999528885" />
+                    End="0,159.29999528885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41326,7 +41483,7 @@ where PackageName is Null
     design-time-name="Package\Load Production\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Load Production\Get Audit Parameters\Union All"
@@ -41346,7 +41503,7 @@ where PackageName is Null
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
-          TopLeft="174.5,313.5" />
+          TopLeft="172.5,479.5" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
@@ -41370,9 +41527,7 @@ where PackageName is Null
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41406,9 +41561,7 @@ where PackageName is Null
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41430,9 +41583,7 @@ where PackageName is Null
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41466,37 +41617,83 @@ where PackageName is Null
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Load Production\Get Audit Parameters\DC AuditID"
+          TopLeft="208,327.333333333333" />
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="269.166666666667,253.5">
+          TopLeft="271.583333333333,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,73.8333333333337"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,66.3333333333337">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,66.3333333333337" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
+          TopLeft="270.583333333333,370">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109.5"
+              Start="0,0"
+              End="0,102">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Production\Get Audit Parameters\Rows Extracted">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Production\Get Audit Parameters\Get Updates">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Production\Get Audit Parameters\Get Inserts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
