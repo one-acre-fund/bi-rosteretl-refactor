@@ -32,7 +32,7 @@
 	from (
 		select CountryID, SeasonID,RosterSeasonID
 		from OAF_SHARED_DIMENSIONS.dbo.DimSeasons 
-		where RosterSeasonID is not null 
+		where RosterSeasonID is not null  and isDeleted=0
 		) s
 	where s.RosterSeasonID=cls.staging_ADS.SeasonID
 	and s.CountryID=cls.staging_ADS.DimCountryID
@@ -51,3 +51,6 @@
 	and cls.staging_ADS.DimClientID is null
 
 */
+
+
+
