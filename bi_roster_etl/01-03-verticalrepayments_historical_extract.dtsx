@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-verticalrepayments_extract"
-  DTS:VersionBuild="143"
-  DTS:VersionGUID="{2CFAF1A7-29D6-41FF-BF62-A616E64B9872}">
+  DTS:VersionBuild="144"
+  DTS:VersionGUID="{8F0BED9B-2255-4566-AAB4-6F221F8059F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -20891,7 +20891,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cleanup"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="13">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -36045,49 +36045,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Outputs[Data Conversion Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\UG.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
                       name="Derived Column Output"
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
                     <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\UG.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 4]"
                       name="Derived Column Output"
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\TZ.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Inputs[Derived Column Input]"
@@ -36150,7 +36150,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File BI"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -36161,14 +36161,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   ReadOnlyVariables="User::VarFolderPath_BI"
                   ReadWriteVariables="User::VarFileName_BI">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -36555,35 +36576,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -36781,7 +36781,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File KE"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="12">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -36791,6 +36791,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath"
                   ReadWriteVariables="User::VarFileName">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -36910,35 +36919,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_491edd431bd84dcdaf357419d70bdeeb.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -37177,6 +37157,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -37206,15 +37215,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -37412,7 +37412,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MM"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -37423,14 +37423,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_MM"
                   ReadWriteVariables="User::VarFileName_MM">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -37817,35 +37838,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -38043,7 +38043,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MW"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -38054,14 +38054,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_MW"
                   ReadWriteVariables="User::VarFileName_MW">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -38448,35 +38469,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -38674,7 +38674,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File RW"
-              DTS:ThreadHint="13">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -38685,14 +38685,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_RW"
                   ReadWriteVariables="User::VarFileName_RW">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -38899,6 +38920,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
+		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
+		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -39030,26 +39071,6 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	}
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Project"
-                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
-		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
-		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -39079,35 +39100,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -39305,7 +39305,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File TZ"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -39316,14 +39316,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_TZ"
                   ReadWriteVariables="User::VarFileName_TZ">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -39710,35 +39731,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -39936,7 +39936,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File UG"
-              DTS:ThreadHint="11">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -39947,14 +39947,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_UG"
                   ReadWriteVariables="User::VarFileName_UG">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_8299571892d545d4867e0073f7368789.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -40341,35 +40362,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -40567,7 +40567,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File ZA"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -40578,14 +40578,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath_ZA"
                   ReadWriteVariables="User::VarFileName_ZA">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_618dd71314f2446db93266bd6b2ec05f.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -40972,35 +40993,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -43032,77 +43032,77 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="District"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1449:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1500:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Sector]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Sector"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1450:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1501:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Site]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Site"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1451:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1502:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Group]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Group"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1452:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1503:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[SiteAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="SiteAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1453:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1504:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[GroupAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="GroupAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1454:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1505:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[LastName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="LastName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1455:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1506:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[FirstName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="FirstName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1456:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1507:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[OAFID]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="OAFID"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1457:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1508:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Dropped]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Dropped"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1458:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1509:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Amount]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Amount"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1459:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1510:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[ReceiptID]"
                               cachedCodepage="1252"
@@ -43999,7 +43999,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get Latest DateCreated"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -44020,7 +44020,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get LoadEndTime"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -44041,7 +44041,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SP IncrementalLoad"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -44057,7 +44057,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Update AuditDimension"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -44133,7 +44133,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Exec SP_IncrementalLoad"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -45204,7 +45204,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Remove quotes from SeasonName"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -45221,7 +45221,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Vertical Repayments"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -46201,7 +46201,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -46222,7 +46222,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -46362,6 +46362,88 @@ where AuditID = ?
       DTS:ObjectName="Constraint 9"
       DTS:To="Package\Incremental Load - Staging" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{A770577E-30FC-4905-B128-FA8797E38ECB}"
+      DTS:EventID="-704643073"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{F0D70760-EBA7-4B1A-9151-3C6507B6CE45}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Update ETL Errors"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8DDFB989-567D-4A46-A3C4-F45A91D03976}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update ETL Errors">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="insert into cls.ETLErrors (AuditID,&#xA;Pk_ID,&#xA;Machine_Name,&#xA;Package_Name,&#xA;Task_Name,&#xA;Error_Code,&#xA;Error_Description,&#xA;Dated)&#xA;&#xA;values (?,?,?,?,?,?,?,getdate())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::AuditId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::TaskName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -46463,6 +46545,61 @@ where AuditID = ?
           Id="Package\FEL - Load all Historical Exports Zambia"
           TopLeft="234.166663674016,175.466665364902" />
         <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging"
+          TopLeft="316.916655447334,116.766661157409" />
+        <NodeLayout
+          Size="184.666666666667,42.6666666666667"
+          Id="Package\Incremental Load - Staging\SP IncrementalLoad"
+          TopLeft="53.5833279254536,139.599993367195" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Truncate Staging"
+          TopLeft="267.583322859059,23.300001681447" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="347.583322859059,65.9666683481136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.999999254942,50.7999928092958"
+              Start="0,0"
+              End="39.999999254942,43.2999928092958">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3999964046479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3999964046479"
+                    Point2="0,25.3999964046479"
+                    Point3="4,25.3999964046479" />
+                  <mssgle:LineSegment
+                    End="35.999999254942,25.3999964046479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.999999254942,25.3999964046479"
+                    Point2="39.999999254942,25.3999964046479"
+                    Point3="39.999999254942,29.3999964046479" />
+                  <mssgle:LineSegment
+                    End="39.999999254942,43.2999928092958" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="600,500"
+          Size="230,42.6666666666667"
+          Id="Package\Incremental Load - Staging"
+          TopLeft="474.083326298743,401.26665949146" />
+        <NodeLayout
           Size="117.333333333334,42.6666666666667"
           Id="Package\junk\Cleanup"
           TopLeft="30.9999855707097,222.466659708421" />
@@ -46474,78 +46611,6 @@ where AuditID = ?
           Size="245.333333333334,42.6666666666667"
           Id="Package\junk\DFT - Landing_VerticalRepayments"
           TopLeft="116.749995560699,124.333322252828" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\junk\Load Production"
-          TopLeft="60.4166570740442,75.5666558263702" />
-        <NodeLayout
-          Size="190.666666666667,42.6666666666667"
-          Id="Package\junk\Preparation SQL Task 1"
-          TopLeft="157.083324249839,181.933322477539" />
-        <NodeLayout
-          Size="242.666666666667,42.6666666666667"
-          Id="Package\junk\Remove quotes from SeasonName"
-          TopLeft="28.3333242187898,146.633321997126" />
-        <NodeLayout
-          Size="221.333333333334,42.6666666666667"
-          Id="Package\junk\Truncate Vertical Repayments"
-          TopLeft="35.3333241442841,9.03332413574083" />
-        <EdgeLayout
-          Id="Package\junk.PrecedenceConstraints[Constraint]"
-          TopLeft="142.208323942498,51.6999908024075">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23.8666650239627"
-              Start="0,0"
-              End="0,16.3666650239627">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.3666650239627" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\junk.PrecedenceConstraints[Constraint 1]"
-          TopLeft="138.416657074044,118.233322493037">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.2500004780789,28.3999995040893"
-              Start="0,0"
-              End="11.2500004780789,20.8999995040893">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.1999997520447" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.1999997520447"
-                    Point2="0,14.1999997520447"
-                    Point3="4,14.1999997520447" />
-                  <mssgle:LineSegment
-                    End="7.2500004780789,14.1999997520447" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.2500004780789,14.1999997520447"
-                    Point2="11.2500004780789,14.1999997520447"
-                    Point3="11.2500004780789,18.1999997520447" />
-                  <mssgle:LineSegment
-                    End="11.2500004780789,20.8999995040893" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="250.666666666667,42.6666666666667"
           Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments"
@@ -47028,6 +47093,93 @@ where AuditID = ?
           Size="226,42.6666666666667"
           Id="Package\junk\Incremental Load  Staging"
           TopLeft="147.166647704937,181.83332996269" />
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\junk\Load Prnoduction\Exec SP_IncrementalLoad"
+          TopLeft="55.0833325944843,29.5666581509511" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="356,187.333333333334"
+          Size="183.333333333334,42.6666666666667"
+          Id="Package\junk\Load Prnoduction"
+          TopLeft="168.833314048747,237.033328010043" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\junk\Load Production"
+          TopLeft="60.4166570740442,75.5666558263702" />
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\junk\Preparation SQL Task 1"
+          TopLeft="157.083324249839,181.933322477539" />
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\junk\Remove quotes from SeasonName"
+          TopLeft="28.3333242187898,146.633321997126" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\junk\Truncate Vertical Repayments"
+          TopLeft="35.3333241442841,9.03332413574083" />
+        <EdgeLayout
+          Id="Package\junk.PrecedenceConstraints[Constraint]"
+          TopLeft="142.208323942498,51.6999908024075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.8666650239627"
+              Start="0,0"
+              End="0,16.3666650239627">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3666650239627" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\junk.PrecedenceConstraints[Constraint 1]"
+          TopLeft="138.416657074044,118.233322493037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.2500004780789,28.3999995040893"
+              Start="0,0"
+              End="11.2500004780789,20.8999995040893">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.1999997520447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.1999997520447"
+                    Point2="0,14.1999997520447"
+                    Point3="4,14.1999997520447" />
+                  <mssgle:LineSegment
+                    End="7.2500004780789,14.1999997520447" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.2500004780789,14.1999997520447"
+                    Point2="11.2500004780789,14.1999997520447"
+                    Point3="11.2500004780789,18.1999997520447" />
+                  <mssgle:LineSegment
+                    End="11.2500004780789,20.8999995040893" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\junk.PrecedenceConstraints[Constraint 2]"
           TopLeft="147.166647704937,203.166663296023">
@@ -47059,20 +47211,11 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="201.333333333334,42.6666666666667"
-          Id="Package\junk\Load Prnoduction\Exec SP_IncrementalLoad"
-          TopLeft="55.0833325944843,29.5666581509511" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="356,187.333333333334"
-          Size="183.333333333334,42.6666666666667"
-          Id="Package\junk\Load Prnoduction"
-          TopLeft="168.833314048747,237.033328010043" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
@@ -47080,6 +47223,129 @@ where AuditID = ?
           Size="122,42.6666666666667"
           Id="Package\junk"
           TopLeft="1199.91664881631,17.7666663489751" />
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\Load Production\Exec SP_IncrementalLoad"
+          TopLeft="172.999997504056,133.133322965701" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Load Production\Get Audit Parameters"
+          TopLeft="176.41666801398,215.399985944033" />
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\Load Production\Get Latest DateCreated"
+          TopLeft="180.583334618559,18.7333250113328" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Load Production\Get LoadEndTime"
+          TopLeft="185.666668790083,292.233320323427" />
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\Load Production\Update AuditDimension"
+          TopLeft="171.916668994974,377.999986207486" />
+        <EdgeLayout
+          Id="Package\Load Production.PrecedenceConstraints[Constraint]"
+          TopLeft="274.458332727974,61.3999916779995">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.733331287702"
+              Start="0,0"
+              End="0,64.233331287702">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.233331287702" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production.PrecedenceConstraints[Constraint 1]"
+          TopLeft="270.041666092351,175.799989632368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5999963116644"
+              Start="0,0"
+              End="0,32.0999963116644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0999963116644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production.PrecedenceConstraints[Constraint 2]"
+          TopLeft="266.708335068698,258.066652610699">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1666677127282"
+              Start="0,0"
+              End="0,26.6666677127282">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6666677127282" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production.PrecedenceConstraints[Constraint 3]"
+          TopLeft="266.791668892528,334.899986990094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.0999992173916"
+              Start="0,0"
+              End="0,35.5999992173916">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5999992173916" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="590,520"
+          Size="178,42.6666666666667"
+          Id="Package\Load Production"
+          TopLeft="503.666659191251,496.333323492608" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\VerticalRepayments Historical - Landing\ETL Begin"
@@ -47259,6 +47525,28 @@ where AuditID = ?
                     Point3="18.5,55.7222229583395" />
                   <mssgle:LineSegment
                     End="3.33333384245577,55.7222229583395" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="590.874992744997,443.933326158126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3999973344816"
+              Start="0,0"
+              End="0,44.8999973344816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8999973344816" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -47471,182 +47759,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="201.333333333334,42.6666666666667"
-          Id="Package\Load Production\Exec SP_IncrementalLoad"
-          TopLeft="172.999997504056,133.133322965701" />
-        <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\Load Production\Get Audit Parameters"
-          TopLeft="176.41666801398,215.399985944033" />
-        <NodeLayout
-          Size="189.333333333334,42.6666666666667"
-          Id="Package\Load Production\Get Latest DateCreated"
-          TopLeft="180.583334618559,18.7333250113328" />
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Load Production\Get LoadEndTime"
-          TopLeft="185.666668790083,292.233320323427" />
-        <NodeLayout
-          Size="189.333333333334,42.6666666666667"
-          Id="Package\Load Production\Update AuditDimension"
-          TopLeft="171.916668994974,377.999986207486" />
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint]"
-          TopLeft="274.458332727974,61.3999916779995">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71.733331287702"
-              Start="0,0"
-              End="0,64.233331287702">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.233331287702" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint 1]"
-          TopLeft="270.041666092351,175.799989632368">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.5999963116644"
-              Start="0,0"
-              End="0,32.0999963116644">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.0999963116644" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint 2]"
-          TopLeft="266.708335068698,258.066652610699">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.1666677127282"
-              Start="0,0"
-              End="0,26.6666677127282">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6666677127282" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint 3]"
-          TopLeft="266.791668892528,334.899986990094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.0999992173916"
-              Start="0,0"
-              End="0,35.5999992173916">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5999992173916" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="590,520"
-          Size="178,42.6666666666667"
-          Id="Package\Load Production"
-          TopLeft="503.666659191251,496.333323492608" />
-        <NodeLayout
-          Size="141.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging"
-          TopLeft="316.916655447334,116.766661157409" />
-        <NodeLayout
-          Size="184.666666666667,42.6666666666667"
-          Id="Package\Incremental Load - Staging\SP IncrementalLoad"
-          TopLeft="53.5833279254536,139.599993367195" />
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Truncate Staging"
-          TopLeft="267.583322859059,23.300001681447" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
-          TopLeft="347.583322859059,65.9666683481136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.999999254942,50.7999928092958"
-              Start="0,0"
-              End="39.999999254942,43.2999928092958">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3999964046479" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.3999964046479"
-                    Point2="0,25.3999964046479"
-                    Point3="4,25.3999964046479" />
-                  <mssgle:LineSegment
-                    End="35.999999254942,25.3999964046479" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.999999254942,25.3999964046479"
-                    Point2="39.999999254942,25.3999964046479"
-                    Point3="39.999999254942,29.3999964046479" />
-                  <mssgle:LineSegment
-                    End="39.999999254942,43.2999928092958" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="600,500"
-          Size="230,42.6666666666667"
-          Id="Package\Incremental Load - Staging"
-          TopLeft="474.083326298743,401.26665949146" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="767.166657365859,333.866661459605">
@@ -47673,28 +47785,6 @@ where AuditID = ?
                     Point3="-178.083331067115,37.6999990159274" />
                   <mssgle:LineSegment
                     End="-178.083331067115,59.8999980318548" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="590.874992744997,443.933326158126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.3999973344816"
-              Start="0,0"
-              End="0,44.8999973344816">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.8999973344816" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -48452,6 +48542,346 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <TaskHost
+    design-time-name="Package\Incremental Load - Staging\Load Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\DC - AuditID"
+          TopLeft="41.8333333333334,313.5" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments"
+          TopLeft="6.16666666666671,416.166666666667" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\Get Hash Value"
+          TopLeft="35.5,210.833333333334" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\Data Conversion"
+          TopLeft="32.8333333333333,108.166666666667" />
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\landing_VerticalRepayments"
+          TopLeft="5.5,5.50000000000004" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
+          TopLeft="111.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
+          TopLeft="111.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
+          TopLeft="111.5,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Data Conversion Output]"
+          TopLeft="111.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\landing_VerticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\junk\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\junk\Data Flow Task\Flat File Source"
+          TopLeft="244.999996349216,44.1999992096424" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\junk\Data Flow Task\Data Conversion"
+          TopLeft="304.583328794688,169.866663629214" />
+        <NodeLayout
+          Size="278.666666666667,42.6666666666667"
+          Id="Package\junk\Data Flow Task\Destination - Landing_VerticalRepayments"
+          TopLeft="202.166663736105,313.999996319413" />
+        <EdgeLayout
+          Id="Package\junk\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="383.249995461355,212.533330295881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.7499983919164,101.466666023533"
+              Start="0,0"
+              End="-41.7499983919164,93.9666660235327">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.7333330117663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.7333330117663"
+                    Point2="0,50.7333330117663"
+                    Point3="-4,50.7333330117663" />
+                  <mssgle:LineSegment
+                    End="-37.7499983919164,50.7333330117663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.7499983919164,50.7333330117663"
+                    Point2="-41.7499983919164,50.7333330117663"
+                    Point3="-41.7499983919164,54.7333330117663" />
+                  <mssgle:LineSegment
+                    End="-41.7499983919164,93.9666660235327" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\junk\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="320.999996349216,86.8666658763091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.2499991121392,82.9999977529049"
+              Start="0,0"
+              End="62.2499991121392,75.4999977529049">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.4999988764525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.4999988764525"
+                    Point2="0,41.4999988764525"
+                    Point3="4,41.4999988764525" />
+                  <mssgle:LineSegment
+                    End="58.2499991121392,41.4999988764525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.2499991121392,41.4999988764525"
+                    Point2="62.2499991121392,41.4999988764525"
+                    Point3="62.2499991121392,45.4999988764525" />
+                  <mssgle:LineSegment
+                    End="62.2499991121392,75.4999977529049" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\junk\Data Flow Task\Destination - Landing_VerticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\junk\DFT - Landing_VerticalRepayments">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\junk\DFT - Landing_VerticalRepayments\Flat File Source"
+          TopLeft="244.999996349216,44.1999992096424" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\junk\DFT - Landing_VerticalRepayments\Data Conversion"
+          TopLeft="239.583329763263,159.033330489596" />
+        <NodeLayout
+          Size="278.666666666667,42.6666666666667"
+          Id="Package\junk\DFT - Landing_VerticalRepayments\Destination - Landing_VerticalRepayments"
+          TopLeft="208.416663642973,396.766661506096" />
+        <EdgeLayout
+          Id="Package\junk\DFT - Landing_VerticalRepayments.Paths[Flat File Source Output]"
+          TopLeft="319.624996389573,86.8666658763091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.1666646132867"
+              Start="0,0"
+              End="0,64.6666646132867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.6666646132867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\junk\DFT - Landing_VerticalRepayments.Paths[Data Conversion Output]"
+          TopLeft="318.24999642993,201.699997156263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.5000005463766,195.066664349833"
+              Start="0,0"
+              End="29.5000005463766,187.566664349833">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5333321749167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,93.5333321749167"
+                    Point2="0,97.5333321749167"
+                    Point3="4,97.5333321749167" />
+                  <mssgle:LineSegment
+                    End="25.5000005463766,97.5333321749167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5000005463766,97.5333321749167"
+                    Point2="29.5000005463766,97.5333321749167"
+                    Point3="29.5000005463766,101.533332174917" />
+                  <mssgle:LineSegment
+                    End="29.5000005463766,187.566664349833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\junk\DFT - Landing_VerticalRepayments\Destination - Landing_VerticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\junk\Get the files\DFT - Landing_VerticalRepakyments">
     <LayoutInfo>
       <GraphLayout
@@ -48685,7 +49115,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
           TopLeft="990.648148148148,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48709,7 +49139,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48745,7 +49175,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48781,7 +49211,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48817,7 +49247,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
           TopLeft="1452.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48853,7 +49283,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
           TopLeft="834.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48889,7 +49319,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48925,7 +49355,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -48961,7 +49391,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
           TopLeft="987.5,664.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -49411,204 +49841,6 @@ where AuditID = ?
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\junk\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\junk\Data Flow Task\Flat File Source"
-          TopLeft="244.999996349216,44.1999992096424" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\junk\Data Flow Task\Data Conversion"
-          TopLeft="304.583328794688,169.866663629214" />
-        <NodeLayout
-          Size="278.666666666667,42.6666666666667"
-          Id="Package\junk\Data Flow Task\Destination - Landing_VerticalRepayments"
-          TopLeft="202.166663736105,313.999996319413" />
-        <EdgeLayout
-          Id="Package\junk\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="383.249995461355,212.533330295881">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-41.7499983919164,101.466666023533"
-              Start="0,0"
-              End="-41.7499983919164,93.9666660235327">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.7333330117663" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.7333330117663"
-                    Point2="0,50.7333330117663"
-                    Point3="-4,50.7333330117663" />
-                  <mssgle:LineSegment
-                    End="-37.7499983919164,50.7333330117663" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-37.7499983919164,50.7333330117663"
-                    Point2="-41.7499983919164,50.7333330117663"
-                    Point3="-41.7499983919164,54.7333330117663" />
-                  <mssgle:LineSegment
-                    End="-41.7499983919164,93.9666660235327" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\junk\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="320.999996349216,86.8666658763091">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="62.2499991121392,82.9999977529049"
-              Start="0,0"
-              End="62.2499991121392,75.4999977529049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.4999988764525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.4999988764525"
-                    Point2="0,41.4999988764525"
-                    Point3="4,41.4999988764525" />
-                  <mssgle:LineSegment
-                    End="58.2499991121392,41.4999988764525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.2499991121392,41.4999988764525"
-                    Point2="62.2499991121392,41.4999988764525"
-                    Point3="62.2499991121392,45.4999988764525" />
-                  <mssgle:LineSegment
-                    End="62.2499991121392,75.4999977529049" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\junk\Data Flow Task\Destination - Landing_VerticalRepayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\junk\DFT - Landing_VerticalRepayments">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\junk\DFT - Landing_VerticalRepayments\Flat File Source"
-          TopLeft="244.999996349216,44.1999992096424" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\junk\DFT - Landing_VerticalRepayments\Data Conversion"
-          TopLeft="239.583329763263,159.033330489596" />
-        <NodeLayout
-          Size="278.666666666667,42.6666666666667"
-          Id="Package\junk\DFT - Landing_VerticalRepayments\Destination - Landing_VerticalRepayments"
-          TopLeft="208.416663642973,396.766661506096" />
-        <EdgeLayout
-          Id="Package\junk\DFT - Landing_VerticalRepayments.Paths[Flat File Source Output]"
-          TopLeft="319.624996389573,86.8666658763091">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72.1666646132867"
-              Start="0,0"
-              End="0,64.6666646132867">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.6666646132867" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\junk\DFT - Landing_VerticalRepayments.Paths[Data Conversion Output]"
-          TopLeft="318.24999642993,201.699997156263">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.5000005463766,195.066664349833"
-              Start="0,0"
-              End="29.5000005463766,187.566664349833">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,93.5333321749167" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,93.5333321749167"
-                    Point2="0,97.5333321749167"
-                    Point3="4,97.5333321749167" />
-                  <mssgle:LineSegment
-                    End="25.5000005463766,97.5333321749167" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.5000005463766,97.5333321749167"
-                    Point2="29.5000005463766,97.5333321749167"
-                    Point3="29.5000005463766,101.533332174917" />
-                  <mssgle:LineSegment
-                    End="29.5000005463766,187.566664349833" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\junk\DFT - Landing_VerticalRepayments\Destination - Landing_VerticalRepayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\junk\Load Production">
     <LayoutInfo>
       <GraphLayout
@@ -49873,147 +50105,17 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <TaskHost
-    design-time-name="Package\Incremental Load - Staging\Load Staging">
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\DC - AuditID"
-          TopLeft="41.8333333333334,313.5" />
-        <NodeLayout
-          Size="210.666666666667,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments"
-          TopLeft="6.16666666666671,416.166666666667" />
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\Get Hash Value"
-          TopLeft="35.5,210.833333333334" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\Data Conversion"
-          TopLeft="32.8333333333333,108.166666666667" />
-        <NodeLayout
-          Size="212,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\landing_VerticalRepayments"
-          TopLeft="5.5,5.50000000000004" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
-          TopLeft="111.5,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
-          TopLeft="111.5,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
-          TopLeft="111.5,356.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Data Conversion Output]"
-          TopLeft="111.5,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="165.333333333334,42.6666666666667"
+          Id="Package.EventHandlers[OnError]\Update ETL Errors"
+          TopLeft="660.666666666667,222" />
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\landing_VerticalRepayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
