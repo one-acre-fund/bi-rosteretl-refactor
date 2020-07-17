@@ -7,12 +7,12 @@
   DTS:CreatorName="GACHAGUA-PC\watchman"
   DTS:DTSID="{944B61C9-6435-4D9E-9260-AD3A64BE56CC}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
   DTS:LocaleID="2057"
   DTS:ObjectName="00-02-verticalrepayments_transform_Load"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{7B4E7E24-4C19-434C-BB57-2F50ABC0EB65}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{C5A4FB57-7E42-4CC5-BAA6-4EA1DCD7200B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1194,9 +1194,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.8571428571429"
           Id="Package\Data Flow Task"
-          TopLeft="415.416660476476,50.6999990934134" />
+          TopLeft="27.7976025890301,44.284414747356" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1289,7 +1289,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\staging VerticalRepayments">
+    design-time-name="Package\Data Flow Task\VerticalRepayments">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1302,7 +1302,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\VerticalRepayments">
+    design-time-name="Package\Data Flow Task\staging VerticalRepayments">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -8,12 +8,12 @@
   DTS:Description="SSIS Package Description"
   DTS:DTSID="{A893922E-26C2-48BE-BB05-DC6029BEA369}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-verticalrepayments_extract"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{D7A06EB6-B70B-43DE-A20C-9915C1C9A148}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{24758124-96C5-4366-8B35-9E920420A904}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -13960,49 +13960,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\UG.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
-                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\UG.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 4]"
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_VerticalRepakyments\TZ.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                  endId="Package\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output]"
                   endId="Package\Get the files\DFT - Landing_VerticalRepakyments\RW.Inputs[Derived Column Input]"
@@ -14076,14 +14076,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               ReadOnlyVariables="User::VarFolderPath_BI"
               ReadWriteVariables="User::VarFileName_BI">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -14470,35 +14491,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -14696,7 +14696,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File KE"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -14706,6 +14706,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               Language="CSharp"
               ReadOnlyVariables="User::VarFolderPath"
               ReadWriteVariables="User::VarFileName">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -14825,35 +14834,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ST_491edd431bd84dcdaf357419d70bdeeb.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -15092,6 +15072,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15121,15 +15130,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -15327,7 +15327,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File MM"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="10">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -15338,14 +15338,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_MM"
               ReadWriteVariables="User::VarFileName_MM">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -15732,35 +15753,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -15958,7 +15958,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File MW"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -15969,14 +15969,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_MW"
               ReadWriteVariables="User::VarFileName_MW">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -16363,35 +16384,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -16589,7 +16589,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File RW"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -16600,14 +16600,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_RW"
               ReadWriteVariables="User::VarFileName_RW">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -16814,6 +16835,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
+		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
+		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -16945,26 +16986,6 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	}
 }]]></ProjectItem>
               <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
-		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
-		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Settings.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -16994,35 +17015,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -17220,7 +17220,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File TZ"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -17231,14 +17231,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_TZ"
               ReadWriteVariables="User::VarFileName_TZ">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -17625,35 +17646,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -17851,7 +17851,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File UG"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -17862,14 +17862,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_UG"
               ReadWriteVariables="User::VarFileName_UG">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="ST_8299571892d545d4867e0073f7368789.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -18256,35 +18277,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -18482,7 +18482,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File ZA"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -18493,14 +18493,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::VarFolderPath_ZA"
               ReadWriteVariables="User::VarFileName_ZA">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="ST_618dd71314f2446db93266bd6b2ec05f.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -18887,35 +18908,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -19853,7 +19853,7 @@ where PackageName is Null
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Latest DateCreated"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19874,7 +19874,7 @@ where PackageName is Null
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadEndTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19895,7 +19895,7 @@ where PackageName is Null
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SP IncrementalLoad"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19911,7 +19911,7 @@ where PackageName is Null
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update AuditDimension"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19932,6 +19932,22 @@ where PackageName is Null
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Incremental Load - Staging\Update surrogate keys"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4fd80fa5-35a6-41c4-af2b-902b6a741b02}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update surrogate keys"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+              SQLTask:SqlStatementSource="&#xA;&#x9;Update cls.staging_VerticalRepayments&#xA;&#x9;&#x9;set DimCountryID=geo.CountryID,&#xA;&#x9;&#x9;&#x9;DimRegionID=geo.RegionID,&#xA;&#x9;&#x9;&#x9;DimDistrictID=geo.DistrictID,&#xA;&#x9;&#x9;&#x9;DimSectorID=geo.SectorID,&#xA;&#x9;&#x9;&#x9;DimSiteID=geo.SiteID,&#xA;&#x9;&#x9;&#x9;DimGroupID=geo.GroupID&#xA;&#x9;from (&#xA;&#x9;&#x9;select CountryID, RegionID, DistrictID, SectorID, SiteID, GroupID, DistrictName,SiteName, GroupName&#xA;&#x9;&#x9;from OAF_SHARED_DIMENSIONS.dbo.DimGroup &#xA;&#x9;&#x9;where isDeleted=0 &#xA;&#x9;&#x9;) geo&#xA;&#x9;where geo.DistrictName=cls.staging_VerticalRepayments.District and geo.GroupName=staging_VerticalRepayments.GroupAtTimeOfRepayment&#xA;&#x9;and cls.staging_VerticalRepayments.SiteAtTimeOfRepayment=geo.SiteName&#xA;&#x9;and cls.staging_VerticalRepayments.DimCountryID is null&#xA;&#xA;&#xA;&#x9;Update cls.staging_VerticalRepayments&#xA;&#x9;&#x9;set DimSeasonID=s.SeasonID&#xA;&#x9;from (&#xA;&#x9;&#x9;select CountryID, SeasonID,RosterSeasonID, SeasonName&#xA;&#x9;&#x9;from OAF_SHARED_DIMENSIONS.dbo.DimSeasons &#xA;&#x9;&#x9;where RosterSeasonID is not null  and isDeleted=0&#xA;&#x9;&#x9;) s&#xA;&#x9;where s.SeasonName=cls.staging_VerticalRepayments.SeasonName&#xA;&#x9;and s.CountryID=cls.staging_VerticalRepayments.DimCountryID&#xA;&#x9;and cls.staging_VerticalRepayments.DimSeasonID is null&#xA;&#xA;&#xA;&#x9;update cls.staging_VerticalRepayments&#xA;&#x9;&#x9;set DimClientID=client.DimClientID&#xA;&#x9;from (&#xA;&#x9;&#x9;SELECT  cs.GlobalClientID, cs.ClientID DimClientID&#xA;&#x9;&#x9;from OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;&#x9;) client&#xA;&#x9;where client.GlobalClientID=cls.staging_VerticalRepayments.GlobalClientID &#xA;&#x9;and cls.staging_VerticalRepayments.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -19950,6 +19966,14 @@ where PackageName is Null
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Incremental Load - Staging\SP IncrementalLoad" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BAE1C258-AAA2-4E97-8CF0-EA917BBA86F2}"
+          DTS:From="Package\Incremental Load - Staging\Update AuditDimension"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Incremental Load - Staging\Update surrogate keys" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
@@ -19988,7 +20012,7 @@ where PackageName is Null
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cleanup"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24369,7 +24393,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:FailPackageOnFailure="True"
           DTS:LocaleID="-1"
           DTS:ObjectName="Preparation SQL Task 1"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24386,7 +24410,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Remove quotes from SeasonName"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24403,7 +24427,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Vertical Repayments"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24449,7 +24473,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Exec SP_IncrementalLoad"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24477,7 +24501,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ETL Begin"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24506,7 +24530,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24527,7 +24551,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24548,7 +24572,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Landing_VerticalRepayments"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -24622,7 +24646,7 @@ from cls.Staging_VerticalRepayments</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="250.666666666667,42.6666666666667"
           Id="Package\Get the files\DFT - Landing_VerticalRepakyments"
@@ -24690,7 +24714,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24724,7 +24750,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24758,7 +24786,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24792,7 +24822,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24826,7 +24858,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24860,7 +24894,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24894,7 +24930,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24928,34 +24966,36 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="798,722"
-          Size="158,42.6666666666667"
+          Size="157.714285714286,42.8571428571429"
           Id="Package\Get the files"
           TopLeft="473.333326776822,152.533330605824" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.8571428571429"
           Id="Package\Incremental Load - Staging\Get Audit Parameters"
           TopLeft="60.999994809429,233.433321160277" />
         <NodeLayout
-          Size="189.333333333334,42.6666666666667"
+          Size="189.142857142858,42.8571428571429"
           Id="Package\Incremental Load - Staging\Get Latest DateCreated"
           TopLeft="5.58332896853489,9.89999404132379" />
         <NodeLayout
-          Size="162.666666666667,42.6666666666667"
+          Size="162.857142857143,42.8571428571429"
           Id="Package\Incremental Load - Staging\Get LoadEndTime"
           TopLeft="101.916661780328,325.866655260722" />
         <NodeLayout
-          Size="184.666666666667,42.6666666666667"
+          Size="184.571428571429,42.8571428571429"
           Id="Package\Incremental Load - Staging\SP IncrementalLoad"
           TopLeft="53.5833279254536,139.599993367195" />
         <NodeLayout
-          Size="189.333333333334,42.6666666666667"
+          Size="189.142857142858,42.8571428571429"
           Id="Package\Incremental Load - Staging\Update AuditDimension"
           TopLeft="84.8333287015561,402.533321307501" />
         <EdgeLayout
@@ -25070,39 +25110,77 @@ from cls.Staging_VerticalRepayments</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="188.571428571429,42.2857142857143"
+          Id="Package\Incremental Load - Staging\Update surrogate keys"
+          TopLeft="95.5304212984091,496.386135257897" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
+          TopLeft="179.404757272985,445.390464164644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.4113783111387,50.9956710932527"
+              Start="0,0"
+              End="10.4113783111387,43.4956710932527">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4978355466264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4978355466264"
+                    Point2="0,25.4978355466264"
+                    Point3="4,25.4978355466264" />
+                  <mssgle:LineSegment
+                    End="6.41137831113866,25.4978355466264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.41137831113866,25.4978355466264"
+                    Point2="10.4113783111387,25.4978355466264"
+                    Point3="10.4113783111387,29.4978355466264" />
+                  <mssgle:LineSegment
+                    End="10.4113783111387,43.4956710932527" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="600,500"
-          Size="230,42.6666666666667"
+          IsExpanded="True"
+          PanelSize="600,602.857142857143"
+          Size="600,645.714285714286"
           Id="Package\Incremental Load - Staging"
           TopLeft="438.333326801657,255.933329722483" />
         <NodeLayout
-          Size="117.333333333334,42.6666666666667"
+          Size="117.142857142858,42.8571428571429"
           Id="Package\junk\Cleanup"
           TopLeft="30.9999855707097,222.466659708421" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.8571428571429"
           Id="Package\junk\Data Flow Task"
           TopLeft="134.666658135749,70.0999929797654" />
         <NodeLayout
-          Size="245.333333333334,42.6666666666667"
+          Size="245.142857142858,42.8571428571429"
           Id="Package\junk\DFT - Landing_VerticalRepayments"
           TopLeft="116.749995560699,124.333322252828" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.8571428571429"
           Id="Package\junk\Load Production"
           TopLeft="60.4166570740442,75.5666558263702" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\junk\Preparation SQL Task 1"
           TopLeft="157.083324249839,181.933322477539" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
+          Size="242.857142857143,42.8571428571429"
           Id="Package\junk\Remove quotes from SeasonName"
           TopLeft="28.3333242187898,146.633321997126" />
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
+          Size="221.142857142858,42.8571428571429"
           Id="Package\junk\Truncate Vertical Repayments"
           TopLeft="35.3333241442841,9.03332413574083" />
         <EdgeLayout
@@ -25164,19 +25242,19 @@ from cls.Staging_VerticalRepayments</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="376.666666666667,320"
-          Size="376.666666666667,362.666666666667"
+          PanelSize="376.571428571429,320"
+          Size="376.571428571429,362.857142857143"
           Id="Package\junk"
           TopLeft="1044.49998446554,139.099997512699" />
         <NodeLayout
-          Size="201.333333333334,42.6666666666667"
+          Size="201.142857142858,42.8571428571429"
           Id="Package\Load Production\Exec SP_IncrementalLoad"
           TopLeft="55.0833325944843,29.5666581509511" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="269.333333333334,127.333333333334"
-          Size="269.333333333334,170"
+          PanelSize="269.142857142858,127.428571428572"
+          Size="269.142857142858,170.285714285715"
           Id="Package\Load Production"
           TopLeft="481.666659489274,403.866659444968" />
         <NodeLayout
@@ -25226,7 +25304,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25260,7 +25340,9 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25282,14 +25364,16 @@ from cls.Staging_VerticalRepayments</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="412,492.666666666667"
-          Size="242,42.6666666666667"
+          Size="242.285714285715,42.8571428571429"
           Id="Package\VerticalRepayments - Landing"
           TopLeft="423.333327025176,6.06666655818628" />
         <EdgeLayout
@@ -25316,18 +25400,30 @@ from cls.Staging_VerticalRepayments</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="552.833326789239,195.199997272491">
+          TopLeft="552.190469633965,195.390473462967">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.7333324499922"
+              EndConnector="186.142857167692,60.5428562595162"
               Start="0,0"
-              End="0,53.2333324499922">
+              End="186.142857167692,53.0428562595162">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.2333324499922" />
+                    End="0,26.2714281297581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2714281297581"
+                    Point2="0,30.2714281297581"
+                    Point3="4,30.2714281297581" />
+                  <mssgle:LineSegment
+                    End="182.142857167692,30.2714281297581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182.142857167692,30.2714281297581"
+                    Point2="186.142857167692,30.2714281297581"
+                    Point3="186.142857167692,34.2714281297581" />
+                  <mssgle:LineSegment
+                    End="186.142857167692,53.0428562595162" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25338,30 +25434,30 @@ from cls.Staging_VerticalRepayments</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="553.333326801657,298.59999638915">
+          TopLeft="738.333326801657,901.647615436769">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.9999993542837,105.266663055818"
+              EndConnector="-122.095238740954,-497.780955991801"
               Start="0,0"
-              End="62.9999993542837,97.7666630558184">
+              End="-122.095238740954,-490.280955991801">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.6333315279092" />
+                    End="0,-244.8904779959" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.6333315279092"
-                    Point2="0,52.6333315279092"
-                    Point3="4,52.6333315279092" />
+                    Point1="0,-244.8904779959"
+                    Point2="0,-248.8904779959"
+                    Point3="-4,-248.8904779959" />
                   <mssgle:LineSegment
-                    End="58.9999993542837,52.6333315279092" />
+                    End="-118.095238740954,-248.8904779959" />
                   <mssgle:CubicBezierSegment
-                    Point1="58.9999993542837,52.6333315279092"
-                    Point2="62.9999993542837,52.6333315279092"
-                    Point3="62.9999993542837,56.6333315279092" />
+                    Point1="-118.095238740954,-248.8904779959"
+                    Point2="-122.095238740954,-248.8904779959"
+                    Point3="-122.095238740954,-252.8904779959" />
                   <mssgle:LineSegment
-                    End="62.9999993542837,97.7666630558184" />
+                    End="-122.095238740954,-490.280955991801" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25607,7 +25703,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
           TopLeft="990.648148148148,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25631,7 +25727,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25667,7 +25763,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25703,7 +25799,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25739,7 +25835,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
           TopLeft="1452.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25775,7 +25871,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
           TopLeft="834.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25811,7 +25907,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25847,7 +25943,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25883,7 +25979,7 @@ from cls.Staging_VerticalRepayments</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+          Id="Package\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
           TopLeft="987.5,664.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
