@@ -8,12 +8,12 @@
   DTS:Description="SSIS Package Description"
   DTS:DTSID="{2D425AE7-2642-4DA8-9D0D-5CF8C24341CB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-ADS_extract"
-  DTS:VersionBuild="179"
-  DTS:VersionGUID="{D2A8F150-1CF1-4268-BF38-DDFD206764FF}">
+  DTS:VersionBuild="182"
+  DTS:VersionGUID="{79B6DBAB-8C0A-4214-B00D-D2FDB9E17B40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9899,54 +9899,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               startId="Package\DFT - Landing_ADS\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - Landing_ADS.Paths[Derived Column Output8]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 1]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\KE.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output7]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output6]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output5]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output9]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 5]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\UG.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output3]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output2]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output1]"
-              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
-              name="Derived Column Output"
-              startId="Package\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output]"
               endId="Package\DFT - Landing_ADS\landing_ADS.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\DFT - Landing_ADS\DC - AuditID.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output4]"
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output7]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output6]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output5]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output9]"
               endId="Package\DFT - Landing_ADS\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\DFT - Landing_ADS\Remove Nulls.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output3]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output2]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output1]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\KE.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ADS.Paths[Derived Column Output4]"
+              endId="Package\DFT - Landing_ADS\Union All.Inputs[Union All Input 5]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ADS\UG.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Landing_ADS.Paths[Flat File Source Output]"
               endId="Package\DFT - Landing_ADS\ZA.Inputs[Derived Column Input]"
@@ -17325,89 +17325,89 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Data Conversion.Outputs[Data Conversion Output]" />
                     <path
                       refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Data Conversion.Inputs[Data Conversion Input]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Remove Nulls.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
-                      name="Derived Column Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 1]"
                       name="Derived Column Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\KE.Outputs[Derived Column Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Remove Nulls.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 5]"
                       name="Derived Column Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\UG.Outputs[Derived Column Output]" />
                     <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
+                      name="Derived Column Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
+                    <path
                       refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output7]"
+                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\KE.Inputs[Derived Column Input]"
+                      name="Flat File Source Output"
+                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output]" />
+                    <path
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\RW.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source RW.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output1]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MW.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source MW.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output1]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output2]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\UG.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source UG.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output2]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output3]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\ZA.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source ZA.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output3]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output4]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\TZ.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source TZ.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output4]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output5]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\MM.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source MM.Outputs[Flat File Source Output]" />
                     <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output5]"
+                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output6]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\BI.Inputs[Derived Column Input]"
                       name="Flat File Source Output"
                       startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source BI.Outputs[Flat File Source Output]" />
-                    <path
-                      refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output6]"
-                      endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\KE.Inputs[Derived Column Input]"
-                      name="Flat File Source Output"
-                      startId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output]" />
                     <path
                       refId="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Union All Output 1]"
                       endId="Package\Load ADS Container\Get the files\DFT - Landing_ADS\Remove Nulls.Inputs[Derived Column Input]"
@@ -17435,36 +17435,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_BI"
                   ReadWriteVariables="User::VarFileName_BI">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -17584,6 +17554,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -17736,34 +17735,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_e14ce8c2f81d4273b4aadfa9b9768eae.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -18056,7 +18056,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File KE"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -18067,14 +18067,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   ReadOnlyVariables="User::VarFolderPath"
                   ReadWriteVariables="User::VarFileName">
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -18461,35 +18482,14 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -18687,7 +18687,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MM"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -18697,36 +18697,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_MM"
                   ReadWriteVariables="User::VarFileName_MM">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -18846,6 +18816,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_42ad4efbd558431786c72c69f385ac87.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -19084,34 +19083,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -19318,7 +19318,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MW"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -19328,36 +19328,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_MW"
                   ReadWriteVariables="User::VarFileName_MW">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -19477,6 +19447,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_9fd83d63e4f64ce0a604d04d2de58525.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -19715,34 +19714,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -19949,7 +19949,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File RW"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -19959,261 +19959,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_RW"
                   ReadWriteVariables="User::VarFileName_RW">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Resources.resx"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-</root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A07547FA-CB0B-4D79-B952-04AE5C979307}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ST_4474cb3d3fad421090ec11f5953e8403</RootNamespace>
-    <AssemblyName>ST_a5ef040e761d4368ac1340e1df5bc19c</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptMain.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
-        <Host Name="ScriptTask" />
-        <ProjectClient>
-          <HostIdentifier>SSIS_ST130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Project"
-                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
-		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -20346,6 +20091,125 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	}
 }]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Resources.resx"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -20374,6 +20238,142 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
         }
     }
 }]]></ProjectItem>
+                  <ProjectItem
+                    Name="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A07547FA-CB0B-4D79-B952-04AE5C979307}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_4474cb3d3fad421090ec11f5953e8403</RootNamespace>
+    <AssemblyName>ST_a5ef040e761d4368ac1340e1df5bc19c</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
+		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -20580,7 +20580,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File TZ"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -20590,36 +20590,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_TZ"
                   ReadWriteVariables="User::VarFileName_TZ">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20739,6 +20709,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_be32c3ed5e02485793334cde589711a0.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20977,34 +20976,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -21211,7 +21211,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File UG"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21221,36 +21221,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_UG"
                   ReadWriteVariables="User::VarFileName_UG">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_8299571892d545d4867e0073f7368789.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -21457,6 +21427,35 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -21608,34 +21607,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -21842,7 +21842,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File ZA"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21852,36 +21852,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_ZA"
                   ReadWriteVariables="User::VarFileName_ZA">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="ST_618dd71314f2446db93266bd6b2ec05f.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -22088,6 +22058,35 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -22239,34 +22238,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -25083,6 +25083,30 @@ S.[DistrictName]
                               refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[AuditDateCreated]"
                               dataType="dbTimeStamp"
                               name="AuditDateCreated" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimSeasonID]"
+                              dataType="i4"
+                              name="DimSeasonID" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                              dataType="i4"
+                              name="DimCountryID" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                              dataType="i4"
+                              name="DimRegionID" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                              dataType="i4"
+                              name="DimDistrictID" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimClientID]"
+                              dataType="i4"
+                              name="DimClientID" />
+                            <externalMetadataColumn
+                              refId="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                              dataType="guid"
+                              name="GlobalClientID" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -25146,7 +25170,7 @@ S.[DistrictName]
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SP IncrementalLoad"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -25162,12 +25186,28 @@ S.[DistrictName]
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Truncate Staging"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
                   SQLTask:SqlStatementSource="Truncate table cls.staging_ADS;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load ADS Container\Incremental Load - Staging\Update surrogate keys"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{EE18FD8E-9B85-4F49-BD06-ACFB87CC1265}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Update surrogate keys"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+                  SQLTask:SqlStatementSource="Update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.LocationID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            LocationID,&#xA;            RosterDistrictID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimLocations&#xA;        where&#xA;            RosterDistrictID is not null&#xA;    ) geo&#xA;where&#xA;    geo.RosterDistrictID = cls.staging_ADS.DistrictID&#xA;    and cls.staging_ADS.DimCountryID is null&#xA;Update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.RosterSeasonID = cls.staging_ADS.SeasonID&#xA;    and s.CountryID = cls.staging_ADS.DimCountryID&#xA;    and cls.staging_ADS.DimSeasonID is null&#xA;update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimClientID = client.DimClientID,&#xA;    GlobalClientID = client.GlobalClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            distinct c.ClientID,&#xA;            c.DistrictID,&#xA;            cs.ClientID DimClientID,&#xA;            cs.GlobalClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;            join OAF_SHARED_DIMENSIONS_staging.dbo.Staging_Clients c on cs.GlobalClientID = c.GlobalClientID&#xA;    ) client&#xA;where&#xA;    client.ClientID = cls.staging_ADS.ClientID&#xA;    and client.DistrictID = cls.staging_ADS.DistrictID&#xA;    and cls.staging_ADS.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -25180,6 +25220,14 @@ S.[DistrictName]
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
               DTS:To="Package\Load ADS Container\Incremental Load - Staging\Load Staging" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load ADS Container\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{C159CB23-972D-4F56-8625-C206303E1BDB}"
+              DTS:From="Package\Load ADS Container\Incremental Load - Staging\Load Staging"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\Load ADS Container\Incremental Load - Staging\Update surrogate keys" />
           </DTS:PrecedenceConstraints>
         </DTS:Executable>
         <DTS:Executable
@@ -26226,7 +26274,7 @@ where AuditID = ?
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172,42.6666666666667"
+          Size="172,42.8571428571429"
           Id="Package\DFT - Landing_ADS"
           TopLeft="0.416666660457381,84.3666676972311" />
         <NodeLayout
@@ -26276,7 +26324,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26310,7 +26360,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26344,38 +26396,18 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="412,492.666666666667"
-          Size="168.666666666667,42.6666666666667"
+          Size="168.571428571429,42.8571428571429"
           Id="Package\Load ADS Container\ADS - Landing"
           TopLeft="32.1666662693031,4.36666490773365" />
-        <EdgeLayout
-          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint]"
-          TopLeft="119.249999770274,47.0333315744003">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97.7333308227853"
-              Start="0,0"
-              End="0,90.2333308227853">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,90.2333308227853" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS"
@@ -26443,7 +26475,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26477,7 +26511,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26511,7 +26547,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26545,7 +26583,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26579,7 +26619,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26613,7 +26655,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26647,7 +26691,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26681,48 +26727,28 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="798,722.666666666667"
-          Size="158,42.6666666666667"
+          Size="157.714285714286,42.8571428571429"
           Id="Package\Load ADS Container\Get the files"
           TopLeft="42.999999937912,144.766662397186" />
-        <EdgeLayout
-          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="121.249999968956,187.433329063852">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,104.499998334049"
-              Start="0,0"
-              End="0,96.9999983340494">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,96.9999983340494" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="141.333333333334,42.6666666666667"
+          Size="141.142857142858,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging"
           TopLeft="317.666655863325,202.266659259001" />
         <NodeLayout
-          Size="184.666666666667,42.6666666666667"
+          Size="184.571428571429,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\SP IncrementalLoad"
           TopLeft="53.5833279254536,139.599993367195" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Truncate Staging"
           TopLeft="335.583322263012,78.9999952733517" />
         <EdgeLayout
@@ -26756,32 +26782,39 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="600,500"
-          Size="230,42.6666666666667"
-          Id="Package\Load ADS Container\Incremental Load - Staging"
-          TopLeft="5.5,291.933327397902" />
+        <NodeLayout
+          Size="188.571428571429,42.2857142857143"
+          Id="Package\Load ADS Container\Incremental Load - Staging\Update surrogate keys"
+          TopLeft="308.82632478925,337.003760364556" />
         <EdgeLayout
-          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="121.041666589056,334.599994064569">
+          Id="Package\Load ADS Container\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
+          TopLeft="388.238084434754,245.123802116144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,130.833329265318"
+              EndConnector="14.873954640211,91.8799582484123"
               Start="0,0"
-              End="0,123.333329265318">
+              End="14.873954640211,84.3799582484123">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,123.333329265318" />
+                    End="0,41.9399791242061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.9399791242061"
+                    Point2="0,45.9399791242061"
+                    Point3="4,45.9399791242061" />
+                  <mssgle:LineSegment
+                    End="10.873954640211,45.9399791242061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.873954640211,45.9399791242061"
+                    Point2="14.873954640211,45.9399791242061"
+                    Point3="14.873954640211,49.9399791242061" />
+                  <mssgle:LineSegment
+                    End="14.873954640211,84.3799582484123" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26790,24 +26823,31 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="600,523.428571428572"
+          Size="600,566.285714285715"
+          Id="Package\Load ADS Container\Incremental Load - Staging"
+          TopLeft="5.5,291.933327397902" />
         <NodeLayout
-          Size="197.333333333334,42.6666666666667"
+          Size="197.142857142858,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server\Exec sp IncrementalLoad"
           TopLeft="90.2499922079346,132.26665615956" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server\Get Audit Parameters"
           TopLeft="122.999995554487,241.399985324144" />
         <NodeLayout
-          Size="189.333333333334,42.6666666666667"
+          Size="189.142857142858,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server\Get Latest DateCreated"
           TopLeft="67.5833297135931,17.8666582051915" />
         <NodeLayout
-          Size="162.666666666667,42.6666666666667"
+          Size="162.857142857143,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server\Get LoadEndTime"
           TopLeft="163.916662525386,333.833319424589" />
         <NodeLayout
-          Size="189.333333333334,42.6666666666667"
+          Size="189.142857142858,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server\Update AuditDimension"
           TopLeft="146.833329446614,410.499985471368" />
         <EdgeLayout
@@ -26841,9 +26881,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26877,9 +26915,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26913,9 +26949,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26937,28 +26971,128 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="592,592.666666666667"
-          Size="211.333333333334,42.6666666666667"
+          PanelSize="592,592.571428571429"
+          Size="216,42.8571428571429"
           Id="Package\Load ADS Container\Load Production Server"
           TopLeft="15.916666511446,465.433323329887" />
+        <EdgeLayout
+          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint]"
+          TopLeft="119.249999770274,47.0333315744003">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.7333308227853"
+              Start="0,0"
+              End="0,90.2333308227853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.2333308227853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="121.857142795055,187.623805254329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.642857204945,104.309522143573"
+              Start="0,0"
+              End="183.642857204945,96.8095221435732">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.1547610717866" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.1547610717866"
+                    Point2="0,52.1547610717866"
+                    Point3="4,52.1547610717866" />
+                  <mssgle:LineSegment
+                    End="179.642857204945,52.1547610717866" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.642857204945,52.1547610717866"
+                    Point2="183.642857204945,52.1547610717866"
+                    Point3="183.642857204945,56.1547610717866" />
+                  <mssgle:LineSegment
+                    End="183.642857204945,96.8095221435732" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="305.5,858.219041683616">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-181.583333488554,-392.785718353729"
+              Start="0,0"
+              End="-181.583333488554,-385.285718353729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-192.392859176865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-192.392859176865"
+                    Point2="0,-196.392859176865"
+                    Point3="-4,-196.392859176865" />
+                  <mssgle:LineSegment
+                    End="-177.583333488554,-196.392859176865" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-177.583333488554,-196.392859176865"
+                    Point2="-181.583333488554,-196.392859176865"
+                    Point3="-181.583333488554,-200.392859176865" />
+                  <mssgle:LineSegment
+                    End="-181.583333488554,-385.285718353729" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="846,966"
-          Size="846,1008.66666666667"
+          PanelSize="845.714285714286,1156"
+          Size="845.714285714286,1198.85714285715"
           Id="Package\Load ADS Container"
           TopLeft="430.833326913417,44.6333325352271" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package.EventHandlers[OnError]\Update ETL Errors"
+          TopLeft="532,202" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\DFT - Landing_ADS">
     <LayoutInfo>
@@ -27053,7 +27187,7 @@ where AuditID = ?
           Id="Package\DFT - Landing_ADS\UG"
           TopLeft="940.833333333333,108.166666666666" />
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output9]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output4]"
           TopLeft="986.60647463626,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27075,7 +27209,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output8]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27109,7 +27243,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output7]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output1]"
           TopLeft="1452.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27143,7 +27277,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output6]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output2]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27177,7 +27311,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output5]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output3]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27211,7 +27345,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output4]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output9]"
           TopLeft="984.083324013899,373.533329753478">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27245,7 +27379,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output3]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output5]"
           TopLeft="834.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27279,7 +27413,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output2]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output6]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27313,7 +27447,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output1]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output7]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27347,7 +27481,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output]"
+          Id="Package\DFT - Landing_ADS.Paths[Derived Column Output8]"
           TopLeft="987.5,664.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27709,6 +27843,18 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Load ADS Container\ADS - Landing\Truncate Table Landing_ADS.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Load ADS Container\ADS - Landing\Truncate Table Landing_ADS.EventHandlers[OnError]\Update ETL Errors"
+          TopLeft="258.666666666667,135.333333333333" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Load ADS Container\Get the files\DFT - Landing_ADS">
     <LayoutInfo>
@@ -27795,7 +27941,7 @@ where AuditID = ?
           Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS\BI"
           TopLeft="657.5,108.166666666666" />
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output3]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output4]"
           TopLeft="1683.16666666667,48.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27831,7 +27977,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output2]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output3]"
           TopLeft="777.166666666667,48.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27867,7 +28013,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output1]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output2]"
           TopLeft="90.1666666666667,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27903,7 +28049,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output1]"
           TopLeft="1008.16666666667,48.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27927,7 +28073,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
           TopLeft="1008.16666666667,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27951,7 +28097,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
           TopLeft="1011.31481481482,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27975,7 +28121,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
           TopLeft="853.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28011,7 +28157,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
           TopLeft="549.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28047,7 +28193,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
           TopLeft="1473.16666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28083,7 +28229,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
           TopLeft="394.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28119,7 +28265,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
           TopLeft="1165.16666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28155,7 +28301,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
           TopLeft="702.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28191,7 +28337,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
           TopLeft="1320.16666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28275,7 +28421,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output7]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output]"
           TopLeft="1241.16666666667,48.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28311,7 +28457,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output6]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output7]"
           TopLeft="1463.16666666667,48.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28347,7 +28493,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output5]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output6]"
           TopLeft="550.166666666667,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28383,7 +28529,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output4]"
+          Id="Package\Load ADS Container\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output5]"
           TopLeft="321.166666666667,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -28438,25 +28584,25 @@ where AuditID = ?
     design-time-name="Package\Load ADS Container\Incremental Load - Staging\Load Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="139.428571428572,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging\staging_ADS"
           TopLeft="694,840.666666666667" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging\Get Hash Value"
           TopLeft="680,465.966670246521" />
         <NodeLayout
-          Size="140,42.6666666666667"
+          Size="140,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging\Landing ADS"
           TopLeft="685.416656453162,128.999998062849" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
+          Size="157.142857142858,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging\Data Conversion"
           TopLeft="682.499990512927,370.933329335054" />
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="139.428571428572,42.8571428571429"
           Id="Package\Load ADS Container\Incremental Load - Staging\Load Staging\DC - AuditID"
           TopLeft="686.333333333333,568.633336913188" />
         <EdgeLayout
@@ -28478,9 +28624,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28502,9 +28646,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28526,9 +28668,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28550,9 +28690,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -28807,29 +28945,5 @@ where AuditID = ?
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package.EventHandlers[OnError]\Update ETL Errors"
-          TopLeft="532,202" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Load ADS Container\ADS - Landing\Truncate Table Landing_ADS.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Load ADS Container\ADS - Landing\Truncate Table Landing_ADS.EventHandlers[OnError]\Update ETL Errors"
-          TopLeft="258.666666666667,135.333333333333" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
