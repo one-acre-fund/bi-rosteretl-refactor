@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="01-01-ADS_Historical_Extract"
-  DTS:VersionBuild="180"
-  DTS:VersionGUID="{F1C13732-12B6-46DA-B6A7-9285A1F1003D}">
+  DTS:VersionBuild="186"
+  DTS:VersionGUID="{A1166A1C-D3C2-4C7E-B231-958255D5D920}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1603,7 +1603,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ETL Begin"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1632,7 +1632,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1653,7 +1653,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="9">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1674,7 +1674,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Table Landing_ADS_Historical"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -33111,54 +33111,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   startId="Package\Get the files\DFT - Landing_ADS\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 1]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\KE.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output9]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 5]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\UG.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
-                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
-                  name="Derived Column Output"
-                  startId="Package\Get the files\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
                   endId="Package\Get the files\DFT - Landing_ADS\landing_ADS.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_ADS\DC - AuditID.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 2]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\BI.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 3]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\RW.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 4]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\TZ.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output9]"
                   endId="Package\Get the files\DFT - Landing_ADS\Data Conversion.Inputs[Data Conversion Input]"
                   name="Derived Column Output"
                   startId="Package\Get the files\DFT - Landing_ADS\Remove Nulls.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 6]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\MM.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 7]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\ZA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 8]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\MW.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\KE.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
+                  endId="Package\Get the files\DFT - Landing_ADS\Union All.Inputs[Union All Input 5]"
+                  name="Derived Column Output"
+                  startId="Package\Get the files\DFT - Landing_ADS\UG.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Get the files\DFT - Landing_ADS.Paths[Flat File Source Output]"
                   endId="Package\Get the files\DFT - Landing_ADS\ZA.Inputs[Derived Column Input]"
@@ -33221,7 +33221,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File BI"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="7">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -34483,7 +34483,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File MM"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -35114,7 +35114,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File MW"
-          DTS:ThreadHint="8">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -35745,7 +35745,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File RW"
-          DTS:ThreadHint="9">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -36376,7 +36376,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File TZ"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -37007,7 +37007,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File UG"
-          DTS:ThreadHint="7">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -37638,7 +37638,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ST - Get Latest File ZA"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -38490,7 +38490,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.landing_ADS_Historical</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsInserted from cls.landing_ADS_Historical</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -38527,21 +38527,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsInserted]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
-                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]"
-                          name="RowsExtracted"
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsInserted]"
+                          name="RowsInserted"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
                           dataType="i4"
-                          name="RowsExtracted" />
+                          name="RowsInserted" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -38550,10 +38550,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
                           dataType="i4"
-                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsExtracted]"
-                          name="RowsExtracted" />
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
+                          name="RowsInserted" />
                         <outputColumn
                           refId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -38593,7 +38593,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
 
 set 
 PackageName = ?,
-RowsExtracted = ?
+RowsInserted = ?
 
 where AuditID = ?
 </property>
@@ -38626,17 +38626,17 @@ where AuditID = ?
                           externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           lineageId="Package\Update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]" />
                         <inputColumn
-                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsExtracted]"
-                          cachedDataType="i4"
-                          cachedName="RowsExtracted"
-                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsExtracted]" />
-                        <inputColumn
                           refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
                           externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsInserted]"
+                          cachedDataType="i4"
+                          cachedName="RowsInserted"
+                          externalMetadataColumnId="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Update Audit Dimension\Get Audit Parameters\Rows Extracted.Outputs[OLE DB Source Output].Columns[RowsInserted]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -38738,7 +38738,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadEndTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -38759,7 +38759,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update AuditDimension"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="8">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -39162,7 +39162,7 @@ where AuditID = ?
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="331.333333333334,268"
-          Size="284.666666666667,42.6666666666667"
+          Size="331.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports Uganda"
           TopLeft="40.8333327248688,123.399999736548" />
         <NodeLayout
@@ -39538,9 +39538,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39562,9 +39560,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -39580,9 +39576,9 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-452.416659060867,78.9999997675425"
+              EndConnector="-429.083325727534,78.9999997675424"
               Start="0,0"
-              End="-452.416659060867,71.4999997675425">
+              End="-429.083325727534,71.4999997675424">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -39593,13 +39589,13 @@ where AuditID = ?
                     Point2="0,39.4999998837712"
                     Point3="-4,39.4999998837712" />
                   <mssgle:LineSegment
-                    End="-448.416659060867,39.4999998837712" />
+                    End="-425.083325727534,39.4999998837712" />
                   <mssgle:CubicBezierSegment
-                    Point1="-448.416659060867,39.4999998837712"
-                    Point2="-452.416659060867,39.4999998837712"
-                    Point3="-452.416659060867,43.4999998837712" />
+                    Point1="-425.083325727534,39.4999998837712"
+                    Point2="-429.083325727534,39.4999998837712"
+                    Point3="-429.083325727534,43.4999998837712" />
                   <mssgle:LineSegment
-                    End="-452.416659060867,71.4999997675425" />
+                    End="-429.083325727534,71.4999997675424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39610,18 +39606,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="186.124999332552,166.066666403215">
+          TopLeft="206.499999391535,166.066666403215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.0999987524743"
+              EndConnector="-17.4166667846333,27.0999987524743"
               Start="0,0"
-              End="0,19.5999987524743">
+              End="-17.4166667846333,19.5999987524743">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5999987524743" />
+                    End="0,9.54999937623717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.54999937623717"
+                    Point2="0,13.5499993762372"
+                    Point3="-4,13.5499993762372" />
+                  <mssgle:LineSegment
+                    End="-13.4166667846333,13.5499993762372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.4166667846333,13.5499993762372"
+                    Point2="-17.4166667846333,13.5499993762372"
+                    Point3="-17.4166667846333,17.5499993762372" />
+                  <mssgle:LineSegment
+                    End="-17.4166667846333,19.5999987524743" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39632,30 +39640,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="810.499992065132,140.499997869134">
+          TopLeft="810.499992065132,140.499997869133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="161.583326783031,56.7666656516001"
+              EndConnector="161.583326783031,56.7666656516"
               Start="0,0"
-              End="154.083326783031,56.7666656516001">
+              End="154.083326783031,56.7666656516">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="76.7916633915157,0" />
+                    End="76.7916633915155,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="76.7916633915157,0"
-                    Point2="80.7916633915157,0"
-                    Point3="80.7916633915157,4" />
+                    Point1="76.7916633915155,0"
+                    Point2="80.7916633915155,0"
+                    Point3="80.7916633915155,4" />
                   <mssgle:LineSegment
-                    End="80.7916633915157,52.7666656516001" />
+                    End="80.7916633915155,52.7666656516" />
                   <mssgle:CubicBezierSegment
-                    Point1="80.7916633915157,52.7666656516001"
-                    Point2="80.7916633915157,56.7666656516001"
-                    Point3="84.7916633915157,56.7666656516001" />
+                    Point1="80.7916633915155,52.7666656516"
+                    Point2="80.7916633915155,56.7666656516"
+                    Point3="84.7916633915155,56.7666656516" />
                   <mssgle:LineSegment
-                    End="154.083326783031,56.7666656516001" />
+                    End="154.083326783031,56.7666656516" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39772,26 +39780,26 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.3333332339922,-62.9666667209078"
+              EndConnector="-11.3333332339917,-62.9666667209083"
               Start="0,0"
-              End="-11.3333332339922,-55.4666667209078">
+              End="-11.3333332339917,-55.4666667209083">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-27.4833333604539" />
+                    End="0,-27.4833333604541" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-27.4833333604539"
-                    Point2="0,-31.4833333604539"
-                    Point3="-4,-31.4833333604539" />
+                    Point1="0,-27.4833333604541"
+                    Point2="0,-31.4833333604541"
+                    Point3="-4,-31.4833333604541" />
                   <mssgle:LineSegment
-                    End="-7.33333323399222,-31.4833333604539" />
+                    End="-7.33333323399165,-31.4833333604541" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.33333323399222,-31.4833333604539"
-                    Point2="-11.3333332339922,-31.4833333604539"
-                    Point3="-11.3333332339922,-35.4833333604539" />
+                    Point1="-7.33333323399165,-31.4833333604541"
+                    Point2="-11.3333332339917,-31.4833333604541"
+                    Point3="-11.3333332339917,-35.4833333604541" />
                   <mssgle:LineSegment
-                    End="-11.3333332339922,-55.4666667209078" />
+                    End="-11.3333332339917,-55.4666667209083" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39859,6 +39867,18 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package.EventHandlers[OnError]\Update ETL Errors"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\FEL - load all historical exports Burundi\DFT- Landing_ADS_Historical - BI">
     <LayoutInfo>
@@ -40104,7 +40124,7 @@ where AuditID = ?
     design-time-name="Package\FEL - load all historical exports Kenya\DFT - Landing_ADS_Historical - KE">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42.6666666666667"
           Id="Package\FEL - load all historical exports Kenya\DFT - Landing_ADS_Historical - KE\Remove Nulls"
@@ -40156,9 +40176,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40180,9 +40198,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40216,9 +40232,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40252,9 +40266,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40288,9 +40300,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40324,9 +40334,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40348,9 +40356,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -41145,7 +41151,7 @@ where AuditID = ?
     design-time-name="Package\FEL - load all historical exports Uganda\DFT - Landing_ADS - UG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42.6666666666667"
           Id="Package\FEL - load all historical exports Uganda\DFT - Landing_ADS - UG\Remove Nulls"
@@ -41193,9 +41199,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41217,9 +41221,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41241,9 +41243,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41265,9 +41265,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41289,9 +41287,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41313,9 +41309,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -41621,7 +41615,7 @@ where AuditID = ?
           Id="Package\Get the files\DFT - Landing_ADS\UG"
           TopLeft="940.833333333333,108.166666666666" />
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output9]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
           TopLeft="986.60647463626,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41645,7 +41639,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41681,7 +41675,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
           TopLeft="1452.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41717,7 +41711,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41753,7 +41747,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41789,7 +41783,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output4]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output9]"
           TopLeft="984.083324013899,373.533329753478">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41825,7 +41819,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output3]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output5]"
           TopLeft="834.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41861,7 +41855,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output2]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output6]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41897,7 +41891,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output1]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output7]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41933,7 +41927,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output]"
+          Id="Package\Get the files\DFT - Landing_ADS.Paths[Derived Column Output8]"
           TopLeft="987.5,664.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42336,7 +42330,7 @@ where AuditID = ?
     design-time-name="Package\Update Audit Dimension\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\Update Audit Dimension\Get Audit Parameters\Update AuditDimension"
@@ -42384,9 +42378,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42408,9 +42400,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42432,9 +42422,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42448,17 +42436,5 @@ where AuditID = ?
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package.EventHandlers[OnError]\Update ETL Errors"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
