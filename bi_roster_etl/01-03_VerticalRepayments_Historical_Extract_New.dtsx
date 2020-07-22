@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract_New"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{E2AB0AC1-15BB-464B-BBE4-704AD14CD4B4}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{69CE857C-7CD1-4EE3-8D09-18447BE77685}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -323,6 +323,1124 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Collect Errors"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0090DC35-397A-461D-A6C9-5B2A1D8F3028}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Collect Errors">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Collect Errors\Delete Rows with Errors"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FA272243-3479-43CB-B7BE-A8FC917517AB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Rows with Errors"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments_Historical where dropped not in ('true', 'false')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Collect Errors\Gather errors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{56D7A844-A235-4889-8E9A-DBA67A31FC64}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Gather errors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Collect Errors\Gather errors\Get bad data"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Get bad data"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments_Historical where dropped not in ('true', 'false')</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PrimaryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[PrimaryID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PrimaryID]"
+                          name="PrimaryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Sector]"
+                          name="Sector"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Site]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Site]"
+                          name="Site"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Group]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Group]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Group]"
+                          name="Group"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteAtTimeOfRepayment]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteAtTimeOfRepayment]"
+                          name="SiteAtTimeOfRepayment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupAtTimeOfRepayment]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupAtTimeOfRepayment]"
+                          name="GroupAtTimeOfRepayment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastName]"
+                          name="LastName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          name="FirstName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
+                          name="OAFID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]"
+                          name="Dropped"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Amount]"
+                          name="Amount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ReceiptID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ReceiptID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ReceiptID]"
+                          name="ReceiptID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Type]"
+                          name="Type"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RepaymentDate]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentDate]"
+                          name="RepaymentDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntryDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DataEntryDate]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntryDate]"
+                          name="DataEntryDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          name="GlobalClientID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentPhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RepaymentPhoneNumber]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentPhoneNumber]"
+                          name="RepaymentPhoneNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          name="AccountNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BulkUploaded]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BulkUploaded]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BulkUploaded]"
+                          name="BulkUploaded"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Autosaved]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Autosaved]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Autosaved]"
+                          name="Autosaved"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]"
+                          name="SeasonName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]"
+                          name="AuditID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[PrimaryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PrimaryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Site" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Group" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteAtTimeOfRepayment" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupAtTimeOfRepayment" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OAFID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Dropped" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ReceiptID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ReceiptID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RepaymentDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RepaymentDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DataEntryDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DataEntryDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RepaymentPhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RepaymentPhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AccountNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BulkUploaded]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BulkUploaded" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Autosaved]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Autosaved" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="SeasonName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[PrimaryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[PrimaryID]"
+                          name="PrimaryID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                          name="Sector" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Site]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Site]"
+                          name="Site" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Group]"
+                          name="Group" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteAtTimeOfRepayment]"
+                          name="SiteAtTimeOfRepayment" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupAtTimeOfRepayment]"
+                          name="GroupAtTimeOfRepayment" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          name="LastName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          name="FirstName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
+                          name="OAFID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                          name="Dropped" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                          name="Amount" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ReceiptID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ReceiptID]"
+                          name="ReceiptID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Type]"
+                          name="Type" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RepaymentDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RepaymentDate]"
+                          name="RepaymentDate" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DataEntryDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DataEntryDate]"
+                          name="DataEntryDate" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          name="GlobalClientID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RepaymentPhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RepaymentPhoneNumber]"
+                          name="RepaymentPhoneNumber" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          name="AccountNumber" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BulkUploaded]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BulkUploaded]"
+                          name="BulkUploaded" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Autosaved]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Autosaved]"
+                          name="Autosaved" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
+                          name="SeasonName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
+                          name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="VerticalRepayments_Errors"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[cls].[VerticalRepayments_Errors]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[District]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="District"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[District]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[PrimaryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PrimaryID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PrimaryID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Sector]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Sector"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Sector]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Site]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Site"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Site]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Group]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Group"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Group]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[SiteAtTimeOfRepayment]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SiteAtTimeOfRepayment"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteAtTimeOfRepayment]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[GroupAtTimeOfRepayment]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GroupAtTimeOfRepayment"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupAtTimeOfRepayment]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[LastName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LastName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FirstName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[OAFID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="OAFID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Dropped]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Dropped"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Amount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Amount"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Amount]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[ReceiptID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ReceiptID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ReceiptID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Type"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Type]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RepaymentDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RepaymentDate"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentDate]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[DataEntryDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DataEntryDate"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntryDate]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GlobalClientID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RepaymentPhoneNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RepaymentPhoneNumber"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RepaymentPhoneNumber]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AccountNumber"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[BulkUploaded]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BulkUploaded"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BulkUploaded]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[Autosaved]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Autosaved"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Autosaved]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[SeasonName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="SeasonName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PrimaryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Site" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Group" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteAtTimeOfRepayment" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupAtTimeOfRepayment" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FirstName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OAFID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Dropped" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Amount" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ReceiptID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Type" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RepaymentDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DataEntryDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RepaymentPhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AccountNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BulkUploaded" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Autosaved" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="SeasonName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+                  endId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8CDF9BFA-EFD5-4597-87A0-1677386031E6}"
+          DTS:From="Package\Collect Errors\Gather errors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Collect Errors\Delete Rows with Errors" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FEL - load all historical exports"
       DTS:CreationName="STOCK:FOREACHLOOP"
@@ -1176,6 +2294,79 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Get AuditID"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                          name="AuditID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::AuditId]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::AuditId]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1423,6 +2614,12 @@
                           cachedName="PrimaryID"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[PrimaryID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1558,6 +2755,10 @@
                           dataType="str"
                           length="50"
                           name="PrimaryID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1589,13 +2790,18 @@
               </components>
               <paths>
                 <path
+                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Derived Column Output]"
+                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Error Output]"
                   endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Error Output"
                   startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Error Output]" />
                 <path
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Output]"
-                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]"
+                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output]" />
               </paths>
@@ -4946,6 +6152,112 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\update Audit Dimension\Get Audit Parameters\Error Count"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Error Count"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) as RowsWithErrors from [cls].VerticalRepayments_Errors  where AuditID = ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{0EDBCE2E-0A49-4C69-8E51-3539C35C0DE9};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
+                          name="RowsWithErrors"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
+                          dataType="i4"
+                          name="RowsWithErrors" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
+                          name="RowsWithErrors" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -5052,6 +6364,83 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\update Audit Dimension\Get Audit Parameters\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 1].Columns[RowsWithErrors]"
+                          cachedDataType="i4"
+                          cachedName="RowsWithErrors"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 2].Columns[RowsInserted]"
+                          cachedDataType="i4"
+                          cachedName="RowsInserted"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]"
+                          name="RowsInserted" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]"
+                          name="RowsWithErrors" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -5073,7 +6462,8 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
 
 set 
 PackageName = ?,
-RowsInserted = ?
+RowsInserted = ?,
+RowsWithErrors = ?
 
 where AuditID = ?
 </property>
@@ -5110,12 +6500,18 @@ where AuditID = ?
                           cachedDataType="i4"
                           cachedName="RowsInserted"
                           externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]" />
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]" />
+                        <inputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsWithErrors]"
+                          cachedDataType="i4"
+                          cachedName="RowsWithErrors"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]" />
                         <inputColumn
                           refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
-                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -5147,6 +6543,17 @@ where AuditID = ?
                           refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="i4"
                           name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -5203,9 +6610,19 @@ where AuditID = ?
                   startId="Package\update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
-                  endId="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
+                  endId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
+                  endId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Source Output"
                   startId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
+                  endId="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
+                  name="Union All Output 1"
+                  startId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5281,11 +6698,11 @@ where AuditID = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{53562EA3-5316-413A-9D0D-E26CB641CB49}"
-          DTS:From="Package\update Audit Dimension\Update AuditDimension"
+          DTS:DTSID="{9AC22CA2-708F-4B86-B55B-843881A7CA5A}"
+          DTS:From="Package\update Audit Dimension\Remove duplicates"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\update Audit Dimension\Remove duplicates" />
+          DTS:To="Package\update Audit Dimension\Get Audit Parameters" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -5466,11 +6883,11 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{CC342716-F757-40D5-A89F-5DEF4D391F69}"
+      DTS:DTSID="{4212D455-21E5-4016-BBAD-1D63FEF69326}"
       DTS:From="Package\FEL - load all historical exports"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\update Audit Dimension" />
+      DTS:To="Package\Collect Errors" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -5479,6 +6896,14 @@ where AuditID = ?
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Get Export List" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{10A9A5F8-6651-4463-BC35-37900D34EFDF}"
+      DTS:From="Package\Collect Errors"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\update Audit Dimension" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5506,7 +6931,7 @@ where AuditID = ?
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Get Export List"
-          TopLeft="112.833333333333,378.933332163294" />
+          TopLeft="107.833333407839,430.933331233462" />
         <NodeLayout
           Size="145.333333333334,42.6666666666667"
           Id="Package\Get Full path list\Get File Name"
@@ -5630,9 +7055,9 @@ where AuditID = ?
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="382,248"
-          Size="382,42.6666666666667"
+          Size="171.333333333334,42.6666666666667"
           Id="Package\Sort latest files"
-          TopLeft="74.583332221955,289.733328653177" />
+          TopLeft="96.666665226221,327.433327979049" />
         <NodeLayout
           Size="229.333333333334,42.6666666666667"
           Id="Package\Truncate table ExportFileNames"
@@ -5648,47 +7073,11 @@ where AuditID = ?
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\update Audit Dimension\Remove duplicates"
-          TopLeft="314.583324075987,318.866657662789" />
+          TopLeft="407.08332269763,45.8666625444095" />
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\update Audit Dimension\Update AuditDimension"
           TopLeft="171.500002334516,219.83332236906" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
-          TopLeft="266.166669001183,262.499989035727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="132.416655074804,56.3666686270626"
-              Start="0,0"
-              End="132.416655074804,48.8666686270626">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1833343135313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1833343135313"
-                    Point2="0,28.1833343135313"
-                    Point3="4,28.1833343135313" />
-                  <mssgle:LineSegment
-                    End="128.416655074804,28.1833343135313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="128.416655074804,28.1833343135313"
-                    Point2="132.416655074804,28.1833343135313"
-                    Point3="132.416655074804,32.1833343135313" />
-                  <mssgle:LineSegment
-                    End="132.416655074804,48.8666686270626" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
           TopLeft="266.29166840824,99.8999887722727">
@@ -5708,9 +7097,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5732,9 +7119,41 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
+          TopLeft="407.08332269763,67.1999958777428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51.0833213441076,11.3666595611973"
+              Start="0,0"
+              End="-43.5833213441076,11.3666595611973">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-21.5416606720538,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.5416606720538,0"
+                    Point2="-25.5416606720538,0"
+                    Point3="-25.5416606720538,4" />
+                  <mssgle:LineSegment
+                    End="-25.5416606720538,7.36665956119725" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5416606720538,7.36665956119725"
+                    Point2="-25.5416606720538,11.3666595611973"
+                    Point3="-29.5416606720538,11.3666595611973" />
+                  <mssgle:LineSegment
+                    End="-43.5833213441076,11.3666595611973" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -5743,7 +7162,7 @@ where AuditID = ?
           PanelSize="590,520"
           Size="214,42.6666666666667"
           Id="Package\update Audit Dimension"
-          TopLeft="72.3333385859927,643.66666259865" />
+          TopLeft="73.5833385673662,713.433328017791" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\VerticalRepayments Historical - Begin ETL\ETL Begin"
@@ -5893,30 +7312,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="184.833333333333,253.500000000001">
+          TopLeft="183.583332613111,253.500000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="80.7499988886216,36.2333286531764"
+              EndConnector="0,73.9333279790479"
               Start="0,0"
-              End="80.7499988886216,28.7333286531764">
+              End="0,66.4333279790479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1166643265882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1166643265882"
-                    Point2="0,18.1166643265882"
-                    Point3="4,18.1166643265882" />
-                  <mssgle:LineSegment
-                    End="76.7499988886216,18.1166643265882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.7499988886216,18.1166643265882"
-                    Point2="80.7499988886216,18.1166643265882"
-                    Point3="80.7499988886216,22.1166643265882" />
-                  <mssgle:LineSegment
-                    End="80.7499988886216,28.7333286531764" />
+                    End="0,66.4333279790479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5927,18 +7334,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="186.541666241363,421.599998829961">
+          TopLeft="184.041666278615,473.599997900128">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,102.899999232888"
+              EndConnector="0,50.9000001627208"
               Start="0,0"
-              End="0,95.3999992328883">
+              End="0,43.4000001627208">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.3999992328883" />
+                    End="0,43.4000001627208" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5982,19 +7389,102 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="182.458335534359,567.166664729516">
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="182.416665983697,370.099994645715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.4999978691342"
+              EndConnector="0,60.8333365877463"
               Start="0,0"
-              End="0,68.9999978691342">
+              End="0,53.3333365877463">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.9999978691342" />
+                    End="0,53.3333365877463" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="63.7499925928812,34.1333245929085" />
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="155.166662953794,102.466655679147" />
+        <EdgeLayout
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="135.083325926215,76.7999912595751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.750003694246,25.6666644195714"
+              Start="0,0"
+              End="116.750003694246,18.1666644195714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.83333220978572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.83333220978572"
+                    Point2="0,12.8333322097857"
+                    Point3="4,12.8333322097857" />
+                  <mssgle:LineSegment
+                    End="112.750003694246,12.8333322097857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.750003694246,12.8333322097857"
+                    Point2="116.750003694246,12.8333322097857"
+                    Point3="116.750003694246,16.8333322097857" />
+                  <mssgle:LineSegment
+                    End="116.750003694246,18.1666644195714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="353.333333333334,200"
+          Size="164.666666666667,42.6666666666667"
+          Id="Package\Collect Errors"
+          TopLeft="94.166665263474,613.233323655327" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="185.583332482725,567.166664729516">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.08333388591811,46.0666589258117"
+              Start="0,0"
+              End="-9.08333388591811,38.5666589258117">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0333294629058" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0333294629058"
+                    Point2="0,23.0333294629058"
+                    Point3="-4,23.0333294629058" />
+                  <mssgle:LineSegment
+                    End="-5.08333388591811,23.0333294629058" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.08333388591811,23.0333294629058"
+                    Point2="-9.08333388591811,23.0333294629058"
+                    Point3="-9.08333388591811,27.0333294629058" />
+                  <mssgle:LineSegment
+                    End="-9.08333388591811,38.5666589258117" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6004,31 +7494,19 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="265.583332221955,332.399995319844">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="178.541668582087,655.899990321994">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-78.0833322219553,46.5333368434502"
+              EndConnector="0,57.5333376957974"
               Start="0,0"
-              End="-78.0833322219553,39.0333368434502">
+              End="0,50.0333376957974">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2666684217251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.2666684217251"
-                    Point2="0,23.2666684217251"
-                    Point3="-4,23.2666684217251" />
-                  <mssgle:LineSegment
-                    End="-74.0833322219553,23.2666684217251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-74.0833322219553,23.2666684217251"
-                    Point2="-78.0833322219553,23.2666684217251"
-                    Point3="-78.0833322219553,27.2666684217251" />
-                  <mssgle:LineSegment
-                    End="-78.0833322219553,39.0333368434502" />
+                    End="0,50.0333376957974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6053,40 +7531,6 @@ where AuditID = ?
           Size="260,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical"
           TopLeft="442,492" />
-        <EdgeLayout
-          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Output]"
-          TopLeft="145.5,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="426.5,443.833333333333"
-              Start="0,0"
-              End="426.5,436.333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,217.916666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,217.916666666667"
-                    Point2="0,221.916666666667"
-                    Point3="4,221.916666666667" />
-                  <mssgle:LineSegment
-                    End="422.5,221.916666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="422.5,221.916666666667"
-                    Point2="426.5,221.916666666667"
-                    Point3="426.5,225.916666666667" />
-                  <mssgle:LineSegment
-                    End="426.5,436.333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="108,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors"
@@ -6125,6 +7569,78 @@ where AuditID = ?
             <mssgm:EdgeLabel
               BoundingBox="196.734724392361,27.9223454833597,127.2527734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135.333333333334,42.6666666666667"
+          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID"
+          TopLeft="338.666666666667,226.666666666667" />
+        <EdgeLayout
+          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Output]"
+          TopLeft="119.055555555556,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="287.277777777778,178.5"
+              Start="0,0"
+              End="287.277777777778,171">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.418383518225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.418383518225"
+                    Point2="0,72.418383518225"
+                    Point3="4,72.418383518225" />
+                  <mssgle:LineSegment
+                    End="283.277777777778,72.418383518225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="283.277777777778,72.418383518225"
+                    Point2="287.277777777778,72.418383518225"
+                    Point3="287.277777777778,76.418383518225" />
+                  <mssgle:LineSegment
+                    End="287.277777777778,171" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Derived Column Output]"
+          TopLeft="406.333333333333,269.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165.666666666667,222.666666666667"
+              Start="0,0"
+              End="165.666666666667,215.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,107.333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,107.333333333333"
+                    Point2="0,111.333333333333"
+                    Point3="4,111.333333333333" />
+                  <mssgle:LineSegment
+                    End="161.666666666667,111.333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.666666666667,111.333333333333"
+                    Point2="165.666666666667,111.333333333333"
+                    Point3="165.666666666667,115.333333333333" />
+                  <mssgle:LineSegment
+                    End="165.666666666667,215.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6617,48 +8133,26 @@ where AuditID = ?
     design-time-name="Package\update Audit Dimension\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension"
-          TopLeft="11.1666666666667,313.5" />
+          TopLeft="185.166666666667,416.166666666667" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
-          TopLeft="32.5,5.50000000000004" />
+          TopLeft="5.49999999999999,5.50000000000004" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
-          TopLeft="5.50000000000001,108.166666666667" />
+          TopLeft="179.5,210.833333333334" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\DC AuditID"
-          TopLeft="39.8333333333334,210.833333333334" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="105.833333333333,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="213.833333333333,313.5" />
         <EdgeLayout
           Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
-          TopLeft="105.833333333333,253.5">
+          TopLeft="279.833333333333,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6680,7 +8174,105 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="105.833333333333,150.833333333333">
+          TopLeft="279.833333333333,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Error Count"
+          TopLeft="213.166666666667,5.50000000000004" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Union All"
+          TopLeft="219.166666666667,108.166666666667" />
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
+          TopLeft="279.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8888888888889,60.0000000000001"
+              Start="0,0"
+              End="18.8888888888889,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,35.531453362256"
+                    Point2="18.8888888888889,35.531453362256"
+                    Point3="18.8888888888889,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
+          TopLeft="78.8333333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182.111111111111,60.0000000000001"
+              Start="0,0"
+              End="182.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="178.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178.111111111111,35.531453362256"
+                    Point2="182.111111111111,35.531453362256"
+                    Point3="182.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="182.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
+          TopLeft="279.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6703,5 +8295,84 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\Collect Errors\Gather errors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors\Get bad data"
+          TopLeft="306.666666666667,75.3333333333333" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors\VerticalRepayments_Errors"
+          TopLeft="510,454" />
+        <EdgeLayout
+          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+          TopLeft="377.333333333333,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="236,336"
+              Start="0,0"
+              End="236,328.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,164" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,164"
+                    Point2="0,168"
+                    Point3="4,168" />
+                  <mssgle:LineSegment
+                    End="232,168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="232,168"
+                    Point2="236,168"
+                    Point3="236,172" />
+                  <mssgle:LineSegment
+                    End="236,328.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\VerticalRepayments_Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Error Count">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
