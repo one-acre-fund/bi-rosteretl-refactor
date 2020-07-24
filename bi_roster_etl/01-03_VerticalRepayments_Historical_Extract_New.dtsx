@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract_New"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{07A505DD-65DA-4DE5-AC2A-E45233B306FE}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{FC9C4A01-2F51-4A78-B05D-2F97171948FD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1478,141 +1478,6 @@
               version="1">
               <components>
                 <component
-                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="Errors"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[cls].[VerticalRepayments_Errors]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Connections[OleDbConnection]"
-                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].Columns[Flat File Source Error Output Column]"
-                          cachedCodepage="1252"
-                          cachedDataType="text"
-                          cachedName="Flat File Source Error Output Column"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
-                        <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
-                          cachedDataType="i4"
-                          cachedName="ErrorCode"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
-                        <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
-                          cachedDataType="i4"
-                          cachedName="ErrorColumn"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                          codePage="1252"
-                          dataType="text"
-                          name="Flat File Source Error Output Column" />
-                        <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                          dataType="i4"
-                          name="ErrorCode" />
-                        <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                          dataType="i4"
-                          name="ErrorColumn" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1648,12 +1513,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[District]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[District]"
                           name="District"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1670,12 +1535,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Sector]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Sector]"
                           name="Sector"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1692,12 +1557,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Site]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Site]"
                           name="Site"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1714,12 +1579,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Group]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Group]"
                           name="Group"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1736,12 +1601,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[SiteAtTimeOfRepayment]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[SiteAtTimeOfRepayment]"
                           name="SiteAtTimeOfRepayment"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1758,12 +1623,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[GroupAtTimeOfRepayment]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[GroupAtTimeOfRepayment]"
                           name="GroupAtTimeOfRepayment"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1780,12 +1645,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[LastName]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[LastName]"
                           name="LastName"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1802,12 +1667,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[FirstName]"
                           name="FirstName"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1824,12 +1689,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[OAFID]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[OAFID]"
                           name="OAFID"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1846,12 +1711,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Dropped]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Dropped]"
                           name="Dropped"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1868,12 +1733,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Amount]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Amount]"
                           name="Amount"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1890,12 +1755,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[ReceiptID]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[ReceiptID]"
                           name="ReceiptID"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1912,12 +1777,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Type]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Type]"
                           name="Type"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1934,12 +1799,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RepaymentDate]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RepaymentDate]"
                           name="RepaymentDate"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1956,12 +1821,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[DataEntryDate]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[DataEntryDate]"
                           name="DataEntryDate"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1978,12 +1843,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[GlobalClientID]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[GlobalClientID]"
                           name="GlobalClientID"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2000,12 +1865,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RepaymentPhoneNumber]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RepaymentPhoneNumber]"
                           name="RepaymentPhoneNumber"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2022,12 +1887,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[AccountNumber]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[AccountNumber]"
                           name="AccountNumber"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2044,12 +1909,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[BulkUploaded]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[BulkUploaded]"
                           name="BulkUploaded"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2066,12 +1931,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[Autosaved]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Autosaved]"
                           name="Autosaved"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2088,12 +1953,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[SeasonName]"
                           length="250"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[SeasonName]"
                           name="SeasonName"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2110,12 +1975,12 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="RedirectRow"
+                          errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[PrimaryID]"
                           length="50"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[PrimaryID]"
                           name="PrimaryID"
-                          truncationRowDisposition="RedirectRow">
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2794,11 +2659,6 @@
                   endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Error Output]"
-                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors.Inputs[OLE DB Destination Input]"
-                  name="Flat File Source Error Output"
-                  startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Error Output]" />
                 <path
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Output]"
                   endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Inputs[Derived Column Input]"
@@ -6916,7 +6776,7 @@ where AuditID = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="293.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical"
@@ -6959,9 +6819,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -7285,23 +7143,23 @@ where AuditID = ?
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="412,492.666666666667"
-          Size="412,42.6666666666667"
+          Size="298,42.6666666666667"
           Id="Package\VerticalRepayments Historical - Begin ETL"
           TopLeft="35.8333333333334,5.50000000000006" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="184.833333333333,150.833333333333">
+          TopLeft="184.833333333333,150.833333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,60.0000000000003"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7316,14 +7174,14 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73.9333279790479"
+              EndConnector="0,73.933327979048"
               Start="0,0"
-              End="0,66.4333279790479">
+              End="0,66.433327979048">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.4333279790479" />
+                    End="0,66.433327979048" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7356,30 +7214,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="241.833333333333,48.1666666666667">
+          TopLeft="184.833333333333,48.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-57,60.0000000000003"
+              EndConnector="0,60.0000000000003"
               Start="0,0"
-              End="-57,52.5000000000003">
+              End="0,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0000000000001"
-                    Point2="0,30.0000000000001"
-                    Point3="-4,30.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-53,30.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-53,30.0000000000001"
-                    Point2="-57,30.0000000000001"
-                    Point3="-57,34.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-57,52.5000000000003" />
+                    End="0,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7510,7 +7356,7 @@ where AuditID = ?
     design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE"
@@ -7520,75 +7366,35 @@ where AuditID = ?
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical"
           TopLeft="442,492" />
         <NodeLayout
-          Size="108,42.6666666666667"
-          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors"
-          TopLeft="638.666666666667,104.666666666667" />
-        <EdgeLayout
-          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Error Output]"
-          TopLeft="171.944444444444,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="520.722222222222,56.5"
-              Start="0,0"
-              End="520.722222222222,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.9223454833597" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.9223454833597"
-                    Point2="0,22.9223454833597"
-                    Point3="4,22.9223454833597" />
-                  <mssgle:LineSegment
-                    End="516.722222222222,22.9223454833597" />
-                  <mssgle:CubicBezierSegment
-                    Point1="516.722222222222,22.9223454833597"
-                    Point2="520.722222222222,22.9223454833597"
-                    Point3="520.722222222222,26.9223454833597" />
-                  <mssgle:LineSegment
-                    End="520.722222222222,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="196.734724392361,27.9223454833597,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="135.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID"
           TopLeft="338.666666666667,226.666666666667" />
         <EdgeLayout
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Flat File Source Output]"
-          TopLeft="119.055555555556,48.1666666666667">
+          TopLeft="145.5,48.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="287.277777777778,178.5"
+              EndConnector="260.833333333333,178.5"
               Start="0,0"
-              End="287.277777777778,171">
+              End="260.833333333333,171">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.418383518225" />
+                    End="0,85.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,68.418383518225"
-                    Point2="0,72.418383518225"
-                    Point3="4,72.418383518225" />
+                    Point1="0,85.25"
+                    Point2="0,89.25"
+                    Point3="4,89.25" />
                   <mssgle:LineSegment
-                    End="283.277777777778,72.418383518225" />
+                    End="256.833333333333,89.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="283.277777777778,72.418383518225"
-                    Point2="287.277777777778,72.418383518225"
-                    Point3="287.277777777778,76.418383518225" />
+                    Point1="256.833333333333,89.25"
+                    Point2="260.833333333333,89.25"
+                    Point3="260.833333333333,93.25" />
                   <mssgle:LineSegment
-                    End="287.277777777778,171" />
+                    End="260.833333333333,171" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7636,19 +7442,6 @@ where AuditID = ?
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Errors">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
