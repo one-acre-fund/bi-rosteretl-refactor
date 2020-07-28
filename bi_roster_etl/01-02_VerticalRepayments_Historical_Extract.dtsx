@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="GACHAGUA-PC"
   DTS:CreatorName="GACHAGUA-PC\watchman"
-  DTS:DTSID="{FBE3E7A8-90A9-4B20-A105-1B60E65D7B56}"
+  DTS:DTSID="{832EEF73-D196-4A9E-84B8-EEC992F5FA8C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.71"
   DTS:LocaleID="2057"
-  DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract_New"
+  DTS:ObjectName="01-02_VerticalRepayments_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{FC9C4A01-2F51-4A78-B05D-2F97171948FD}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{B74CC374-D651-4110-8F74-BDC6C977AB59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,8 +39,71 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
+              DTS:ObjectName="RosterSeasonID"
+              DTS:DTSID="{E5C1462C-37EC-42AC-9B38-3CFF11F723C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterRegionID"
+              DTS:DTSID="{9D9C77EC-3BE2-48ED-B4D5-C01ADF817BE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterDistrictID"
+              DTS:DTSID="{7119E20B-F813-4DB2-9C5A-E47D0127207E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterSectorID"
+              DTS:DTSID="{7A46B0DD-616C-4D6D-9788-42B796B27EE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterSiteID"
+              DTS:DTSID="{300DCD48-3BA7-43C9-8541-DD40E6F530AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterGroupID"
+              DTS:DTSID="{B41738A8-B789-470F-8C54-25D56F0C874C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RosterCountryID"
+              DTS:DTSID="{262979D1-9735-4D0F-8409-7EA37C554985}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
               DTS:ObjectName="District"
-              DTS:DTSID="{35CD68D1-5F50-411B-BF5F-CF296700C045}"
+              DTS:DTSID="{A41CF393-4473-4C2D-993B-4B8883C660AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PrimaryID"
-              DTS:DTSID="{BB20E582-B8AD-41AD-8CA6-28B0FF5F224F}"
+              DTS:DTSID="{E529530A-E107-4664-8FD5-EEFA1B3A257B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sector"
-              DTS:DTSID="{B05A0A9E-1A96-4D5A-B22C-CEB73325C111}"
+              DTS:DTSID="{010CFFEB-64A3-4EFD-92B9-D5121485E158}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Site"
-              DTS:DTSID="{B51FCCBF-587E-476E-99FE-F79CD8F2954F}"
+              DTS:DTSID="{D32294CC-6AB6-4C51-8564-5DAD1AFC47DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Group"
-              DTS:DTSID="{42F44D19-ECF7-49D6-9636-85FAE5F63B52}"
+              DTS:DTSID="{31BBEFFC-BA79-472D-B31A-4F339C6CBE45}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SiteAtTimeOfRepayment"
-              DTS:DTSID="{6B3F1C96-5B28-48AF-B92E-8337D858B660}"
+              DTS:DTSID="{EED9DA42-E5B8-483E-9168-321E6FB2C50D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GroupAtTimeOfRepayment"
-              DTS:DTSID="{99BB5848-2483-49E6-917C-B3E6028020EA}"
+              DTS:DTSID="{1B05CBC7-5FA3-4A0F-BCA7-FA91B390D81D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LastName"
-              DTS:DTSID="{72F8D49A-0D1F-4D9A-86ED-6D68B53923B6}"
+              DTS:DTSID="{84D161B2-3D8A-4781-826E-1C6191C94B66}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FirstName"
-              DTS:DTSID="{720B7372-9CD0-400E-8A98-E24E0464DD8A}"
+              DTS:DTSID="{901F7110-060E-41DA-AE7F-C9C2B56678D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OAFID"
-              DTS:DTSID="{AAB1224E-CE70-4A76-A289-0D9004C93C03}"
+              DTS:DTSID="{08C4DAFE-D12A-4C48-B75D-D455AE797410}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Dropped"
-              DTS:DTSID="{E39763BD-4B01-4978-A808-8560F30004A4}"
+              DTS:DTSID="{04192F92-04CB-4C24-89D7-526DBAA81309}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Amount"
-              DTS:DTSID="{2D85CF2A-7C35-433D-859D-B40B8B4E7D61}"
+              DTS:DTSID="{1EFBFFBA-2BAF-466D-9F91-86FA2D8CF82C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ReceiptID"
-              DTS:DTSID="{925CFF28-624C-4BEF-8E4A-88520962F90E}"
+              DTS:DTSID="{71D2E511-8BBF-48C9-9853-0F83153A2BEB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Type"
-              DTS:DTSID="{69F2FBC3-99EC-42EA-B1DE-4E7284CACA20}"
+              DTS:DTSID="{92DBF62C-5613-45E1-99CE-6460DB7F0477}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentDate"
-              DTS:DTSID="{ADB4194D-DBBA-4735-9113-D8EDBDDCFB7A}"
+              DTS:DTSID="{BCDBDF26-0436-4174-B6A0-FE28B735B153}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DataEntryDate"
-              DTS:DTSID="{DAA4AD1D-0613-494E-AE45-BA3428B210A1}"
+              DTS:DTSID="{7A4BC6AC-D598-41D7-AA57-30225ED44D41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GlobalClientID"
-              DTS:DTSID="{1E18D938-1DAE-4F8B-A502-91311A810C68}"
+              DTS:DTSID="{B5631AC2-EA4A-4244-8C55-0C8C9F285ECA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentPhoneNumber"
-              DTS:DTSID="{C8AF5843-2F23-4860-B101-A56048566BBD}"
+              DTS:DTSID="{A0DE0612-010C-4799-8A18-386B25566C9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +265,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AccountNumber"
-              DTS:DTSID="{26878625-1324-4699-80CC-1533E99563C8}"
+              DTS:DTSID="{BA307E32-A676-47BB-82F0-D42E60B9F003}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +274,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BulkUploaded"
-              DTS:DTSID="{5450F15F-7D62-400D-9806-76EE230FFD46}"
+              DTS:DTSID="{935C23F1-A53A-4E92-8C75-E7183EE8ED32}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,16 +283,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Autosaved"
-              DTS:DTSID="{66600BFE-E8C1-4FC6-B0BB-1D10419A6C4E}"
+              DTS:DTSID="{B4BC4B96-3C93-4FAE-8FCD-26CB0F28677B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="250"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SeasonName"
-              DTS:DTSID="{B5FC228A-427A-407E-AE70-6087227EC352}"
+              DTS:DTSID="{E40A5690-B2F7-4EE1-8877-A6DC8138A40F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -675,6 +738,83 @@
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]"
                           name="AuditID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSeasonID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSeasonID]"
+                          name="RosterSeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          name="RosterRegionID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterDistrictID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterDistrictID]"
+                          name="RosterDistrictID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSectorID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSectorID]"
+                          name="RosterSectorID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSiteID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSiteID]"
+                          name="RosterSiteID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterGroupID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterGroupID]"
+                          name="RosterGroupID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterCountryID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
+                          name="RosterCountryID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -814,6 +954,48 @@
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
                           dataType="i4"
                           name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSectorID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterGroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -975,6 +1157,55 @@
                           length="250"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           name="SeasonName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSeasonID]"
+                          name="RosterSeasonID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          name="RosterRegionID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterDistrictID]"
+                          name="RosterDistrictID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSectorID]"
+                          name="RosterSectorID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterSiteID]"
+                          name="RosterSiteID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterGroupID]"
+                          name="RosterGroupID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RosterCountryID]"
+                          name="RosterCountryID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           dataType="i4"
@@ -1251,6 +1482,62 @@
                           cachedName="AuditID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterSeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSeasonID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSeasonID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterRegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterRegionID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterRegionID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterDistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterDistrictID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterDistrictID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterSectorID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSectorID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSectorID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSectorID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterSiteID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSiteID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSiteID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterSiteID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterGroupID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterGroupID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterGroupID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterGroupID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[RosterCountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterCountryID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterCountryID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1390,6 +1677,48 @@
                           refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
                           dataType="i4"
                           name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSectorID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterGroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1992,6 +2321,160 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSeasonID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSeasonID]"
+                          name="RosterSeasonID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterRegionID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterRegionID]"
+                          name="RosterRegionID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterDistrictID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterDistrictID]"
+                          name="RosterDistrictID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSectorID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSectorID]"
+                          name="RosterSectorID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSiteID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSiteID]"
+                          name="RosterSiteID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterGroupID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterGroupID]"
+                          name="RosterGroupID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterCountryID]"
+                          length="50"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterCountryID]"
+                          name="RosterCountryID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2119,7 +2602,7 @@
                           refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="250"
                           name="SeasonName" />
                         <externalMetadataColumn
                           refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[PrimaryID]"
@@ -2127,6 +2610,48 @@
                           dataType="str"
                           length="50"
                           name="PrimaryID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSectorID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSiteID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterGroupID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2232,11 +2757,11 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical"
+                  refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="landing_verticalRepayments_Historical"
+                  name="OLE DB Destination"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -2247,7 +2772,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[cls].[Landing_VerticalRepayments_Historical]</property>
+                      name="OpenRowset">[cls].[landing_verticalRepayments_Historical]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2289,7 +2814,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Connections[OleDbConnection]"
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
                       connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
                       description="The OLE DB runtime connection used to access the database."
@@ -2297,331 +2822,429 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]"
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[District]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="District"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[District]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Sector]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sector]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Sector"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Sector]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Site]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Site]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Site"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Site]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Group]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Group]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Group"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Group]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[SiteAtTimeOfRepayment]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SiteAtTimeOfRepayment]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="SiteAtTimeOfRepayment"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[SiteAtTimeOfRepayment]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[GroupAtTimeOfRepayment]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GroupAtTimeOfRepayment]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="GroupAtTimeOfRepayment"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[GroupAtTimeOfRepayment]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[LastName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="LastName"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[LastName]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FirstName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="FirstName"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[FirstName]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[OAFID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OAFID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="OAFID"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[OAFID]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Dropped]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dropped]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Dropped"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Dropped]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Amount]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Amount]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Amount"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Amount]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[ReceiptID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReceiptID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="ReceiptID"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[ReceiptID]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Type]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Type"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Type]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[RepaymentDate]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RepaymentDate]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="RepaymentDate"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RepaymentDate]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[DataEntryDate]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DataEntryDate]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="DataEntryDate"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[DataEntryDate]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="GlobalClientID"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[GlobalClientID]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[RepaymentPhoneNumber]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RepaymentPhoneNumber]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="RepaymentPhoneNumber"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RepaymentPhoneNumber]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="AccountNumber"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[AccountNumber]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[BulkUploaded]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BulkUploaded]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="BulkUploaded"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[BulkUploaded]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[Autosaved]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Autosaved]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Autosaved"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[Autosaved]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[SeasonName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SeasonName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="250"
                           cachedName="SeasonName"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[SeasonName]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[PrimaryID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PrimaryID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="PrimaryID"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[PrimaryID]" />
                         <inputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterSeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSeasonID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSeasonID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterRegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterRegionID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterRegionID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterDistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterDistrictID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterDistrictID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterSectorID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSectorID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSectorID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSectorID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterSiteID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSiteID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSiteID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterSiteID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterGroupID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterGroupID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterGroupID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterGroupID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RosterCountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterCountryID"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE.Outputs[Flat File Source Output].Columns[RosterCountryID]" />
+                        <inputColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
-                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          externalMetadataColumnId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
                           lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="District" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Sector" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Site]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Site" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Group" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SiteAtTimeOfRepayment]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="SiteAtTimeOfRepayment" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupAtTimeOfRepayment]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="GroupAtTimeOfRepayment" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="LastName" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="FirstName" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="OAFID" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Dropped" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Amount" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReceiptID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="ReceiptID" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Type" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentDate]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="RepaymentDate" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataEntryDate]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="DataEntryDate" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="GlobalClientID" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPhoneNumber]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="RepaymentPhoneNumber" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="AccountNumber" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BulkUploaded]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="BulkUploaded" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Autosaved]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Autosaved" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
                           codePage="1252"
                           dataType="str"
                           length="250"
                           name="SeasonName" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="PrimaryID" />
                         <externalMetadataColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSectorID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterSiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSiteID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterGroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterGroupID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
                           dataType="i4"
                           name="AuditID" />
                       </externalMetadataColumns>
@@ -2629,22 +3252,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2656,7 +3279,7 @@
               <paths>
                 <path
                   refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Derived Column Output]"
-                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical.Inputs[OLE DB Destination Input]"
+                  endId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID.Outputs[Derived Column Output]" />
                 <path
@@ -6776,7 +7399,58 @@ where AuditID = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="155.166662953794,102.466655679147" />
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="63.7499925928812,34.1333245929085" />
+        <EdgeLayout
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="135.083325926215,76.7999912595751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.750003694246,25.6666644195714"
+              Start="0,0"
+              End="116.750003694246,18.1666644195714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.83333220978572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.83333220978572"
+                    Point2="0,12.8333322097857"
+                    Point3="4,12.8333322097857" />
+                  <mssgle:LineSegment
+                    End="112.750003694246,12.8333322097857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.750003694246,12.8333322097857"
+                    Point2="116.750003694246,12.8333322097857"
+                    Point3="116.750003694246,16.8333322097857" />
+                  <mssgle:LineSegment
+                    End="116.750003694246,18.1666644195714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="353.333333333334,200"
+          Size="164.666666666667,42.6666666666667"
+          Id="Package\Collect Errors"
+          TopLeft="97.0833318866789,614.533323632082" />
         <NodeLayout
           Size="293.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical"
@@ -6819,7 +7493,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -6830,13 +7506,17 @@ where AuditID = ?
           Id="Package\Get Full path list"
           TopLeft="95.8333333333334,210.833333333334" />
         <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Sort latest files\Truncate table"
-          TopLeft="67.4166645494598,74.499993374944" />
-        <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only"
           TopLeft="70.3333251625301,150.466658623616" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Sort latest files\Get latest load date"
+          TopLeft="95.7499974605938,5.76666061500714" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Sort latest files\Truncate table"
+          TopLeft="67.4166645494598,74.499993374944" />
         <EdgeLayout
           Id="Package\Sort latest files.PrecedenceConstraints[Constraint]"
           TopLeft="141.41666454946,117.166660041611">
@@ -6868,13 +7548,11 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Sort latest files\Get latest load date"
-          TopLeft="95.7499974605938,5.76666061500714" />
         <EdgeLayout
           Id="Package\Sort latest files.PrecedenceConstraints[Constraint 1]"
           TopLeft="181.749997460594,48.4333272816738">
@@ -6906,7 +7584,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -6936,50 +7616,6 @@ where AuditID = ?
           Size="189.333333333334,42.6666666666667"
           Id="Package\update Audit Dimension\Update AuditDimension"
           TopLeft="171.500002334516,219.83332236906" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
-          TopLeft="266.29166840824,99.8999887722727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.1666677127282"
-              Start="0,0"
-              End="0,26.6666677127282">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6666677127282" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
-          TopLeft="266.37500223207,176.733323151668">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.0999992173917"
-              Start="0,0"
-              End="0,35.5999992173917">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5999992173917" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
           TopLeft="407.08332269763,67.1999958777428">
@@ -7011,7 +7647,57 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="266.29166840824,99.8999887722727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1666677127282"
+              Start="0,0"
+              End="0,26.6666677127282">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6666677127282" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="266.37500223207,176.733323151668">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.0999992173917"
+              Start="0,0"
+              End="0,35.5999992173917">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5999992173917" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -7037,6 +7723,42 @@ where AuditID = ?
           Size="289.333333333334,42.6666666666667"
           Id="Package\VerticalRepayments Historical - Begin ETL\Truncate Table Landing_VerticalRepayments"
           TopLeft="72.5833323337134,282.233326057394" />
+        <EdgeLayout
+          Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="204.749994157503,147.166663760941">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5000048428767,135.066662296453"
+              Start="0,0"
+              End="12.5000048428767,127.566662296453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5333311482267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.5333311482267"
+                    Point2="0,67.5333311482267"
+                    Point3="4,67.5333311482267" />
+                  <mssgle:LineSegment
+                    End="8.50000484287671,67.5333311482267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.50000484287671,67.5333311482267"
+                    Point2="12.5000048428767,67.5333311482267"
+                    Point3="12.5000048428767,71.5333311482267" />
+                  <mssgle:LineSegment
+                    End="12.5000048428767,127.566662296453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
           TopLeft="136.666661898295,53.4666650549571">
@@ -7068,7 +7790,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7102,41 +7826,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint]"
-          TopLeft="204.749994157503,147.166663760941">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.5000048428767,135.066662296453"
-              Start="0,0"
-              End="12.5000048428767,127.566662296453">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5333311482267" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.5333311482267"
-                    Point2="0,67.5333311482267"
-                    Point3="4,67.5333311482267" />
-                  <mssgle:LineSegment
-                    End="8.50000484287671,67.5333311482267" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.50000484287671,67.5333311482267"
-                    Point2="12.5000048428767,67.5333311482267"
-                    Point3="12.5000048428767,71.5333311482267" />
-                  <mssgle:LineSegment
-                    End="12.5000048428767,127.566662296453" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -7192,18 +7884,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="184.041666278615,473.599997900128">
+          TopLeft="184.041666278616,473.599997900129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.9000001627208"
+              EndConnector="0,50.9000001627203"
               Start="0,0"
-              End="0,43.4000001627208">
+              End="0,43.4000001627203">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.4000001627208" />
+                    End="0,43.4000001627203" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7235,6 +7927,28 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="182.499998851369,567.166664729516">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.3666589025663"
+              Start="0,0"
+              End="0,39.8666589025663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8666589025663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="182.416665983697,370.099994645715">
           <EdgeLayout.Curve>
@@ -7256,91 +7970,20 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Collect Errors\Gather errors"
-          TopLeft="63.7499925928812,34.1333245929085" />
-        <NodeLayout
-          Size="193.333333333334,42.6666666666667"
-          Id="Package\Collect Errors\Delete Rows with Errors"
-          TopLeft="155.166662953794,102.466655679147" />
-        <EdgeLayout
-          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
-          TopLeft="135.083325926215,76.7999912595751">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.750003694246,25.6666644195714"
-              Start="0,0"
-              End="116.750003694246,18.1666644195714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.83333220978572" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.83333220978572"
-                    Point2="0,12.8333322097857"
-                    Point3="4,12.8333322097857" />
-                  <mssgle:LineSegment
-                    End="112.750003694246,12.8333322097857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.750003694246,12.8333322097857"
-                    Point2="116.750003694246,12.8333322097857"
-                    Point3="116.750003694246,16.8333322097857" />
-                  <mssgle:LineSegment
-                    End="116.750003694246,18.1666644195714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="353.333333333334,200"
-          Size="164.666666666667,42.6666666666667"
-          Id="Package\Collect Errors"
-          TopLeft="97.0833318866789,614.533323632082" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="182.499998851369,567.166664729516">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.3666589025659"
-              Start="0,0"
-              End="0,39.8666589025659">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.8666589025659" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="180.000001893689,657.199990298748">
+          TopLeft="180.000001893689,657.199990298749">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.2333377190432"
+              EndConnector="0,56.2333377190424"
               Start="0,0"
-              End="0,48.7333377190432">
+              End="0,48.7333377190424">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.7333377190432" />
+                    End="0,48.7333377190424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7353,6 +7996,77 @@ where AuditID = ?
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Collect Errors\Gather errors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors\VerticalRepayments_Errors"
+          TopLeft="510,454" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Collect Errors\Gather errors\Get bad data"
+          TopLeft="306.666666666667,75.3333333333333" />
+        <EdgeLayout
+          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+          TopLeft="377.333333333333,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="236,336"
+              Start="0,0"
+              End="236,328.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,164" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,164"
+                    Point2="0,168"
+                    Point3="4,168" />
+                  <mssgle:LineSegment
+                    End="232,168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="232,168"
+                    Point2="236,168"
+                    Point3="236,172" />
+                  <mssgle:LineSegment
+                    End="236,328.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\VerticalRepayments_Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical">
     <LayoutInfo>
       <GraphLayout
@@ -7361,10 +8075,6 @@ where AuditID = ?
           Size="166.666666666667,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Flat File Source KE"
           TopLeft="62.1666666666667,5.50000000000004" />
-        <NodeLayout
-          Size="260,42.6666666666667"
-          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical"
-          TopLeft="442,492" />
         <NodeLayout
           Size="135.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\Get AuditID"
@@ -7403,32 +8113,36 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination"
+          TopLeft="371.666661128402,497.899991096854" />
         <EdgeLayout
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical.Paths[Derived Column Output]"
-          TopLeft="406.333333333333,269.333333333333">
+          TopLeft="406.333333333334,269.333333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="165.666666666667,222.666666666667"
+              EndConnector="51.3333277950681,228.566657763521"
               Start="0,0"
-              End="165.666666666667,215.166666666667">
+              End="51.3333277950681,221.066657763521">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,107.333333333333" />
+                    End="0,110.28332888176" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,107.333333333333"
-                    Point2="0,111.333333333333"
-                    Point3="4,111.333333333333" />
+                    Point1="0,110.28332888176"
+                    Point2="0,114.28332888176"
+                    Point3="4,114.28332888176" />
                   <mssgle:LineSegment
-                    End="161.666666666667,111.333333333333" />
+                    End="47.3333277950681,114.28332888176" />
                   <mssgle:CubicBezierSegment
-                    Point1="161.666666666667,111.333333333333"
-                    Point2="165.666666666667,111.333333333333"
-                    Point3="165.666666666667,115.333333333333" />
+                    Point1="47.3333277950681,114.28332888176"
+                    Point2="51.3333277950681,114.28332888176"
+                    Point3="51.3333277950681,118.28332888176" />
                   <mssgle:LineSegment
-                    End="165.666666666667,215.166666666667" />
+                    End="51.3333277950681,221.066657763521" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7441,7 +8155,7 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\landing_verticalRepayments_Historical">
+    design-time-name="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8076,77 +8790,6 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <TaskHost
-    design-time-name="Package\Collect Errors\Gather errors">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="141.333333333334,42.6666666666667"
-          Id="Package\Collect Errors\Gather errors\Get bad data"
-          TopLeft="306.666666666667,75.3333333333333" />
-        <NodeLayout
-          Size="206.666666666667,42.6666666666667"
-          Id="Package\Collect Errors\Gather errors\VerticalRepayments_Errors"
-          TopLeft="510,454" />
-        <EdgeLayout
-          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
-          TopLeft="377.333333333333,118">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="236,336"
-              Start="0,0"
-              End="236,328.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,164" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,164"
-                    Point2="0,168"
-                    Point3="4,168" />
-                  <mssgle:LineSegment
-                    End="232,168" />
-                  <mssgle:CubicBezierSegment
-                    Point1="232,168"
-                    Point2="236,168"
-                    Point3="236,172" />
-                  <mssgle:LineSegment
-                    End="236,328.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Collect Errors\Gather errors\VerticalRepayments_Errors">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\update Audit Dimension\Get Audit Parameters\Error Count">
     <Properties>
