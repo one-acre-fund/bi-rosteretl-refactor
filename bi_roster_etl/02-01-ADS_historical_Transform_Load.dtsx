@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="02-01-ADS_historical_Transform_Load"
-  DTS:VersionBuild="186"
-  DTS:VersionGUID="{4562C98E-72BF-4888-A42E-1B586B296071}">
+  DTS:VersionBuild="197"
+  DTS:VersionGUID="{2F97245E-7792-4345-B047-CD3FC38599F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2626,22 +2626,24 @@ public class ScriptMain : UserComponent
 
         using (SHA512 shaHash = new SHA512Managed())
         {
-            Row.Hash = GetShaHash(shaHash, RowData = (Row.CopyofDistrictName_IsNull ? "" : Row.CopyofDistrictName.ToString()) + Separator + 
-                (Row.CopyofDeliveryName_IsNull ? "" : Row.CopyofDeliveryName.ToString()) + Separator + 
-                (Row.CopyofItemID_IsNull ? "" : Row.CopyofItemID.ToString()) + Separator + 
-                (Row.CopyofCredit_IsNull ? "" : Row.CopyofCredit.ToString()) + Separator +
-                (Row.CopyofQuantity_IsNull ? "" : Row.CopyofQuantity.ToString()) + Separator +
-                (Row.CopyofProductName_IsNull ? "" : Row.CopyofProductName.ToString()) + Separator +
-                (Row.CopyofGlobalProductName_IsNull ? "" : Row.CopyofGlobalProductName.ToString()) + Separator +
-                (Row.CopyofFinanceID_IsNull ? "" : Row.CopyofFinanceID.ToString()) + Separator +
-                (Row.CopyofDeliveryDate_IsNull ? "" : Row.CopyofDeliveryDate.ToString()) + Separator +
-                (Row.CopyofUnitTypeID_IsNull ? "" : Row.CopyofUnitTypeID.ToString()) + Separator +
-                (Row.CopyofBookingMechanism_IsNull ? "" : Row.CopyofBookingMechanism.ToString()) + Separator +
-                (Row.CopyofClientID_IsNull ? "" : Row.CopyofClientID.ToString()) + Separator +
-                (Row.CopyofDistrictID_IsNull ? "" : Row.CopyofDistrictID.ToString()) + Separator +
-                (Row.CopyofSeasonID_IsNull ? "" : Row.CopyofSeasonID.ToString())
+            Row.Hash = GetShaHash(shaHash, RowData = (Row.DistrictName_IsNull ? "" : Row.DistrictName.ToString()) + Separator + 
+                (Row.DeliveryName_IsNull     ? "" : Row.DeliveryName.ToString()) + Separator + 
+                (Row.ItemID_IsNull   ? "" : Row.ItemID.ToString()) + Separator + 
+                (Row.Credit_IsNull ? "" : Row.Credit.ToString()) + Separator +
+                (Row.Quantity_IsNull ? "" : Row.Quantity.ToString()) + Separator +
+                (Row.ProductName_IsNull ? "" : Row.ProductName.ToString()) + Separator +
+                (Row.GlobalProductName_IsNull ? "" : Row.GlobalProductName.ToString()) + Separator +
+                (Row.FinanceID_IsNull ? "" : Row.FinanceID.ToString()) + Separator +
+                (Row.DeliveryDate_IsNull ? "" : Row.DeliveryDate.ToString()) + Separator +
+                (Row.UnitTypeID_IsNull ? "" : Row.UnitTypeID_IsNull.ToString()) + Separator +
+                (Row.BookingMechanism_IsNull ? "" : Row.BookingMechanism.ToString()) + Separator +
+                (Row.RosterClientID_IsNull ? "" : Row.RosterClientID.ToString()) 
                 
-                
+
+
+
+
+
                 );
         }
 
@@ -2694,14 +2696,14 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public String CopyofDistrictName
+    public String DistrictName
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[0]);
         }
     }
-    public bool CopyofDistrictName_IsNull
+    public bool DistrictName_IsNull
     {
         get
         {
@@ -2709,14 +2711,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofDeliveryName
+    public String DeliveryName
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[1]);
         }
     }
-    public bool CopyofDeliveryName_IsNull
+    public bool DeliveryName_IsNull
     {
         get
         {
@@ -2724,14 +2726,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofItemID
+    public String ItemID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[2]);
         }
     }
-    public bool CopyofItemID_IsNull
+    public bool ItemID_IsNull
     {
         get
         {
@@ -2739,14 +2741,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofCredit
+    public String Credit
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[3]);
         }
     }
-    public bool CopyofCredit_IsNull
+    public bool Credit_IsNull
     {
         get
         {
@@ -2754,14 +2756,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public UInt32 CopyofQuantity
+    public String Quantity
     {
         get
         {
-            return Buffer.GetUInt32(BufferColumnIndexes[4]);
+            return Buffer.GetString(BufferColumnIndexes[4]);
         }
     }
-    public bool CopyofQuantity_IsNull
+    public bool Quantity_IsNull
     {
         get
         {
@@ -2769,14 +2771,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofProductName
+    public String ProductName
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[5]);
         }
     }
-    public bool CopyofProductName_IsNull
+    public bool ProductName_IsNull
     {
         get
         {
@@ -2784,14 +2786,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofGlobalProductName
+    public String GlobalProductName
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[6]);
         }
     }
-    public bool CopyofGlobalProductName_IsNull
+    public bool GlobalProductName_IsNull
     {
         get
         {
@@ -2799,14 +2801,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofFinanceID
+    public String FinanceID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[7]);
         }
     }
-    public bool CopyofFinanceID_IsNull
+    public bool FinanceID_IsNull
     {
         get
         {
@@ -2814,14 +2816,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofDeliveryDate
+    public String DeliveryDate
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[8]);
         }
     }
-    public bool CopyofDeliveryDate_IsNull
+    public bool DeliveryDate_IsNull
     {
         get
         {
@@ -2829,14 +2831,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofUnitTypeID
+    public String UnitTypeID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[9]);
         }
     }
-    public bool CopyofUnitTypeID_IsNull
+    public bool UnitTypeID_IsNull
     {
         get
         {
@@ -2844,14 +2846,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofBookingMechanism
+    public String BookingMechanism
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[10]);
         }
     }
-    public bool CopyofBookingMechanism_IsNull
+    public bool BookingMechanism_IsNull
     {
         get
         {
@@ -2859,14 +2861,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofClientID
+    public String RosterClientID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[11]);
         }
     }
-    public bool CopyofClientID_IsNull
+    public bool RosterClientID_IsNull
     {
         get
         {
@@ -2874,14 +2876,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofDistrictID
+    public String RosterDistrictID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[12]);
         }
     }
-    public bool CopyofDistrictID_IsNull
+    public bool RosterDistrictID_IsNull
     {
         get
         {
@@ -2889,14 +2891,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String CopyofSeasonID
+    public String RosterSeasonID
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[13]);
         }
     }
-    public bool CopyofSeasonID_IsNull
+    public bool RosterSeasonID_IsNull
     {
         get
         {
@@ -2904,11 +2906,56 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
+    public String RosterRegionID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[14]);
+        }
+    }
+    public bool RosterRegionID_IsNull
+    {
+        get
+        {
+            return IsNull(14);
+        }
+    }
+
+    public String RosterCountryID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[15]);
+        }
+    }
+    public bool RosterCountryID_IsNull
+    {
+        get
+        {
+            return IsNull(15);
+        }
+    }
+
+    public String GlobalClientID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[16]);
+        }
+    }
+    public bool GlobalClientID_IsNull
+    {
+        get
+        {
+            return IsNull(16);
+        }
+    }
+
     public String Hash
     {
         set
         {
-            this[14] = value;
+            this[17] = value;
         }
     }
     public bool Hash_IsNull
@@ -2917,7 +2964,7 @@ public class Input0Buffer: ScriptBuffer
         {
             if (value)
             {
-                SetNull(14);
+                SetNull(17);
             }
             else
             {
@@ -3051,18 +3098,18 @@ public class Variables
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:DisplayName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:DisplayName>
 		<msb:ProjectId>{6B00E8D6-45D4-4B7C-B2BF-50E3CDC77FD9}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_34e3a63733f5404eab8a30c3f72000e9.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
@@ -3259,145 +3306,145 @@ namespace SC_34e3a63733f5404eab8a30c3f72000e9.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOubgV4AAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAnjwA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABlQIF8AAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAQj0A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEw8AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPA8AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAApBwAAAAgAAAAHgAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAASB0AAAAgAAAAHgAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAgAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACA
-PAAAAAAAAEgAAAACAAUAvCUAANgVAAABAAAAAAAAAJQ7AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAYAGAIAAAEAABFyAQAAcApy
-BQAAcAtzEgAACgwDCB8bjR0AAAElFgNvCAAABi0NA28HAAAGbxMAAAorBXIFAABwoiUXBqIlGANv
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAk
+PQAAAAAAAEgAAAACAAUA2CUAAGAWAAABAAAAAAAAADg8AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAYA0gEAAAEAABFyAQAAcApy
+BQAAcAtzEgAACgwDCB8XjR0AAAElFgNvCAAABi0NA28HAAAGbxMAAAorBXIFAABwoiUXBqIlGANv
 CgAABi0NA28JAAAGbxMAAAorBXIFAABwoiUZBqIlGgNvDAAABi0NA28LAAAGbxMAAAorBXIFAABw
-oiUbBqIlHANvDgAABi0NA28NAAAGbxMAAAorBXIFAABwoiUdBqIlHgNvEAAABi0QA28PAAAGDRID
-KBQAAAorBXIFAABwoiUfCQaiJR8KA28SAAAGLQ0DbxEAAAZvEwAACisFcgUAAHCiJR8LBqIlHwwD
-bxQAAAYtDQNvEwAABm8TAAAKKwVyBQAAcKIlHw0GoiUfDgNvFgAABi0NA28VAAAGbxMAAAorBXIF
-AABwoiUfDwaiJR8QA28YAAAGLQ0DbxcAAAZvEwAACisFcgUAAHCiJR8RBqIlHxIDbxoAAAYtDQNv
-GQAABm8TAAAKKwVyBQAAcKIlHxMGoiUfFANvHAAABi0NA28bAAAGbxMAAAorBXIFAABwoiUfFQai
-JR8WA28eAAAGLQ0Dbx0AAAZvEwAACisFcgUAAHCiJR8XBqIlHxgDbyAAAAYtDQNvHwAABm8TAAAK
-KwVyBQAAcKIlHxkGoiUfGgNvIgAABi0NA28hAAAGbxMAAAorBXIFAABwoigVAAAKJQsoBAAABm8j
-AAAG3goILAYIbxYAAArcKkEcAAACAAAAEgAAAPsBAAANAgAACgAAAAAAAAATMAMARQAAAAIAABEC
-KBcAAAoDbxgAAApvGQAACgpzGgAACgsWDCscBwYIjyIAAAFyBwAAcCgbAAAKbxwAAAomCBdYDAgG
-jmky3gdvEwAACioeAignAAAGKioCAwQFKB0AAAoqUgJ7HgAACgJ7HwAAChaUbyAAAAoqIgIWKCEA
-AAoqUgJ7HgAACgJ7HwAACheUbyAAAAoqIgIXKCEAAAoqUgJ7HgAACgJ7HwAAChiUbyAAAAoqIgIY
-KCEAAAoqUgJ7HgAACgJ7HwAAChmUbyAAAAoqIgIZKCEAAAoqUgJ7HgAACgJ7HwAAChqUbyIAAAoq
-IgIaKCEAAAoqUgJ7HgAACgJ7HwAAChuUbyAAAAoqIgIbKCEAAAoqUgJ7HgAACgJ7HwAAChyUbyAA
-AAoqIgIcKCEAAAoqUgJ7HgAACgJ7HwAACh2UbyAAAAoqIgIdKCEAAAoqUgJ7HgAACgJ7HwAACh6U
-byAAAAoqIgIeKCEAAAoqVgJ7HgAACgJ7HwAACh8JlG8gAAAKKiYCHwkoIQAACipWAnseAAAKAnsf
-AAAKHwqUbyAAAAoqJgIfCighAAAKKlYCex4AAAoCex8AAAofC5RvIAAACiomAh8LKCEAAAoqVgJ7
-HgAACgJ7HwAACh8MlG8gAAAKKiYCHwwoIQAACipWAnseAAAKAnsfAAAKHw2UbyAAAAoqJgIfDSgh
-AAAKKioCHw4DKCMAAAoqXgMsCQIfDigkAAAKKnINAABwcyUAAAp6HgIoJgAACioeAignAAAKKn4C
-KCgAAAoCAnMrAAAGfQEAAAQCAnMsAAAGfQIAAAQqkgRyqgAAcBpvKQAACiwVAgUCAygqAAAKDgRz
-BgAABm8pAAAGKkorBwIDbyoAAAYDbyUAAAYt8SoGKjoCKCsAAAoCA30DAAAEKjoCKCsAAAoCA30E
-AAAEKh4CKCsAAAoqrn4FAAAELR5yugAAcNAHAAACKCwAAApvLQAACnMuAAAKgAUAAAR+BQAABCoa
-fgYAAAQqHgKABgAABCoafgcAAAQqHgIoLwAACiouczIAAAaABwAABCoAQlNKQgEAAQAAAAAADAAA
-AHY0LjAuMzAzMTkAAAAABQBsAAAApAgAACN+AAAQCQAAnAkAACNTdHJpbmdzAAAAAKwSAAAsAQAA
-I1VTANgTAAAQAAAAI0dVSUQAAADoEwAA8AEAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6ATMA
-FgAAAQAAACcAAAAIAAAABwAAADMAAAARAAAALwAAABAAAAACAAAAAwAAACEAAAAiAAAAAQAAAAQA
-AAABAAAAAABeBAEAAAAAAAYAFgNxBwYAqgNxBwYAYgJeBw8A5QcAAAYAjwKlBgYA+QKlBgYA2gKl
-BgYAkQOlBgYANgOlBgYATwOlBgYApgKlBgYAwQLzAwoAagOQAQYAAQBfCQYABgc0CQoAMAeQAQ4A
-IQeQAQoA7gaQAQoAzAiQAQYAfgg0BgYARQJeBwYAQQeRBwYA4gaQBhIAFQJIBBIAdgJIBBIA3gF7
-BgYAKgJxBwYAxQBfCQYAGQQ0BgYACwA0BgYA9gA0BgYA6gM0CQYAOwZfCQYA3wM0BgYAtwY0BgYA
-0QY0BgYAsQE0BgYAAgE0BgYAgAmlBgAAAAA2AAAAAAABAAEAAQAQAHAGAAAQAAEAAQABABAAFAcA
-AEEAAQAGAAEAEACuCAAATQABACcAAQAQAGsIAABRAAMAKwABABAAIwgAAFEABAAsAAAAEACYB/QH
-UQAFAC0AAAEQAFsI9AdpAAcAMQAGAGsItQAGACMIuQABALwIvQABALwIvQARAGQGwQARAM4BxQAR
-ANoAyQBQIAAAAADGAMgDBgABAFggAAAAAMYA0wMGAAEAYCAAAAAAxgBACc0AAQCgIgAAAACRACkE
-0wACAPEiAAAAAIYYUQcGAAQA+SIAAAAAhhhRB1MABAAEIwAAAACGCCYBIwAHABkjAAAAAIYIJQV6
-AAcAIiMAAAAAhgh5ASMABwA3IwAAAACGCIMFegAHAEAjAAAAAIYIaAAjAAcAVSMAAAAAhgi9BHoA
-BwBeIwAAAACGCJEIIwAHAHMjAAAAAIYI8QV6AAcAfCMAAAAAhgiJCdoABwCRIwAAAACGCAkGegAH
-AJojAAAAAIYIPQEjAAcAryMAAAAAhghDBXoABwC4IwAAAACGCFMBIwAHAM0jAAAAAIYIYAV6AAcA
-1iMAAAAAhgg/ACMABwDrIwAAAACGCIYEegAHAPQjAAAAAIYI/gEjAAcACSQAAAAAhgihBXoABwAS
-JAAAAACGCFMAIwAHACgkAAAAAIYIoQR6AAcAMiQAAAAAhghJBiMABwBIJAAAAACGCM8FegAHAFIk
-AAAAAIYIoQAjAAcAaCQAAAAAhggLBXoABwByJAAAAACGCIwAIwAHAIgkAAAAAIYI7wR6AAcAkiQA
-AAAAhgh5ACMABwCoJAAAAACGCNUEegAHALIkAAAAAIYIIAQQAAcAvSQAAAAAhgi/Bd4ACADVJAAA
-AACGAFcJegAJAN0kAAAAAIYAhQh6AAkA5SQAAAAAhhhRBwYACQAFJQAAAADGACEJ4wAJAColAAAA
-AMYBGgnNAA0APSUAAAAAxgFACc0ADgA/JQAAAACGGFEH7QAPAE4lAAAAAIYYUQftABAAXSUAAAAA
-gxhRBwYAEQBlJQAAAACTCD0H8wARAJElAAAAAJMItgH4ABEAmCUAAAAAkwjCAf0AEQCgJQAAAACW
-CKIIAwESAKclAAAAAIYYUQcGABIAryUAAAAAkRhXBwgBEgAAAAEAWwkAAAEANAQAAAIALgkAAAEA
-NgcAAAIANggAAAMA/AYAAAEA5AMAAAEA5AMAAAEAtAAAAAIAbwEAAAMANgcAAAQA/AYAAAEANgcA
-AAEAWwkAAAEA0ggAAAEA0ggAAAEA5AMJAFEHAQARAFEHBgAZAFEHCgApAFEHEAAxAFEHEAA5AFEH
-EABBAFEHEABJAFEHEABRAFEHEABZAFEHEABhAFEHEABpAFEHBgCpAFEHBgDJAFEHFQDZAFEHBgCZ
-AMgDBgCZANMDBgDhAFEHBgChAA0EIwDxAA0EIwDpAHcIJwD5APYBBgABAeoANQABAS0IOwAJATwE
-QQB5AFEHBgARAQ0ESAB5ANMATQCBAFEHUwCBADYHXQCBADYIYQCJABYEZQCBABwGagCJAAgAbwCB
-ACsGdACBACMGAQAZAVEHEACBAFcJegCBAIUIegCZAFEHBgDpAGQIfgCZAEoIhgChAFEHBgApARQB
-jAApAXwJlQCxAFEHmwDRAFEHBgAuAAsAJwEuABMAMAEuABsATwEuACMAWAEuACsAgQEuADMAgQEu
-ADsAgQEuAEMAWAEuAEsAhwEuAFMAgQEuAFsAngFDAGMA6AHhAHsA6AHjAGsA6AHpA3MATwEJBHMA
-TwEbAC0AAwABAAcAHwAIACEAAAAqAQwBAAApBRABAAB9AQwBAACHBRABAABsAAwBAADBBBABAACV
-CAwBAAD1BRABAACNCRQBAAANBhABAABBAQwBAABHBRABAABXAQwBAABkBRABAABDAAwBAACKBBAB
-AAACAgwBAAClBRABAABXAAwBAAClBBABAABNBgwBAADTBRABAAClAAwBAAAPBRABAACQAAwBAADz
-BBABAAB9AAwBAADZBBABAABDBAwBAADDBRABAABBBxgBAADWAR0BAACmCCIBAgAHAAMAAgAIAAUA
-AgAJAAcAAgAKAAkAAgALAAsAAgAMAA0AAgANAA8AAgAOABEAAgAPABMAAgAQABUAAgARABcAAgAS
-ABkAAgATABsAAgAUAB0AAgAVAB8AAgAWACEAAgAXACMAAgAYACUAAgAZACcAAgAaACkAAgAbACsA
-AgAcAC0AAgAdAC8AAgAeADEAAgAfADMAAgAgADUAAgAhADcAAgAiADkAAQAjADsAAQAkAD0AAgAu
-AD8AAgAvAEEAAQAwAEEAAgAxAEMABIAAAAEAAAAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAAAAAAKMA
-vAAAAAAADQAAAAAAAAAAAAAArADcCAAAAAANAAAAAAAAAAAAAACsAPkIAAAAAAQAAAAAAAAAAAAA
-AKMANAYAAAAAAAAAAAEAAACiBwAAAAAAAABTSEE1MTIAR2V0VUludDMyAFNDXzM0ZTNhNjM3MzNm
-NTQwNGVhYjhhMzBjM2Y3MjAwMGU5ADxNb2R1bGU+AGdldF9Db3B5b2ZGaW5hbmNlSUQAZ2V0X0Nv
-cHlvZlVuaXRUeXBlSUQAZ2V0X0NvcHlvZkl0ZW1JRABnZXRfQ29weW9mU2Vhc29uSUQAZ2V0X0Nv
-cHlvZkRpc3RyaWN0SUQAZ2V0X0NvcHlvZkNsaWVudElEAElucHV0SUQAbXNjb3JsaWIAU0hBNTEy
-TWFuYWdlZABBcHBlbmQAZGVmYXVsdEluc3RhbmNlAGdldF9Vbmljb2RlAElEaXNwb3NhYmxlAFJ1
-bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAGdldF9Db3B5b2ZEaXN0cmljdE5hbWUA
-Z2V0X0NvcHlvZlByb2R1Y3ROYW1lAGdldF9Db3B5b2ZHbG9iYWxQcm9kdWN0TmFtZQBJbnB1dE5h
-bWUAZ2V0X0NvcHlvZkRlbGl2ZXJ5TmFtZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGlu
-ZQBUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlv
-blNldHRpbmdzQmFzZQBEaXNwb3NlAGdldF9Db3B5b2ZEZWxpdmVyeURhdGUARWRpdG9yQnJvd3Nh
-YmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0
-dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3Nl
-bWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1l
-d29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNj
-cmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5
-UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29t
-cG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGlt
-ZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBCeXRlAHZhbHVl
-AEVuY29kaW5nAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcAR2V0U3RyaW5nAHNl
-dF9IYXNoAEdldFNoYUhhc2gAc2hhSGFzaABDb21wdXRlSGFzaABTeXN0ZW0uQ29tcG9uZW50TW9k
-ZWwAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTkuZGxsAGdldF9Db3B5b2ZGaW5h
-bmNlSURfSXNOdWxsAGdldF9Db3B5b2ZVbml0VHlwZUlEX0lzTnVsbABnZXRfQ29weW9mSXRlbUlE
-X0lzTnVsbABnZXRfQ29weW9mU2Vhc29uSURfSXNOdWxsAGdldF9Db3B5b2ZEaXN0cmljdElEX0lz
-TnVsbABnZXRfQ29weW9mQ2xpZW50SURfSXNOdWxsAGdldF9Db3B5b2ZEaXN0cmljdE5hbWVfSXNO
-dWxsAGdldF9Db3B5b2ZQcm9kdWN0TmFtZV9Jc051bGwAZ2V0X0NvcHlvZkdsb2JhbFByb2R1Y3RO
-YW1lX0lzTnVsbABnZXRfQ29weW9mRGVsaXZlcnlOYW1lX0lzTnVsbABnZXRfQ29weW9mRGVsaXZl
-cnlEYXRlX0lzTnVsbABzZXRfSGFzaF9Jc051bGwAZ2V0X0NvcHlvZkJvb2tpbmdNZWNoYW5pc21f
-SXNOdWxsAGdldF9Db3B5b2ZDcmVkaXRfSXNOdWxsAGdldF9Db3B5b2ZRdWFudGl0eV9Jc051bGwA
-U2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBnZXRfQ29weW9mQm9va2luZ01l
-Y2hhbmlzbQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3Rl
-bS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRp
-b24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABT
-dHJpbmdCdWlsZGVyAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0
-X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5S
-dW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ18zNGUzYTYzNzMzZjU0
-MDRlYWI4YTMwYzNmNzIwMDBlOS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdn
-aW5nTW9kZXMAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTkuUHJvcGVydGllcwBW
-YXJpYWJsZXMAR2V0Qnl0ZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVzAFNl
-dHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBDb25jYXQAT2JqZWN0AEVuZE9mUm93c2V0AGdldF9D
-b3B5b2ZDcmVkaXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2Ny
-aXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNl
-cnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABpbnB1dABTeXN0ZW0uVGV4dABJ
-bnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAU3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBo
-eQBnZXRfQXNzZW1ibHkAZ2V0X0NvcHlvZlF1YW50aXR5AAADfAAAAQAFeAAyAACAm0kAcwBOAHUA
-bABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAg
-AEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUA
-IABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwAz
-ADQAZQAzAGEANgAzADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAwAGMAMwBmADcAMgAwADAA
-MABlADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAIVLtAcamsZD
-nqdJKO5O+V8ABCABAQgDIAABBSABARERBCABAQ4FIAEBEWEHBwQODhI5CQMgAA4FAAEOHQ4HBwMd
-BRI9CAUAABKAgQUgAR0FDgYgAR0FHQUEIAEODgUgARI9DgkgAwESRR0IEkkDBhJFAwYdCAQgAQ4I
-BCABAggEIAEJCAUgAgEIHAMgAAIHIAICDhGAkQUgAR0ICAgAARKAlRGAmQUgABKAnQcgAgEOEoCd
-CLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJNAwYSWQMGEl0DBhIgBSABARIMBgACDhI5DgMg
-AAkEIAEBAgkgBAEIDhJFEkkFIAEBEk0EAAASWQQAABJdBQABARJdBAAAEiADAAABAygADgMoAAID
-KAAJBAgAElkECAASXQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dz
-AQgBAAIAAAAAACgBACNTQ18zNGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNmNzIwMDBlOQAABQEAAAAA
-FgEAEUNvcHlyaWdodCBAICAyMDIwAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQO
-FEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQQBAAAAAAAAtAAAAM7K774B
-AAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lv
-bj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUw
-ODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQ
-tAAAAHQ8AAAAAAAAAAAAAI48AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPAAAAAAAAAAAAAAA
-AF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+oiUbBqIlHANvDgAABi0NA28NAAAGbxMAAAorBXIFAABwoiUdBqIlHgNvEAAABi0NA28PAAAGbxMA
+AAorBXIFAABwoiUfCQaiJR8KA28SAAAGLQ0DbxEAAAZvEwAACisFcgUAAHCiJR8LBqIlHwwDbxQA
+AAYtDQNvEwAABm8TAAAKKwVyBQAAcKIlHw0GoiUfDgNvFgAABi0NA28VAAAGbxMAAAorBXIFAABw
+oiUfDwaiJR8QA28YAAAGLQ0DbxcAAAZvEwAACisFcgUAAHCiJR8RBqIlHxIDbxoAAAYtEANvGgAA
+Bg0SAygUAAAKKwVyBQAAcKIlHxMGoiUfFANvHAAABi0NA28bAAAGbxMAAAorBXIFAABwoiUfFQai
+JR8WA28eAAAGLQ0Dbx0AAAZvEwAACisFcgUAAHCiKBUAAAolCygEAAAGbykAAAbeCggsBghvFgAA
+CtwqAABBHAAAAgAAABIAAAC1AQAAxwEAAAoAAAAAAAAAEzADAEUAAAACAAARAigXAAAKA28YAAAK
+bxkAAAoKcxoAAAoLFgwrHAcGCI8iAAABcgcAAHAoGwAACm8cAAAKJggXWAwIBo5pMt4HbxMAAAoq
+HgIoLQAABioqAgMEBSgdAAAKKlICex4AAAoCex8AAAoWlG8gAAAKKiICFighAAAKKlICex4AAAoC
+ex8AAAoXlG8gAAAKKiICFyghAAAKKlICex4AAAoCex8AAAoYlG8gAAAKKiICGCghAAAKKlICex4A
+AAoCex8AAAoZlG8gAAAKKiICGSghAAAKKlICex4AAAoCex8AAAoalG8gAAAKKiICGighAAAKKlIC
+ex4AAAoCex8AAAoblG8gAAAKKiICGyghAAAKKlICex4AAAoCex8AAAoclG8gAAAKKiICHCghAAAK
+KlICex4AAAoCex8AAAodlG8gAAAKKiICHSghAAAKKlICex4AAAoCex8AAAoelG8gAAAKKiICHigh
+AAAKKlYCex4AAAoCex8AAAofCZRvIAAACiomAh8JKCEAAAoqVgJ7HgAACgJ7HwAACh8KlG8gAAAK
+KiYCHwooIQAACipWAnseAAAKAnsfAAAKHwuUbyAAAAoqJgIfCyghAAAKKlYCex4AAAoCex8AAAof
+DJRvIAAACiomAh8MKCEAAAoqVgJ7HgAACgJ7HwAACh8NlG8gAAAKKiYCHw0oIQAACipWAnseAAAK
+AnsfAAAKHw6UbyAAAAoqJgIfDighAAAKKlYCex4AAAoCex8AAAofD5RvIAAACiomAh8PKCEAAAoq
+VgJ7HgAACgJ7HwAACh8QlG8gAAAKKiYCHxAoIQAACioqAh8RAygiAAAKKl4DLAkCHxEoIwAACipy
+DQAAcHMkAAAKeh4CKCUAAAoqHgIoJgAACip+AignAAAKAgJzMQAABn0BAAAEAgJzMgAABn0CAAAE
+KpIEcqoAAHAabygAAAosFQIFAgMoKQAACg4EcwYAAAZvLwAABipKKwcCA28wAAAGA28rAAAGLfEq
+Bio6AigqAAAKAgN9AwAABCo6AigqAAAKAgN9BAAABCoeAigqAAAKKq5+BQAABC0ecroAAHDQBwAA
+AigrAAAKbywAAApzLQAACoAFAAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqGn4HAAAEKh4CKC4AAAoq
+LnM4AAAGgAcAAAQqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAADgJAAAjfgAA
+pAkAAKAJAAAjU3RyaW5ncwAAAABEEwAALAEAACNVUwBwFAAAEAAAACNHVUlEAAAAgBQAAOABAAAj
+QmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEAAAAnAAAACAAAAAcAAAA5AAAAEQAAAC4A
+AAAQAAAAAgAAAAMAAAAnAAAAKAAAAAEAAAAEAAAAAQAAAAAAXgQBAAAAAAAGABYDgAcGAKoDgAcG
+AGICbQcPAPQHAAAGAI8CtAYGAPkCtAYGANoCtAYGAJEDtAYGADYDtAYGAE8DtAYGAKYCtAYGAMEC
+8wMKAGoDlgEGAAEAaAkGABUHPQkKAD8HlgEOADAHlgEKAP0GlgEKANUIlgEGAI0IQQYGAEUCbQcG
+AFAHoAcGAPEGnwYSABUCSAQSAHYCSAQSAOQBigYGACoCgAcGAOMAaAkGABkEQQYGAHcGQQYGABQB
+QQYGAOoDPQkGAEgGaAkGAN8DQQYGAMYGQQYGAOAGQQYGALcBQQYGACABQQYGAIkJtAYAAAAALAAA
+AAAAAQABAAEAEAB/BgAAEAABAAEAAQAQACMHAABBAAEABgABABAAtwgAAE0AAQAtAAEAEAB6CAAA
+UQADADEAAQAQADIIAABRAAQAMgAAABAApwcDCFEABQAzAAABEABqCAMIaQAHADcABgB6CLAABgAy
+CLQAAQDFCLgAAQDFCLgAEQBrBrwAEQDUAcAAEQD4AMQAUCAAAAAAxgDIAwYAAQBYIAAAAADGANMD
+BgABAGAgAAAAAMYASQnIAAEAXCIAAAAAkQApBM4AAgCtIgAAAACGGGAHBgAEALUiAAAAAIYYYAdT
+AAQAwCIAAAAAhghEASMABwDVIgAAAACGCGIFdQAHAN4iAAAAAIYIhQEjAAcA8yIAAAAAhgiuBXUA
+BwD8IgAAAACGCFIAIwAHABEjAAAAAIYIsQR1AAcAGiMAAAAAhgigCCMABwAvIwAAAACGCAoGdQAH
+ADgjAAAAAIYIkgkjAAcATSMAAAAAhggcBnUABwBWIwAAAACGCFUBIwAHAGsjAAAAAIYIegV1AAcA
+dCMAAAAAhghlASMABwCJIwAAAACGCJEFdQAHAJIjAAAAAIYINQAjAAcApyMAAAAAhgiGBHUABwCw
+IwAAAACGCAQCIwAHAMUjAAAAAIYIxgV1AAcAziMAAAAAhghDACMABwDkIwAAAACGCJsEdQAHAO4j
+AAAAAIYIVgYjAAcABCQAAAAAhgjuBXUABwAOJAAAAACGCKsAIwAHACQkAAAAAIYILQV1AAcALiQA
+AAAAhgiDACMABwBEJAAAAACGCPcEdQAHAE4kAAAAAIYIcAAjAAcAZCQAAAAAhgjdBHUABwBuJAAA
+AACGCF0AIwAHAIQkAAAAAIYIwwR1AAcAjiQAAAAAhgjGACMABwCkJAAAAACGCEcFdQAHAK4kAAAA
+AIYImAAjAAcAxCQAAAAAhggTBXUABwDOJAAAAACGCCAEEAAHANkkAAAAAIYI3gXVAAgA8SQAAAAA
+hgBgCXUACQD5JAAAAACGAJQIdQAJAAElAAAAAIYYYAcGAAkAISUAAAAAxgAqCdoACQBGJQAAAADG
+ASMJyAANAFklAAAAAMYBSQnIAA4AWyUAAAAAhhhgB+QADwBqJQAAAACGGGAH5AAQAHklAAAAAIMY
+YAcGABEAgSUAAAAAkwhMB+oAEQCtJQAAAACTCLwB7wARALQlAAAAAJMIyAH0ABEAvCUAAAAAlgir
+CPoAEgDDJQAAAACGGGAHBgASAMslAAAAAJEYZgf/ABIAAAABAGQJAAABADQEAAACADcJAAABAEUH
+AAACAEUIAAADAAsHAAABAOQDAAABAOQDAAABAL4AAAACAHsBAAADAEUHAAAEAAsHAAABAEUHAAAB
+AGQJAAABANsIAAABANsIAAABAOQDCQBgBwEAEQBgBwYAGQBgBwoAKQBgBxAAMQBgBxAAOQBgBxAA
+QQBgBxAASQBgBxAAUQBgBxAAWQBgBxAAYQBgBxAAaQBgBwYAqQBgBwYAyQBgBxUA2QBgBwYAmQDI
+AwYAmQDTAwYA4QBgBwYAoQANBCMA8QANBCMA6QCGCCcA+QD8AQYAAQEIATUAAQE8CDsACQE8BEEA
+eQBgBwYAEQENBEgAeQDxAE0AgQBgB1MAgQBFB10AgQBFCGEAiQAWBGUAgQApBmoAgQA4Bm8AgQAw
+BgEAGQFgBxAAgQBgCXUAgQCUCHUAmQBgBwYA6QBzCHkAmQBZCIEAoQBgBwYAKQEyAYcAKQGFCZAA
+sQBgB5YA0QBgBwYALgALABoBLgATACMBLgAbAEIBLgAjAEsBLgArAHQBLgAzAHQBLgA7AHQBLgBD
+AEsBLgBLAHoBLgBTAHQBLgBbAJEBQwBjANsB4QB7ANsB4wBrANsBqQRzAEIByQRzAEIBGwAtAAMA
+AQAHACUACAAnAAAASAEDAQAAZgUHAQAAiQEDAQAAsgUHAQAAVgADAQAAtQQHAQAApAgDAQAADgYH
+AQAAlgkDAQAAIAYHAQAAbwEDAQAAmwUHAQAAaQEDAQAAlQUHAQAAOQADAQAAigQHAQAACAIDAQAA
+ygUHAQAARwADAQAAnwQHAQAAWgYDAQAA8gUHAQAArwADAQAAMQUHAQAAhwADAQAA+wQHAQAAdAAD
+AQAA4QQHAQAAYQADAQAAxwQHAQAAygADAQAASwUHAQAAnAADAQAAFwUHAQAAQwQDAQAA4gUHAQAA
+UAcLAQAA3AEQAQAArwgVAQIABwADAAIACAAFAAIACQAHAAIACgAJAAIACwALAAIADAANAAIADQAP
+AAIADgARAAIADwATAAIAEAAVAAIAEQAXAAIAEgAZAAIAEwAbAAIAFAAdAAIAFQAfAAIAFgAhAAIA
+FwAjAAIAGAAlAAIAGQAnAAIAGgApAAIAGwArAAIAHAAtAAIAHQAvAAIAHgAxAAIAHwAzAAIAIAA1
+AAIAIQA3AAIAIgA5AAIAIwA7AAIAJAA9AAIAJQA/AAIAJgBBAAIAJwBDAAIAKABFAAEAKQBHAAEA
+KgBJAAIANABLAAIANQBNAAEANgBNAAIANwBPAASAAAABAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAA
+AAAAAACeANoAAAAAAA0AAAAAAAAAAAAAAKcA5QgAAAAADQAAAAAAAAAAAAAApwACCQAAAAAEAAAA
+AAAAAAAAAACeAEEGAAAAAAAAAAABAAAAsQcAAAAAAFNIQTUxMgBTQ18zNGUzYTYzNzMzZjU0MDRl
+YWI4YTMwYzNmNzIwMDBlOQA8TW9kdWxlPgBnZXRfRmluYW5jZUlEAGdldF9Vbml0VHlwZUlEAGdl
+dF9JdGVtSUQAZ2V0X1Jvc3RlclJlZ2lvbklEAGdldF9Sb3N0ZXJTZWFzb25JRABnZXRfUm9zdGVy
+RGlzdHJpY3RJRABnZXRfR2xvYmFsQ2xpZW50SUQAZ2V0X1Jvc3RlckNsaWVudElEAElucHV0SUQA
+Z2V0X1Jvc3RlckNvdW50cnlJRABtc2NvcmxpYgBTSEE1MTJNYW5hZ2VkAEFwcGVuZABkZWZhdWx0
+SW5zdGFuY2UAZ2V0X1VuaWNvZGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlw
+ZUZyb21IYW5kbGUAZ2V0X0Rpc3RyaWN0TmFtZQBnZXRfUHJvZHVjdE5hbWUAZ2V0X0dsb2JhbFBy
+b2R1Y3ROYW1lAElucHV0TmFtZQBnZXRfRGVsaXZlcnlOYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
+RHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJl
+AEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UAZ2V0X0RlbGl2ZXJ5RGF0ZQBFZGl0b3JC
+cm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJD
+b2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRl
+AEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0
+RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJs
+eURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNz
+ZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3Jp
+cHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBS
+dW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAEJ5dGUA
+dmFsdWUARW5jb2RpbmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBHZXRTdHJp
+bmcAc2V0X0hhc2gAR2V0U2hhSGFzaABzaGFIYXNoAENvbXB1dGVIYXNoAFN5c3RlbS5Db21wb25l
+bnRNb2RlbABTQ18zNGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNmNzIwMDBlOS5kbGwAZ2V0X0ZpbmFu
+Y2VJRF9Jc051bGwAZ2V0X1VuaXRUeXBlSURfSXNOdWxsAGdldF9JdGVtSURfSXNOdWxsAGdldF9S
+b3N0ZXJSZWdpb25JRF9Jc051bGwAZ2V0X1Jvc3RlclNlYXNvbklEX0lzTnVsbABnZXRfUm9zdGVy
+RGlzdHJpY3RJRF9Jc051bGwAZ2V0X0dsb2JhbENsaWVudElEX0lzTnVsbABnZXRfUm9zdGVyQ2xp
+ZW50SURfSXNOdWxsAGdldF9Sb3N0ZXJDb3VudHJ5SURfSXNOdWxsAGdldF9EaXN0cmljdE5hbWVf
+SXNOdWxsAGdldF9Qcm9kdWN0TmFtZV9Jc051bGwAZ2V0X0dsb2JhbFByb2R1Y3ROYW1lX0lzTnVs
+bABnZXRfRGVsaXZlcnlOYW1lX0lzTnVsbABnZXRfRGVsaXZlcnlEYXRlX0lzTnVsbABzZXRfSGFz
+aF9Jc051bGwAZ2V0X0Jvb2tpbmdNZWNoYW5pc21fSXNOdWxsAGdldF9DcmVkaXRfSXNOdWxsAGdl
+dF9RdWFudGl0eV9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBn
+ZXRfQm9va2luZ01lY2hhbmlzbQByZXNvdXJjZU1hbgBCb29sZWFuAFNjcmlwdE1haW4AU3lzdGVt
+LkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52
+YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1
+dE5hbWVNYXAAT3V0cHV0TWFwAFN0cmluZ0J1aWxkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVm
+ZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5jdG9yAC5jY3RvcgBTeXN0ZW0u
+RGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3Vy
+Y2VzAFNDXzM0ZTNhNjM3MzNmNTQwNGVhYjhhMzBjM2Y3MjAwMGU5LlByb3BlcnRpZXMuUmVzb3Vy
+Y2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ18zNGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNm
+NzIwMDBlOS5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBHZXRCeXRlcwBCdWZmZXJDb2x1bW5JbmRleGVz
+AEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAENvbmNhdABPYmpl
+Y3QARW5kT2ZSb3dzZXQAZ2V0X0NyZWRpdABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVu
+dENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABN
+aWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AGlucHV0
+AFN5c3RlbS5UZXh0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBTeXN0ZW0uU2VjdXJp
+dHkuQ3J5cHRvZ3JhcGh5AGdldF9Bc3NlbWJseQBnZXRfUXVhbnRpdHkAAAADfAAAAQAFeAAyAACA
+m0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUA
+dAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABv
+ACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAA
+AHFTAEMAXwAzADQAZQAzAGEANgAzADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAwAGMAMwBm
+ADcAMgAwADAAMABlADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMA
+ABe/wODr2N5Evf3aqcEk/LAABCABAQgDIAABBSABARERBCABAQ4FIAEBEWEHBwQODhI5AgMgAA4F
+AAEOHQ4HBwMdBRI9CAUAABKAgQUgAR0FDgYgAR0FHQUEIAEODgUgARI9DgkgAwESRR0IEkkDBhJF
+AwYdCAQgAQ4IBCABAggFIAIBCBwDIAACByACAg4RgJEFIAEdCAgIAAESgJURgJkFIAASgJ0HIAIB
+DhKAnQi3elxWGTTgiQiJhF3NgIDMkQMGEhQDBhIYAwYSTQMGElkDBhJdAwYSIAUgAQESDAYAAg4S
+OQ4EIAEBAgkgBAEIDhJFEkkFIAEBEk0EAAASWQQAABJdBQABARJdBAAAEiADAAABAygADgMoAAIE
+CAASWQQIABJdBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEA
+AgAAAAAAKAEAI1NDXzM0ZTNhNjM3MzNmNTQwNGVhYjhhMzBjM2Y3MjAwMGU5AAAFAQAAAAAWAQAR
+Q29weXJpZ2h0IEAgIDIwMjAAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNQEAVA4URnJh
+bWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC41BAEAAAC0AAAAzsrvvgEAAACRAAAA
+bFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4w
+LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0
+ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAGD0A
+AAAAAAAAAAAAMj0AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQ9AAAAAAAAAAAAAAAAX0NvckRs
+bE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
@@ -3427,7 +3474,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAKA8AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAEQ9AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3472,12 +3519,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataChecksum"
-                      typeConverter="NOTBROWSABLE">3a723c020497b411ea08faf94cc6a0b7</property>
+                      typeConverter="NOTBROWSABLE">40523437c2fbdc9de4d14664d06bb348</property>
                     <property
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataShaChecksum"
-                      typeConverter="NOTBROWSABLE">5d7d06967d976fe4231a274962d1aa38d03b72f2</property>
+                      typeConverter="NOTBROWSABLE">d2ae2f52f7965f1206e41b8e4d80909d197fc58d</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -3492,6 +3539,127 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0]"
                       hasSideEffects="true"
                       name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[DistrictName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistrictName"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[DeliveryName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="DeliveryName"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DeliveryName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[Item_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Item_ID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Item_ID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[Credit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Credit"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Credit]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[Quantity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Quantity"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ProductName"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[GlobalProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GlobalProductName"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalProductName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[FinanceID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FinanceID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[FinanceID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[DeliveryDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DeliveryDate"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DeliveryDate]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[UnitTypeID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UnitTypeID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[UnitTypeID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[BookingMechanism]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BookingMechanism"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[BookingMechanism]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[RosterClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterClientID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterClientID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[RosterDistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterDistrictID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterDistrictID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[RosterSeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSeasonID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterSeasonID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[RosterRegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterRegionID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterRegionID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[RosterCountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterCountryID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterCountryID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[GlobalClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GlobalClientID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -3729,13 +3897,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           name="RosterSeasonID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[AuditID]"
-                          dataType="i4"
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
-                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[AuditID]"
-                          name="AuditID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          name="RosterRegionID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[RosterCountryID]"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
+                          name="RosterCountryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          name="GlobalClientID"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3828,6 +4020,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
                           dataType="i4"
                           name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GlobalClientID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3934,10 +4144,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[RosterSeasonID]"
                           name="RosterSeasonID" />
                         <outputColumn
-                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[AuditID]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[AuditID]"
-                          name="AuditID" />
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          name="RosterRegionID" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[RosterCountryID]"
+                          name="RosterCountryID" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          name="GlobalClientID" />
                         <outputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3955,13 +4181,423 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Incremental Load - Staging\Load Staging\staging_ADS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="staging_ADS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[cls].[staging_ADS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Connections[OleDbConnection]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[DistrictName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistrictName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[DeliveryName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="DeliveryName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DeliveryName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[Item_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Item_ID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Item_ID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Item_ID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[Credit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Credit"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Credit]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Credit]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Quantity"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[GlobalProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GlobalProductName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[GlobalProductName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalProductName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[FinanceID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FinanceID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[FinanceID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[FinanceID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[DeliveryDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DeliveryDate"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDate]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[DeliveryDate]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[UnitTypeID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UnitTypeID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[UnitTypeID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[UnitTypeID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[BookingMechanism]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BookingMechanism"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[BookingMechanism]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[BookingMechanism]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[RosterClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterClientID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterClientID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterClientID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[RosterDistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterDistrictID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterDistrictID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[RosterSeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterSeasonID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterSeasonID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[RosterRegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterRegionID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterRegionID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[RosterCountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RosterCountryID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[RosterCountryID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[Hash]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="512"
+                          cachedName="Hash"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[HashKey]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Outputs[Output 0].Columns[Hash]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GlobalClientID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].Columns[AuditDateCreated]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="AuditDateCreated"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[AuditDateCreated]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output].Columns[AuditDateCreated]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="DeliveryName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Item_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Item_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Credit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Credit" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[GlobalProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GlobalProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[FinanceID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FinanceID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DeliveryDate" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[UnitTypeID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UnitTypeID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[BookingMechanism]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BookingMechanism" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="5"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[AuditDateCreated]"
+                          dataType="dbTimeStamp"
+                          name="AuditDateCreated" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimSeasonID]"
+                          dataType="i4"
+                          name="DimSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                          dataType="i4"
+                          name="DimCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                          dataType="i4"
+                          name="DimRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                          dataType="i4"
+                          name="DimDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[DimClientID]"
+                          dataType="i4"
+                          name="DimClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input].ExternalColumns[HashKey]"
+                          codePage="1252"
+                          dataType="str"
+                          length="512"
+                          name="HashKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
+                <path
+                  refId="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
+                  endId="Package\Incremental Load - Staging\Load Staging\staging_ADS.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
                   endId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0]"
                   name="OLE DB Source Output"
                   startId="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
+                  endId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Inputs[Derived Column Input]"
+                  name="Output 0"
+                  startId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Outputs[Output 0]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -3975,7 +4611,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SP IncrementalLoad"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3991,7 +4627,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Staging"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4008,7 +4644,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update surrogate keys"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4056,7 +4692,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cleanup"
-          DTS:ThreadHint="10">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19210,49 +19846,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Outputs[Data Conversion Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 4]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\TZ.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
-                      name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
-                    <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
                       name="Derived Column Output"
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
                     <path
-                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MW.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
                       name="Derived Column Output"
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\UG.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 4]"
+                      name="Derived Column Output"
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\TZ.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Flat File Source Output]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Inputs[Derived Column Input]"
@@ -19315,7 +19951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File BI"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -19325,6 +19961,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_BI"
                   ReadWriteVariables="User::VarFileName_BI">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -19444,35 +20089,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -19625,35 +20241,34 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_e14ce8c2f81d4273b4aadfa9b9768eae.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -19741,14 +20356,35 @@ using System.Runtime.CompilerServices;
   </ProjectExtensions>
 </Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -19946,7 +20582,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File KE"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -19956,36 +20592,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath"
                   ReadWriteVariables="User::VarFileName">
-                  <ProjectItem
-                    Name="Properties\AssemblyInfo.cs"
-                    Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20105,6 +20711,35 @@ using System.Runtime.CompilerServices;
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_491edd431bd84dcdaf357419d70bdeeb.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20343,34 +20978,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                    Name="Properties\AssemblyInfo.cs"
+                    Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4474cb3d3fad421090ec11f5953e8403")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.settings"
                     Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -20577,7 +21213,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MM"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -20587,6 +21223,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_MM"
                   ReadWriteVariables="User::VarFileName_MM">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20706,35 +21351,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_42ad4efbd558431786c72c69f385ac87.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -20973,6 +21589,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -21002,15 +21647,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -21208,7 +21844,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MW"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21218,6 +21854,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_MW"
                   ReadWriteVariables="User::VarFileName_MW">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -21337,35 +21982,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_9fd83d63e4f64ce0a604d04d2de58525.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -21604,6 +22220,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -21633,15 +22278,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -21839,7 +22475,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File RW"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21849,6 +22485,220 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_RW"
                   ReadWriteVariables="User::VarFileName_RW">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+                  <ProjectItem
+                    Name="Properties\Resources.resx"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+                  <ProjectItem
+                    Name="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"
+                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A07547FA-CB0B-4D79-B952-04AE5C979307}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_4474cb3d3fad421090ec11f5953e8403</RootNamespace>
+    <AssemblyName>ST_a5ef040e761d4368ac1340e1df5bc19c</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
                   <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -21981,124 +22831,25 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	}
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Resources.resx"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-</root>]]></ProjectItem>
+                    Name="Project"
+                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
+		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
+		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Settings.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -22129,112 +22880,6 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
     }
 }]]></ProjectItem>
                   <ProjectItem
-                    Name="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"
-                    Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A07547FA-CB0B-4D79-B952-04AE5C979307}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ST_4474cb3d3fad421090ec11f5953e8403</RootNamespace>
-    <AssemblyName>ST_a5ef040e761d4368ac1340e1df5bc19c</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptMain.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
-        <Host Name="ScriptTask" />
-        <ProjectClient>
-          <HostIdentifier>SSIS_ST130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Project"
-                    Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:CodeName>
-		<msb:DisplayName>ST_a5ef040e761d4368ac1340e1df5bc19c</msb:DisplayName>
-		<msb:ProjectId>{0D8ECD49-C8BC-4BF0-81A9-8F581C1C79CB}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_a5ef040e761d4368ac1340e1df5bc19c.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -22264,15 +22909,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -22470,7 +23106,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File TZ"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -22480,6 +23116,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_TZ"
                   ReadWriteVariables="User::VarFileName_TZ">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.resx"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -22599,35 +23244,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
                   <ProjectItem
                     Name="ST_be32c3ed5e02485793334cde589711a0.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -22866,6 +23482,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -22895,15 +23540,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -23101,7 +23737,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File UG"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -23111,6 +23747,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_UG"
                   ReadWriteVariables="User::VarFileName_UG">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="ST_8299571892d545d4867e0073f7368789.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -23317,35 +23962,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -23497,6 +24113,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -23526,15 +24171,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -23732,7 +24368,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File ZA"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -23742,6 +24378,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Language="CSharp"
                   ReadOnlyVariables="User::VarFolderPath_ZA"
                   ReadWriteVariables="User::VarFileName_ZA">
+                  <ProjectItem
+                    Name="Properties\Settings.settings"
+                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="ST_618dd71314f2446db93266bd6b2ec05f.csproj"
                     Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -23948,35 +24593,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </resheader>
 </root>]]></ProjectItem>
                   <ProjectItem
-                    Name="Properties\Settings.Designer.cs"
-                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
-    "ings")]
-
-namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-                  <ProjectItem
                     Name="ScriptMain.cs"
                     Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -24128,6 +24744,35 @@ namespace ST_4474cb3d3fad421090ec11f5953e8403
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
                   <ProjectItem
+                    Name="Properties\Settings.Designer.cs"
+                    Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4474cb3d3fad421090ec11f5953e8403.Properties.Settings.get_Default():ST_4474cb3d3fad421090ec11f5953e8403.Properties.Sett" +
+    "ings")]
+
+namespace ST_4474cb3d3fad421090ec11f5953e8403.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+                  <ProjectItem
                     Name="Properties\AssemblyInfo.cs"
                     Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -24157,15 +24802,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-                  <ProjectItem
-                    Name="Properties\Settings.settings"
-                    Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
                   <ProjectItem
                     Name="Properties\Resources.Designer.cs"
                     Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -26197,77 +26833,77 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="District"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1471:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1460:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Sector]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Sector"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1472:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1461:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Site]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Site"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1473:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1462:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Group]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Group"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1474:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1463:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[SiteAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="SiteAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1475:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1464:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[GroupAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="GroupAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1476:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1465:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[LastName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="LastName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1477:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1466:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[FirstName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="FirstName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1478:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1467:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[OAFID]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="OAFID"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1479:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1468:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Dropped]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Dropped"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1480:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1469:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Amount]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Amount"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1481:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1470:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[ReceiptID]"
                               cachedCodepage="1252"
@@ -27164,7 +27800,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get Latest DateCreated"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27185,7 +27821,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get LoadEndTime"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27206,7 +27842,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SP IncrementalLoad"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27222,7 +27858,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Update AuditDimension"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27298,7 +27934,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Exec SP_IncrementalLoad"
-              DTS:ThreadHint="12">
+              DTS:ThreadHint="11">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -28369,7 +29005,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Remove quotes from SeasonName"
-          DTS:ThreadHint="11">
+          DTS:ThreadHint="12">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -28386,7 +29022,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Vertical Repayments"
-          DTS:ThreadHint="11">
+          DTS:ThreadHint="12">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -28445,7 +29081,7 @@ from cls.Staging_VerticalRepayments</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="exec [cls].[sp_IncrementalLoad_VerticalRepayments] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="exec [cls].[sp_IncrementalLoad_ADS] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::AuditId"
@@ -28606,7 +29242,7 @@ from cls.Staging_VerticalRepayments</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.staging_VerticalRepayments</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsExtracted from cls.staging_ADS</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -28859,7 +29495,7 @@ where AuditID = ?
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.VerticalRepayments;"
+              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.AccountDeliverySummary;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -29067,6 +29703,137 @@ where AuditID = ?
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\ADS Historical Begin ETL\ETL Begin"
+          TopLeft="141.41666082417,104.499997094274" />
+        <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\ADS Historical Begin ETL\Get AuditID"
+          TopLeft="73.3333285649618,10.7999983882904" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\ADS Historical Begin ETL\Get LoadStartTime"
+          TopLeft="223.916659594824,15.8999983805418" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\ADS Historical Begin ETL\Remove duplicates"
+          TopLeft="219.249990196278,209.399994312525" />
+        <EdgeLayout
+          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint]"
+          TopLeft="204.749994157503,147.166663760941">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.4999960387743,62.2333305515843"
+              Start="0,0"
+              End="98.4999960387743,54.7333305515843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1166652757921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.1166652757921"
+                    Point2="0,31.1166652757921"
+                    Point3="4,31.1166652757921" />
+                  <mssgle:LineSegment
+                    End="94.4999960387743,31.1166652757921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.4999960387743,31.1166652757921"
+                    Point2="98.4999960387743,31.1166652757921"
+                    Point3="98.4999960387743,35.1166652757921" />
+                  <mssgle:LineSegment
+                    End="98.4999960387743,54.7333305515843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint 2]"
+          TopLeft="136.666661898295,53.4666650549571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.3055544814303,51.0333320393164"
+              Start="0,0"
+              End="48.3055544814303,43.5333320393164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2380449713206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2380449713206"
+                    Point2="0,30.2380449713206"
+                    Point3="4,30.2380449713206" />
+                  <mssgle:LineSegment
+                    End="44.3055544814303,30.2380449713206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.3055544814303,30.2380449713206"
+                    Point2="48.3055544814303,30.2380449713206"
+                    Point3="48.3055544814303,34.2380449713206" />
+                  <mssgle:LineSegment
+                    End="48.3055544814303,43.5333320393164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint 3]"
+          TopLeft="307.916659594824,58.5666650472085">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.3888876595431,45.9333320470651"
+              Start="0,0"
+              End="-83.3888876595431,38.4333320470651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2162154540822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2162154540822"
+                    Point2="0,27.2162154540822"
+                    Point3="-4,27.2162154540822" />
+                  <mssgle:LineSegment
+                    End="-79.3888876595431,27.2162154540822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.3888876595431,27.2162154540822"
+                    Point2="-83.3888876595431,27.2162154540822"
+                    Point3="-83.3888876595431,31.2162154540822" />
+                  <mssgle:LineSegment
+                    End="-83.3888876595431,38.4333320470651" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="412,492.666666666667"
+          Size="218,42.6666666666667"
+          Id="Package\ADS Historical Begin ETL"
+          TopLeft="440.416660103948,84.0666651634376" />
+        <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="293.900781821748,88.9095186021598" />
@@ -29140,9 +29907,9 @@ where AuditID = ?
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="600,500"
-          Size="600,542.666666666667"
+          Size="230,42.6666666666667"
           Id="Package\Incremental Load - Staging"
           TopLeft="462.416659805923,253.066662141483" />
         <NodeLayout
@@ -29808,9 +30575,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29832,9 +30597,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29856,9 +30619,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29880,152 +30641,25 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="590,520"
-          Size="590,42.6666666666667"
+          Size="178,42.6666666666667"
           Id="Package\Load Production"
           TopLeft="503.666659191251,496.333323492608" />
-        <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\ADS Historical Begin ETL\ETL Begin"
-          TopLeft="141.41666082417,104.499997094274" />
-        <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\ADS Historical Begin ETL\Get AuditID"
-          TopLeft="73.3333285649618,10.7999983882904" />
-        <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\ADS Historical Begin ETL\Get LoadStartTime"
-          TopLeft="223.916659594824,15.8999983805418" />
-        <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\ADS Historical Begin ETL\Remove duplicates"
-          TopLeft="219.249990196278,209.399994312525" />
-        <EdgeLayout
-          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint]"
-          TopLeft="204.749994157503,147.166663760941">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.4999960387743,62.2333305515843"
-              Start="0,0"
-              End="98.4999960387743,54.7333305515843">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1166652757921" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1166652757921"
-                    Point2="0,31.1166652757921"
-                    Point3="4,31.1166652757921" />
-                  <mssgle:LineSegment
-                    End="94.4999960387743,31.1166652757921" />
-                  <mssgle:CubicBezierSegment
-                    Point1="94.4999960387743,31.1166652757921"
-                    Point2="98.4999960387743,31.1166652757921"
-                    Point3="98.4999960387743,35.1166652757921" />
-                  <mssgle:LineSegment
-                    End="98.4999960387743,54.7333305515843" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="136.666661898295,53.4666650549571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="48.3055544814303,51.0333320393164"
-              Start="0,0"
-              End="48.3055544814303,43.5333320393164">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2380449713206" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2380449713206"
-                    Point2="0,30.2380449713206"
-                    Point3="4,30.2380449713206" />
-                  <mssgle:LineSegment
-                    End="44.3055544814303,30.2380449713206" />
-                  <mssgle:CubicBezierSegment
-                    Point1="44.3055544814303,30.2380449713206"
-                    Point2="48.3055544814303,30.2380449713206"
-                    Point3="48.3055544814303,34.2380449713206" />
-                  <mssgle:LineSegment
-                    End="48.3055544814303,43.5333320393164" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ADS Historical Begin ETL.PrecedenceConstraints[Constraint 3]"
-          TopLeft="307.916659594824,58.5666650472085">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-83.3888876595431,45.9333320470651"
-              Start="0,0"
-              End="-83.3888876595431,38.4333320470651">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.2162154540822" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.2162154540822"
-                    Point2="0,27.2162154540822"
-                    Point3="-4,27.2162154540822" />
-                  <mssgle:LineSegment
-                    End="-79.3888876595431,27.2162154540822" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-79.3888876595431,27.2162154540822"
-                    Point2="-83.3888876595431,27.2162154540822"
-                    Point3="-83.3888876595431,31.2162154540822" />
-                  <mssgle:LineSegment
-                    End="-83.3888876595431,38.4333320470651" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="412,492.666666666667"
-          Size="218,42.6666666666667"
-          Id="Package\ADS Historical Begin ETL"
-          TopLeft="440.416660103948,84.0666651634376" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="549.416660103948,126.733331830104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="212.999999701975,126.333330311379"
+              EndConnector="27.999999701975,126.333330311379"
               Start="0,0"
-              End="212.999999701975,118.833330311379">
+              End="27.999999701975,118.833330311379">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -30036,13 +30670,13 @@ where AuditID = ?
                     Point2="0,63.1666651556893"
                     Point3="4,63.1666651556893" />
                   <mssgle:LineSegment
-                    End="208.999999701975,63.1666651556893" />
+                    End="23.999999701975,63.1666651556893" />
                   <mssgle:CubicBezierSegment
-                    Point1="208.999999701975,63.1666651556893"
-                    Point2="212.999999701975,63.1666651556893"
-                    Point3="212.999999701975,67.1666651556893" />
+                    Point1="23.999999701975,63.1666651556893"
+                    Point2="27.999999701975,63.1666651556893"
+                    Point3="27.999999701975,67.1666651556893" />
                   <mssgle:LineSegment
-                    End="212.999999701975,118.833330311379" />
+                    End="27.999999701975,118.833330311379" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30053,24 +30687,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="1062.41665980592,516.499990159275">
+          TopLeft="577.416659805923,295.73332880815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-263.750000614672,22.5"
+              EndConnector="15.249999385328,200.599994684458"
               Start="0,0"
-              End="-263.750000614672,15">
+              End="15.249999385328,193.099994684458">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-259.750000614672,0" />
+                    End="0,96.2999973422292" />
                   <mssgle:CubicBezierSegment
-                    Point1="-259.750000614672,0"
-                    Point2="-263.750000614672,0"
-                    Point3="-263.750000614672,4" />
+                    Point1="0,96.2999973422292"
+                    Point2="0,100.299997342229"
+                    Point3="4,100.299997342229" />
                   <mssgle:LineSegment
-                    End="-263.750000614672,15" />
+                    End="11.249999385328,100.299997342229" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.249999385328,100.299997342229"
+                    Point2="15.249999385328,100.299997342229"
+                    Point3="15.249999385328,104.299997342229" />
+                  <mssgle:LineSegment
+                    End="15.249999385328,193.099994684458" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30098,45 +30738,81 @@ where AuditID = ?
     design-time-name="Package\Incremental Load - Staging\Load Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="139.333333333334,42.6666666666667"
-          Id="Package\Incremental Load - Staging\Load Staging\DC - AuditID"
-          TopLeft="75.5833328304192,224.66666825513" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical"
-          TopLeft="472.916659619659,12.5666664419572" />
+          TopLeft="5.5,5.50000000000004" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\staging_ADS"
+          TopLeft="29.8333333333334,313.5" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Incremental Load - Staging\Load Staging\Get Hash Value"
-          TopLeft="175.333330812554,133.166673562924" />
+          TopLeft="23.5,108.166666666667" />
         <EdgeLayout
           Id="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
-          TopLeft="566.916659619659,55.2333331086238">
+          TopLeft="99.5,48.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-315.583328807106,77.9333404543001"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="-315.583328807106,70.4333404543001">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9666702271501" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.9666702271501"
-                    Point2="0,38.9666702271501"
-                    Point3="-4,38.9666702271501" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Incremental Load - Staging\Load Staging\DC - AuditID"
+          TopLeft="29.8333333333334,210.833333333334" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
+          TopLeft="99.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-311.583328807106,38.9666702271501" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-311.583328807106,38.9666702271501"
-                    Point2="-315.583328807106,38.9666702271501"
-                    Point3="-315.583328807106,42.9666702271501" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
+          TopLeft="99.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-315.583328807106,70.4333404543001" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30148,6 +30824,32 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_ADS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\junk\Data Flow Task">
     <LayoutInfo>
@@ -30580,7 +31282,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
           TopLeft="1452.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30616,7 +31318,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30652,7 +31354,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30688,7 +31390,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30724,7 +31426,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
           TopLeft="834.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30760,7 +31462,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output8]"
           TopLeft="990.648148148148,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30784,7 +31486,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30820,7 +31522,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -30856,7 +31558,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
           TopLeft="987.5,664.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31483,19 +32185,6 @@ where AuditID = ?
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\landing_ADS_Historical">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
