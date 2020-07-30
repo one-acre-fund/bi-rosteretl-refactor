@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-01-ADS_extract"
-  DTS:VersionBuild="199"
-  DTS:VersionGUID="{D3D4C9BB-9D73-4D92-8ABF-6A04F5CA4104}">
+  DTS:VersionBuild="202"
+  DTS:VersionGUID="{0F665A25-8AAC-4AE6-8980-2DFA8770FAE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11075,7 +11075,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-                  SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ADSi]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ADS]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -27396,6 +27396,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               DTS:refId="Package\Load ADS Container\Incremental Load - Staging\Update surrogate keys"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
               DTS:DTSID="{EE18FD8E-9B85-4F49-BD06-ACFB87CC1265}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
@@ -28112,7 +28113,7 @@ where AuditID = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\DFT - Landing_ADS"
@@ -28164,9 +28165,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28200,9 +28199,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28236,9 +28233,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -28660,9 +28655,9 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.1666663065548,70.8666646365324"
+              EndConnector="52.1666663065547,70.8666646365324"
               Start="0,0"
-              End="52.1666663065548,63.3666646365324">
+              End="52.1666663065547,63.3666646365324">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28673,13 +28668,13 @@ where AuditID = ?
                     Point2="0,35.4333323182662"
                     Point3="4,35.4333323182662" />
                   <mssgle:LineSegment
-                    End="48.1666663065548,35.4333323182662" />
+                    End="48.1666663065547,35.4333323182662" />
                   <mssgle:CubicBezierSegment
-                    Point1="48.1666663065548,35.4333323182662"
-                    Point2="52.1666663065548,35.4333323182662"
-                    Point3="52.1666663065548,39.4333323182662" />
+                    Point1="48.1666663065547,35.4333323182662"
+                    Point2="52.1666663065547,35.4333323182662"
+                    Point3="52.1666663065547,39.4333323182662" />
                   <mssgle:LineSegment
-                    End="52.1666663065548,63.3666646365324" />
+                    End="52.1666663065547,63.3666646365324" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28903,9 +28898,9 @@ where AuditID = ?
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="590,520"
-          Size="178,42.6666666666667"
+          Size="590,562.666666666667"
           Id="Package\Load ADS Container\Load Production"
           TopLeft="59.2499991990627,395.033327390153" />
         <EdgeLayout
@@ -28914,9 +28909,9 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.2500002048907,61.2999999767542"
+              EndConnector="193.749999795109,61.2999999767542"
               Start="0,0"
-              End="-12.2500002048907,53.7999999767542">
+              End="193.749999795109,53.7999999767542">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28925,15 +28920,15 @@ where AuditID = ?
                   <mssgle:CubicBezierSegment
                     Point1="0,26.6499999883771"
                     Point2="0,30.6499999883771"
-                    Point3="-4,30.6499999883771" />
+                    Point3="4,30.6499999883771" />
                   <mssgle:LineSegment
-                    End="-8.25000020489074,30.6499999883771" />
+                    End="189.749999795109,30.6499999883771" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8.25000020489074,30.6499999883771"
-                    Point2="-12.2500002048907,30.6499999883771"
-                    Point3="-12.2500002048907,34.6499999883771" />
+                    Point1="189.749999795109,30.6499999883771"
+                    Point2="193.749999795109,30.6499999883771"
+                    Point3="193.749999795109,34.6499999883771" />
                   <mssgle:LineSegment
-                    End="-12.2500002048907,53.7999999767542" />
+                    End="193.749999795109,53.7999999767542" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
