@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{887A500D-4500-48CA-99A1-0DEB7BE97EAD}">
+  DTS:VersionBuild="221"
+  DTS:VersionGUID="{AFFE68C2-8F83-4A25-9758-F5A01330845F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6314,7 +6314,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\Incremental Load - Staging\Update surrogate keys"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{2e364f15-3b3f-423e-97ed-7073bdf90ca6}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -6324,7 +6323,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
-              SQLTask:SqlStatementSource="Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.DistrictID,&#xA;    DimSectorID = geo.SectorID,&#xA;    DimSiteID = geo.SiteID,&#xA;    DimGroupID = geo.GroupID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            DistrictID,&#xA;            SectorID,&#xA;            SiteID,&#xA;            GroupID,&#xA;            DistrictName,&#xA;            SiteName,&#xA;            GroupName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimGroup&#xA;        where&#xA;            isDeleted = 0&#xA;    ) geo&#xA;where&#xA;    geo.DistrictName = cls.staging_VerticalRepayments.District&#xA;    and geo.GroupName = staging_VerticalRepayments.GroupAtTimeOfRepayment&#xA;    and cls.staging_VerticalRepayments.SiteAtTimeOfRepayment = geo.SiteName&#xA;    and cls.staging_VerticalRepayments.DimCountryID is null&#xA;Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID,&#xA;            SeasonName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.SeasonName = cls.staging_VerticalRepayments.SeasonName&#xA;    and s.CountryID = cls.staging_VerticalRepayments.DimCountryID&#xA;    and cls.staging_VerticalRepayments.DimSeasonID is null&#xA;update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimClientID = client.DimClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            cs.GlobalClientID,&#xA;            cs.ClientID DimClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;    ) client&#xA;where&#xA;    client.GlobalClientID = cls.staging_VerticalRepayments.GlobalClientID&#xA;    and cls.staging_VerticalRepayments.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Update&#xA;    cls.staging_ClientBundles&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.DistrictID,&#xA;    DimSectorID = geo.SectorID,&#xA;    DimSiteID = geo.SiteID,&#xA;    DimGroupID = geo.GroupID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            DistrictID,&#xA;            SectorID,&#xA;            SiteID,&#xA;            GroupID,&#xA;            DistrictName,&#xA;            SiteName,&#xA;            GroupName,&#xA;&#x9;&#x9;&#x9;RosterGroupID,&#xA;&#x9;&#x9;&#x9;RosterDistrictID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimGroup&#xA;        where&#xA;            isDeleted = 0&#xA;    ) geo&#xA;where&#xA;    geo.RosterDistrictID = cls.staging_ClientBundles.DistrictID&#xA;    and geo.RosterGroupID = staging_ClientBundles.GroupID&#xA;    and cls.staging_ClientBundles.DimCountryID is null&#xA;&#xA;&#xA;&#xA;Update&#xA;    cls.staging_ClientBundles&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID,&#xA;            SeasonName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.RosterSeasonID = cls.staging_ClientBundles.SeasonID&#xA;    and s.CountryID = cls.staging_ClientBundles.DimCountryID&#xA;    and cls.staging_ClientBundles.DimSeasonID is null&#xA;update&#xA;    cls.staging_ClientBundles&#xA;set&#xA;    DimClientID = client.DimClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            cs.GlobalClientID,&#xA;            cs.ClientID DimClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;    ) client&#xA;where&#xA;    cast(client.GlobalClientID as varchar(150)) = cls.staging_ClientBundles.GlobalClientID&#xA;    and cls.staging_ClientBundles.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
