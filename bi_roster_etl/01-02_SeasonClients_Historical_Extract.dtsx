@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="GACHAGUA-PC"
   DTS:CreatorName="GACHAGUA-PC\watchman"
-  DTS:DTSID="{832EEF73-D196-4A9E-84B8-EEC992F5FA8C}"
+  DTS:DTSID="{C772D4CB-1F9E-41EA-82B4-4668836F3EAD}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.71"
   DTS:LocaleID="2057"
-  DTS:ObjectName="01-02_VerticalRepayments_Historical_Extract"
+  DTS:ObjectName="01-02_SeasonClients_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="93"
-  DTS:VersionGUID="{2E429258-B201-40DC-9460-5D0E6849C01F}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{201BB4C6-0E2F-4B16-A40A-D70100645965}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{F9F2966E-676D-45BD-BA6A-6B4E5A9A65FF}"
+      DTS:DTSID="{A1569E85-4A81-4C52-8611-CECFD0778C20}"
       DTS:ObjectName="Flat File Connection Manager 2">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::VarFilePathHistorical_KE]</DTS:PropertyExpression>
@@ -40,7 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterSeasonID"
-              DTS:DTSID="{E5C1462C-37EC-42AC-9B38-3CFF11F723C5}"
+              DTS:DTSID="{197CDDA4-7669-4DD6-BBAD-7B6BE4E6B98C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterRegionID"
-              DTS:DTSID="{9D9C77EC-3BE2-48ED-B4D5-C01ADF817BE9}"
+              DTS:DTSID="{93A9659C-4CD8-48F3-AE6D-8D4C8C312058}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterDistrictID"
-              DTS:DTSID="{7119E20B-F813-4DB2-9C5A-E47D0127207E}"
+              DTS:DTSID="{2DD970DA-0A30-4478-9503-9F14F68DB89E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterSectorID"
-              DTS:DTSID="{7A46B0DD-616C-4D6D-9788-42B796B27EE1}"
+              DTS:DTSID="{C58F5764-B5D4-410D-9AED-246BEEE59CCA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterSiteID"
-              DTS:DTSID="{300DCD48-3BA7-43C9-8541-DD40E6F530AF}"
+              DTS:DTSID="{6E74F82D-5654-417E-B21D-F71B5A76AD69}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterGroupID"
-              DTS:DTSID="{B41738A8-B789-470F-8C54-25D56F0C874C}"
+              DTS:DTSID="{07669955-0EC1-4F42-B052-07E12FB0ED5A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +94,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RosterCountryID"
-              DTS:DTSID="{262979D1-9735-4D0F-8409-7EA37C554985}"
+              DTS:DTSID="{44CDCF70-914B-4356-A8C9-95F3AED23999}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="District"
-              DTS:DTSID="{A41CF393-4473-4C2D-993B-4B8883C660AD}"
+              DTS:DTSID="{517AF01B-D789-45C0-AE33-130AB8E1328D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PrimaryID"
-              DTS:DTSID="{E529530A-E107-4664-8FD5-EEFA1B3A257B}"
+              DTS:DTSID="{2D001F68-0485-4876-96C7-7B33659BE0CF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sector"
-              DTS:DTSID="{010CFFEB-64A3-4EFD-92B9-D5121485E158}"
+              DTS:DTSID="{D9BB77FA-A356-49AD-978E-40C257300944}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Site"
-              DTS:DTSID="{D32294CC-6AB6-4C51-8564-5DAD1AFC47DA}"
+              DTS:DTSID="{7AE7B2A4-BEA9-450F-8E5E-8BBBDE8EF84D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Group"
-              DTS:DTSID="{31BBEFFC-BA79-472D-B31A-4F339C6CBE45}"
+              DTS:DTSID="{9BCDA155-F46E-4554-9B8F-414B60C8231A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SiteAtTimeOfRepayment"
-              DTS:DTSID="{EED9DA42-E5B8-483E-9168-321E6FB2C50D}"
+              DTS:DTSID="{0FBA1CBE-E8F1-4A29-AE61-D0D9AAE3EDC9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GroupAtTimeOfRepayment"
-              DTS:DTSID="{1B05CBC7-5FA3-4A0F-BCA7-FA91B390D81D}"
+              DTS:DTSID="{1B87898B-791B-4F93-A53C-C8C4BF5EAE76}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LastName"
-              DTS:DTSID="{84D161B2-3D8A-4781-826E-1C6191C94B66}"
+              DTS:DTSID="{18BD0951-7589-41CF-8DD1-988A4913BE61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FirstName"
-              DTS:DTSID="{901F7110-060E-41DA-AE7F-C9C2B56678D2}"
+              DTS:DTSID="{5F87BBD7-22E2-45A7-A266-A9F1A0EC3058}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OAFID"
-              DTS:DTSID="{08C4DAFE-D12A-4C48-B75D-D455AE797410}"
+              DTS:DTSID="{8BCFD4B3-AB6C-4899-8760-6729F8425B09}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Dropped"
-              DTS:DTSID="{04192F92-04CB-4C24-89D7-526DBAA81309}"
+              DTS:DTSID="{F898B42C-4EAC-4207-9CC8-029918B11288}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Amount"
-              DTS:DTSID="{1EFBFFBA-2BAF-466D-9F91-86FA2D8CF82C}"
+              DTS:DTSID="{DDC84409-FEAC-4D9A-B4A9-43E09C31427C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ReceiptID"
-              DTS:DTSID="{71D2E511-8BBF-48C9-9853-0F83153A2BEB}"
+              DTS:DTSID="{1825DB81-0B5B-4BBB-8944-ECBE2B70C36D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Type"
-              DTS:DTSID="{92DBF62C-5613-45E1-99CE-6460DB7F0477}"
+              DTS:DTSID="{92A694D0-6045-4785-AB60-C8BAC73B8E94}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentDate"
-              DTS:DTSID="{BCDBDF26-0436-4174-B6A0-FE28B735B153}"
+              DTS:DTSID="{CE79F304-BAF0-48A5-8684-6B2586ADBC47}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -238,7 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DataEntryDate"
-              DTS:DTSID="{7A4BC6AC-D598-41D7-AA57-30225ED44D41}"
+              DTS:DTSID="{E5864352-0A3D-4A31-9F9A-A1419C75E20D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GlobalClientID"
-              DTS:DTSID="{B5631AC2-EA4A-4244-8C55-0C8C9F285ECA}"
+              DTS:DTSID="{CED93522-3568-463E-850A-4C27B4EAC1AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentPhoneNumber"
-              DTS:DTSID="{A0DE0612-010C-4799-8A18-386B25566C9B}"
+              DTS:DTSID="{FE36A6D7-273A-40AE-A9B4-E75BB5FB7176}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -265,7 +265,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AccountNumber"
-              DTS:DTSID="{BA307E32-A676-47BB-82F0-D42E60B9F003}"
+              DTS:DTSID="{2C38CCFA-BD35-4189-BD3E-F2FE0BA45577}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -274,7 +274,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BulkUploaded"
-              DTS:DTSID="{935C23F1-A53A-4E92-8C75-E7183EE8ED32}"
+              DTS:DTSID="{17EF6D37-BD67-46B1-9E81-7DB68ED07EFA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -283,7 +283,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Autosaved"
-              DTS:DTSID="{B4BC4B96-3C93-4FAE-8FCD-26CB0F28677B}"
+              DTS:DTSID="{0C2CA06C-0B1C-4378-AB30-D42E37CBA901}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -292,7 +292,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SeasonName"
-              DTS:DTSID="{E40A5690-B2F7-4EE1-8877-A6DC8138A40F}"
+              DTS:DTSID="{0CD358D8-5AA4-4AC6-AD1D-4AFE92BE1651}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -302,7 +302,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0EDBCE2E-0A49-4C69-8E51-3539C35C0DE9}"
+      DTS:DTSID="{91298FBA-BDE9-4CCA-B72E-3488E6CE7938}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="AuditId">
@@ -311,7 +311,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{06584A06-1936-419A-8B52-D90268CCB99F}"
+      DTS:DTSID="{020C6050-FD4E-4F75-A560-146E5DB33D26}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
@@ -321,7 +321,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{60126DE1-6FB5-44BC-86C9-EA57EBFBF58B}"
+      DTS:DTSID="{C21501B7-300F-43E5-B960-2B2830D060D9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FilepathList">
@@ -339,7 +339,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D0F40282-3C3E-4767-8032-BDABAB44E5DE}"
+      DTS:DTSID="{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastUpdated">
@@ -348,7 +348,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{41A11F2B-D7EF-4AB7-BD1D-F406BACD9820}"
+      DTS:DTSID="{B4FE4D46-1F3E-44BE-840C-BEA320681B80}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LoadEndTime">
@@ -357,7 +357,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B250F6CC-C6F7-449B-B1F7-724172A7F37C}"
+      DTS:DTSID="{2DF44C73-B5BA-4175-9107-25D784ECF27D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LoadStartTime">
@@ -366,7 +366,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E275346-36DA-4301-BB84-3428760D6985}"
+      DTS:DTSID="{689A7358-D8AE-4BCB-A670-2181335D2EA2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="VarFilePathHistorical">
@@ -376,7 +376,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D5D146C7-64AC-4E90-9F25-C94D2D02D682}"
+      DTS:DTSID="{31CB6024-39C3-492D-9B59-E8746663BA69}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="VarFilePathHistorical_KE">
@@ -390,7 +390,7 @@
       DTS:refId="Package\Collect Errors"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{0090DC35-397A-461D-A6C9-5B2A1D8F3028}"
+      DTS:DTSID="{6C100AEA-B7CD-4C7B-91FD-DA10C30097D5}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Collect Errors">
@@ -400,7 +400,7 @@
           DTS:refId="Package\Collect Errors\Delete Rows with Errors"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{FA272243-3479-43CB-B7BE-A8FC917517AB}"
+          DTS:DTSID="{607D6228-F05B-4A3F-8403-3E2F71D33FA3}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Rows with Errors"
@@ -416,7 +416,7 @@
           DTS:refId="Package\Collect Errors\Gather errors"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{56D7A844-A235-4889-8E9A-DBA67A31FC64}"
+          DTS:DTSID="{1623D368-BD89-49FF-AE79-815D28DF8373}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Gather errors"
@@ -1763,7 +1763,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Collect Errors.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{8CDF9BFA-EFD5-4597-87A0-1677386031E6}"
+          DTS:DTSID="{B11ABC6A-033D-4106-B553-360C6C468EC5}"
           DTS:From="Package\Collect Errors\Gather errors"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1774,14 +1774,14 @@
       DTS:refId="Package\FEL - load all historical exports"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{19d55fc0-804d-4fa9-aa45-ce9cf4c04ede}"
+      DTS:DTSID="{A94EA400-BBF2-4ECD-960B-629C356B41EA}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="FEL - load all historical exports">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{1B0CE1CA-F6E3-4375-BB88-F5B302400A96}"
-        DTS:ObjectName="{1B0CE1CA-F6E3-4375-BB88-F5B302400A96}">
+        DTS:DTSID="{47C6ED0D-B291-462B-9F95-46487FEC8DCA}"
+        DTS:ObjectName="{47C6ED0D-B291-462B-9F95-46487FEC8DCA}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -1794,7 +1794,7 @@
           DTS:refId="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
-          DTS:DTSID="{ff171a8e-0a6e-4069-a9ac-e54e4ee6a564}"
+          DTS:DTSID="{93974545-0420-4712-96F9-BF392917FFAF}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:FailPackageOnFailure="True"
           DTS:LocaleID="-1"
@@ -3295,8 +3295,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{7D8385F7-1A5E-40ED-981D-A1AA12F62628}"
-          DTS:ObjectName="{7D8385F7-1A5E-40ED-981D-A1AA12F62628}"
+          DTS:DTSID="{A9417CC7-BEEB-4D85-AFB3-C2E9963DC2B7}"
+          DTS:ObjectName="{A9417CC7-BEEB-4D85-AFB3-C2E9963DC2B7}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::VarFilePathHistorical_KE" />
       </DTS:ForEachVariableMappings>
@@ -3305,7 +3305,7 @@
       DTS:refId="Package\Get Export List"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{19C413AF-5A89-44E7-89A6-1EE76861FF0D}"
+      DTS:DTSID="{06057474-430D-4A3C-8ABE-0AB76275EA79}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Export List"
@@ -3326,14 +3326,14 @@
       DTS:refId="Package\Get Full path list"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{DED1227B-4592-4CB0-A91C-E14789C27B07}"
+      DTS:DTSID="{2B73EC1F-C77B-4161-87CE-33DDC989FCD4}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Full path list">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{64A400D8-2CBB-4A6F-BA37-FA4AFB297BAA}"
-        DTS:ObjectName="{64A400D8-2CBB-4A6F-BA37-FA4AFB297BAA}">
+        DTS:DTSID="{8BA5638B-502E-4D28-BA5C-9B500C84E4E2}"
+        DTS:ObjectName="{8BA5638B-502E-4D28-BA5C-9B500C84E4E2}">
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
@@ -3353,7 +3353,7 @@
           DTS:refId="Package\Get Full path list\Get File Name"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{16F96BF5-8B63-4641-AB76-83E2E84B8F90}"
+          DTS:DTSID="{444840DD-6240-4DA4-A993-C3C7E9F4E964}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get File Name"
@@ -3979,7 +3979,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Get Full path list\insert into table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9D91A73F-7C96-488A-B882-AB1D69891C49}"
+          DTS:DTSID="{0D0D8C07-CD4D-424D-AFEA-25475AC3D8E2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="insert into table"
@@ -4009,7 +4009,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Get Full path list.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{AD10B90E-5425-4A63-8268-E397760CFC41}"
+          DTS:DTSID="{07A00EAC-D3FE-4982-AC40-9409691E2873}"
           DTS:From="Package\Get Full path list\Get File Name"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -4018,17 +4018,142 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{438C7351-F8E8-4762-99DF-1848E26E37A7}"
-          DTS:ObjectName="{438C7351-F8E8-4762-99DF-1848E26E37A7}"
+          DTS:DTSID="{CD98B9D5-346D-4199-949F-4D2D690D79FB}"
+          DTS:ObjectName="{CD98B9D5-346D-4199-949F-4D2D690D79FB}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\SeasonClients Historical - Begin ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1B713F1A-0AF3-46A4-B6E2-4783C42A261E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SeasonClients Historical - Begin ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients Historical - Begin ETL\ETL Begin"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E232C15C-0DA1-497D-B7BB-FE3021FD546B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Begin"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::AuditId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::LoadStartTime"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients Historical - Begin ETL\Get AuditID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A4F1B163-88E4-441B-811C-3AB47A601F12}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get AuditID"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select isnull(max(AuditID), 0) + 1  from cls.AuditDimension&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::AuditId" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients Historical - Begin ETL\Get LoadStartTime"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4924E466-0141-4322-88D4-13576B05B629}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LoadStartTime"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select GetDate()"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoadStartTime" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients Historical - Begin ETL\Truncate Table Landing_SeasonClients"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E68391E2-A49F-4244-AA68-42C4C2F97094}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Table Landing_SeasonClients"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_SeasonClients_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A0D01151-1C65-446D-ABBB-5569FDC485FC}"
+          DTS:From="Package\SeasonClients Historical - Begin ETL\ETL Begin"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SeasonClients Historical - Begin ETL\Truncate Table Landing_SeasonClients" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{EA20B01D-751C-42A6-BEB5-6DDA4F4F79AF}"
+          DTS:From="Package\SeasonClients Historical - Begin ETL\Get AuditID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SeasonClients Historical - Begin ETL\ETL Begin" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{BE05179F-8945-42B0-9124-1CE93755D382}"
+          DTS:From="Package\SeasonClients Historical - Begin ETL\Get LoadStartTime"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\SeasonClients Historical - Begin ETL\ETL Begin" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Sort latest files"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{1B70B14E-87F7-4B0F-BD0E-776EC85266CD}"
+      DTS:DTSID="{3792B136-6A88-4568-B332-92F1C74AE3C6}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sort latest files">
@@ -4038,7 +4163,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Sort latest files\Get latest files only"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{A1A4E74E-AE2E-4FD6-BE80-8D078C220BC2}"
+          DTS:DTSID="{5DB1AC90-B37A-4A63-B89B-6536DEEA7E47}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get latest files only"
@@ -4196,7 +4321,7 @@ and FileName like '%VerticalRepayments%2021%2022%Burundi%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -4508,91 +4633,91 @@ and FileName like '%VerticalRepayments%2021%2022%Burundi%'</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2007%2008%India%' 
+and FileName like '%VerticalRepayments%2007%2008%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2008%2009%India%' 
+and FileName like '%VerticalRepayments%2008%2009%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2009%2010%India%' 
+and FileName like '%VerticalRepayments%2009%2010%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2010%2011%India%' 
+and FileName like '%VerticalRepayments%2010%2011%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2011%2012%India%' 
+and FileName like '%VerticalRepayments%2011%2012%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2012%2013%India%' 
+and FileName like '%VerticalRepayments%2012%2013%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2013%2014%India%' 
+and FileName like '%VerticalRepayments%2013%2014%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2014%2015%India%' 
+and FileName like '%VerticalRepayments%2014%2015%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2015%2016%India%' 
+and FileName like '%VerticalRepayments%2015%2016%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2016%2017%India%' 
+and FileName like '%VerticalRepayments%2016%2017%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2017%2018%India%' 
+and FileName like '%VerticalRepayments%2017%2018%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ? )
-and FileName like '%VerticalRepayments%2018%2019%India%' 
+and FileName like '%VerticalRepayments%2018%2019%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName]and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2019%2020%India%' 
+and FileName like '%VerticalRepayments%2019%2020%Malawi%' 
 
 
 union all
@@ -4600,14 +4725,14 @@ union all
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2020%2021%India%' 
+and FileName like '%VerticalRepayments%2020%2021%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2021%2022%India%'</property>
+and FileName like '%VerticalRepayments%2021%2022%Malawi%'</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -4628,7 +4753,7 @@ and FileName like '%VerticalRepayments%2021%2022%India%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -4854,7 +4979,7 @@ and FileName like '%VerticalRepayments%2021%2022%Kenya%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5080,7 +5205,7 @@ and FileName like '%VerticalRepayments%2021%2022%Myanmar%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5306,7 +5431,7 @@ and FileName like '%VerticalRepayments%2021%2022%Malawi%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5412,91 +5537,91 @@ and FileName like '%VerticalRepayments%2021%2022%Malawi%'</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2007%2008%Nigeria%' 
+and FileName like '%VerticalRepayments%2007%2008%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2008%2009%Nigeria%' 
+and FileName like '%VerticalRepayments%2008%2009%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2009%2010%Nigeria%' 
+and FileName like '%VerticalRepayments%2009%2010%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2010%2011%Nigeria%' 
+and FileName like '%VerticalRepayments%2010%2011%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2011%2012%Nigeria%' 
+and FileName like '%VerticalRepayments%2011%2012%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2012%2013%Nigeria%' 
+and FileName like '%VerticalRepayments%2012%2013%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2013%2014%Nigeria%' 
+and FileName like '%VerticalRepayments%2013%2014%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2014%2015%Nigeria%' 
+and FileName like '%VerticalRepayments%2014%2015%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2015%2016%Nigeria%' 
+and FileName like '%VerticalRepayments%2015%2016%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2016%2017%Nigeria%' 
+and FileName like '%VerticalRepayments%2016%2017%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2017%2018%Nigeria%' 
+and FileName like '%VerticalRepayments%2017%2018%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ? )
-and FileName like '%VerticalRepayments%2018%2019%Nigeria%' 
+and FileName like '%VerticalRepayments%2018%2019%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName]and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2019%2020%Nigeria%' 
+and FileName like '%VerticalRepayments%2019%2020%Malawi%' 
 
 
 union all
@@ -5504,14 +5629,14 @@ union all
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2020%2021%Nigeria%' 
+and FileName like '%VerticalRepayments%2020%2021%Malawi%' 
 
 union all
 
 Select Top 1 [FileName] , LastUpdated
 From  cls.ExportFileNames  t1
 where LastUpdated = (select max(LastUpdated) from cls.ExportFileNames t2 where t1.[FileName] = t2.[FileName] and LastUpdated &gt; ?)
-and FileName like '%VerticalRepayments%2021%2022%Nigeria%'</property>
+and FileName like '%VerticalRepayments%2021%2022%Malawi%'</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -5532,7 +5657,7 @@ and FileName like '%VerticalRepayments%2021%2022%Nigeria%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5758,7 +5883,7 @@ and FileName like '%VerticalRepayments%2021%2022%Rwanda%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5984,7 +6109,7 @@ and FileName like '%VerticalRepayments%2021%2022%Tanzania%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -6210,7 +6335,7 @@ and FileName like '%VerticalRepayments%2021%2022%Uganda%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -6569,77 +6694,9 @@ and FileName like '%VerticalRepayments%2021%2022%Uganda%'</property>
                     </input>
                     <input
                       refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 9]"
-                      hasSideEffects="true"
-                      name="Union All Input 9">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 9].Columns[FileName]"
-                          cachedDataType="nText"
-                          cachedName="FileName"
-                          lineageId="Package\Sort latest files\Get latest files only\NG.Outputs[OLE DB Source Output].Columns[FileName]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sort latest files\Get latest files only\Union All.Outputs[Union All Output 1].Columns[FileName]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 9].Columns[LastUpdated]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="LastUpdated"
-                          lineageId="Package\Sort latest files\Get latest files only\NG.Outputs[OLE DB Source Output].Columns[LastUpdated]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sort latest files\Get latest files only\Union All.Outputs[Union All Output 1].Columns[LastUpdated]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 10]"
-                      hasSideEffects="true"
-                      name="Union All Input 10">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 10].Columns[FileName]"
-                          cachedDataType="nText"
-                          cachedName="FileName"
-                          lineageId="Package\Sort latest files\Get latest files only\IN.Outputs[OLE DB Source Output].Columns[FileName]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sort latest files\Get latest files only\Union All.Outputs[Union All Output 1].Columns[FileName]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 10].Columns[LastUpdated]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="LastUpdated"
-                          lineageId="Package\Sort latest files\Get latest files only\IN.Outputs[OLE DB Source Output].Columns[LastUpdated]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sort latest files\Get latest files only\Union All.Outputs[Union All Output 1].Columns[LastUpdated]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 11]"
                       dangling="true"
                       hasSideEffects="true"
-                      name="Union All Input 11">
+                      name="Union All Input 9">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -6811,7 +6868,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter1:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter2:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter3:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter4:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter5:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter6:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter7:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter8:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter9:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter10:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter11:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter12:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter13:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};"Parameter14:Input",{D0F40282-3C3E-4767-8032-BDABAB44E5DE};</property>
+                      name="ParameterMapping">"Parameter0:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter1:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter2:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter3:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter4:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter5:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter6:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter7:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter8:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter9:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter10:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter11:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter12:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter13:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};"Parameter14:Input",{33F367B0-18B5-4C11-B089-E7D3FEA6A0B9};</property>
                   </properties>
                   <connections>
                     <connection
@@ -6937,16 +6994,6 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
                   name="OLE DB Source Output"
                   startId="Package\Sort latest files\Get latest files only\MW.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output8]"
-                  endId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 9]"
-                  name="OLE DB Source Output"
-                  startId="Package\Sort latest files\Get latest files only\NG.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output9]"
-                  endId="Package\Sort latest files\Get latest files only\Union All.Inputs[Union All Input 10]"
-                  name="OLE DB Source Output"
-                  startId="Package\Sort latest files\Get latest files only\IN.Outputs[OLE DB Source Output]" />
-                <path
                   refId="Package\Sort latest files\Get latest files only.Paths[Union All Output 1]"
                   endId="Package\Sort latest files\Get latest files only\Derived Column.Inputs[Derived Column Input]"
                   name="Union All Output 1"
@@ -6959,7 +7006,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
           DTS:refId="Package\Sort latest files\Get latest load date"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{65444B55-1AF2-4F0A-8089-AA510E4E6079}"
+          DTS:DTSID="{5339B8FB-CF68-44E8-87E0-CA407F6562DC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get latest load date"
@@ -6980,7 +7027,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
           DTS:refId="Package\Sort latest files\Truncate table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="truncate exportlist"
-          DTS:DTSID="{6E823192-E23D-4EA1-B560-3152AFCC3D58}"
+          DTS:DTSID="{0821357F-9892-4FB3-96F2-B60291932CF0}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate table"
@@ -6997,7 +7044,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sort latest files.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{85D2AF6F-784C-489C-BBF0-426E4D90C17A}"
+          DTS:DTSID="{119386BB-79C6-4724-B325-3B8248B039E2}"
           DTS:From="Package\Sort latest files\Truncate table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -7005,7 +7052,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sort latest files.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{D615F1D4-C72B-41C5-BEBF-326B2A30EF65}"
+          DTS:DTSID="{159196B5-3107-475A-8291-D620790B7503}"
           DTS:From="Package\Sort latest files\Get latest load date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -7016,7 +7063,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
       DTS:refId="Package\Truncate table ExportFileNames"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{2784E8F7-C9BF-4D65-9A30-1AC346CEB63F}"
+      DTS:DTSID="{9689AB0C-842A-4B4B-BF73-1E97DD64C930}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table ExportFileNames"
@@ -7032,7 +7079,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
       DTS:refId="Package\update Audit Dimension"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{1e670ebd-fcc4-4a6f-a017-fa78adb8c1a7}"
+      DTS:DTSID="{970C1DAA-68A4-4060-A93E-371DA39EAB91}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="update Audit Dimension">
@@ -7042,7 +7089,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
           DTS:refId="Package\update Audit Dimension\Get Audit Parameters"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{078a37f6-a2e0-44cf-ae6a-d02abd4f4e79}"
+          DTS:DTSID="{C2FEFDAF-8748-4567-AEAE-DBB0F3F3DD72}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Audit Parameters"
@@ -7210,7 +7257,7 @@ and FileName like '%VerticalRepayments%2021%2022%Zambia%'</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{0EDBCE2E-0A49-4C69-8E51-3539C35C0DE9};</property>
+                      name="ParameterMapping">"Parameter0:Input",{91298FBA-BDE9-4CCA-B72E-3488E6CE7938};</property>
                   </properties>
                   <connections>
                     <connection
@@ -7644,7 +7691,7 @@ where AuditID = ?
           DTS:refId="Package\update Audit Dimension\Get LoadEndTime"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3b7e24d4-8678-4809-a901-9ed084c3f6e9}"
+          DTS:DTSID="{B6E5DC46-8F4B-4783-A4FA-B9409EA7341B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadEndTime"
@@ -7665,7 +7712,7 @@ where AuditID = ?
           DTS:refId="Package\update Audit Dimension\Remove duplicates"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{943e00ac-9be6-438c-a173-20939611b945}"
+          DTS:DTSID="{85EDF760-8929-4D33-9913-1BB79979E67B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Remove duplicates"
@@ -7681,7 +7728,7 @@ where AuditID = ?
           DTS:refId="Package\update Audit Dimension\Update AuditDimension"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{abd1bc0a-d5e4-4a24-9ecc-0cdd7b6311f1}"
+          DTS:DTSID="{1B7356D7-195A-4E34-BFE0-DAE24AC66B09}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update AuditDimension"
@@ -7711,7 +7758,7 @@ where AuditID = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{9AC22CA2-708F-4B86-B55B-843881A7CA5A}"
+          DTS:DTSID="{50E91934-5EE9-44F2-BB18-42DC2233B87B}"
           DTS:From="Package\update Audit Dimension\Remove duplicates"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -7719,7 +7766,7 @@ where AuditID = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{b7adf5b4-1c69-4b66-ac69-12c771a1b80f}"
+          DTS:DTSID="{31010C69-C88A-4F5C-AA44-5353E6336C21}"
           DTS:From="Package\update Audit Dimension\Get Audit Parameters"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -7727,136 +7774,11 @@ where AuditID = ?
         <DTS:PrecedenceConstraint
           DTS:refId="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{576c7c54-1ee8-46f2-a062-582c9be136df}"
+          DTS:DTSID="{591A2586-ABA9-42CE-9EED-5B68167D7127}"
           DTS:From="Package\update Audit Dimension\Get LoadEndTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\update Audit Dimension\Update AuditDimension" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\VerticalRepayments Historical - Begin ETL"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{b25a0b62-b2d6-475f-bf63-79895d1ed380}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="VerticalRepayments Historical - Begin ETL">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL\ETL Begin"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{387a8a60-2806-4a45-ad0a-f33ff565d62a}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="ETL Begin"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::AuditId"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="20"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::LoadStartTime"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL\Get AuditID"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f123e0a6-563e-48a2-9dd5-64c03ae932bd}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select isnull(max(AuditID), 0) + 1  from cls.AuditDimension&#xA;"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::AuditId" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL\Get LoadStartTime"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{b6244299-568c-43d1-989e-6e178bb58107}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select GetDate()"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::LoadStartTime" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL\Truncate Table Landing_VerticalRepayments"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8a9141c3-0017-49b0-a678-2a7872168be8}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Truncate Table Landing_VerticalRepayments"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_VerticalRepayments_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{D0B5EF05-6B3B-4D46-908D-94663DADF4CC}"
-          DTS:From="Package\VerticalRepayments Historical - Begin ETL\ETL Begin"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\VerticalRepayments Historical - Begin ETL\Truncate Table Landing_VerticalRepayments" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{be2e7f42-bc7f-4ae4-b7fe-cd3b71fa38d2}"
-          DTS:From="Package\VerticalRepayments Historical - Begin ETL\Get AuditID"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\VerticalRepayments Historical - Begin ETL\ETL Begin" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{6ca337ef-c56e-45a4-b766-733f608c2678}"
-          DTS:From="Package\VerticalRepayments Historical - Begin ETL\Get LoadStartTime"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 3"
-          DTS:To="Package\VerticalRepayments Historical - Begin ETL\ETL Begin" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -7864,7 +7786,7 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{E5CB948E-CE8A-4056-8A35-E0678B538E15}"
+      DTS:DTSID="{3EC0846D-C99E-428B-AEE9-3B2BC71934CF}"
       DTS:From="Package\Truncate table ExportFileNames"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -7872,7 +7794,7 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{AC4F2FBB-103D-4A96-8E8D-BA7A43C5597A}"
+      DTS:DTSID="{E9DE72F3-3618-4FC9-B8F5-B105EA5244BD}"
       DTS:From="Package\Get Full path list"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -7880,7 +7802,7 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{973B2D83-AD5F-459F-9CC4-55D32B746A6E}"
+      DTS:DTSID="{0FA7CB33-E6D9-49E1-B066-52FC6AF6B1DF}"
       DTS:From="Package\Get Export List"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -7888,15 +7810,15 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{943E1C45-812C-4CDE-A87F-29F27DB9F3DD}"
-      DTS:From="Package\VerticalRepayments Historical - Begin ETL"
+      DTS:DTSID="{18769101-B8E6-46AC-B826-62AB558E9BB4}"
+      DTS:From="Package\SeasonClients Historical - Begin ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Truncate table ExportFileNames" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{4212D455-21E5-4016-BBAD-1D63FEF69326}"
+      DTS:DTSID="{11580971-A3E4-4392-A6E0-4172F3DFA5AF}"
       DTS:From="Package\FEL - load all historical exports"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -7904,7 +7826,7 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{1B3EF745-A0BB-472B-89CB-4E49C50C991A}"
+      DTS:DTSID="{2F14A94C-1414-4A15-BC04-F3CB71DCF574}"
       DTS:From="Package\Sort latest files"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -7912,7 +7834,7 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{10A9A5F8-6651-4463-BC35-37900D34EFDF}"
+      DTS:DTSID="{42B80E81-6310-4607-816E-5987C32A3EA6}"
       DTS:From="Package\Collect Errors"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -7978,7 +7900,7 @@ where AuditID = ?
           PanelSize="353.333333333334,200"
           Size="164.666666666667,42.6666666666667"
           Id="Package\Collect Errors"
-          TopLeft="97.0833318866789,614.533323632082" />
+          TopLeft="52.0833325572311,611.066657027404" />
         <NodeLayout
           Size="293.333333333334,42.6666666666667"
           Id="Package\FEL - load all historical exports\DFT - Landing_VerticalRepayments_Historical"
@@ -8021,9 +7943,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8115,9 +8035,9 @@ where AuditID = ?
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="382,248"
-          Size="171.333333333334,42.6666666666667"
+          Size="382,290.666666666667"
           Id="Package\Sort latest files"
           TopLeft="96.666665226221,327.433327979049" />
         <NodeLayout
@@ -8171,7 +8091,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8193,7 +8115,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8215,7 +8139,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8227,22 +8153,22 @@ where AuditID = ?
           TopLeft="73.5833385673662,713.433328017791" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
-          Id="Package\VerticalRepayments Historical - Begin ETL\ETL Begin"
+          Id="Package\SeasonClients Historical - Begin ETL\ETL Begin"
           TopLeft="141.41666082417,104.499997094274" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
-          Id="Package\VerticalRepayments Historical - Begin ETL\Get AuditID"
+          Id="Package\SeasonClients Historical - Begin ETL\Get AuditID"
           TopLeft="73.3333285649618,10.7999983882904" />
         <NodeLayout
           Size="168,42.6666666666667"
-          Id="Package\VerticalRepayments Historical - Begin ETL\Get LoadStartTime"
+          Id="Package\SeasonClients Historical - Begin ETL\Get LoadStartTime"
           TopLeft="223.916659594824,15.8999983805418" />
         <NodeLayout
           Size="289.333333333334,42.6666666666667"
-          Id="Package\VerticalRepayments Historical - Begin ETL\Truncate Table Landing_VerticalRepayments"
+          Id="Package\SeasonClients Historical - Begin ETL\Truncate Table Landing_SeasonClients"
           TopLeft="72.5833323337134,282.233326057394" />
         <EdgeLayout
-          Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint]"
+          Id="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint]"
           TopLeft="204.749994157503,147.166663760941">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8272,13 +8198,11 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
+          Id="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
           TopLeft="136.666661898295,53.4666650549571">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8308,13 +8232,11 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\VerticalRepayments Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
+          Id="Package\SeasonClients Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
           TopLeft="307.916659594824,58.5666650472085">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8344,17 +8266,15 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="412,492.666666666667"
-          Size="298,42.6666666666667"
-          Id="Package\VerticalRepayments Historical - Begin ETL"
+          Size="270,42.6666666666667"
+          Id="Package\SeasonClients Historical - Begin ETL"
           TopLeft="35.8333333333334,5.50000000000006" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
@@ -8380,18 +8300,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="183.583332613111,253.500000000001">
+          TopLeft="184.833333333333,253.500000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73.9333279790483"
+              EndConnector="102.833331892888,73.9333279790483"
               Start="0,0"
-              End="0,66.4333279790483">
+              End="102.833331892888,66.4333279790483">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.4333279790483" />
+                    End="0,32.9666639895242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9666639895242"
+                    Point2="0,36.9666639895242"
+                    Point3="4,36.9666639895242" />
+                  <mssgle:LineSegment
+                    End="98.8333318928876,36.9666639895242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.8333318928876,36.9666639895242"
+                    Point2="102.833331892888,36.9666639895242"
+                    Point3="102.833331892888,40.9666639895242" />
+                  <mssgle:LineSegment
+                    End="102.833331892888,66.4333279790483" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8424,18 +8356,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="184.833333333333,48.1666666666667">
+          TopLeft="170.833333333333,48.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000003"
+              EndConnector="14,60.0000000000003"
               Start="0,0"
-              End="0,52.5000000000003">
+              End="14,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000003" />
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="9.99999999999997,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.99999999999997,30.0000000000001"
+                    Point2="14,30.0000000000001"
+                    Point3="14,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="14,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8446,18 +8390,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="182.499998851369,567.166664729516">
+          TopLeft="185.583332482725,567.166664729516">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.3666589025663"
+              EndConnector="-51.166666592161,43.8999922978886"
               Start="0,0"
-              End="0,39.8666589025663">
+              End="-51.166666592161,36.3999922978886">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8666589025663" />
+                    End="0,17.9499961489443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9499961489443"
+                    Point2="0,21.9499961489443"
+                    Point3="-4,21.9499961489443" />
+                  <mssgle:LineSegment
+                    End="-47.166666592161,21.9499961489443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47.166666592161,21.9499961489443"
+                    Point2="-51.166666592161,21.9499961489443"
+                    Point3="-51.166666592161,25.9499961489443" />
+                  <mssgle:LineSegment
+                    End="-51.166666592161,36.3999922978886" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8468,18 +8424,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="182.416665983697,370.099994645716">
+          TopLeft="287.666665226221,618.099994645716">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.8333365877464"
+              EndConnector="-105.166665151715,-187.166663412254"
               Start="0,0"
-              End="0,53.3333365877464">
+              End="-105.166665151715,-179.666663412254">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.3333365877464" />
+                    End="0,-89.5833317061268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-89.5833317061268"
+                    Point2="0,-93.5833317061268"
+                    Point3="-4,-93.5833317061268" />
+                  <mssgle:LineSegment
+                    End="-101.166665151715,-93.5833317061268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-101.166665151715,-93.5833317061268"
+                    Point2="-105.166665151715,-93.5833317061268"
+                    Point3="-105.166665151715,-97.5833317061268" />
+                  <mssgle:LineSegment
+                    End="-105.166665151715,-179.666663412254" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8490,18 +8458,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="180.000001893689,657.199990298749">
+          TopLeft="134.416665890564,653.733323694071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.2333377190425"
+              EndConnector="46.1666726768017,59.7000043237201"
               Start="0,0"
-              End="0,48.7333377190425">
+              End="46.1666726768017,52.2000043237201">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.7333377190425" />
+                    End="0,25.8500021618601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8500021618601"
+                    Point2="0,29.8500021618601"
+                    Point3="4,29.8500021618601" />
+                  <mssgle:LineSegment
+                    End="42.1666726768017,29.8500021618601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.1666726768017,29.8500021618601"
+                    Point2="46.1666726768017,29.8500021618601"
+                    Point3="46.1666726768017,33.8500021618601" />
+                  <mssgle:LineSegment
+                    End="46.1666726768017,52.2000043237201" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8669,73 +8649,73 @@ where AuditID = ?
         <NodeLayout
           Size="96,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\RW"
-          TopLeft="5.5,5.49999999999993" />
+          TopLeft="307.5,20.2333330698808" />
         <NodeLayout
           Size="224,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\ExportList_VerticalRepayments"
-          TopLeft="716.5,313.5" />
+          TopLeft="548.166666666667,419.566666403214" />
         <NodeLayout
           Size="97.3333333333334,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\MW"
-          TopLeft="161.833333333333,5.49999999999993" />
+          TopLeft="1079.83333333333,20.2333330698807" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\Union All"
-          TopLeft="767.833333333333,108.166666666667" />
+          TopLeft="602.833333333333,122.899999736548" />
         <NodeLayout
           Size="96,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\MM"
-          TopLeft="319.5,5.49999999999993" />
+          TopLeft="770.5,20.2333330698807" />
         <NodeLayout
           Size="93.3333333333334,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\UG"
-          TopLeft="475.833333333333,5.49999999999993" />
+          TopLeft="616.833333333333,20.2333330698808" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\Derived Column"
-          TopLeft="751.166666666667,210.833333333333" />
+          TopLeft="595.333333333333,284.733333069881" />
         <NodeLayout
           Size="92,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\ZA"
-          TopLeft="629.5,5.49999999999993" />
+          TopLeft="927.5,20.2333330698807" />
         <NodeLayout
           Size="92,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\KE"
-          TopLeft="782.5,5.49999999999993" />
+          TopLeft="5.5,20.2333330698808" />
         <NodeLayout
           Size="92,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\TZ"
-          TopLeft="935.5,5.49999999999981" />
+          TopLeft="464.5,20.2333330698808" />
         <NodeLayout
           Size="89.3333333333334,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\BI"
-          TopLeft="1087.83333333333,5.49999999999981" />
+          TopLeft="157.833333333333,20.2333330698808" />
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output6]"
-          TopLeft="675.5,48.1666666666666">
+          TopLeft="973.5,62.8999997365474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.848484848485,60.0000000000001"
+              EndConnector="-278.518518518518,60.0000000000002"
               Start="0,0"
-              End="147.848484848485,52.5000000000001">
+              End="-278.518518518518,52.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.3302034428795" />
+                    End="0,36.5111294311626" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.3302034428795"
-                    Point2="0,31.3302034428795"
-                    Point3="4,31.3302034428795" />
+                    Point1="0,36.5111294311626"
+                    Point2="0,40.5111294311626"
+                    Point3="-4,40.5111294311626" />
                   <mssgle:LineSegment
-                    End="143.848484848485,31.3302034428795" />
+                    End="-274.518518518518,40.5111294311626" />
                   <mssgle:CubicBezierSegment
-                    Point1="143.848484848485,31.3302034428795"
-                    Point2="147.848484848485,31.3302034428795"
-                    Point3="147.848484848485,35.3302034428795" />
+                    Point1="-274.518518518518,40.5111294311626"
+                    Point2="-278.518518518518,40.5111294311626"
+                    Point3="-278.518518518518,44.5111294311626" />
                   <mssgle:LineSegment
-                    End="147.848484848485,52.5000000000001" />
+                    End="-278.518518518518,52.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8746,30 +8726,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output5]"
-          TopLeft="367.5,48.1666666666666">
+          TopLeft="818.5,62.8999997365474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="435.242424242424,60.0000000000001"
+              EndConnector="-136.111111111111,60.0000000000002"
               Start="0,0"
-              End="435.242424242424,52.5000000000001">
+              End="-136.111111111111,52.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.0849714648067" />
+                    End="0,31.5314533622561" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.0849714648067"
-                    Point2="0,38.0849714648067"
-                    Point3="4,38.0849714648067" />
+                    Point1="0,31.5314533622561"
+                    Point2="0,35.5314533622561"
+                    Point3="-4,35.5314533622561" />
                   <mssgle:LineSegment
-                    End="431.242424242424,38.0849714648067" />
+                    End="-132.111111111111,35.5314533622561" />
                   <mssgle:CubicBezierSegment
-                    Point1="431.242424242424,38.0849714648067"
-                    Point2="435.242424242424,38.0849714648067"
-                    Point3="435.242424242424,42.0849714648067" />
+                    Point1="-132.111111111111,35.5314533622561"
+                    Point2="-136.111111111111,35.5314533622561"
+                    Point3="-136.111111111111,39.5314533622561" />
                   <mssgle:LineSegment
-                    End="435.242424242424,52.5000000000001" />
+                    End="-136.111111111111,52.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8780,30 +8760,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output4]"
-          TopLeft="522.5,48.1666666666666">
+          TopLeft="666.648148148148,62.8999997365475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="290.545454545455,60.0000000000001"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="290.545454545455,52.5000000000001">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.3789353176875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.3789353176875"
-                    Point2="0,34.3789353176875"
-                    Point3="4,34.3789353176875" />
-                  <mssgle:LineSegment
-                    End="286.545454545455,34.3789353176875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="286.545454545455,34.3789353176875"
-                    Point2="290.545454545455,34.3789353176875"
-                    Point3="290.545454545455,38.3789353176875" />
-                  <mssgle:LineSegment
-                    End="290.545454545455,52.5000000000001" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8814,30 +8782,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output3]"
-          TopLeft="981.5,48.1666666666665">
+          TopLeft="510.5,62.8999997365475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-137.545454545455,60.0000000000002"
+              EndConnector="146.703703703704,60.0000000000001"
               Start="0,0"
-              End="-137.545454545455,52.5000000000002">
+              End="146.703703703704,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.3789353176876" />
+                    End="0,27.64198325821" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.3789353176876"
-                    Point2="0,34.3789353176876"
-                    Point3="-4,34.3789353176876" />
+                    Point1="0,27.64198325821"
+                    Point2="0,31.64198325821"
+                    Point3="4,31.64198325821" />
                   <mssgle:LineSegment
-                    End="-133.545454545455,34.3789353176876" />
+                    End="142.703703703704,31.64198325821" />
                   <mssgle:CubicBezierSegment
-                    Point1="-133.545454545455,34.3789353176876"
-                    Point2="-137.545454545455,34.3789353176876"
-                    Point3="-137.545454545455,38.3789353176876" />
+                    Point1="142.703703703704,31.64198325821"
+                    Point2="146.703703703704,31.64198325821"
+                    Point3="146.703703703704,35.64198325821" />
                   <mssgle:LineSegment
-                    End="-137.545454545455,52.5000000000002" />
+                    End="146.703703703704,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8848,30 +8816,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output2]"
-          TopLeft="53.5,48.1666666666666">
+          TopLeft="355.5,62.8999997365475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="728.636363636364,60.0000000000001"
+              EndConnector="289.111111111111,60.0000000000001"
               Start="0,0"
-              End="728.636363636364,52.5000000000001">
+              End="289.111111111111,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5529506871464" />
+                    End="0,31.531453362256" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.5529506871464"
-                    Point2="0,48.5529506871464"
-                    Point3="4,48.5529506871464" />
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
                   <mssgle:LineSegment
-                    End="724.636363636364,48.5529506871464" />
+                    End="285.111111111111,35.531453362256" />
                   <mssgle:CubicBezierSegment
-                    Point1="724.636363636364,48.5529506871464"
-                    Point2="728.636363636364,48.5529506871464"
-                    Point3="728.636363636364,52.5529506871464" />
+                    Point1="285.111111111111,35.531453362256"
+                    Point2="289.111111111111,35.531453362256"
+                    Point3="289.111111111111,39.531453362256" />
                   <mssgle:LineSegment
-                    End="728.636363636364,52.5000000000001" />
+                    End="289.111111111111,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8882,30 +8850,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output1]"
-          TopLeft="1132.5,48.1666666666665">
+          TopLeft="202.5,62.8999997365475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-278.242424242424,60.0000000000002"
+              EndConnector="429.518518518519,60.0000000000001"
               Start="0,0"
-              End="-278.242424242424,52.5000000000002">
+              End="429.518518518519,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.0849714648067" />
+                    End="0,36.5111294311624" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.0849714648067"
-                    Point2="0,38.0849714648067"
-                    Point3="-4,38.0849714648067" />
+                    Point1="0,36.5111294311624"
+                    Point2="0,40.5111294311624"
+                    Point3="4,40.5111294311624" />
                   <mssgle:LineSegment
-                    End="-274.242424242424,38.0849714648067" />
+                    End="425.518518518519,40.5111294311624" />
                   <mssgle:CubicBezierSegment
-                    Point1="-274.242424242424,38.0849714648067"
-                    Point2="-278.242424242424,38.0849714648067"
-                    Point3="-278.242424242424,42.0849714648067" />
+                    Point1="425.518518518519,40.5111294311624"
+                    Point2="429.518518518519,40.5111294311624"
+                    Point3="429.518518518519,44.5111294311624" />
                   <mssgle:LineSegment
-                    End="-278.242424242424,52.5000000000002" />
+                    End="429.518518518519,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8916,18 +8884,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output]"
-          TopLeft="831.075757575758,48.1666666666666">
+          TopLeft="51.5,62.8999997365475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="567.925925925926,60.0000000000001"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="567.925925925926,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,43.1140939597316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.1140939597316"
+                    Point2="0,47.1140939597316"
+                    Point3="4,47.1140939597316" />
+                  <mssgle:LineSegment
+                    End="563.925925925926,47.1140939597316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="563.925925925926,47.1140939597316"
+                    Point2="567.925925925926,47.1140939597316"
+                    Point3="567.925925925926,51.1140939597316" />
+                  <mssgle:LineSegment
+                    End="567.925925925926,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8938,18 +8918,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[Derived Column Output]"
-          TopLeft="828.5,253.5">
+          TopLeft="672.666666666667,327.399999736548">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="-12.5000000000001,92.1666666666668"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="-12.5000000000001,84.6666666666668">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,42.0833333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.0833333333334"
+                    Point2="0,46.0833333333334"
+                    Point3="-4,46.0833333333334" />
+                  <mssgle:LineSegment
+                    End="-8.50000000000011,46.0833333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.50000000000011,46.0833333333334"
+                    Point2="-12.5000000000001,46.0833333333334"
+                    Point3="-12.5000000000001,50.0833333333334" />
+                  <mssgle:LineSegment
+                    End="-12.5000000000001,84.6666666666668" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8960,18 +8952,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[Union All Output 1]"
-          TopLeft="828.5,150.833333333333">
+          TopLeft="663.5,165.566666403214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="9.16666666666674,119.166666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="9.16666666666674,111.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,55.5833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.5833333333333"
+                    Point2="0,59.5833333333333"
+                    Point3="4,59.5833333333333" />
+                  <mssgle:LineSegment
+                    End="5.16666666666674,59.5833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.16666666666674,59.5833333333333"
+                    Point2="9.16666666666674,59.5833333333333"
+                    Point3="9.16666666666674,63.5833333333333" />
+                  <mssgle:LineSegment
+                    End="9.16666666666674,111.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8982,30 +8986,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output7]"
-          TopLeft="210.5,48.1666666666666">
+          TopLeft="1128.5,62.8999997365474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="581.939393939394,60.0000000000001"
+              EndConnector="-420.925925925926,60.0000000000002"
               Start="0,0"
-              End="581.939393939394,52.5000000000001">
+              End="-420.925925925926,52.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.6865671641791" />
+                    End="0,43.1140939597317" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.6865671641791"
-                    Point2="0,42.6865671641791"
-                    Point3="4,42.6865671641791" />
+                    Point1="0,43.1140939597317"
+                    Point2="0,47.1140939597317"
+                    Point3="-4,47.1140939597317" />
                   <mssgle:LineSegment
-                    End="577.939393939394,42.6865671641791" />
+                    End="-416.925925925926,47.1140939597317" />
                   <mssgle:CubicBezierSegment
-                    Point1="577.939393939394,42.6865671641791"
-                    Point2="581.939393939394,42.6865671641791"
-                    Point3="581.939393939394,46.6865671641791" />
+                    Point1="-416.925925925926,47.1140939597317"
+                    Point2="-420.925925925926,47.1140939597317"
+                    Point3="-420.925925925926,51.1140939597317" />
                   <mssgle:LineSegment
-                    End="581.939393939394,52.5000000000001" />
+                    End="-420.925925925926,52.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9014,82 +9018,14 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="93.3333333333334,42.6666666666667"
-          Id="Package\Sort latest files\Get latest files only\NG"
-          TopLeft="1237.83333333333,5.49999999999981" />
         <NodeLayout
           Size="90.6666666666667,42.6666666666667"
           Id="Package\Sort latest files\Get latest files only\IN"
-          TopLeft="1392.16666666667,5.49999999999981" />
-        <EdgeLayout
-          Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output8]"
-          TopLeft="1284.5,48.1666666666665">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-419.939393939394,60.0000000000002"
-              Start="0,0"
-              End="-419.939393939394,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.6865671641793" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.6865671641793"
-                    Point2="0,42.6865671641793"
-                    Point3="-4,42.6865671641793" />
-                  <mssgle:LineSegment
-                    End="-415.939393939394,42.6865671641793" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-415.939393939394,42.6865671641793"
-                    Point2="-419.939393939394,42.6865671641793"
-                    Point3="-419.939393939394,46.6865671641793" />
-                  <mssgle:LineSegment
-                    End="-419.939393939394,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sort latest files\Get latest files only.Paths[OLE DB Source Output9]"
-          TopLeft="1437.5,48.1666666666665">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-562.636363636364,60.0000000000002"
-              Start="0,0"
-              End="-562.636363636364,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5529506871465" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.5529506871465"
-                    Point2="0,48.5529506871465"
-                    Point3="-4,48.5529506871465" />
-                  <mssgle:LineSegment
-                    End="-558.636363636364,48.5529506871465" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-558.636363636364,48.5529506871465"
-                    Point2="-562.636363636364,48.5529506871465"
-                    Point3="-562.636363636364,52.5529506871465" />
-                  <mssgle:LineSegment
-                    End="-562.636363636364,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="1219.16664849967,20.3666663024823" />
+        <NodeLayout
+          Size="93.3333333333334,42.6666666666667"
+          Id="Package\Sort latest files\Get latest files only\NG"
+          TopLeft="1020.49998487532,204.166672090689" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -9176,119 +9112,21 @@ where AuditID = ?
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133.333333333334,42.6666666666667"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Error Count"
-          TopLeft="213.166666666667,5.50000000000004" />
-        <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension"
           TopLeft="185.166666666667,416.166666666667" />
         <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\update Audit Dimension\Get Audit Parameters\DC AuditID"
-          TopLeft="213.833333333333,313.5" />
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
+          TopLeft="5.49999999999999,5.50000000000004" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
           TopLeft="179.5,210.833333333334" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Union All"
-          TopLeft="219.166666666667,108.166666666667" />
-        <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
-          TopLeft="5.49999999999999,5.50000000000004" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
-          TopLeft="279.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
-          TopLeft="78.8333333333333,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="182.111111111111,60.0000000000001"
-              Start="0,0"
-              End="182.111111111111,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="178.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="178.111111111111,35.531453362256"
-                    Point2="182.111111111111,35.531453362256"
-                    Point3="182.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="182.111111111111,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="279.833333333333,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8888888888889,60.0000000000001"
-              Start="0,0"
-              End="18.8888888888889,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="14.8888888888889,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8888888888889,35.531453362256"
-                    Point2="18.8888888888889,35.531453362256"
-                    Point3="18.8888888888889,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="18.8888888888889,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="132,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\DC AuditID"
+          TopLeft="213.833333333333,313.5" />
         <EdgeLayout
           Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
           TopLeft="279.833333333333,356.166666666667">
@@ -9333,27 +9171,109 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Error Count"
+          TopLeft="213.166666666667,5.50000000000004" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Union All"
+          TopLeft="219.166666666667,108.166666666667" />
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
+          TopLeft="279.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8888888888889,60.0000000000001"
+              Start="0,0"
+              End="18.8888888888889,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,35.531453362256"
+                    Point2="18.8888888888889,35.531453362256"
+                    Point3="18.8888888888889,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
+          TopLeft="78.8333333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182.111111111111,60.0000000000001"
+              Start="0,0"
+              End="182.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="178.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178.111111111111,35.531453362256"
+                    Point2="182.111111111111,35.531453362256"
+                    Point3="182.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="182.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
+          TopLeft="279.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\update Audit Dimension\Get Audit Parameters\Error Count">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sort latest files\Get latest files only\NG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sort latest files\Get latest files only\IN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
