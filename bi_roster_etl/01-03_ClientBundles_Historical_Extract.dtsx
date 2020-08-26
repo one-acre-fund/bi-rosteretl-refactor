@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{75A1C7BA-FEEF-4948-BCF8-37A8155153C2}">
+  DTS:VersionBuild="124"
+  DTS:VersionGUID="{CB9F545E-68DB-4CCB-905B-DDD5C5B09E74}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -303,6 +303,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{CDF4C574-1C4E-43D4-94A8-2D7380F18212}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsExtracted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{859A40DC-D757-41ED-ABE7-1DA48117289D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -359,7 +368,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -380,7 +389,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -484,7 +493,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -505,7 +514,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -563,6 +572,1087 @@
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Collect Errors"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{70bd6ab0-1efa-4d6b-813a-9b67a2e04613}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Collect Errors">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Collect Errors\Delete Rows with Errors"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{32124c63-75ff-4676-9999-231910941702}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Rows with Errors"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+              SQLTask:SqlStatementSource="delete from  cls.Landing_ClientBundles_Historical &#xA;where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Collect Errors\Gather errors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{95f83d57-988a-463e-bc09-b72100648328}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Gather errors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Collect Errors\Gather errors\ClientBundles_Errors"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ClientBundles_Errors"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[cls].[ClientBundles_Errors]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[OAFID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="OAFID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GlobalClientID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          cachedDataType="i4"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[DistrictName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistrictName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistrictID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[SeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SeasonID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[CreditCycleID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CreditCycleID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CreditCycleID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[RegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[SectorID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SectorID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[SiteID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SiteID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[GroupID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GroupID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[CountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CountryID"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[CreditCycleName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CreditCycleName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CreditCycleName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[SectorName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SectorName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[SiteName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SiteName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[GroupName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GroupName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[ClientName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ClientName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ClientName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[BundleName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BundleName"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleName]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleName]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[quantity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="quantity"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[quantity]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[BundleCredit]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BundleCredit"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleCredit]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleCredit]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[BundleSignUpDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BundleSignUpDate"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleSignUpDate]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleSignUpDate]" />
+                        <inputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].Columns[ClientBundleChoices]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ClientBundleChoices"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ClientBundleChoices]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientBundleChoices]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OAFID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CreditCycleID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CreditCycleID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SectorID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CreditCycleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CreditCycleName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SectorName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ClientName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ClientName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleCredit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleCredit" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[BundleSignUpDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleSignUpDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ClientBundleChoices]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ClientBundleChoices" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Collect Errors\Gather errors\Get bad data"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Get bad data"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_ClientBundles_Historical 
+where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
+                          name="OAFID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          name="GlobalClientID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]"
+                          name="AuditID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                          name="DistrictName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                          name="DistrictID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                          name="SeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CreditCycleID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleID]"
+                          name="CreditCycleID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]"
+                          name="RegionID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]"
+                          name="SectorID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]"
+                          name="SiteID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]"
+                          name="GroupID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]"
+                          name="CountryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CreditCycleName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CreditCycleName]"
+                          name="CreditCycleName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorName]"
+                          name="SectorName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]"
+                          name="SiteName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupName]"
+                          name="GroupName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientName]"
+                          name="ClientName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleName]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleName]"
+                          name="BundleName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[quantity]"
+                          name="quantity"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleCredit]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleCredit]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleCredit]"
+                          name="BundleCredit"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleSignUpDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleSignUpDate]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[BundleSignUpDate]"
+                          name="BundleSignUpDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientBundleChoices]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientBundleChoices]"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientBundleChoices]"
+                          name="ClientBundleChoices"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OAFID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CreditCycleID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CreditCycleID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SectorID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CreditCycleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CreditCycleName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SectorName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ClientName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleName" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="quantity" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleCredit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleCredit" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[BundleSignUpDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BundleSignUpDate" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientBundleChoices]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ClientBundleChoices" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                          name="DistrictName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                          name="DistrictID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                          name="SeasonID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CreditCycleID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CreditCycleID]"
+                          name="CreditCycleID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionID]"
+                          name="RegionID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorID]"
+                          name="SectorID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                          name="SiteID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                          name="GroupID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CountryID]"
+                          name="CountryID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CreditCycleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CreditCycleName]"
+                          name="CreditCycleName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorName]"
+                          name="SectorName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteName]"
+                          name="SiteName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                          name="GroupName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientName]"
+                          name="ClientName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
+                          name="OAFID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          name="GlobalClientID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleName]"
+                          name="BundleName" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                          name="quantity" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleCredit]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleCredit]"
+                          name="BundleCredit" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleSignUpDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[BundleSignUpDate]"
+                          name="BundleSignUpDate" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientBundleChoices]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientBundleChoices]"
+                          name="ClientBundleChoices" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
+                          name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+                  endId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{0f7db241-09b9-49d9-b147-0b954957a4f1}"
+          DTS:From="Package\Collect Errors\Gather errors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Collect Errors\Delete Rows with Errors" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Get Files"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -592,6 +1682,27 @@
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="50" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get RowsExtract Count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BAB4DABB-02F5-4356-A105-76A703C782A9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get RowsExtract Count"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*) FROM CLS.Landing_ClientBundles_Historical "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::RowsExtracted" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1927,6 +3038,112 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\update Audit Dimension\Get Audit Parameters\Error Count"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Error Count"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) as RowsWithErrors from [cls].ClientBundles_Errors  where AuditID = ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{A068A3C2-C74D-4B47-B117-5134AC8CAF69};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Connections[OleDbConnection]"
+                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
+                          name="RowsWithErrors"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
+                          dataType="i4"
+                          name="RowsWithErrors" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
+                          name="RowsWithErrors" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -2063,9 +3280,30 @@
                     </input>
                     <input
                       refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 3]"
-                      dangling="true"
                       hasSideEffects="true"
                       name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 3].Columns[RowsWithErrors]"
+                          cachedDataType="i4"
+                          cachedName="RowsWithErrors"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 1]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 1">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -2079,6 +3317,11 @@
                           dataType="i4"
                           lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]"
                           name="RowsInserted" />
+                        <outputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]"
+                          dataType="i4"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]"
+                          name="RowsWithErrors" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2106,8 +3349,8 @@
 
 set 
 PackageName = ?,
-RowsInserted = ?
-
+RowsInserted = ?,
+RowsWithErrors = ?
 where AuditID = ?
 </property>
                     <property
@@ -2145,10 +3388,16 @@ where AuditID = ?
                           externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsInserted]" />
                         <inputColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsWithErrors]"
+                          cachedDataType="i4"
+                          cachedName="RowsWithErrors"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\update Audit Dimension\Get Audit Parameters\Union All.Outputs[Union All Output 1].Columns[RowsWithErrors]" />
+                        <inputColumn
                           refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
-                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\update Audit Dimension\Get Audit Parameters\DC AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -2180,6 +3429,17 @@ where AuditID = ?
                           refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="i4"
                           name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2240,6 +3500,11 @@ where AuditID = ?
                   name="OLE DB Source Output"
                   startId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output]" />
                 <path
+                  refId="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
+                  endId="Package\update Audit Dimension\Get Audit Parameters\Union All.Inputs[Union All Input 3]"
+                  name="OLE DB Source Output"
+                  startId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]" />
+                <path
                   refId="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
                   endId="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
                   name="Union All Output 1"
@@ -2298,7 +3563,7 @@ where AuditID = ?
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="Update cls.AuditDimension&#xA;&#xA;set &#xA;&#xA;LoadEndTime = ?&#xA;&#xA;where AuditID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="Update cls.AuditDimension&#xA;&#xA;set &#xA;&#xA;LoadEndTime = ?,&#xA;RowsExtracted=?&#xA;&#xA;where AuditID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::LoadEndTime"
@@ -2306,8 +3571,14 @@ where AuditID = ?
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
+                SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::AuditId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::RowsExtracted"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="20"
                 SQLTask:ParameterSize="-1" />
@@ -2363,11 +3634,27 @@ where AuditID = ?
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{27A85680-1801-4281-83AB-85C97813A9C0}"
+      DTS:DTSID="{92D570B0-D6E4-40FA-86AF-B87E9931CFD1}"
       DTS:From="Package\Get the files - Load to Landing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get RowsExtract Count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D6A358FF-E5A2-4FF4-828F-909F800F4A4E}"
+      DTS:From="Package\Collect Errors"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
       DTS:To="Package\update Audit Dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD9B563A-3AB2-496C-B5A2-5A65908E23C2}"
+      DTS:From="Package\Get RowsExtract Count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Collect Errors" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4 1]"
       DTS:CreationName=""
@@ -2388,102 +3675,7 @@ where AuditID = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="180,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters"
-          TopLeft="176.000001353522,57.2333221056067" />
-        <NodeLayout
-          Size="162.857142857143,42.8571428571429"
-          Id="Package\update Audit Dimension\Get LoadEndTime"
-          TopLeft="185.250002129625,134.066656485001" />
-        <NodeLayout
-          Size="189.142857142858,42.8571428571429"
-          Id="Package\update Audit Dimension\Update AuditDimension"
-          TopLeft="171.500002334516,219.83332236906" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
-          TopLeft="266.29166840824,99.8999887722727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.1666677127282"
-              Start="0,0"
-              End="0,26.6666677127282">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6666677127282" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
-          TopLeft="266.37500223207,176.733323151668">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.0999992173917"
-              Start="0,0"
-              End="0,35.5999992173917">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5999992173917" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42.2857142857143"
-          Id="Package\update Audit Dimension\Remove duplicates"
-          TopLeft="356.89683264268,7.98916993538762" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
-          TopLeft="356.89683264268,29.1320270782448">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-90.8968312891581,28.1012950273619"
-              Start="0,0"
-              End="-90.8968312891581,20.6012950273619">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-86.8968312891581,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-86.8968312891581,0"
-                    Point2="-90.8968312891581,0"
-                    Point3="-90.8968312891581,4" />
-                  <mssgle:LineSegment
-                    End="-90.8968312891581,20.6012950273619" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="589.714285714286,520"
-          Size="589.714285714286,562.857142857143"
-          Id="Package\update Audit Dimension"
-          TopLeft="64.7341313435378,466.738526087097" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="126.857142857143,42.8571428571429"
           Id="Package\ClientBundles Historical - Begin ETL\ETL Begin"
@@ -2519,7 +3711,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2553,7 +3747,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2587,7 +3783,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -2725,6 +3923,101 @@ where AuditID = ?
           Size="225.714285714286,145.714285714286"
           Id="Package\Get the files - Load to Landing"
           TopLeft="1343.82678097002,63.9636400189106" />
+        <NodeLayout
+          Size="180,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters"
+          TopLeft="176.000001353522,57.2333221056067" />
+        <NodeLayout
+          Size="162.857142857143,42.8571428571429"
+          Id="Package\update Audit Dimension\Get LoadEndTime"
+          TopLeft="185.250002129625,134.066656485001" />
+        <NodeLayout
+          Size="172,42.2857142857143"
+          Id="Package\update Audit Dimension\Remove duplicates"
+          TopLeft="356.89683264268,7.98916993538762" />
+        <NodeLayout
+          Size="189.142857142858,42.8571428571429"
+          Id="Package\update Audit Dimension\Update AuditDimension"
+          TopLeft="171.500002334516,219.83332236906" />
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
+          TopLeft="356.89683264268,29.1320270782448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.8968312891581,28.1012950273619"
+              Start="0,0"
+              End="-90.8968312891581,20.6012950273619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-86.8968312891581,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.8968312891581,0"
+                    Point2="-90.8968312891581,0"
+                    Point3="-90.8968312891581,4" />
+                  <mssgle:LineSegment
+                    End="-90.8968312891581,20.6012950273619" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="266.29166840824,99.8999887722727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1666677127282"
+              Start="0,0"
+              End="0,26.6666677127282">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6666677127282" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="266.37500223207,176.733323151668">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.0999992173917"
+              Start="0,0"
+              End="0,35.5999992173917">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5999992173917" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="589.714285714286,520"
+          Size="589.714285714286,562.857142857143"
+          Id="Package\update Audit Dimension"
+          TopLeft="870.448438401964,445.076190715492" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="1225.62964948803,176.32294725563">
@@ -2751,6 +4044,28 @@ where AuditID = ?
                     Point3="63.0985657409924,-39.5021643795765" />
                   <mssgle:LineSegment
                     End="110.697131481985,-39.5021643795765" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="476,87.6545472632561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.301599680852,0"
+              Start="0,0"
+              End="43.801599680852,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.801599680852,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2793,20 +4108,119 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="193.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="155.166662953794,102.466655679147" />
+        <NodeLayout
+          Size="142.857142857143,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="63.7499925928812,34.1333245929085" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="476,87.6545472632561">
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="135.083325926215,76.7999912595751">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.301599680852,0"
+              EndConnector="116.750003694246,25.6666644195714"
               Start="0,0"
-              End="43.801599680852,0">
+              End="116.750003694246,18.1666644195714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="43.801599680852,0" />
+                    End="0,8.83333220978572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.83333220978572"
+                    Point2="0,12.8333322097857"
+                    Point3="4,12.8333322097857" />
+                  <mssgle:LineSegment
+                    End="112.750003694246,12.8333322097857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.750003694246,12.8333322097857"
+                    Point2="116.750003694246,12.8333322097857"
+                    Point3="116.750003694246,16.8333322097857" />
+                  <mssgle:LineSegment
+                    End="116.750003694246,18.1666644195714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="353.142857142858,200"
+          Size="353.142857142858,242.857142857143"
+          Id="Package\Collect Errors"
+          TopLeft="120.317461915327,449.387883674513" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="473.460319058185,570.816455103084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="396.988119343779,155.688307040979"
+              Start="0,0"
+              End="389.488119343779,155.688307040979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="194.49405967189,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194.49405967189,0"
+                    Point2="198.49405967189,0"
+                    Point3="198.49405967189,4" />
+                  <mssgle:LineSegment
+                    End="198.49405967189,151.688307040979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.49405967189,151.688307040979"
+                    Point2="198.49405967189,155.688307040979"
+                    Point3="202.49405967189,155.688307040979" />
+                  <mssgle:LineSegment
+                    End="389.488119343779,155.688307040979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192.571428571429,42.2857142857143"
+          Id="Package\Get RowsExtract Count"
+          TopLeft="1452.69845118178,305.66233480807" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1456.68392382716,209.677925733196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.3002416403306,95.984409074874"
+              Start="0,0"
+              End="92.3002416403306,88.484409074874">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.992204537437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.992204537437"
+                    Point2="0,47.992204537437"
+                    Point3="4,47.992204537437" />
+                  <mssgle:LineSegment
+                    End="88.3002416403306,47.992204537437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.3002416403306,47.992204537437"
+                    Point2="92.3002416403306,47.992204537437"
+                    Point3="92.3002416403306,51.992204537437" />
+                  <mssgle:LineSegment
+                    End="92.3002416403306,88.484409074874" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2816,31 +4230,31 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1456.68392382716,209.677925733196">
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1548.98416546749,347.948049093785">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1097.09264962648,257.0606003539"
+              EndConnector="-1252.09527498074,101.439834580728"
               Start="0,0"
-              End="-1097.09264962648,249.5606003539">
+              End="-1252.09527498074,93.939834580728">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,124.53030017695" />
+                    End="0,46.719917290364" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,124.53030017695"
-                    Point2="0,128.53030017695"
-                    Point3="-4,128.53030017695" />
+                    Point1="0,46.719917290364"
+                    Point2="0,50.719917290364"
+                    Point3="-4,50.719917290364" />
                   <mssgle:LineSegment
-                    End="-1093.09264962648,128.53030017695" />
+                    End="-1248.09527498074,50.719917290364" />
                   <mssgle:CubicBezierSegment
-                    Point1="-1093.09264962648,128.53030017695"
-                    Point2="-1097.09264962648,128.53030017695"
-                    Point3="-1097.09264962648,132.53030017695" />
+                    Point1="-1248.09527498074,50.719917290364"
+                    Point2="-1252.09527498074,50.719917290364"
+                    Point3="-1252.09527498074,54.719917290364" />
                   <mssgle:LineSegment
-                    End="-1097.09264962648,249.5606003539" />
+                    End="-1252.09527498074,93.939834580728" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2852,142 +4266,6 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\update Audit Dimension\Get Audit Parameters">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="189.142857142858,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension"
-          TopLeft="185.166666666667,416.166666666667" />
-        <NodeLayout
-          Size="132,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters\DC AuditID"
-          TopLeft="213.833333333333,313.5" />
-        <NodeLayout
-          Size="200.571428571429,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
-          TopLeft="179.5,210.833333333334" />
-        <NodeLayout
-          Size="121.142857142858,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Union All"
-          TopLeft="219.166666666667,108.166666666667" />
-        <NodeLayout
-          Size="146.857142857143,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
-          TopLeft="5.49999999999999,5.50000000000004" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
-          TopLeft="279.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="78.8333333333333,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="182.111111111111,60.0000000000001"
-              Start="0,0"
-              End="182.111111111111,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="178.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="178.111111111111,35.531453362256"
-                    Point2="182.111111111111,35.531453362256"
-                    Point3="182.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="182.111111111111,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
-          TopLeft="279.833333333333,356.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="279.833333333333,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles">
     <LayoutInfo>
@@ -3086,6 +4364,259 @@ where AuditID = ?
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\update Audit Dimension\Get Audit Parameters">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146.857142857143,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted"
+          TopLeft="5.49999999999999,16.9285714285715" />
+        <NodeLayout
+          Size="132,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\DC AuditID"
+          TopLeft="213.833333333333,324.928571428571" />
+        <NodeLayout
+          Size="189.142857142858,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension"
+          TopLeft="185.166666666667,427.595238095238" />
+        <NodeLayout
+          Size="200.571428571429,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Audit - Get PackageName"
+          TopLeft="179.5,222.261904761905" />
+        <NodeLayout
+          Size="121.142857142858,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Union All"
+          TopLeft="219.166666666667,119.595238095238" />
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output]"
+          TopLeft="78.8333333333333,59.5952380952381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182.111111111111,60.0000000000001"
+              Start="0,0"
+              End="182.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="178.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178.111111111111,35.531453362256"
+                    Point2="182.111111111111,35.531453362256"
+                    Point3="182.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="182.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Derived Column Output]"
+          TopLeft="279.833333333333,367.595238095238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Audit Output 1]"
+          TopLeft="279.833333333333,264.928571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[Union All Output 1]"
+          TopLeft="279.833333333333,162.261904761904">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.142857142858,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters\Error Count"
+          TopLeft="294.642857142857,14.4523809523814" />
+        <EdgeLayout
+          Id="Package\update Audit Dimension\Get Audit Parameters.Paths[OLE DB Source Output1]"
+          TopLeft="361.214285714286,57.3095238095242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.6190476190473,62.2857142857142"
+              Start="0,0"
+              End="-62.6190476190473,54.7857142857142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8842777334397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8842777334397"
+                    Point2="0,36.8842777334397"
+                    Point3="-4,36.8842777334397" />
+                  <mssgle:LineSegment
+                    End="-58.6190476190473,36.8842777334397" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.6190476190473,36.8842777334397"
+                    Point2="-62.6190476190473,36.8842777334397"
+                    Point3="-62.6190476190473,40.8842777334397" />
+                  <mssgle:LineSegment
+                    End="-62.6190476190473,54.7857142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Collect Errors\Gather errors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors\Get bad data"
+          TopLeft="306.666666666667,75.3333333333333" />
+        <NodeLayout
+          Size="182.285714285715,42.2857142857143"
+          Id="Package\Collect Errors\Gather errors\ClientBundles_Errors"
+          TopLeft="510,454" />
+        <EdgeLayout
+          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+          TopLeft="377.238095238096,118.190476190476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223.904761904762,335.809523809524"
+              Start="0,0"
+              End="223.904761904762,328.309523809524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,163.904761904762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,163.904761904762"
+                    Point2="0,167.904761904762"
+                    Point3="4,167.904761904762" />
+                  <mssgle:LineSegment
+                    End="219.904761904762,167.904761904762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="219.904761904762,167.904761904762"
+                    Point2="223.904761904762,167.904761904762"
+                    Point3="223.904761904762,171.904761904762" />
+                  <mssgle:LineSegment
+                    End="223.904761904762,328.309523809524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\ClientBundles_Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Error Count">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
