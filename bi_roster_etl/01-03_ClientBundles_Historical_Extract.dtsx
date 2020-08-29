@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="124"
-  DTS:VersionGUID="{CB9F545E-68DB-4CCB-905B-DDD5C5B09E74}">
+  DTS:VersionBuild="125"
+  DTS:VersionGUID="{BA9D9579-7AAF-4524-B6E0-A15AF980E078}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -303,6 +303,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{D3091885-0F34-4DB6-9F52-4BDE0A3BD0BA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCountExtract">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{CDF4C574-1C4E-43D4-94A8-2D7380F18212}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -493,7 +502,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -514,7 +523,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2891,7 +2900,70 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Get the files - Load to Landing\Record file details"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{eb773188-29a3-47f7-8c16-9212a4653715}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Record file details"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="insert into cls.AuditDimensionFiles (AuditID, FileName,PackageName,RowsExtracted,LoadStartTime, LoadEndTime)&#xA;&#xA;VALUES(?,?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::AuditId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::FileName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::RowCountExtract"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::LoadStartTime"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::LoadEndTime"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E17B9F8C-10E7-4AA6-A531-952F5CE89ADF}"
+          DTS:From="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Get the files - Load to Landing\Record file details" />
+      </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
@@ -3909,18 +3981,109 @@ where AuditID = ?
           Id="Package\ClientBundles- Landing"
           TopLeft="809.629649488033,0.608661541344247" />
         <NodeLayout
+          Size="193.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="155.166662953794,102.466655679147" />
+        <NodeLayout
+          Size="142.857142857143,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="63.7499925928812,34.1333245929085" />
+        <EdgeLayout
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="135.083325926215,76.7999912595751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.750003694246,25.6666644195714"
+              Start="0,0"
+              End="116.750003694246,18.1666644195714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.83333220978572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.83333220978572"
+                    Point2="0,12.8333322097857"
+                    Point3="4,12.8333322097857" />
+                  <mssgle:LineSegment
+                    End="112.750003694246,12.8333322097857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.750003694246,12.8333322097857"
+                    Point2="116.750003694246,12.8333322097857"
+                    Point3="116.750003694246,16.8333322097857" />
+                  <mssgle:LineSegment
+                    End="116.750003694246,18.1666644195714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="353.142857142858,200"
+          Size="353.142857142858,242.857142857143"
+          Id="Package\Collect Errors"
+          TopLeft="120.317461915327,449.387883674513" />
+        <NodeLayout
           Size="122.857142857143,42.2857142857143"
           Id="Package\Get Files"
           TopLeft="527.301599680852,63.2831206029991" />
         <NodeLayout
+          Size="192.571428571429,42.2857142857143"
+          Id="Package\Get RowsExtract Count"
+          TopLeft="1452.69845118178,305.66233480807" />
+        <NodeLayout
           Size="214.857142857143,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
           TopLeft="5.5,5.49999999999997" />
+        <NodeLayout
+          Size="165.714285714286,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\Record file details"
+          TopLeft="5.5,107.785714285714" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          TopLeft="112.928571428571,47.7857142857142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.5714285714286,60"
+              Start="0,0"
+              End="-24.5714285714286,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-20.5714285714286,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.5714285714286,30"
+                    Point2="-24.5714285714286,30"
+                    Point3="-24.5714285714286,34" />
+                  <mssgle:LineSegment
+                    End="-24.5714285714286,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="225.714285714286,102.857142857143"
-          Size="225.714285714286,145.714285714286"
+          PanelSize="225.714285714286,205.142857142858"
+          Size="225.714285714286,248"
           Id="Package\Get the files - Load to Landing"
           TopLeft="1343.82678097002,63.9636400189106" />
         <NodeLayout
@@ -4024,26 +4187,26 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.197131481985,-39.5021643795765"
+              EndConnector="118.197131481987,11.6406927632806"
               Start="0,0"
-              End="110.697131481985,-39.5021643795765">
+              End="110.697131481987,11.6406927632806">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.0985657409924,0" />
+                    End="55.0985657409935,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="55.0985657409924,0"
-                    Point2="59.0985657409924,0"
-                    Point3="59.0985657409924,-4" />
+                    Point1="55.0985657409935,0"
+                    Point2="59.0985657409935,0"
+                    Point3="59.0985657409935,4" />
                   <mssgle:LineSegment
-                    End="59.0985657409924,-35.5021643795765" />
+                    End="59.0985657409935,7.64069276328064" />
                   <mssgle:CubicBezierSegment
-                    Point1="59.0985657409924,-35.5021643795765"
-                    Point2="59.0985657409924,-39.5021643795765"
-                    Point3="63.0985657409924,-39.5021643795765" />
+                    Point1="59.0985657409935,7.64069276328064"
+                    Point2="59.0985657409935,11.6406927632806"
+                    Point3="63.0985657409935,11.6406927632806" />
                   <mssgle:LineSegment
-                    End="110.697131481985,-39.5021643795765" />
+                    End="110.697131481987,11.6406927632806" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4075,31 +4238,25 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="650.158742537995,84.4259777458563">
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1569.54106668431,187.963640018911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.470906950038,91.8969695097737"
+              EndConnector="-20.5569012168116,117.698694789159"
               Start="0,0"
-              End="151.970906950038,91.8969695097737">
+              End="-20.5569012168116,110.198694789159">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="75.7354534750189,0" />
+                    End="-16.5569012168116,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="75.7354534750189,0"
-                    Point2="79.7354534750189,0"
-                    Point3="79.7354534750189,4" />
+                    Point1="-16.5569012168116,0"
+                    Point2="-20.5569012168116,0"
+                    Point3="-20.5569012168116,4" />
                   <mssgle:LineSegment
-                    End="79.7354534750189,87.8969695097737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="79.7354534750189,87.8969695097737"
-                    Point2="79.7354534750189,91.8969695097737"
-                    Point3="83.7354534750189,91.8969695097737" />
-                  <mssgle:LineSegment
-                    End="151.970906950038,91.8969695097737" />
+                    End="-20.5569012168116,110.198694789159" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4108,55 +4265,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193.142857142858,42.8571428571429"
-          Id="Package\Collect Errors\Delete Rows with Errors"
-          TopLeft="155.166662953794,102.466655679147" />
-        <NodeLayout
-          Size="142.857142857143,42.8571428571429"
-          Id="Package\Collect Errors\Gather errors"
-          TopLeft="63.7499925928812,34.1333245929085" />
-        <EdgeLayout
-          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
-          TopLeft="135.083325926215,76.7999912595751">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.750003694246,25.6666644195714"
-              Start="0,0"
-              End="116.750003694246,18.1666644195714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.83333220978572" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.83333220978572"
-                    Point2="0,12.8333322097857"
-                    Point3="4,12.8333322097857" />
-                  <mssgle:LineSegment
-                    End="112.750003694246,12.8333322097857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.750003694246,12.8333322097857"
-                    Point2="116.750003694246,12.8333322097857"
-                    Point3="116.750003694246,16.8333322097857" />
-                  <mssgle:LineSegment
-                    End="116.750003694246,18.1666644195714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="353.142857142858,200"
-          Size="353.142857142858,242.857142857143"
-          Id="Package\Collect Errors"
-          TopLeft="120.317461915327,449.387883674513" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="473.460319058185,570.816455103084">
@@ -4183,44 +4291,6 @@ where AuditID = ?
                     Point3="202.49405967189,155.688307040979" />
                   <mssgle:LineSegment
                     End="389.488119343779,155.688307040979" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192.571428571429,42.2857142857143"
-          Id="Package\Get RowsExtract Count"
-          TopLeft="1452.69845118178,305.66233480807" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1456.68392382716,209.677925733196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.3002416403306,95.984409074874"
-              Start="0,0"
-              End="92.3002416403306,88.484409074874">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.992204537437" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.992204537437"
-                    Point2="0,47.992204537437"
-                    Point3="4,47.992204537437" />
-                  <mssgle:LineSegment
-                    End="88.3002416403306,47.992204537437" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.3002416403306,47.992204537437"
-                    Point2="92.3002416403306,47.992204537437"
-                    Point3="92.3002416403306,51.992204537437" />
-                  <mssgle:LineSegment
-                    End="92.3002416403306,88.484409074874" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4263,9 +4333,114 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4 1]"
+          TopLeft="650.158742537995,84.4259777458563">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.470906950038,91.8969695097737"
+              Start="0,0"
+              End="151.970906950038,91.8969695097737">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.7354534750189,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.7354534750189,0"
+                    Point2="79.7354534750189,0"
+                    Point3="79.7354534750189,4" />
+                  <mssgle:LineSegment
+                    End="79.7354534750189,87.8969695097737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.7354534750189,87.8969695097737"
+                    Point2="79.7354534750189,91.8969695097737"
+                    Point3="83.7354534750189,91.8969695097737" />
+                  <mssgle:LineSegment
+                    End="151.970906950038,91.8969695097737" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Collect Errors\Gather errors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors\Get bad data"
+          TopLeft="306.666666666667,75.3333333333333" />
+        <NodeLayout
+          Size="182.285714285715,42.2857142857143"
+          Id="Package\Collect Errors\Gather errors\ClientBundles_Errors"
+          TopLeft="510,454" />
+        <EdgeLayout
+          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
+          TopLeft="377.238095238096,118.190476190476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223.904761904762,335.809523809524"
+              Start="0,0"
+              End="223.904761904762,328.309523809524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,163.904761904762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,163.904761904762"
+                    Point2="0,167.904761904762"
+                    Point3="4,167.904761904762" />
+                  <mssgle:LineSegment
+                    End="219.904761904762,167.904761904762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="219.904761904762,167.904761904762"
+                    Point2="223.904761904762,167.904761904762"
+                    Point3="223.904761904762,171.904761904762" />
+                  <mssgle:LineSegment
+                    End="223.904761904762,328.309523809524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\ClientBundles_Errors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles">
     <LayoutInfo>
@@ -4534,86 +4709,15 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Collect Errors\Gather errors">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="141.142857142858,42.8571428571429"
-          Id="Package\Collect Errors\Gather errors\Get bad data"
-          TopLeft="306.666666666667,75.3333333333333" />
-        <NodeLayout
-          Size="182.285714285715,42.2857142857143"
-          Id="Package\Collect Errors\Gather errors\ClientBundles_Errors"
-          TopLeft="510,454" />
-        <EdgeLayout
-          Id="Package\Collect Errors\Gather errors.Paths[OLE DB Source Output]"
-          TopLeft="377.238095238096,118.190476190476">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="223.904761904762,335.809523809524"
-              Start="0,0"
-              End="223.904761904762,328.309523809524">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,163.904761904762" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,163.904761904762"
-                    Point2="0,167.904761904762"
-                    Point3="4,167.904761904762" />
-                  <mssgle:LineSegment
-                    End="219.904761904762,167.904761904762" />
-                  <mssgle:CubicBezierSegment
-                    Point1="219.904761904762,167.904761904762"
-                    Point2="223.904761904762,167.904761904762"
-                    Point3="223.904761904762,171.904761904762" />
-                  <mssgle:LineSegment
-                    End="223.904761904762,328.309523809524" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Collect Errors\Gather errors\ClientBundles_Errors">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\update Audit Dimension\Get Audit Parameters\Error Count">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
