@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "bi_roster_etl", "bi_roster_etl\bi_roster_etl.dtproj", "{40EEF98B-37DB-4507-9818-F646043BA33F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
+		Production|Default = Production|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40EEF98B-37DB-4507-9818-F646043BA33F}.Development|Default.ActiveCfg = Development
-		{40EEF98B-37DB-4507-9818-F646043BA33F}.Development|Default.Build.0 = Development
+		{40EEF98B-37DB-4507-9818-F646043BA33F}.Development|Default.ActiveCfg = Production
+		{40EEF98B-37DB-4507-9818-F646043BA33F}.Production|Default.ActiveCfg = Production
+		{40EEF98B-37DB-4507-9818-F646043BA33F}.Production|Default.Build.0 = Production
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
