@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="132"
-  DTS:VersionGUID="{26D00635-AFA5-459D-823B-4DB6B6236F08}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{276DB9FA-C6B2-4D2D-AC6D-ABFBF49731B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -377,7 +377,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -398,7 +398,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -502,7 +502,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -523,7 +523,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -680,7 +680,7 @@
                     <connection
                       refId="Package\Collect Errors\Gather errors\ClientBundles_Errors.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1080,7 +1080,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                     <connection
                       refId="Package\Collect Errors\Gather errors\Get bad data.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2537,7 +2537,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                     <connection
                       refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2901,6 +2901,27 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Get the files - Load to Landing\Get LoadEndTime"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d185a718-3851-475c-b2f0-594dc078e7f9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LoadEndTime"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select GetDate()"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoadEndTime" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Get the files - Load to Landing\Record file details"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -2958,11 +2979,19 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E17B9F8C-10E7-4AA6-A531-952F5CE89ADF}"
-          DTS:From="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
+          DTS:DTSID="{06AC5E86-9A07-4C76-9458-A34C3E7A9582}"
+          DTS:From="Package\Get the files - Load to Landing\Get LoadEndTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Get the files - Load to Landing\Record file details" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7F79EA2D-83CE-4945-85EB-2B35A6BA6DB6}"
+          DTS:From="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Get the files - Load to Landing\Get LoadEndTime" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -3234,7 +3263,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                     <connection
                       refId="Package\update Audit Dimension\Get Audit Parameters\Error Count.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3457,7 +3486,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                     <connection
                       refId="Package\update Audit Dimension\Get Audit Parameters\Rows Inserted.Connections[OleDbConnection]"
                       connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW_Landing]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3740,7 +3769,7 @@ where AuditID = ?
                     <connection
                       refId="Package\update Audit Dimension\Get Audit Parameters\Update AuditDimension.Connections[OleDbConnection]"
                       connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[NewRosterDW]"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_prod]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4188,7 +4217,7 @@ where AuditID = ?
           PanelSize="416,308.571428571429"
           Size="416,42.8571428571429"
           Id="Package\ClientBundles Historical - Begin ETL"
-          TopLeft="60,69.4545453520846" />
+          TopLeft="60,72.1558440241088" />
         <NodeLayout
           Size="126.857142857143,42.8571428571429"
           Id="Package\ClientBundles- Landing\ETL Begin"
@@ -4301,7 +4330,7 @@ where AuditID = ?
           PanelSize="416,308.571428571429"
           Size="416,351.428571428572"
           Id="Package\ClientBundles- Landing"
-          TopLeft="809.629649488033,0.608661541344247" />
+          TopLeft="809.629649488033,3.30996021336841" />
         <NodeLayout
           Size="193.142857142858,42.8571428571429"
           Id="Package\Collect Errors\Delete Rows with Errors"
@@ -4338,49 +4367,63 @@ where AuditID = ?
           PanelSize="204,206.285714285715"
           Size="204,249.142857142858"
           Id="Package\Collect Errors"
-          TopLeft="120.317461915327,449.387883674513" />
+          TopLeft="120.317461915327,452.089182346537" />
         <NodeLayout
           Size="122.857142857143,42.2857142857143"
           Id="Package\Get Files"
-          TopLeft="527.301599680852,63.2831206029991" />
+          TopLeft="527.301599680852,65.9844192750233" />
         <NodeLayout
           Size="192.571428571429,42.2857142857143"
           Id="Package\Get RowsExtract Count"
-          TopLeft="1392.38098926645,339.428568208372" />
+          TopLeft="1416.50797403258,400.207788328916" />
         <NodeLayout
           Size="214.857142857143,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
-          TopLeft="5.5,5.49999999999997" />
+          TopLeft="5.50000000000001,5.49999999999997" />
         <NodeLayout
           Size="165.714285714286,42.2857142857143"
           Id="Package\Get the files - Load to Landing\Record file details"
-          TopLeft="5.5,107.785714285714" />
+          TopLeft="30.0714285714286,210.642857142857" />
+        <NodeLayout
+          Size="162.857142857143,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\Get LoadEndTime"
+          TopLeft="31.5,107.785714285714" />
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
           TopLeft="112.928571428571,47.7857142857142">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-24.5714285714286,60"
+              EndConnector="0,60"
               Start="0,0"
-              End="-24.5714285714286,52.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          TopLeft="112.928571428571,150.642857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-20.5714285714286,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.5714285714286,30"
-                    Point2="-24.5714285714286,30"
-                    Point3="-24.5714285714286,34" />
-                  <mssgle:LineSegment
-                    End="-24.5714285714286,52.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4392,10 +4435,10 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="225.714285714286,205.142857142858"
-          Size="225.714285714286,248"
+          PanelSize="225.714285714286,308"
+          Size="225.714285714286,350.857142857143"
           Id="Package\Get the files - Load to Landing"
-          TopLeft="1343.82678097002,63.9636400189106" />
+          TopLeft="1410.49344940275,0.483121226342746" />
         <NodeLayout
           Size="180,42.8571428571429"
           Id="Package\update Audit Dimension\Get Audit Parameters"
@@ -4484,33 +4527,21 @@ where AuditID = ?
           PanelSize="200,411.428571428572"
           Size="200,454.285714285715"
           Id="Package\update Audit Dimension"
-          TopLeft="870.448438401964,445.076190715492" />
+          TopLeft="870.448438401964,447.777489387516" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1225.62964948803,176.32294725563">
+          TopLeft="1225.62964948803,177.467969291284">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.197131481987,11.6406927632806"
+              EndConnector="184.863799914717,0"
               Start="0,0"
-              End="110.697131481987,11.6406927632806">
+              End="177.363799914717,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.0985657409935,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.0985657409935,0"
-                    Point2="59.0985657409935,0"
-                    Point3="59.0985657409935,4" />
-                  <mssgle:LineSegment
-                    End="59.0985657409935,7.64069276328064" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.0985657409935,7.64069276328064"
-                    Point2="59.0985657409935,11.6406927632806"
-                    Point3="63.0985657409935,11.6406927632806" />
-                  <mssgle:LineSegment
-                    End="110.697131481987,11.6406927632806" />
+                    End="177.363799914717,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4521,7 +4552,7 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="476,87.6545472632561">
+          TopLeft="476,90.3558459352803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4543,30 +4574,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1456.68392382716,311.963640018911">
+          TopLeft="1523.35059225989,351.340264083486">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.9827797250039,27.4649281894614"
+              EndConnector="-10.556903941598,48.8675242454302"
               Start="0,0"
-              End="31.9827797250039,19.9649281894614">
+              End="-10.556903941598,41.3675242454302">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.73246409473072" />
+                    End="0,20.4337621227151" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.73246409473072"
-                    Point2="0,13.7324640947307"
-                    Point3="4,13.7324640947307" />
+                    Point1="0,20.4337621227151"
+                    Point2="0,24.4337621227151"
+                    Point3="-4,24.4337621227151" />
                   <mssgle:LineSegment
-                    End="27.9827797250039,13.7324640947307" />
+                    End="-6.55690394159797,24.4337621227151" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.9827797250039,13.7324640947307"
-                    Point2="31.9827797250039,13.7324640947307"
-                    Point3="31.9827797250039,17.7324640947307" />
+                    Point1="-6.55690394159797,24.4337621227151"
+                    Point2="-10.556903941598,24.4337621227151"
+                    Point3="-10.556903941598,28.4337621227151" />
                   <mssgle:LineSegment
-                    End="31.9827797250039,19.9649281894614" />
+                    End="-10.556903941598,41.3675242454302" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4577,7 +4608,7 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="324.317461915327,573.959312245942">
+          TopLeft="324.317461915327,576.660610917966">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4611,30 +4642,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1488.66670355216,381.714282494086">
+          TopLeft="1416.50797403258,421.350645471773">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1266.34924163684,67.6736011804267"
+              EndConnector="-1092.19051211725,115.119489255717"
               Start="0,0"
-              End="-1266.34924163684,60.1736011804267">
+              End="-1084.69051211725,115.119489255717">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.8368005902134" />
+                    End="-647.132720988773,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.8368005902134"
-                    Point2="0,33.8368005902134"
-                    Point3="-4,33.8368005902134" />
+                    Point1="-647.132720988773,0"
+                    Point2="-651.132720988773,0"
+                    Point3="-651.132720988773,4" />
                   <mssgle:LineSegment
-                    End="-1262.34924163684,33.8368005902134" />
+                    End="-651.132720988773,111.119489255717" />
                   <mssgle:CubicBezierSegment
-                    Point1="-1262.34924163684,33.8368005902134"
-                    Point2="-1266.34924163684,33.8368005902134"
-                    Point3="-1266.34924163684,37.8368005902134" />
+                    Point1="-651.132720988773,111.119489255717"
+                    Point2="-651.132720988773,115.119489255717"
+                    Point3="-655.132720988773,115.119489255717" />
                   <mssgle:LineSegment
-                    End="-1266.34924163684,60.1736011804267" />
+                    End="-1084.69051211725,115.119489255717" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4645,7 +4676,7 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="650.158742537995,84.4259777458562">
+          TopLeft="650.158742537995,87.1272764178804">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

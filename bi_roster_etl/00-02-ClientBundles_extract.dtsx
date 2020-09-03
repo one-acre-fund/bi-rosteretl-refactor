@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="251"
-  DTS:VersionGUID="{6F64AEF6-0438-47C2-928E-FF7A8E4DA25E}">
+  DTS:VersionBuild="252"
+  DTS:VersionGUID="{18A8C07B-5FE6-43CE-8C0C-BD8E196B32BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2841,6 +2841,27 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Get the files - Load to Landing\Get LoadEndTime"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{39af00ae-bc86-41e8-8a2c-4f2f0e80d3e2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LoadEndTime"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select GetDate()"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoadEndTime" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Get the files - Load to Landing\Record file details"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -2898,10 +2919,18 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{EE7FFD71-3B6C-4975-9063-9769ADB56DE3}"
+          DTS:DTSID="{5F6E7A67-3D63-45AE-B982-49C833471FEA}"
           DTS:From="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
+          DTS:To="Package\Get the files - Load to Landing\Get LoadEndTime" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9F2D6F6C-156F-4C3E-B9E2-21D98153AE9C}"
+          DTS:From="Package\Get the files - Load to Landing\Get LoadEndTime"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
           DTS:To="Package\Get the files - Load to Landing\Record file details" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
@@ -6623,25 +6652,51 @@ where AuditID = ?
         <NodeLayout
           Size="214.857142857143,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
-          TopLeft="5.5,5.49999999999997" />
+          TopLeft="5.50000000000001,5.49999999999997" />
         <NodeLayout
           Size="165.714285714286,42.2857142857143"
           Id="Package\Get the files - Load to Landing\Record file details"
-          TopLeft="37.6084887915545,94.4761890002659" />
+          TopLeft="30.0714285714286,210.642857142857" />
+        <NodeLayout
+          Size="162.857142857143,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\Get LoadEndTime"
+          TopLeft="31.5,107.785714285714" />
         <EdgeLayout
           Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
-          TopLeft="116.697101538634,47.7857142857142">
+          TopLeft="112.928571428571,47.7857142857142">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.6904747145517"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,39.1904747145517">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.1904747145517" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
+          TopLeft="112.928571428571,150.642857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6653,8 +6708,8 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="225.714285714286,192"
-          Size="225.714285714286,234.857142857143"
+          PanelSize="225.714285714286,308"
+          Size="225.714285714286,350.857142857143"
           Id="Package\Get the files - Load to Landing"
           TopLeft="839.153461383414,18.8528136485018" />
         <NodeLayout
@@ -6837,30 +6892,18 @@ where AuditID = ?
           TopLeft="1241.50131690031,298.1030296315" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="699.369027742258,199.419912353832">
+          TopLeft="699.369027742258,196.850648715453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="139.784433641156,-63.1385272767587"
+              EndConnector="139.784433641156,0"
               Start="0,0"
-              End="132.284433641156,-63.1385272767587">
+              End="132.284433641156,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="65.892216820578,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.892216820578,0"
-                    Point2="69.892216820578,0"
-                    Point3="69.892216820578,-4" />
-                  <mssgle:LineSegment
-                    End="69.892216820578,-59.1385272767587" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.892216820578,-59.1385272767587"
-                    Point2="69.892216820578,-63.1385272767587"
-                    Point3="73.892216820578,-63.1385272767587" />
-                  <mssgle:LineSegment
-                    End="132.284433641156,-63.1385272767587" />
+                    End="132.284433641156,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6871,13 +6914,13 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1064.8677470977,136.281385077073">
+          TopLeft="1064.8677470977,194.281385077073">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.56479713439,-96.1523717809577"
+              EndConnector="146.56479713439,-154.152371780958"
               Start="0,0"
-              End="139.06479713439,-96.1523717809577">
+              End="139.06479713439,-154.152371780958">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6888,13 +6931,13 @@ where AuditID = ?
                     Point2="73.2823985671952,0"
                     Point3="73.2823985671952,-4" />
                   <mssgle:LineSegment
-                    End="73.2823985671952,-92.1523717809577" />
+                    End="73.2823985671952,-150.152371780958" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.2823985671952,-92.1523717809577"
-                    Point2="73.2823985671952,-96.1523717809577"
-                    Point3="77.2823985671952,-96.1523717809577" />
+                    Point1="73.2823985671952,-150.152371780958"
+                    Point2="73.2823985671952,-154.152371780958"
+                    Point3="77.2823985671952,-154.152371780958" />
                   <mssgle:LineSegment
-                    End="139.06479713439,-96.1523717809577" />
+                    End="139.06479713439,-154.152371780958" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
