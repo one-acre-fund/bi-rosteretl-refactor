@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="249"
-  DTS:VersionGUID="{3A4F4BA9-2A3E-4469-9ABB-8106851C871E}">
+  DTS:VersionBuild="250"
+  DTS:VersionGUID="{261655DD-75E2-4D02-B01D-2FEEB9C8F03E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2882,13 +2882,13 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                 SQLTask:ParameterName="4"
                 SQLTask:DtsVariableName="User::LoadStartTime"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="20"
+                SQLTask:DataType="135"
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="5"
                 SQLTask:DtsVariableName="User::LoadEndTime"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="20"
+                SQLTask:DataType="135"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
