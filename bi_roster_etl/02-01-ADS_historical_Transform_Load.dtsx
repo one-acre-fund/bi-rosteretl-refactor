@@ -8,12 +8,12 @@
   DTS:Description="SSIS Package Description"
   DTS:DTSID="{03413A3C-8CA4-4B87-A7E3-8DBE88294BF1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="02-01-ADS_historical_Transform_Load"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{3C74C357-F90A-4FB1-A9DA-B8D4412A92A4}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{8CDCFB06-9212-4467-95EE-8C2704CCFCA9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4649,7 +4649,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
-              SQLTask:SqlStatementSource="Update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.LocationID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            LocationID,&#xA;            RosterDistrictID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimLocations&#xA;        where&#xA;            RosterDistrictID is not null&#xA;    ) geo&#xA;where&#xA;    geo.RosterDistrictID = cls.staging_ADS.RosterDistrictID&#xA;    and cls.staging_ADS.DimCountryID is null&#xA;Update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.RosterSeasonID = cls.staging_ADS.RosterSeasonID&#xA;    and s.CountryID = cls.staging_ADS.DimCountryID&#xA;    and cls.staging_ADS.DimSeasonID is null&#xA;update&#xA;    cls.staging_ADS&#xA;set&#xA;    DimClientID = client.DimClientID,&#xA;    GlobalClientID = client.GlobalClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            distinct c.ClientID,&#xA;            c.DistrictID,&#xA;            cs.ClientID DimClientID,&#xA;            cs.GlobalClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;            join OAF_SHARED_DIMENSIONS_staging.dbo.Staging_Clients c on cs.GlobalClientID = c.GlobalClientID&#xA;    ) client&#xA;where&#xA;    client.ClientID = cls.staging_ADS.RosterClientID&#xA;    and client.DistrictID = cls.staging_ADS.RosterDistrictID&#xA;    and cls.staging_ADS.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.DistrictID,&#xA;    DimSectorID = geo.SectorID,&#xA;    DimSiteID = geo.SiteID,&#xA;    DimGroupID = geo.GroupID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            DistrictID,&#xA;            SectorID,&#xA;            SiteID,&#xA;            GroupID,&#xA;            DistrictName,&#xA;            SiteName,&#xA;            GroupName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimGroup&#xA;        where&#xA;            isDeleted = 0&#xA;    ) geo&#xA;where&#xA;    geo.DistrictName = cls.staging_VerticalRepayments.District&#xA;    and geo.GroupName = staging_VerticalRepayments.GroupAtTimeOfRepayment&#xA;    and cls.staging_VerticalRepayments.SiteAtTimeOfRepayment = geo.SiteName&#xA;    and cls.staging_VerticalRepayments.DimCountryID is null&#xA;Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID,&#xA;            SeasonName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.SeasonName = cls.staging_VerticalRepayments.SeasonName&#xA;    and s.CountryID = cls.staging_VerticalRepayments.DimCountryID&#xA;    and cls.staging_VerticalRepayments.DimSeasonID is null&#xA;update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimClientID = client.DimClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            cs.GlobalClientID,&#xA;            cs.ClientID DimClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;    ) client&#xA;where&#xA;    client.GlobalClientID = cls.staging_VerticalRepayments.GlobalClientID&#xA;    and cls.staging_VerticalRepayments.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4692,7 +4692,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Cleanup"
-          DTS:ThreadHint="11">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -19846,19 +19846,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Data Conversion.Outputs[Data Conversion Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output4]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 5]"
@@ -19871,19 +19871,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\TZ.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 6]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 3]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\MM.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\RW.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 7]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 1]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\ZA.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\BI.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
-                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Destination - Landing_VerticalRepayments.Inputs[Destination Input]"
+                      endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 2]"
                       name="Derived Column Output"
-                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\DC - AuditID.Outputs[Derived Column Output]" />
+                      startId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\KE.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output3]"
                       endId="Package\junk\Get the files\DFT - Landing_VerticalRepakyments\Union All.Inputs[Union All Input 8]"
@@ -19951,7 +19951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File BI"
-              DTS:ThreadHint="9">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -20582,7 +20582,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File KE"
-              DTS:ThreadHint="8">
+              DTS:ThreadHint="9">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21213,7 +21213,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MM"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="6">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -21844,7 +21844,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File MW"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="10">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -22475,7 +22475,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File RW"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -23106,7 +23106,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File TZ"
-              DTS:ThreadHint="6">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -23737,7 +23737,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File UG"
-              DTS:ThreadHint="7">
+              DTS:ThreadHint="8">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -24368,7 +24368,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               DTS:ExecutableType="Microsoft.ScriptTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="ST - Get Latest File ZA"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="7">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ScriptProject
@@ -26833,77 +26833,77 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="District"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1811:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2093:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Sector]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Sector"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1812:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2094:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Site]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Site"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1813:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2095:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Group]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Group"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1814:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2096:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[SiteAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="SiteAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1815:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2097:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[GroupAtTimeOfRepayment]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="GroupAtTimeOfRepayment"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1816:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2098:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[LastName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="LastName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1817:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2099:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[FirstName]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="FirstName"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1818:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2100:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[OAFID]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="OAFID"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1819:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2101:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Dropped]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Dropped"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1820:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2102:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[Amount]"
                               cachedCodepage="1252"
                               cachedDataType="str"
                               cachedLength="50"
                               cachedName="Amount"
-                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\1821:invalid" />
+                              lineageId="Package\junk\Incremental Load  Staging\Data Flow Task\2103:invalid" />
                             <inputColumn
                               refId="Package\junk\Incremental Load  Staging\Data Flow Task\Get Hash Value.Inputs[Input 0].Columns[ReceiptID]"
                               cachedCodepage="1252"
@@ -27800,7 +27800,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get Latest DateCreated"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27821,7 +27821,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Get LoadEndTime"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27842,7 +27842,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SP IncrementalLoad"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27858,7 +27858,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Update AuditDimension"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -27934,7 +27934,7 @@ where PackageName is Null
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Exec SP_IncrementalLoad"
-              DTS:ThreadHint="10">
+              DTS:ThreadHint="13">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -28988,7 +28988,7 @@ from cls.Staging_VerticalRepayments</property>
           DTS:FailPackageOnFailure="True"
           DTS:LocaleID="-1"
           DTS:ObjectName="Preparation SQL Task 1"
-          DTS:ThreadHint="13">
+          DTS:ThreadHint="11">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -29830,23 +29830,23 @@ where AuditID = ?
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="412,492.666666666667"
-          Size="218.285714285715,42.8571428571429"
+          Size="218,42.6666666666667"
           Id="Package\ADS Historical Begin ETL"
           TopLeft="440.416660103948,84.0666651634376" />
         <NodeLayout
-          Size="141.142857142858,42.8571428571429"
+          Size="141.333333333334,42.6666666666667"
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="293.900781821748,88.9095186021598" />
         <NodeLayout
-          Size="184.571428571429,42.8571428571429"
+          Size="184.666666666667,42.6666666666667"
           Id="Package\Incremental Load - Staging\SP IncrementalLoad"
           TopLeft="53.5833279254536,139.599993367195" />
         <NodeLayout
-          Size="160,42.8571428571429"
+          Size="160,42.6666666666667"
           Id="Package\Incremental Load - Staging\Truncate Staging"
           TopLeft="267.583322859059,23.300001681447" />
         <NodeLayout
-          Size="185.142857142858,42.8571428571429"
+          Size="185.333333333334,42.6666666666667"
           Id="Package\Incremental Load - Staging\Update surrogate keys"
           TopLeft="275.011905219879,170.281812331192" />
         <EdgeLayout
@@ -29880,7 +29880,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29902,14 +29904,16 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="600,500"
-          Size="600,542.857142857143"
+          Size="230,42.6666666666667"
           Id="Package\Incremental Load - Staging"
           TopLeft="462.416659805923,253.066662141483" />
         <NodeLayout
@@ -30533,27 +30537,27 @@ where AuditID = ?
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="376.666666666667,396"
-          Size="122.285714285715,42.8571428571429"
+          Size="122,42.6666666666667"
           Id="Package\junk"
           TopLeft="1199.91664881631,17.7666663489751" />
         <NodeLayout
-          Size="201.142857142858,42.8571428571429"
+          Size="201.333333333334,42.6666666666667"
           Id="Package\Load Production\Exec SP_IncrementalLoad"
           TopLeft="172.999997504056,133.133322965701" />
         <NodeLayout
-          Size="180,42.8571428571429"
+          Size="180,42.6666666666667"
           Id="Package\Load Production\Get Audit Parameters"
           TopLeft="176.41666801398,215.399985944033" />
         <NodeLayout
-          Size="189.142857142858,42.8571428571429"
+          Size="189.333333333334,42.6666666666667"
           Id="Package\Load Production\Get Latest DateCreated"
           TopLeft="180.583334618559,18.7333250113328" />
         <NodeLayout
-          Size="162.857142857143,42.8571428571429"
+          Size="162.666666666667,42.6666666666667"
           Id="Package\Load Production\Get LoadEndTime"
           TopLeft="185.666668790083,292.233320323427" />
         <NodeLayout
-          Size="189.142857142858,42.8571428571429"
+          Size="189.333333333334,42.6666666666667"
           Id="Package\Load Production\Update AuditDimension"
           TopLeft="171.916668994974,377.999986207486" />
         <EdgeLayout
@@ -30575,9 +30579,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -30599,9 +30601,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -30623,9 +30623,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -30647,44 +30645,42 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="589.714285714286,520"
-          Size="181.142857142858,42.8571428571429"
+          IsExpanded="True"
+          PanelSize="590,520"
+          Size="590,562.666666666667"
           Id="Package\Load Production"
           TopLeft="503.666659191251,496.333323492608" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="549.559517246805,126.92380802058">
+          TopLeft="549.416660103948,126.733331830104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="212.857142559118,126.142854120903"
+              EndConnector="27.999999701975,126.333330311379"
               Start="0,0"
-              End="212.857142559118,118.642854120903">
+              End="27.999999701975,118.833330311379">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.0714270604513" />
+                    End="0,59.1666651556893" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,59.0714270604513"
-                    Point2="0,63.0714270604513"
-                    Point3="4,63.0714270604513" />
+                    Point1="0,59.1666651556893"
+                    Point2="0,63.1666651556893"
+                    Point3="4,63.1666651556893" />
                   <mssgle:LineSegment
-                    End="208.857142559118,63.0714270604513" />
+                    End="23.999999701975,63.1666651556893" />
                   <mssgle:CubicBezierSegment
-                    Point1="208.857142559118,63.0714270604513"
-                    Point2="212.857142559118,63.0714270604513"
-                    Point3="212.857142559118,67.0714270604513" />
+                    Point1="23.999999701975,63.1666651556893"
+                    Point2="27.999999701975,63.1666651556893"
+                    Point3="27.999999701975,67.1666651556893" />
                   <mssgle:LineSegment
-                    End="212.857142559118,118.642854120903" />
+                    End="27.999999701975,118.833330311379" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30695,30 +30691,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="762.416659805923,795.923804998626">
+          TopLeft="577.416659805923,295.73332880815">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-168.178572043243,-299.590481506018"
+              EndConnector="221.249999385328,200.599994684458"
               Start="0,0"
-              End="-168.178572043243,-292.090481506018">
+              End="221.249999385328,193.099994684458">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-145.795240753009" />
+                    End="0,96.2999973422292" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-145.795240753009"
-                    Point2="0,-149.795240753009"
-                    Point3="-4,-149.795240753009" />
+                    Point1="0,96.2999973422292"
+                    Point2="0,100.299997342229"
+                    Point3="4,100.299997342229" />
                   <mssgle:LineSegment
-                    End="-164.178572043243,-149.795240753009" />
+                    End="217.249999385328,100.299997342229" />
                   <mssgle:CubicBezierSegment
-                    Point1="-164.178572043243,-149.795240753009"
-                    Point2="-168.178572043243,-149.795240753009"
-                    Point3="-168.178572043243,-153.795240753009" />
+                    Point1="217.249999385328,100.299997342229"
+                    Point2="221.249999385328,100.299997342229"
+                    Point3="221.249999385328,104.299997342229" />
                   <mssgle:LineSegment
-                    End="-168.178572043243,-292.090481506018" />
+                    End="221.249999385328,193.099994684458" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -31326,7 +31322,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
           TopLeft="375.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31362,7 +31358,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
           TopLeft="526.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31398,7 +31394,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
           TopLeft="679.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31494,7 +31490,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output2]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output5]"
           TopLeft="1142.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31530,7 +31526,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output1]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output6]"
           TopLeft="1297.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -31566,7 +31562,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output]"
+          Id="Package\junk\Get the files\DFT - Landing_VerticalRepakyments.Paths[Derived Column Output7]"
           TopLeft="987.5,664.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
