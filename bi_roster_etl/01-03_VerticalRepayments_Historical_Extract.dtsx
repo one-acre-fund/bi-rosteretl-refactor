@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="140"
-  DTS:VersionGUID="{055A3BF3-FD50-4B52-B92C-0D0B4B61F6F1}">
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{3C1A465B-A231-4213-B558-A6C465F4470A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,8 +39,71 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
+              DTS:ObjectName="SeasonID"
+              DTS:DTSID="{E5C2679F-C5C5-4DFF-8B65-AFBE3EC5944E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionID"
+              DTS:DTSID="{1A782B4A-4965-42D7-9EAA-0044F0C983B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistrictID"
+              DTS:DTSID="{3E27567F-E0F6-4AF9-9BCE-A1729900126E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SectorID"
+              DTS:DTSID="{CA634A76-B596-42BE-85AD-61005CB4F89E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteID"
+              DTS:DTSID="{7B1BDED4-BBAF-4886-A923-505B9153373A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupID"
+              DTS:DTSID="{0A96A2E9-57D1-4EBD-9AAB-D633B167DA70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryID"
+              DTS:DTSID="{5165A95C-F929-4407-BCB6-13F817341331}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
               DTS:ObjectName="District"
-              DTS:DTSID="{9ABBEB96-B190-46E7-B3F9-3A1C5208F580}"
+              DTS:DTSID="{EE4ABE5C-33F7-420A-86A4-B5162C531EBD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PrimaryID"
-              DTS:DTSID="{7D1116FD-0135-4F3C-A0FD-E6740EF7D029}"
+              DTS:DTSID="{2DEABF22-8414-40AC-AFD7-B37D3F63BFEE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Sector"
-              DTS:DTSID="{2979635C-F83E-4048-9948-5F1BE66AA1AA}"
+              DTS:DTSID="{38A267CD-4DC5-46DA-B24B-8BE7D523491B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Site"
-              DTS:DTSID="{39BD0A48-556D-4D3E-98F9-A4F92689BABB}"
+              DTS:DTSID="{4B7717CC-2DBC-4D88-9BB7-07AE769A3DAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Group"
-              DTS:DTSID="{92FDCC49-8D1A-4DC5-9526-77BDC4AD326A}"
+              DTS:DTSID="{0C7F32BE-6AAC-4B28-B96D-F2A1B6E50598}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SiteAtTimeOfRepayment"
-              DTS:DTSID="{97B2511B-3F73-4B4B-B1B2-EE421545557B}"
+              DTS:DTSID="{4056BBB9-A708-4027-95EF-A0BA77086FA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GroupAtTimeOfRepayment"
-              DTS:DTSID="{52621857-583F-4921-A595-B1C1A969D5FA}"
+              DTS:DTSID="{ACC4C87B-2C8A-475C-82BF-58C728159BE9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LastName"
-              DTS:DTSID="{3E9EB79C-963E-4D88-A230-61F425CC8F9B}"
+              DTS:DTSID="{51BAFBB4-B022-4CD5-9FFA-F665122ECA7D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FirstName"
-              DTS:DTSID="{A513BE77-7247-4FBE-8801-15F9996FFAB6}"
+              DTS:DTSID="{18B12500-5986-4F66-A515-0A544F091822}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OAFID"
-              DTS:DTSID="{3F8B44CD-A476-4F92-A3F6-F1AADCABCBAF}"
+              DTS:DTSID="{3EED9339-7BE1-4D3F-91D6-98C7090EF756}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Dropped"
-              DTS:DTSID="{831A9F9C-1BDE-4508-A116-A996C664CA17}"
+              DTS:DTSID="{756C6EA4-263C-4FBA-86F6-AFF11DAC8B4B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -139,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Amount"
-              DTS:DTSID="{DECF12C0-8394-4A9D-93B3-DBFE1084FD5F}"
+              DTS:DTSID="{3BE786F7-FE95-4F7A-9463-6BB3190B2E70}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ReceiptID"
-              DTS:DTSID="{3F5A4201-834B-4781-AE32-3D72B3B25BAC}"
+              DTS:DTSID="{C55AC508-2281-4BBF-BE71-175123191E0F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Type"
-              DTS:DTSID="{47BFEA36-C040-466B-A283-E5545CA303F5}"
+              DTS:DTSID="{C319C6D9-DEB0-47C7-8DFD-2C7E8E85E2A5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentDate"
-              DTS:DTSID="{6AFE361C-F523-4B1C-B0FE-846CD6114A79}"
+              DTS:DTSID="{9D5F1E37-CA19-476B-8104-4D53A22C297F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DataEntryDate"
-              DTS:DTSID="{A53AB5F0-1EBB-41F9-8C70-333B83D91D87}"
+              DTS:DTSID="{85C56642-E6ED-45E3-9EE9-4890E9900AE8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GlobalClientID"
-              DTS:DTSID="{894BE776-FB5F-4175-BD57-98262558A700}"
+              DTS:DTSID="{308A35FA-9CD9-486C-8768-ED7888E62E19}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RepaymentPhoneNumber"
-              DTS:DTSID="{8384BD96-DFD9-4BA2-A73C-0881C3724786}"
+              DTS:DTSID="{33168221-1D46-4A56-99F1-136C9D8CEED8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +265,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AccountNumber"
-              DTS:DTSID="{BE711982-800A-48E3-B000-CADC4C8BE8E1}"
+              DTS:DTSID="{6C6166B3-EA47-4A11-BAD1-5A58FB874358}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +274,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BulkUploaded"
-              DTS:DTSID="{41350DFA-4DB5-4046-BD11-55BCD79BEBFE}"
+              DTS:DTSID="{47CFD253-7026-479A-9E0D-CC8B4F4744F8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +283,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Autosaved"
-              DTS:DTSID="{FD3EDD48-65CB-4903-BAD7-E7F16E5D8021}"
+              DTS:DTSID="{F5A46986-8BAB-4954-9820-B5E5D3E1A2D8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +292,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SeasonName"
-              DTS:DTSID="{81FA7FB8-9F78-4AA2-AB56-A45B5FC9706B}"
+              DTS:DTSID="{3835AC55-59D7-485E-BBCF-77C0BF7A16F8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2328,6 +2391,160 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SeasonID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]"
+                          name="SeasonID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RegionID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]"
+                          name="RegionID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistrictID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]"
+                          name="DistrictID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SectorID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SectorID]"
+                          name="SectorID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SiteID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SiteID]"
+                          name="SiteID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GroupID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[GroupID]"
+                          name="GroupID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountryID]"
+                          length="50"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]"
+                          name="CountryID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2463,6 +2680,48 @@
                           dataType="str"
                           length="50"
                           name="SeasonName" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SeasonID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RegionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DistrictID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SectorID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SectorID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SiteID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GroupID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountryID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2821,6 +3080,62 @@
                           cachedName="AuditID"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[SeasonID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SeasonID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterSeasonID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[RegionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistrictID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[SectorID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SectorID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterSectorID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SectorID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[SiteID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SiteID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterSiteID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SiteID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[GroupID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GroupID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterGroupID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[GroupID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[CountryID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CountryID"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3030,11 +3345,40 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::RowCountExtract</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Derived Column Output]"
-                  endId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input]"
+                  endId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count.Inputs[Row Count Input 1]"
                   name="Derived Column Output"
                   startId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Outputs[Derived Column Output]" />
                 <path
@@ -3042,6 +3386,11 @@
                   endId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Row Count Output 1]"
+                  endId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -3195,7 +3544,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3216,7 +3565,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4035,6 +4384,126 @@ where AuditID = ?
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="193.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="5.50000000000001,108.357142857143" />
+        <NodeLayout
+          Size="142.857142857143,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="30.6428571428572,5.50000000000002" />
+        <EdgeLayout
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="102.071428571429,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204,206.285714285715"
+          Size="204,249.142857142858"
+          Id="Package\Collect Errors"
+          TopLeft="375.555563914923,468.296974378682" />
+        <NodeLayout
+          Size="122.857142857143,42.2857142857143"
+          Id="Package\Get Files"
+          TopLeft="40.9523804477913,75.4389646271079" />
+        <NodeLayout
+          Size="192.571428571429,42.2857142857143"
+          Id="Package\Get RowsExtract Count"
+          TopLeft="0.634920651737573,504.883111869852" />
+        <NodeLayout
+          Size="252,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments"
+          TopLeft="5.5,5.49999999999997" />
+        <NodeLayout
+          Size="162.857142857143,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\Get LoadEndTime"
+          TopLeft="31.5,107.785714285714" />
+        <NodeLayout
+          Size="165.714285714286,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\Record file details"
+          TopLeft="30.0714285714286,210.642857142857" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          TopLeft="112.928571428571,150.642857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
+          TopLeft="131.5,47.7857142857142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.5714285714286,59.9999999999997"
+              Start="0,0"
+              End="-18.5714285714286,52.4999999999997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9999999999999"
+                    Point2="0,29.9999999999999"
+                    Point3="-4,29.9999999999999" />
+                  <mssgle:LineSegment
+                    End="-14.5714285714286,29.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.5714285714286,29.9999999999999"
+                    Point2="-18.5714285714286,29.9999999999999"
+                    Point3="-18.5714285714286,33.9999999999999" />
+                  <mssgle:LineSegment
+                    End="-18.5714285714286,52.4999999999997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="262.285714285715,308"
+          Size="262.285714285715,350.857142857143"
+          Id="Package\Get the files - Load to Landing"
+          TopLeft="1287.95376361687,14.6649392544696" />
+        <NodeLayout
           Size="126.857142857143,42.8571428571429"
           Id="Package\Repayments - Landing\ETL Begin"
           TopLeft="213.5,108.357142857143" />
@@ -4160,65 +4629,24 @@ where AuditID = ?
           Id="Package\Repayments - Landing"
           TopLeft="596.296310503296,8.03723288941072" />
         <NodeLayout
-          Size="193.142857142858,42.8571428571429"
-          Id="Package\Collect Errors\Delete Rows with Errors"
-          TopLeft="5.50000000000001,108.357142857143" />
-        <NodeLayout
-          Size="142.857142857143,42.8571428571429"
-          Id="Package\Collect Errors\Gather errors"
-          TopLeft="30.6428571428572,5.50000000000002" />
-        <EdgeLayout
-          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
-          TopLeft="102.071428571429,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="204,206.285714285715"
-          Size="204,249.142857142858"
-          Id="Package\Collect Errors"
-          TopLeft="375.555563914923,468.296974378682" />
-        <NodeLayout
-          Size="122.857142857143,42.2857142857143"
-          Id="Package\Get Files"
-          TopLeft="40.9523804477913,75.4389646271079" />
-        <NodeLayout
-          Size="192.571428571429,42.2857142857143"
-          Id="Package\Get RowsExtract Count"
-          TopLeft="0.634920651737573,504.883111869852" />
-        <NodeLayout
-          Size="252,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments"
-          TopLeft="5.5,5.49999999999997" />
+          Size="180,42.8571428571429"
+          Id="Package\update Audit Dimension\Get Audit Parameters"
+          TopLeft="10.0714285714286,108.357142857143" />
         <NodeLayout
           Size="162.857142857143,42.8571428571429"
-          Id="Package\Get the files - Load to Landing\Get LoadEndTime"
-          TopLeft="31.5,107.785714285714" />
+          Id="Package\update Audit Dimension\Get LoadEndTime"
+          TopLeft="18.6428571428572,211.214285714286" />
         <NodeLayout
-          Size="165.714285714286,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\Record file details"
-          TopLeft="30.0714285714286,210.642857142857" />
+          Size="168,42.8571428571429"
+          Id="Package\update Audit Dimension\Remove duplicates"
+          TopLeft="16.0714285714286,5.50000000000002" />
+        <NodeLayout
+          Size="189.142857142858,42.8571428571429"
+          Id="Package\update Audit Dimension\Update AuditDimension"
+          TopLeft="5.50000000000003,314.071428571429" />
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
-          TopLeft="112.928571428571,150.642857142857">
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
+          TopLeft="100.071428571429,48.3571428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4239,31 +4667,41 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
-          TopLeft="131.5,47.7857142857142">
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="100.071428571429,151.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.5714285714286,59.9999999999997"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="-18.5714285714286,52.4999999999997">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.9999999999999"
-                    Point2="0,29.9999999999999"
-                    Point3="-4,29.9999999999999" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="100.071428571429,254.071428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-14.5714285714286,29.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.5714285714286,29.9999999999999"
-                    Point2="-18.5714285714286,29.9999999999999"
-                    Point3="-18.5714285714286,33.9999999999999" />
-                  <mssgle:LineSegment
-                    End="-18.5714285714286,52.4999999999997" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4275,10 +4713,10 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="262.285714285715,308"
-          Size="262.285714285715,350.857142857143"
-          Id="Package\Get the files - Load to Landing"
-          TopLeft="1287.95376361687,14.6649392544696" />
+          PanelSize="217.714285714286,412"
+          Size="217.714285714286,454.857142857143"
+          Id="Package\update Audit Dimension"
+          TopLeft="771.42859186445,467.220774405118" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="1012.2963105033,188.493943214797">
@@ -4293,6 +4731,40 @@ where AuditID = ?
                   Capacity="5">
                   <mssgle:LineSegment
                     End="268.157453113578,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="579.555563914923,592.868402950111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.873027949527,101.780942883579"
+              Start="0,0"
+              End="184.373027949527,101.780942883579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.9365139747637,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.9365139747637,0"
+                    Point2="95.9365139747637,0"
+                    Point3="95.9365139747637,4" />
+                  <mssgle:LineSegment
+                    End="95.9365139747637,97.7809428835789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.9365139747637,97.7809428835789"
+                    Point2="95.9365139747637,101.780942883579"
+                    Point3="99.9365139747637,101.780942883579" />
+                  <mssgle:LineSegment
+                    End="184.373027949527,101.780942883579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4403,221 +4875,9 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42.8571428571429"
-          Id="Package\update Audit Dimension\Get Audit Parameters"
-          TopLeft="10.0714285714286,108.357142857143" />
-        <NodeLayout
-          Size="162.857142857143,42.8571428571429"
-          Id="Package\update Audit Dimension\Get LoadEndTime"
-          TopLeft="18.6428571428572,211.214285714286" />
-        <NodeLayout
-          Size="168,42.8571428571429"
-          Id="Package\update Audit Dimension\Remove duplicates"
-          TopLeft="16.0714285714286,5.50000000000002" />
-        <NodeLayout
-          Size="189.142857142858,42.8571428571429"
-          Id="Package\update Audit Dimension\Update AuditDimension"
-          TopLeft="5.50000000000003,314.071428571429" />
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint]"
-          TopLeft="100.071428571429,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 2]"
-          TopLeft="100.071428571429,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\update Audit Dimension.PrecedenceConstraints[Constraint 3]"
-          TopLeft="100.071428571429,254.071428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="200,412"
-          Size="217.714285714286,454.857142857143"
-          Id="Package\update Audit Dimension"
-          TopLeft="771.42859186445,467.220774405118" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="579.555563914923,592.868402950111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="191.873027949527,101.780942883579"
-              Start="0,0"
-              End="184.373027949527,101.780942883579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="91.9365139747637,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.9365139747637,0"
-                    Point2="95.9365139747637,0"
-                    Point3="95.9365139747637,4" />
-                  <mssgle:LineSegment
-                    End="95.9365139747637,97.7809428835789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95.9365139747637,97.7809428835789"
-                    Point2="95.9365139747637,101.780942883579"
-                    Point3="99.9365139747637,101.780942883579" />
-                  <mssgle:LineSegment
-                    End="184.373027949527,101.780942883579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="221.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments"
-          TopLeft="101.129608868571,330.175325607231" />
-        <NodeLayout
-          Size="135.428571428572,42.8571428571429"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID"
-          TopLeft="145.388868284814,128.235932743676" />
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Derived Column Output]"
-          TopLeft="212.40209571955,171.093075600819">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,159.082250006412"
-              Start="0,0"
-              End="0,151.582250006412">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,151.582250006412" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155.428571428572,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source"
-          TopLeft="103.809526559537,34.2597401609387" />
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Flat File Source Output]"
-          TopLeft="181.523812273823,76.545454446653">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31.5793417252769,51.690478297023"
-              Start="0,0"
-              End="31.5793417252769,44.190478297023">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8452391485115" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8452391485115"
-                    Point2="0,25.8452391485115"
-                    Point3="4,25.8452391485115" />
-                  <mssgle:LineSegment
-                    End="27.5793417252769,25.8452391485115" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.5793417252769,25.8452391485115"
-                    Point2="31.5793417252769,25.8452391485115"
-                    Point3="31.5793417252769,29.8452391485115" />
-                  <mssgle:LineSegment
-                    End="31.5793417252769,44.190478297023" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Collect Errors\Gather errors">
     <LayoutInfo>
@@ -4670,6 +4930,145 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count"
+          TopLeft="154.60317869876,228.337660482389" />
+        <NodeLayout
+          Size="221.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments"
+          TopLeft="101.129608868571,330.175325607231" />
+        <NodeLayout
+          Size="155.428571428572,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source"
+          TopLeft="103.809526559537,34.2597401609387" />
+        <NodeLayout
+          Size="135.428571428572,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Row Count Output 1]"
+          TopLeft="221.174607270189,270.623374768103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.47356983018918,59.5519508391281"
+              Start="0,0"
+              End="-9.47356983018918,52.0519508391281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.775975419564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.775975419564"
+                    Point2="0,29.775975419564"
+                    Point3="-4,29.775975419564" />
+                  <mssgle:LineSegment
+                    End="-5.47356983018918,29.775975419564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.47356983018918,29.775975419564"
+                    Point2="-9.47356983018918,29.775975419564"
+                    Point3="-9.47356983018918,33.775975419564" />
+                  <mssgle:LineSegment
+                    End="-9.47356983018918,52.0519508391281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Flat File Source Output]"
+          TopLeft="181.523812273823,76.545454446653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.5793417252769,51.690478297023"
+              Start="0,0"
+              End="31.5793417252769,44.190478297023">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8452391485115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8452391485115"
+                    Point2="0,25.8452391485115"
+                    Point3="4,25.8452391485115" />
+                  <mssgle:LineSegment
+                    End="27.5793417252769,25.8452391485115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5793417252769,25.8452391485115"
+                    Point2="31.5793417252769,25.8452391485115"
+                    Point3="31.5793417252769,29.8452391485115" />
+                  <mssgle:LineSegment
+                    End="31.5793417252769,44.190478297023" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,171.093075600819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.07145327108901,57.2445848815698"
+              Start="0,0"
+              End="8.07145327108901,49.7445848815698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6222924407849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.6222924407849"
+                    Point2="0,28.6222924407849"
+                    Point3="4,28.6222924407849" />
+                  <mssgle:LineSegment
+                    End="4.07145327108901,28.6222924407849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.07145327108901,28.6222924407849"
+                    Point2="8.07145327108901,28.6222924407849"
+                    Point3="8.07145327108901,32.6222924407849" />
+                  <mssgle:LineSegment
+                    End="8.07145327108901,49.7445848815698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\update Audit Dimension\Get Audit Parameters">
     <LayoutInfo>
