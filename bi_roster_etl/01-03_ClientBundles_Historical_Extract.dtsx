@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="133"
-  DTS:VersionGUID="{276DB9FA-C6B2-4D2D-AC6D-ABFBF49731B2}">
+  DTS:VersionBuild="135"
+  DTS:VersionGUID="{55F9BAA1-B824-4A15-92F3-1F5FE17BAAAA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -331,131 +331,6 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\ClientBundles Historical - Begin ETL"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{f52fedf9-3b88-45f2-9719-7d217971dc26}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="ClientBundles Historical - Begin ETL">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles Historical - Begin ETL\ETL Begin"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{52828f07-7178-4317-965f-fe79d506208d}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="ETL Begin"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::AuditId"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="20"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::LoadStartTime"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles Historical - Begin ETL\Get AuditID"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{c578239e-78a8-4ad1-b573-68e0ea704fb9}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select isnull(max(AuditID), 0) + 1  from cls.AuditDimension&#xA;"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::AuditId" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles Historical - Begin ETL\Get LoadStartTime"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6d171211-df71-420a-a7b9-8c15c6640be6}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select GetDate()"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::LoadStartTime" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles Historical - Begin ETL\Truncate Table Landing_ClientBundles"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ae2b196e-0187-4160-bf23-cb0e3a54e479}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Truncate Table Landing_ClientBundles"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ClientBundles_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{5b9b50c9-3dbd-4040-b09a-9d3dffd37117}"
-          DTS:From="Package\ClientBundles Historical - Begin ETL\ETL Begin"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\ClientBundles Historical - Begin ETL\Truncate Table Landing_ClientBundles" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{71513186-1767-48a3-a558-a30ab28ccb31}"
-          DTS:From="Package\ClientBundles Historical - Begin ETL\Get AuditID"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\ClientBundles Historical - Begin ETL\ETL Begin" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{a116a3d2-03a4-4e27-83de-9a97ef8ab6f8}"
-          DTS:From="Package\ClientBundles Historical - Begin ETL\Get LoadStartTime"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 3"
-          DTS:To="Package\ClientBundles Historical - Begin ETL\ETL Begin" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\ClientBundles- Landing"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -502,7 +377,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -523,7 +398,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -549,7 +424,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ClientBundles]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ClientBundles_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4047,14 +3922,6 @@ where AuditID = ?
       DTS:ObjectName="Constraint"
       DTS:To="Package\Get the files - Load to Landing" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{5B61B384-CE37-44CD-8815-E8638C732B37}"
-      DTS:From="Package\ClientBundles Historical - Begin ETL"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Get Files" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{92D570B0-D6E4-40FA-86AF-B87E9931CFD1}"
@@ -4098,126 +3965,7 @@ where AuditID = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\ClientBundles Historical - Begin ETL\ETL Begin"
-          TopLeft="213.5,108.357142857143" />
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\ClientBundles Historical - Begin ETL\Get AuditID"
-          TopLeft="5.50000000000004,5.50000000000002" />
-        <NodeLayout
-          Size="168,42.8571428571429"
-          Id="Package\ClientBundles Historical - Begin ETL\Get LoadStartTime"
-          TopLeft="192.928571428571,5.50000000000002" />
-        <NodeLayout
-          Size="266.857142857143,42.2857142857143"
-          Id="Package\ClientBundles Historical - Begin ETL\Truncate Table Landing_ClientBundles"
-          TopLeft="143.5,211.214285714286" />
-        <EdgeLayout
-          Id="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint]"
-          TopLeft="276.928571428572,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="68.9285714285715,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="188.190476190476,60"
-              Start="0,0"
-              End="188.190476190476,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="184.190476190476,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="184.190476190476,35.5516014234876"
-                    Point2="188.190476190476,35.5516014234876"
-                    Point3="188.190476190476,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="188.190476190476,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ClientBundles Historical - Begin ETL.PrecedenceConstraints[Constraint 3]"
-          TopLeft="276.928571428571,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.8095238095239,60"
-              Start="0,0"
-              End="19.8095238095239,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="15.8095238095239,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.8095238095239,35.5516014234876"
-                    Point2="19.8095238095239,35.5516014234876"
-                    Point3="19.8095238095239,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="19.8095238095239,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="416,308.571428571429"
-          Size="416,42.8571428571429"
-          Id="Package\ClientBundles Historical - Begin ETL"
-          TopLeft="60,72.1558440241088" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="126.857142857143,42.8571428571429"
           Id="Package\ClientBundles- Landing\ETL Begin"
@@ -4330,7 +4078,7 @@ where AuditID = ?
           PanelSize="416,308.571428571429"
           Size="416,351.428571428572"
           Id="Package\ClientBundles- Landing"
-          TopLeft="809.629649488033,3.30996021336841" />
+          TopLeft="574.179907801009,16.8164535734892" />
         <NodeLayout
           Size="193.142857142858,42.8571428571429"
           Id="Package\Collect Errors\Delete Rows with Errors"
@@ -4371,7 +4119,7 @@ where AuditID = ?
         <NodeLayout
           Size="122.857142857143,42.2857142857143"
           Id="Package\Get Files"
-          TopLeft="527.301599680852,65.9844192750233" />
+          TopLeft="47.9365076169343,56.4173198116044" />
         <NodeLayout
           Size="192.571428571429,42.2857142857143"
           Id="Package\Get RowsExtract Count"
@@ -4381,16 +4129,16 @@ where AuditID = ?
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles"
           TopLeft="5.50000000000001,5.49999999999997" />
         <NodeLayout
-          Size="165.714285714286,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\Record file details"
-          TopLeft="30.0714285714286,210.642857142857" />
-        <NodeLayout
           Size="162.857142857143,42.8571428571429"
           Id="Package\Get the files - Load to Landing\Get LoadEndTime"
           TopLeft="31.5,107.785714285714" />
+        <NodeLayout
+          Size="165.714285714286,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\Record file details"
+          TopLeft="30.0714285714286,210.642857142857" />
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
-          TopLeft="112.928571428571,47.7857142857142">
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
+          TopLeft="112.928571428571,150.642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4411,8 +4159,8 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint]"
-          TopLeft="112.928571428571,150.642857142857">
+          Id="Package\Get the files - Load to Landing.PrecedenceConstraints[Constraint 1]"
+          TopLeft="112.928571428571,47.7857142857142">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4530,40 +4278,30 @@ where AuditID = ?
           TopLeft="870.448438401964,447.777489387516" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1225.62964948803,177.467969291284">
+          TopLeft="990.179907801009,192.530739287775">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="184.863799914717,0"
+              EndConnector="420.313541601741,-16.6190466328608"
               Start="0,0"
-              End="177.363799914717,0">
+              End="412.813541601741,-16.6190466328608">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="177.363799914717,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="476,90.3558459352803">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51.301599680852,0"
-              Start="0,0"
-              End="43.801599680852,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="206.15677080087,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="206.15677080087,0"
+                    Point2="210.15677080087,0"
+                    Point3="210.15677080087,-4" />
                   <mssgle:LineSegment
-                    End="43.801599680852,0" />
+                    End="210.15677080087,-12.6190466328608" />
+                  <mssgle:CubicBezierSegment
+                    Point1="210.15677080087,-12.6190466328608"
+                    Point2="210.15677080087,-16.6190466328608"
+                    Point3="214.15677080087,-16.6190466328608" />
+                  <mssgle:LineSegment
+                    End="412.813541601741,-16.6190466328608" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4676,30 +4414,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="650.158742537995,87.1272764178804">
+          TopLeft="170.793650474077,77.5601769544615">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.470906950038,91.8969695097737"
+              EndConnector="403.386257326932,114.970562333313"
               Start="0,0"
-              End="151.970906950038,91.8969695097737">
+              End="395.886257326932,114.970562333313">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="75.7354534750191,0" />
+                    End="197.693128663466,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="75.7354534750191,0"
-                    Point2="79.7354534750191,0"
-                    Point3="79.7354534750191,4" />
+                    Point1="197.693128663466,0"
+                    Point2="201.693128663466,0"
+                    Point3="201.693128663466,4" />
                   <mssgle:LineSegment
-                    End="79.7354534750191,87.8969695097737" />
+                    End="201.693128663466,110.970562333313" />
                   <mssgle:CubicBezierSegment
-                    Point1="79.7354534750191,87.8969695097737"
-                    Point2="79.7354534750191,91.8969695097737"
-                    Point3="83.7354534750191,91.8969695097737" />
+                    Point1="201.693128663466,110.970562333313"
+                    Point2="201.693128663466,114.970562333313"
+                    Point3="205.693128663466,114.970562333313" />
                   <mssgle:LineSegment
-                    End="151.970906950038,91.8969695097737" />
+                    End="395.886257326932,114.970562333313" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
