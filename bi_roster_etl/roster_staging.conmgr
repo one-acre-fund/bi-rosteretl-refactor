@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="roster_staging"
-  DTS:DTSID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+  DTS:DTSID="{FF028282-60AD-46E1-850E-38B3292889F5}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
     DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID=CSSSIS0001;Password=ClientPassword$;Initial Catalog=Rosterdatawarehouse_StagingArea;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
