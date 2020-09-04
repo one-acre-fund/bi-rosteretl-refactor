@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{3C1A465B-A231-4213-B558-A6C465F4470A}">
+  DTS:VersionBuild="143"
+  DTS:VersionGUID="{0D0C84E6-C8F8-4B11-8A2E-7205560EC1D7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2401,7 +2401,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]"
                           name="SeasonID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2423,7 +2423,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]"
                           name="RegionID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2445,7 +2445,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]"
                           name="DistrictID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2467,7 +2467,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SectorID]"
                           name="SectorID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2489,7 +2489,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[SiteID]"
                           name="SiteID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2511,7 +2511,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[GroupID]"
                           name="GroupID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2533,7 +2533,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]"
                           name="CountryID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -3544,7 +3544,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3565,7 +3565,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4936,10 +4936,6 @@ where AuditID = ?
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count"
-          TopLeft="154.60317869876,228.337660482389" />
-        <NodeLayout
           Size="221.142857142858,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments"
           TopLeft="101.129608868571,330.175325607231" />
@@ -4951,6 +4947,10 @@ where AuditID = ?
           Size="135.428571428572,42.8571428571429"
           Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID"
           TopLeft="145.388868284814,128.235932743676" />
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Row Count"
+          TopLeft="154.60317869876,228.337660482389" />
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments.Paths[Row Count Output 1]"
           TopLeft="221.174607270189,270.623374768103">

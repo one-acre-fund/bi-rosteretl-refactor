@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ADS_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="141"
-  DTS:VersionGUID="{D170139D-4C4A-4B0A-A15B-20D59C53EFA4}">
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{DF7C7C0C-16E8-4850-9DF1-ACE5C04DA1D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -341,7 +341,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -362,7 +362,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1436,7 +1436,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictName]"
                           name="DistrictName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1458,7 +1458,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DeliveryName]"
                           name="DeliveryName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1480,7 +1480,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Item_ID]"
                           name="Item_ID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1502,7 +1502,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]"
                           name="Credit"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1524,7 +1524,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
                           name="Quantity"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1546,7 +1546,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
                           name="ProductName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1568,7 +1568,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[GlobalProductName]"
                           name="GlobalProductName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1590,7 +1590,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[FinanceID]"
                           name="FinanceID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1612,7 +1612,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DeliveryDate]"
                           name="DeliveryDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1634,7 +1634,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[UnitTypeID]"
                           name="UnitTypeID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1656,7 +1656,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[BookingMechanism]"
                           name="BookingMechanism"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1678,7 +1678,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[ClientID]"
                           name="ClientID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1700,7 +1700,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]"
                           name="DistrictID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1722,7 +1722,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]"
                           name="SeasonID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1744,7 +1744,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]"
                           name="RegionID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1766,7 +1766,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]"
                           name="CountryID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1788,7 +1788,7 @@
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[GlobalClientID]"
                           name="GlobalClientID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -3399,6 +3399,43 @@ where AuditID = ?
           Id="Package\ADS- Landing"
           TopLeft="574.179907801009,16.8164535734892" />
         <NodeLayout
+          Size="193.142857142858,42.8571428571429"
+          Id="Package\Collect Errors\Delete Rows with Errors"
+          TopLeft="5.50000000000001,108.357142857143" />
+        <NodeLayout
+          Size="142.857142857143,42.8571428571429"
+          Id="Package\Collect Errors\Gather errors"
+          TopLeft="30.6428571428572,5.50000000000002" />
+        <EdgeLayout
+          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
+          TopLeft="102.071428571429,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204,206.285714285715"
+          Size="204,249.142857142858"
+          Id="Package\Collect Errors"
+          TopLeft="597.104523927831,452.015586255838" />
+        <NodeLayout
           Size="122.857142857143,42.2857142857143"
           Id="Package\Get Files"
           TopLeft="47.9365076169343,56.4173198116044" />
@@ -3481,145 +3518,6 @@ where AuditID = ?
           Size="232,350.857142857143"
           Id="Package\Get the files - Load to Landing"
           TopLeft="1410.49344940275,0.483121226342746" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="990.179907801009,192.530739287775">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="420.313541601741,-16.6190466328607"
-              Start="0,0"
-              End="412.813541601741,-16.6190466328607">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="206.156770800871,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="206.156770800871,0"
-                    Point2="210.156770800871,0"
-                    Point3="210.156770800871,-4" />
-                  <mssgle:LineSegment
-                    End="210.156770800871,-12.6190466328607" />
-                  <mssgle:CubicBezierSegment
-                    Point1="210.156770800871,-12.6190466328607"
-                    Point2="210.156770800871,-16.6190466328607"
-                    Point3="214.156770800871,-16.6190466328607" />
-                  <mssgle:LineSegment
-                    End="412.813541601741,-16.6190466328607" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1526.49344940275,351.340264083486">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-1243.54106350539,101.542848349902"
-              Start="0,0"
-              End="-1243.54106350539,94.0428483499016">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.7714241749508" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.7714241749508"
-                    Point2="0,50.7714241749508"
-                    Point3="-4,50.7714241749508" />
-                  <mssgle:LineSegment
-                    End="-1239.54106350539,50.7714241749508" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-1239.54106350539,50.7714241749508"
-                    Point2="-1243.54106350539,50.7714241749508"
-                    Point3="-1243.54106350539,54.7714241749508" />
-                  <mssgle:LineSegment
-                    End="-1243.54106350539,94.0428483499016" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="170.793650474077,77.5601769544615">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="403.386257326932,114.970562333313"
-              Start="0,0"
-              End="395.886257326932,114.970562333313">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="197.693128663466,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="197.693128663466,0"
-                    Point2="201.693128663466,0"
-                    Point3="201.693128663466,4" />
-                  <mssgle:LineSegment
-                    End="201.693128663466,110.970562333313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="201.693128663466,110.970562333313"
-                    Point2="201.693128663466,114.970562333313"
-                    Point3="205.693128663466,114.970562333313" />
-                  <mssgle:LineSegment
-                    End="395.886257326932,114.970562333313" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="193.142857142858,42.8571428571429"
-          Id="Package\Collect Errors\Delete Rows with Errors"
-          TopLeft="5.50000000000001,108.357142857143" />
-        <NodeLayout
-          Size="142.857142857143,42.8571428571429"
-          Id="Package\Collect Errors\Gather errors"
-          TopLeft="30.6428571428572,5.50000000000002" />
-        <EdgeLayout
-          Id="Package\Collect Errors.PrecedenceConstraints[Constraint]"
-          TopLeft="102.071428571429,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="204,206.285714285715"
-          Size="204,249.142857142858"
-          Id="Package\Collect Errors"
-          TopLeft="597.104523927831,452.015586255838" />
         <NodeLayout
           Size="180,42.8571428571429"
           Id="Package\update Audit Dimension\Get Audit Parameters"
@@ -3710,31 +3608,31 @@ where AuditID = ?
           Id="Package\update Audit Dimension"
           TopLeft="1010.42993900584,419.227280380368" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="801.104523927831,576.587014827266">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="990.179907801009,192.530739287775">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="209.325415078006,70.0688369816737"
+              EndConnector="420.313541601741,-16.6190466328607"
               Start="0,0"
-              End="201.825415078006,70.0688369816737">
+              End="412.813541601741,-16.6190466328607">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="100.662707539003,0" />
+                    End="206.156770800871,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="100.662707539003,0"
-                    Point2="104.662707539003,0"
-                    Point3="104.662707539003,4" />
+                    Point1="206.156770800871,0"
+                    Point2="210.156770800871,0"
+                    Point3="210.156770800871,-4" />
                   <mssgle:LineSegment
-                    End="104.662707539003,66.0688369816737" />
+                    End="210.156770800871,-12.6190466328607" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.662707539003,66.0688369816737"
-                    Point2="104.662707539003,70.0688369816737"
-                    Point3="108.662707539003,70.0688369816737" />
+                    Point1="210.156770800871,-12.6190466328607"
+                    Point2="210.156770800871,-16.6190466328607"
+                    Point3="214.156770800871,-16.6190466328607" />
                   <mssgle:LineSegment
-                    End="201.825415078006,70.0688369816737" />
+                    End="412.813541601741,-16.6190466328607" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3777,148 +3675,111 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1526.49344940275,351.340264083486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1243.54106350539,101.542848349902"
+              Start="0,0"
+              End="-1243.54106350539,94.0428483499016">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.7714241749508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.7714241749508"
+                    Point2="0,50.7714241749508"
+                    Point3="-4,50.7714241749508" />
+                  <mssgle:LineSegment
+                    End="-1239.54106350539,50.7714241749508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-1239.54106350539,50.7714241749508"
+                    Point2="-1243.54106350539,50.7714241749508"
+                    Point3="-1243.54106350539,54.7714241749508" />
+                  <mssgle:LineSegment
+                    End="-1243.54106350539,94.0428483499016" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4 1]"
+          TopLeft="170.793650474077,77.5601769544615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="403.386257326932,114.970562333313"
+              Start="0,0"
+              End="395.886257326932,114.970562333313">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="197.693128663466,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="197.693128663466,0"
+                    Point2="201.693128663466,0"
+                    Point3="201.693128663466,4" />
+                  <mssgle:LineSegment
+                    End="201.693128663466,110.970562333313" />
+                  <mssgle:CubicBezierSegment
+                    Point1="201.693128663466,110.970562333313"
+                    Point2="201.693128663466,114.970562333313"
+                    Point3="205.693128663466,114.970562333313" />
+                  <mssgle:LineSegment
+                    End="395.886257326932,114.970562333313" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="801.104523927831,576.587014827266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.325415078006,70.0688369816737"
+              Start="0,0"
+              End="201.825415078006,70.0688369816737">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="100.662707539003,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.662707539003,0"
+                    Point2="104.662707539003,0"
+                    Point3="104.662707539003,4" />
+                  <mssgle:LineSegment
+                    End="104.662707539003,66.0688369816737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.662707539003,66.0688369816737"
+                    Point2="104.662707539003,70.0688369816737"
+                    Point3="108.662707539003,70.0688369816737" />
+                  <mssgle:LineSegment
+                    End="201.825415078006,70.0688369816737" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ADS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="146.285714285715,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS"
-          TopLeft="101.129608868571,330.175325607231" />
-        <NodeLayout
-          Size="135.428571428572,42.8571428571429"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID"
-          TopLeft="145.388868284814,128.235932743676" />
-        <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Row Count"
-          TopLeft="176.5079411838,223.870127444003" />
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
-          TopLeft="243.079369755229,266.155841729717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.8069037438004,64.0194838775137"
-              Start="0,0"
-              End="-68.8069037438004,56.5194838775137">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0097419387569"
-                    Point2="0,32.0097419387569"
-                    Point3="-4,32.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-64.8069037438004,32.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.8069037438004,32.0097419387569"
-                    Point2="-68.8069037438004,32.0097419387569"
-                    Point3="-68.8069037438004,36.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-68.8069037438004,56.5194838775137" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Derived Column Output]"
-          TopLeft="213.1031539991,171.093075600819">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.976215756129,52.7770518431838"
-              Start="0,0"
-              End="29.976215756129,45.2770518431838">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.3885259215919" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.3885259215919"
-                    Point2="0,26.3885259215919"
-                    Point3="4,26.3885259215919" />
-                  <mssgle:LineSegment
-                    End="25.976215756129,26.3885259215919" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.976215756129,26.3885259215919"
-                    Point2="29.976215756129,26.3885259215919"
-                    Point3="29.976215756129,30.3885259215919" />
-                  <mssgle:LineSegment
-                    End="29.976215756129,45.2770518431838" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155.428571428572,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source"
-          TopLeft="156.507940653981,46.0779218510444" />
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Flat File Source Output]"
-          TopLeft="234.222226368267,88.3636361367587">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21.119072369167,39.8722966069173"
-              Start="0,0"
-              End="-21.119072369167,32.3722966069173">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.9361483034586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.9361483034586"
-                    Point2="0,19.9361483034586"
-                    Point3="-4,19.9361483034586" />
-                  <mssgle:LineSegment
-                    End="-17.119072369167,19.9361483034586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17.119072369167,19.9361483034586"
-                    Point2="-21.119072369167,19.9361483034586"
-                    Point3="-21.119072369167,23.9361483034586" />
-                  <mssgle:LineSegment
-                    End="-21.119072369167,32.3722966069173" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Collect Errors\Gather errors">
     <LayoutInfo>
@@ -3987,6 +3848,145 @@ where AuditID = ?
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ADS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146.285714285715,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS"
+          TopLeft="101.129608868571,330.175325607231" />
+        <NodeLayout
+          Size="135.428571428572,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Row Count"
+          TopLeft="176.5079411838,223.870127444003" />
+        <NodeLayout
+          Size="155.428571428572,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source"
+          TopLeft="156.507940653981,46.0779218510444" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Flat File Source Output]"
+          TopLeft="234.222226368267,88.3636361367587">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.119072369167,39.8722966069173"
+              Start="0,0"
+              End="-21.119072369167,32.3722966069173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9361483034586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9361483034586"
+                    Point2="0,19.9361483034586"
+                    Point3="-4,19.9361483034586" />
+                  <mssgle:LineSegment
+                    End="-17.119072369167,19.9361483034586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.119072369167,19.9361483034586"
+                    Point2="-21.119072369167,19.9361483034586"
+                    Point3="-21.119072369167,23.9361483034586" />
+                  <mssgle:LineSegment
+                    End="-21.119072369167,32.3722966069173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,171.093075600819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.976215756129,52.7770518431838"
+              Start="0,0"
+              End="29.976215756129,45.2770518431838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3885259215919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.3885259215919"
+                    Point2="0,26.3885259215919"
+                    Point3="4,26.3885259215919" />
+                  <mssgle:LineSegment
+                    End="25.976215756129,26.3885259215919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.976215756129,26.3885259215919"
+                    Point2="29.976215756129,26.3885259215919"
+                    Point3="29.976215756129,30.3885259215919" />
+                  <mssgle:LineSegment
+                    End="29.976215756129,45.2770518431838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
+          TopLeft="243.079369755229,266.155841729717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.8069037438004,64.0194838775137"
+              Start="0,0"
+              End="-68.8069037438004,56.5194838775137">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0097419387569"
+                    Point2="0,32.0097419387569"
+                    Point3="-4,32.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-64.8069037438004,32.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.8069037438004,32.0097419387569"
+                    Point2="-68.8069037438004,32.0097419387569"
+                    Point3="-68.8069037438004,36.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-68.8069037438004,56.5194838775137" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

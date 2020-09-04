@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ADS_extract"
-  DTS:VersionBuild="255"
-  DTS:VersionGUID="{F3B239ED-EFB2-4B9A-AB50-426B96671CA1}">
+  DTS:VersionBuild="256"
+  DTS:VersionGUID="{607A834C-51E5-4FD3-8114-94FE476EB7A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -372,7 +372,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -393,7 +393,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1662,7 +1662,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictName]"
                           name="DistrictName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1684,7 +1684,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DeliveryName]"
                           name="DeliveryName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1706,7 +1706,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Item_ID]"
                           name="Item_ID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1728,7 +1728,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]"
                           name="Credit"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1750,7 +1750,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
                           name="Quantity"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1772,7 +1772,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
                           name="ProductName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1794,7 +1794,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[GlobalProductName]"
                           name="GlobalProductName"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1816,7 +1816,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[FinanceID]"
                           name="FinanceID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1838,7 +1838,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DeliveryDate]"
                           name="DeliveryDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1860,7 +1860,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[UnitTypeID]"
                           name="UnitTypeID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1882,7 +1882,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[BookingMechanism]"
                           name="BookingMechanism"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1904,7 +1904,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[ClientID]"
                           name="ClientID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1926,7 +1926,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[DistrictID]"
                           name="DistrictID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1948,7 +1948,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[SeasonID]"
                           name="SeasonID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1970,7 +1970,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[RegionID]"
                           name="RegionID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -1992,7 +1992,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]"
                           name="CountryID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -2014,7 +2014,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           length="50"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source.Outputs[Flat File Source Output].Columns[GlobalClientID]"
                           name="GlobalClientID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="IgnoreFailure">
                           <properties>
                             <property
                               dataType="System.Boolean"
@@ -6956,32 +6956,36 @@ where AuditID = ?
           Size="133.142857142858,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Row Count"
           TopLeft="167.301591733566,223.038959154413" />
+        <NodeLayout
+          Size="155.428571428572,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source"
+          TopLeft="118.412701549564,42.7012985110142" />
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
-          TopLeft="233.873020304995,265.324673440127">
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Flat File Source Output]"
+          TopLeft="196.126987263849,84.9870127967285">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.6005542935664,64.8506521671037"
+              EndConnector="16.9761667352503,43.2489199469475"
               Start="0,0"
-              End="-59.6005542935664,57.3506521671037">
+              End="16.9761667352503,35.7489199469475">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.4253260835519" />
+                    End="0,17.6244599734737" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.4253260835519"
-                    Point2="0,32.4253260835519"
-                    Point3="-4,32.4253260835519" />
+                    Point1="0,17.6244599734737"
+                    Point2="0,21.6244599734737"
+                    Point3="4,21.6244599734737" />
                   <mssgle:LineSegment
-                    End="-55.6005542935664,32.4253260835519" />
+                    End="12.9761667352503,21.6244599734737" />
                   <mssgle:CubicBezierSegment
-                    Point1="-55.6005542935664,32.4253260835519"
-                    Point2="-59.6005542935664,32.4253260835519"
-                    Point3="-59.6005542935664,36.4253260835519" />
+                    Point1="12.9761667352503,21.6244599734737"
+                    Point2="16.9761667352503,21.6244599734737"
+                    Point3="16.9761667352503,25.6244599734737" />
                   <mssgle:LineSegment
-                    End="-59.6005542935664,57.3506521671037" />
+                    End="16.9761667352503,35.7489199469475" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7024,36 +7028,32 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155.428571428572,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source"
-          TopLeft="118.412701549564,42.7012985110142" />
         <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Flat File Source Output]"
-          TopLeft="196.126987263849,84.9870127967285">
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
+          TopLeft="233.873020304995,265.324673440127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.9761667352503,43.2489199469475"
+              EndConnector="-59.6005542935664,64.8506521671037"
               Start="0,0"
-              End="16.9761667352503,35.7489199469475">
+              End="-59.6005542935664,57.3506521671037">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6244599734737" />
+                    End="0,28.4253260835519" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.6244599734737"
-                    Point2="0,21.6244599734737"
-                    Point3="4,21.6244599734737" />
+                    Point1="0,28.4253260835519"
+                    Point2="0,32.4253260835519"
+                    Point3="-4,32.4253260835519" />
                   <mssgle:LineSegment
-                    End="12.9761667352503,21.6244599734737" />
+                    End="-55.6005542935664,32.4253260835519" />
                   <mssgle:CubicBezierSegment
-                    Point1="12.9761667352503,21.6244599734737"
-                    Point2="16.9761667352503,21.6244599734737"
-                    Point3="16.9761667352503,25.6244599734737" />
+                    Point1="-55.6005542935664,32.4253260835519"
+                    Point2="-59.6005542935664,32.4253260835519"
+                    Point3="-59.6005542935664,36.4253260835519" />
                   <mssgle:LineSegment
-                    End="16.9761667352503,35.7489199469475" />
+                    End="-59.6005542935664,57.3506521671037" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
