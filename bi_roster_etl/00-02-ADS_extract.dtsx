@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ADS_extract"
-  DTS:VersionBuild="254"
-  DTS:VersionGUID="{2B67E1E8-BDC3-4436-A7DA-BC57F17F079D}">
+  DTS:VersionBuild="255"
+  DTS:VersionGUID="{F3B239ED-EFB2-4B9A-AB50-426B96671CA1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -419,7 +419,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ADS;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ADS];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
