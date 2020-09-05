@@ -4,13 +4,13 @@
   DTS:DTSID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID=CSSSIS0001;Password=ClientPassword$;Initial Catalog=Rosterdatawarehouse_StagingArea;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID=CSSSIS0001;Password=ClientPassword$;Initial Catalog="+ @[$Project::Roster_StagingArea] +";Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=Rosterdatawarehouse_StagingArea;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=RosterDatawarehouse_StagingArea;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAADRnu8AHCbOf3g53ZRI2qpr5+uGCimJGBN4nXEUecuiaQAAAAAOgAAAAAIAACAAAAC4pXT8we5O8dDEDN+o7ly67nnPT9Sn+5U5e1b/5x0P1IAAAABKqTVZPzXS3cGhIbfwELZUOiO9fZXExhbMGBhq+c4w+bqzmDCIL1Wf4jCdHYo9uFBeVwcHSIv+y9ylb2qJcdnSH0MAE7YGctsVZ0fYq1U2MqXp8ijRr2HQQYiyAbPTqrRguGFIK/3reN0Aa+6q0Gg6qnARN3NeAYjKhGzvZ3WitEAAAABnwQmvQUTdg9BWRCn9Uf7JHaUO7FdfiUiKvdiF4g1VdAOjuPBZZN8Tgel3j70/zeGDiwGdRdyutZHHkJzpVMDe</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAACXqCnurYgMDFMdnyGXvjodfIbIj7BqP8z1xeG2hKWXVAAAAAAOgAAAAAIAACAAAAB7d6PCPlYQKZYJUzQbmS3zsy5IHS8V1/4UtJPGmhLYdYAAAABLpUtBqO69bxPiqq5llHUxYmT7NSroK0g2w9VoCWZOaqFkVkT9ii0N8yCMuMfsxP0aYkhtsPMrFmWThoVbKbVQbubzoblwrH4z+TZbcl4hjDP/lnwncQ60BrWPuddOSLc2Vb2l9QwBf/Wk6T2n2de8cdP6GSNBk5x9XXn/S2+TW0AAAACfmd4h/DldUwSu5VobIRspIRTTqXLWpf4LJxJeMDApCfGP3xoYmpNg9ycy4Yz4t0x3mjUpkCVzlS3qs/jGiZ6/</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
