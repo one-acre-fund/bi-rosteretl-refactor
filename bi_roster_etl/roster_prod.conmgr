@@ -4,13 +4,15 @@
   DTS:DTSID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID=CSSSIS0001;Password=ClientPassword$;Initial Catalog="+ @[$Project::Roster_Production] +";Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID="+@[$Project::ServiceAccount]  +";Initial Catalog="+ @[$Project::Roster_Production] +";Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=NewRosterDatawarehouse;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAAA2g/5VRWT+KVbd0J8fp3fSXC/0NAwfST7sGmAO2L1v3wAAAAAOgAAAAAIAACAAAAD402htTB1+Mg+9DZq/4yLwUcRVsI79FAqGXudIRK1dhIAAAAA9a5yWWMWnJ+dPXy/KRy9cQhk8eKTB7t8DBJ6WkI7gEWi8JUVQ7y0eS8dd0+Z7yMhbyxMmL4WEC1m/y3PPTxAdu8ask/LHtcEMDE2uS/VFAnyqo282N+WueTfknBYLfJPRWAVmcVKORWoHDm11v1EHgTEyakoBovb09sHQDisV70AAAABH1lSEwwlkDeS/3P3N4bhtWMFWC869DSbLGUXr372OjYW8bna/3sNgBpJbJPQHo1lGep8UK0DR0O5FV3ulANcp</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAAA5LgeYoN4/ypW+rZHnwx7NuN5LpwnSnhEkqDzy0i+4AgAAAAAOgAAAAAIAACAAAAA1Jnj9Sj3drWG7qEFNJFUPhIoyvsC/F4M+PlwUzZQ73oAAAAA/niVjBR4HuoPMzibu7MbSrnB21Tu/labLvY7rPJcW9mzzv5hoUFBcm6QKNdkisMqygi2/eSFoFit9SocE2qQKn9kDgB2PEMaa4OvHMYbUp6LVLgeyVMqMddcIeV36M1mMXXgP9ItSPTfQUJDvgv4WrDnYr/IADTjBqcBp4EXmFkAAAABqZirVoyUOONTvTUhnLXa0EXVPgbhaqYkZYFWXgpTGShqpmlLdAqJV0JTZ9KDwDLDSadJ6Kk+w6UUVGKjc+GB1</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

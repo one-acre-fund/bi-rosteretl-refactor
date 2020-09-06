@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SIRMANDELA</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAAASiNcUA9xSxTf7SF4yBlyfDgV79n/EuARwgSUQlhJCHQAAAAAOgAAAAAIAACAAAACwnmdh7KVV5xgF1Ij5xVD/N4UZEjof1A359H+vGl3hvZAAAACjBM352g+j95hdW+0FJRKCD8N9VmrcxyuK4NIiD02Q4d5rx28oHMV2fJvpOcCIW+A6I14Pa9kAtPvHHb9n4QhzS0wHSq2LGNgdKChHiqC4/Vfwx8qYPxv2okrEr2Y+Xj2CcNr5lxvh6fay0/qvna8AWFHEiF6IPf7Z51v/VMOSL85xzmERP4Z3bFB7lCzXq/pAAAAAa+2oIKESRJ8yktOq+MuPgNwWM7ok5kqTV5kCq2afq1KrfXC19cHDSlRF2zPAm3Wf9aRACe62XspJL9pOSg1OgQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAADzJIKRlqp6lo3Q0UVk191EtiQ6rDgsqkVu9USYaDy2HgAAAAAOgAAAAAIAACAAAAB34nHjlOFreSsBuWjT1vHTJhiPZcMqiMLtQCQQCElbP5AAAADmDmlzzZAhra6lVAn4SPSpcdRs8c9eX1nH4SVSgrh9NXnWnU0GBTdiAS3dtujmLJh1HmgEmrsrxqNeZ0sG3A8PlGtZsdEKKDAOTNzuG1BevXqxhGDuip7YaO0TqauANgj3cpvTRmu9Fnna1DhTEkscoNEt3N9ovvtMqw29zB6I97TC0OzNOud+7gT9ydVbzmpAAAAAZtsYqM/9P/vZIESlVhieezjPEBZGKBCXH1VgvjxWR6TSDVxKmV7iohxg/gUs2coZ1xb836XGq2VFSyapj0IVZA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -98,20 +98,6 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.roster_landing.Password">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.roster_landing.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -138,7 +124,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">newndizi.oneacrefund.org,6543</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">mtama.oneacrefund.org,6543</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -198,7 +184,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">NewRosterDatawarehouse</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">RosterDatawarehouse</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -302,7 +288,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">RosterDatawarehouse_StagingArea</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Rosterreporting_Staging</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -12958,12 +12944,12 @@
           <ConfigurationSetting>
             <Id>{0cfd69bf-542b-4301-b93a-d8d0db6a9464}</Id>
             <Name>Project::ServerName</Name>
-            <Value xsi:type="xsd:string">mtama.oneacrefund.org,6543</Value>
+            <Value xsi:type="xsd:string">newndizi.oneacrefund.org,6543</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2020-09-05T13:43:17.3620881Z</Value>
+            <Value xsi:type="xsd:dateTime">2020-09-06T00:53:42.0953588Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{2feaccb1-b82a-49b3-aa43-1097a35b33b5}</Id>
@@ -12983,12 +12969,17 @@
           <ConfigurationSetting>
             <Id>{22f9395a-7d5c-4947-a51f-8c0fbee1e169}</Id>
             <Name>Project::Roster_StagingArea</Name>
-            <Value xsi:type="xsd:string">Rosterreporting_Staging</Value>
+            <Value xsi:type="xsd:string">RosterDatawarehouse_StagingArea</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{c52d4749-919d-4f32-be4e-9dcebf51ec7b}</Id>
             <Name>Project::Roster_Production</Name>
-            <Value xsi:type="xsd:string">RosterDatawarehouse</Value>
+            <Value xsi:type="xsd:string">NewRosterDatawarehouse</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{66781c5f-4f0b-445f-8091-2d635a3d09ca}</Id>
+            <Name>Project::ServiceAccount</Name>
+            <Value xsi:type="xsd:string">CSSSIS0001</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>
@@ -13017,7 +13008,7 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2020-09-05T13:14:50.6745302Z</Value>
+            <Value xsi:type="xsd:dateTime">2020-09-06T00:53:42.0963584Z</Value>
           </ConfigurationSetting>
           <ConfigurationSetting>
             <Id>{2feaccb1-b82a-49b3-aa43-1097a35b33b5}</Id>
@@ -13043,6 +13034,11 @@
             <Id>{c52d4749-919d-4f32-be4e-9dcebf51ec7b}</Id>
             <Name>Project::Roster_Production</Name>
             <Value xsi:type="xsd:string">RosterDatawarehouse</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{66781c5f-4f0b-445f-8091-2d635a3d09ca}</Id>
+            <Name>Project::ServiceAccount</Name>
+            <Value xsi:type="xsd:string">CSSSIS0001</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>
