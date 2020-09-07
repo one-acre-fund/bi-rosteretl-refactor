@@ -8,12 +8,12 @@
   DTS:Description="SSIS Package Description"
   DTS:DTSID="{86EC59D5-3619-4859-B383-9D666FFFF7E3}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="Load_DEV_Dimensions"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{BD529CFE-1246-4F0F-BB69-5E7684A14002}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{11E092E7-4656-4CB1-9790-EE16B70E9212}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,13 +22,17 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{C8F2DC99-9617-42BE-A769-8C9BFE8BF48A}"
       DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source=newndizi.oneacrefund.org,6543;User ID="+ @[$Project::ServiceAccount] +";Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Auto Translate=false;"</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=denis.gachagua;Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Auto Translate=false;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7t0Tx+lRSUGwXBLtFHvDIQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAATNw4QWcUprbVGcyWA3r3/f7xVXuO2gKKfDvMA5PB4fwAAAAAOgAAAAAIAACAAAAC/WwQwLZCD8dKENUMQFpq3j4n4WjY52i7GMSWAvT0aCiAAAABegLa6nJfcKcl0cRIJbffoAudxknl8iBlogb4RZPQCg0AAAABGTFsfqJUrwLJTEQ4cjW7uDsQvcdFL67VOHcxVnTsoPGzT/e3hMVUXKqhHl4Tg+/cunt/aCgGejksadgwCgVF3</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnvfq5IcU2tCeMBDgTjoCeBrMTbgJfKhhRnUinA0CQzgAAAAAOgAAAAAIAACAAAABl4/SV9l3jDSZeu8E/Yoj/mzeO1fszoZ9CNrFFBLb4uiAAAAB/qRrXNR+7E1xVdfkq25mirOfjZRRW84Q2pi7sDT5a9EAAAAD1pxmzCRT68Rs80zmxv3oOBdD2I78zletu1Hxr2JS/3MZ1YirwNIs6i2muASEvPSLHSvLtgwmOW2UmzqN7DGjJ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -37,13 +41,17 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{164C62D0-F07F-4272-95DB-CB2BE298CAAF}"
       DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source=mtama.oneacrefund.org,6543;User ID="+ @[$Project::ServiceAccount] +";Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;"</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=denis.gachagua;Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=OAF_SHARED_DIMENSIONS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7t0Tx+lRSUGwXBLtFHvDIQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWmTe7kVPp7HZgOyhcoTHJ4UChjT1C2mvZIGMIiNzf/QAAAAAOgAAAAAIAACAAAACtyrmOWNz/qWos6ISm3um1f+WibMfID6G3ulxkex46aSAAAABVeW3ql8eXZ/+vRGOzu3QaCcZ3IgBafVRzydK/c3tfwEAAAADgmZrA4nYUBe8ka2xbX5v9XceAE6xPUS/ycnEiENPYOqirIzmj3VcXGpH4icDK12Zfp3mRHbMnMS/YRZrvgxJ4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADD0TVVKAb7I0/mbazFyBP106JzOiLdfGL+Q3SYRlNtTAAAAAAOgAAAAAIAACAAAADtqJbkVavmGrnFzNnHLUeH36S3dzRv5bXElcts22tFLiAAAACAGbXPu6gYFTLliVkl5vKq8Lcnvma4zWIg3olxEWBpEUAAAAC5dD9cVCenVjeqyehBJeov2zvclbeSaorZokiq771NtHzhSyzDe+ef27kl7GF1DTnmsSr8XtOOp3Z49C5NxHNz</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -21466,64 +21474,86 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 1"
           TopLeft="20.1666666666667,108.166666666666" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 2"
           TopLeft="20.1666666666667,313.499999999999" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 3"
           TopLeft="20.1666666666667,518.833333333332" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 4"
           TopLeft="20.1666666666667,724.166666666665" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 5"
           TopLeft="20.1666666666668,929.499999999999" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 6"
           TopLeft="20.1666666666668,1134.83333333333" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 7"
           TopLeft="20.1666666666668,1340.16666666667" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 1"
           TopLeft="5.5,5.49999999999993" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 2"
           TopLeft="5.50000000000003,210.833333333333" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 3"
           TopLeft="5.50000000000006,416.166666666666" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 4"
           TopLeft="5.50000000000007,621.499999999999" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 5"
           TopLeft="5.5000000000001,826.833333333332" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 6"
           TopLeft="5.50000000000013,1032.16666666667" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.857142857143,42.8571428571429"
           Id="Package\Preparation SQL Task 7"
           TopLeft="5.50000000000016,1237.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{44C404E8-89CB-433C-8CB1-CC32D11D3577\}]"
-          TopLeft="100.833333333333,1074.83333333333">
+          Id="Package.PrecedenceConstraints[{0BA905E6-D9ED-4537-9BB3-47EBD8174A48\}]"
+          TopLeft="100.833333333333,356.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999998"
+              Start="0,0"
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{2464B4DE-02B8-47B3-B25B-09C375C3BDD4\}]"
+          TopLeft="100.833333333333,1280.16666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21535,72 +21565,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{F64B415D-BF0F-4DFC-BF34-3ED31E5B5271\}]"
-          TopLeft="100.833333333333,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{2C80F334-55CC-4159-BECA-8340F7A4BC50\}]"
-          TopLeft="100.833333333333,1177.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{C446F469-D135-4475-BB4E-2179925BA974\}]"
-          TopLeft="100.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21632,19 +21596,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{F943603E-B25E-4262-9AF9-50626ED6E4A2\}]"
-          TopLeft="100.833333333333,561.499999999999">
+          Id="Package.PrecedenceConstraints[{2C80F334-55CC-4159-BECA-8340F7A4BC50\}]"
+          TopLeft="100.833333333333,1177.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,59.9999999999998"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.4999999999998">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.4999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21676,85 +21640,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{E4E5F3A5-E6AC-426D-B03B-47C22F516681\}]"
-          TopLeft="100.833333333333,766.833333333332">
+          Id="Package.PrecedenceConstraints[{44C404E8-89CB-433C-8CB1-CC32D11D3577\}]"
+          TopLeft="100.833333333333,1074.83333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60.0000000000002"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{BED35F1B-DF3B-49BB-885E-9DE4B5940396\}]"
-          TopLeft="100.833333333333,664.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{67DFB67B-3C5E-48C8-9D1E-0F678FD33719\}]"
-          TopLeft="100.833333333333,972.166666666665">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{0BA905E6-D9ED-4537-9BB3-47EBD8174A48\}]"
-          TopLeft="100.833333333333,356.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
+                    End="0,52.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21786,19 +21684,129 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[{2464B4DE-02B8-47B3-B25B-09C375C3BDD4\}]"
-          TopLeft="100.833333333333,1280.16666666667">
+          Id="Package.PrecedenceConstraints[{67DFB67B-3C5E-48C8-9D1E-0F678FD33719\}]"
+          TopLeft="100.833333333333,972.166666666665">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000002"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,52.5000000000002">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000002" />
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{BED35F1B-DF3B-49BB-885E-9DE4B5940396\}]"
+          TopLeft="100.833333333333,664.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{C446F469-D135-4475-BB4E-2179925BA974\}]"
+          TopLeft="100.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999998"
+              Start="0,0"
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{E4E5F3A5-E6AC-426D-B03B-47C22F516681\}]"
+          TopLeft="100.833333333333,766.833333333332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{F64B415D-BF0F-4DFC-BF34-3ED31E5B5271\}]"
+          TopLeft="100.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999998"
+              Start="0,0"
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{F943603E-B25E-4262-9AF9-50626ED6E4A2\}]"
+          TopLeft="100.833333333333,561.499999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21816,43 +21824,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186.666666666667,42.6666666666667"
+          Size="186.857142857143,42.8571428571429"
           Id="Package\Data Flow Task 1\Source 3 - ClientPhone"
           TopLeft="16.1666666666667,5.50000000000004" />
         <NodeLayout
-          Size="208,42.6666666666667"
+          Size="208,42.8571428571429"
           Id="Package\Data Flow Task 1\Destination 3 - ClientPhone"
           TopLeft="5.5,108.166666666667" />
         <NodeLayout
-          Size="229.333333333334,42.6666666666667"
+          Size="229.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 1\Source 4 - ClientPhoneNumbers"
           TopLeft="283.833333333333,5.50000000000004" />
         <NodeLayout
-          Size="173.333333333334,42.6666666666667"
+          Size="173.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 1\Source 2 - ClientIDs"
           TopLeft="594.833333333333,5.50000000000004" />
         <NodeLayout
-          Size="249.333333333334,42.6666666666667"
+          Size="249.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 1\Destination 4 - ClientPhoneNumbers"
           TopLeft="273.833333333333,108.166666666667" />
         <NodeLayout
-          Size="218.666666666667,42.6666666666667"
+          Size="218.857142857143,42.8571428571429"
           Id="Package\Data Flow Task 1\Source - AgroEcologicalZones"
           TopLeft="850.166666666667,5.49999999999993" />
         <NodeLayout
-          Size="240,42.6666666666667"
+          Size="240,42.8571428571429"
           Id="Package\Data Flow Task 1\Source 1 - AllocationBVALocations"
           TopLeft="1150.5,5.49999999999993" />
         <NodeLayout
-          Size="261.333333333334,42.6666666666667"
+          Size="261.142857142858,42.8571428571429"
           Id="Package\Data Flow Task 1\Destination 1 - AllocationBVALocations"
           TopLeft="1139.83333333333,108.166666666667" />
         <NodeLayout
-          Size="240,42.6666666666667"
+          Size="240,42.8571428571429"
           Id="Package\Data Flow Task 1\Destination - AgroEcologicalZones"
           TopLeft="839.5,108.166666666667" />
         <NodeLayout
-          Size="194.666666666667,42.6666666666667"
+          Size="194.857142857143,42.8571428571429"
           Id="Package\Data Flow Task 1\Destination 2 - ClientIDs"
           TopLeft="584.166666666667,108.166666666667" />
         <EdgeLayout
