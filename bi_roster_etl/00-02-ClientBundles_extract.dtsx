@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="256"
-  DTS:VersionGUID="{A64B5691-F76E-4F34-BF7E-61C318A54135}">
+  DTS:VersionBuild="257"
+  DTS:VersionGUID="{864B5D66-F8D6-41B0-9F0D-B86F2FBC6C90}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5963,7 +5963,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{F39F04EE-B85F-4ADA-B19E-9867CC667E51};</property>
+                      name="ParameterMapping">"Parameter0:Input",{3142A202-539B-4AB2-8A70-4065C525D023};</property>
                   </properties>
                   <connections>
                     <connection
@@ -7742,109 +7742,41 @@ where AuditID = ?
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133.142857142858,42.8571428571429"
-          Id="Package\Load Production\Get Audit Parameters\Error Count"
-          TopLeft="391.095238095238,62.8571428571428" />
+          Size="151.428571428572,42.2857142857143"
+          Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
+          TopLeft="353.333341104013,129.49536856179" />
         <NodeLayout
           Size="193.714285714286,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
           TopLeft="166.503399291727,523.235622926513" />
         <NodeLayout
-          Size="200.571428571429,42.8571428571429"
-          Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
-          TopLeft="180.882085192261,350.811378163968" />
+          Size="99.4285714285715,42.2857142857143"
+          Id="Package\Load Production\Get Audit Parameters\Sort"
+          TopLeft="121.063494325735,204.18181661929" />
         <NodeLayout
           Size="148.571428571429,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Rows Inserted"
           TopLeft="60,60" />
         <NodeLayout
-          Size="99.4285714285715,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\Sort"
-          TopLeft="121.063494325735,204.18181661929" />
-        <NodeLayout
           Size="133.142857142858,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Merge Join"
           TopLeft="217.253973064389,272.311106910819" />
+        <NodeLayout
+          Size="133.142857142858,42.8571428571429"
+          Id="Package\Load Production\Get Audit Parameters\Error Count"
+          TopLeft="391.095238095238,62.8571428571428" />
         <NodeLayout
           Size="142.857142857143,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\DC AuditID 1"
           TopLeft="84.4523823904614,131.149349818686" />
         <NodeLayout
-          Size="151.428571428572,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
-          TopLeft="353.333341104013,129.49536856179" />
-        <NodeLayout
           Size="99.4285714285715,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Sort 1"
           TopLeft="364.230166643806,199.488874356367" />
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output]"
-          TopLeft="170.777780040021,246.467530905004">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.1904787386538,25.8435760058149"
-              Start="0,0"
-              End="92.1904787386538,18.3435760058149">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.3220183444144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3220183444144"
-                    Point2="0,15.3220183444144"
-                    Point3="4,15.3220183444144" />
-                  <mssgle:LineSegment
-                    End="88.1904787386538,15.3220183444144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.1904787386538,15.3220183444144"
-                    Point2="92.1904787386538,15.3220183444144"
-                    Point3="92.1904787386538,19.3220183444144" />
-                  <mssgle:LineSegment
-                    End="92.1904787386538,18.3435760058149" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
-          TopLeft="155.880953819033,173.4350641044">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.8968262209884,30.7467525148898"
-              Start="0,0"
-              End="14.8968262209884,23.2467525148898">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.3733762574449" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3733762574449"
-                    Point2="0,15.3733762574449"
-                    Point3="4,15.3733762574449" />
-                  <mssgle:LineSegment
-                    End="10.8968262209884,15.3733762574449" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.8968262209884,15.3733762574449"
-                    Point2="14.8968262209884,15.3733762574449"
-                    Point3="14.8968262209884,19.3733762574449" />
-                  <mssgle:LineSegment
-                    End="14.8968262209884,23.2467525148898" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="200.571428571429,42.8571428571429"
+          Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
+          TopLeft="180.882085192261,350.811378163968" />
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
           TopLeft="134.285714285714,102.285714285714">
@@ -7871,6 +7803,28 @@ where AuditID = ?
                     Point3="21.5952395333185,18.4318177664857" />
                   <mssgle:LineSegment
                     End="21.5952395333185,21.3636355329713" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Merge Join Output]"
+          TopLeft="282.496600556896,314.596821196533">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.214556967435"
+              Start="0,0"
+              End="0,28.714556967435">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.714556967435" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7914,87 +7868,31 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output1]"
-          TopLeft="413.944452358091,241.774588642081">
+          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
+          TopLeft="155.880953819033,173.4350641044">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-109.261907865131,30.5365182687376"
+              EndConnector="14.8968262209884,30.7467525148898"
               Start="0,0"
-              End="-109.261907865131,23.0365182687376">
+              End="14.8968262209884,23.2467525148898">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1043479812108" />
+                    End="0,11.3733762574449" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.1043479812108"
-                    Point2="0,18.1043479812108"
-                    Point3="-4,18.1043479812108" />
+                    Point1="0,11.3733762574449"
+                    Point2="0,15.3733762574449"
+                    Point3="4,15.3733762574449" />
                   <mssgle:LineSegment
-                    End="-105.261907865131,18.1043479812108" />
+                    End="10.8968262209884,15.3733762574449" />
                   <mssgle:CubicBezierSegment
-                    Point1="-105.261907865131,18.1043479812108"
-                    Point2="-109.261907865131,18.1043479812108"
-                    Point3="-109.261907865131,22.1043479812108" />
+                    Point1="10.8968262209884,15.3733762574449"
+                    Point2="14.8968262209884,15.3733762574449"
+                    Point3="14.8968262209884,19.3733762574449" />
                   <mssgle:LineSegment
-                    End="-109.261907865131,23.0365182687376" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output1]"
-          TopLeft="457.666666666666,105.714285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-28.6190398483673,23.7810828475044"
-              Start="0,0"
-              End="-28.6190398483673,16.2810828475044">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.89054142375222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.89054142375222"
-                    Point2="0,11.8905414237522"
-                    Point3="-4,11.8905414237522" />
-                  <mssgle:LineSegment
-                    End="-24.6190398483673,11.8905414237522" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.6190398483673,11.8905414237522"
-                    Point2="-28.6190398483673,11.8905414237522"
-                    Point3="-28.6190398483673,15.8905414237522" />
-                  <mssgle:LineSegment
-                    End="-28.6190398483673,16.2810828475044" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Merge Join Output]"
-          TopLeft="282.496600556896,314.596821196533">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.214556967435"
-              Start="0,0"
-              End="0,28.714556967435">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.714556967435" />
+                    End="14.8968262209884,23.2467525148898" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8037,11 +7935,113 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output1]"
+          TopLeft="413.944452358091,241.774588642081">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.261907865131,30.5365182687376"
+              Start="0,0"
+              End="-109.261907865131,23.0365182687376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1043479812108" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1043479812108"
+                    Point2="0,18.1043479812108"
+                    Point3="-4,18.1043479812108" />
+                  <mssgle:LineSegment
+                    End="-105.261907865131,18.1043479812108" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.261907865131,18.1043479812108"
+                    Point2="-109.261907865131,18.1043479812108"
+                    Point3="-109.261907865131,22.1043479812108" />
+                  <mssgle:LineSegment
+                    End="-109.261907865131,23.0365182687376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output]"
+          TopLeft="170.777780040021,246.467530905004">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.1904787386538,25.8435760058149"
+              Start="0,0"
+              End="92.1904787386538,18.3435760058149">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.3220183444144" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.3220183444144"
+                    Point2="0,15.3220183444144"
+                    Point3="4,15.3220183444144" />
+                  <mssgle:LineSegment
+                    End="88.1904787386538,15.3220183444144" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.1904787386538,15.3220183444144"
+                    Point2="92.1904787386538,15.3220183444144"
+                    Point3="92.1904787386538,19.3220183444144" />
+                  <mssgle:LineSegment
+                    End="92.1904787386538,18.3435760058149" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output1]"
+          TopLeft="457.666666666666,105.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.6190398483673,23.7810828475044"
+              Start="0,0"
+              End="-28.6190398483673,16.2810828475044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.89054142375222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.89054142375222"
+                    Point2="0,11.8905414237522"
+                    Point3="-4,11.8905414237522" />
+                  <mssgle:LineSegment
+                    End="-24.6190398483673,11.8905414237522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.6190398483673,11.8905414237522"
+                    Point2="-28.6190398483673,11.8905414237522"
+                    Point3="-28.6190398483673,15.8905414237522" />
+                  <mssgle:LineSegment
+                    End="-28.6190398483673,16.2810828475044" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Production\Get Audit Parameters\Error Count">
+    design-time-name="Package\Load Production\Get Audit Parameters\Rows Inserted">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8049,7 +8049,7 @@ where AuditID = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Production\Get Audit Parameters\Rows Inserted">
+    design-time-name="Package\Load Production\Get Audit Parameters\Error Count">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
