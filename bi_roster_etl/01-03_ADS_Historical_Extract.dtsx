@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ADS_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="149"
-  DTS:VersionGUID="{6698DAEB-126B-4794-A668-03C54F16F42C}">
+  DTS:VersionBuild="152"
+  DTS:VersionGUID="{6DE30938-BBFE-42D5-98AB-032BFD057A10}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3481,7 +3481,7 @@ where AuditID = ?
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="WITH CTE AS(&#xA;   SELECT RosterDistrictID, RosterSeasonID, RosterClientID&#xA;       RN = ROW_NUMBER()OVER(PARTITION BY RosterDistrictID, RosterSeasonID, RosterClientID, ProductName, Item_ID ORDER BY RosterClientID)&#xA;   FROM [RosterDatawarehouse_LandingArea].cls.Landing_ADS_Historical&#xA;)&#xA;delete FROM CTE WHERE RN &gt; 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="WITH CTE AS(&#xA;   SELECT RosterDistrictID, RosterSeasonID, RosterClientID,&#xA;       RN = ROW_NUMBER()OVER(PARTITION BY RosterDistrictID, RosterSeasonID, RosterClientID, ProductName, Item_ID ORDER BY RosterClientID)&#xA;   FROM [RosterDatawarehouse_LandingArea].cls.Landing_ADS_Historical&#xA;)&#xA;delete FROM CTE WHERE RN &gt; 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
