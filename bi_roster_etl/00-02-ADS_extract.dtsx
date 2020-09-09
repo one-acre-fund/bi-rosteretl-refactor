@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ADS_extract"
-  DTS:VersionBuild="270"
-  DTS:VersionGUID="{38F93854-AAD5-4E5C-B13B-6953FAE6BA38}">
+  DTS:VersionBuild="273"
+  DTS:VersionGUID="{7F0B6A92-A172-4710-9F0D-96CB2F49E514}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -372,7 +372,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -393,7 +393,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4941,6 +4941,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Incremental Load - Staging\Remove duplicates"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{90ca1d0a-de8f-4c83-b06a-7fc93d64448a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Remove duplicates"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+              SQLTask:SqlStatementSource="WITH CTE AS(&#xA;   SELECT RosterDistrictID, RosterSeasonID, RosterClientID,&#xA;       RN = ROW_NUMBER()OVER(PARTITION BY RosterDistrictID, RosterSeasonID, RosterClientID,ProductName,Item_ID ORDER BY RosterClientID)&#xA;   FROM [RosterDatawarehouse_LandingArea].cls.Landing_ADS&#xA;)&#xA;delete FROM CTE WHERE RN &gt; 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Incremental Load - Staging\Truncate Staging"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -4966,6 +4982,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Incremental Load - Staging\Load Staging" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{AF98CD1A-FD8C-4612-9CBD-96AB0FA8D6B1}"
+          DTS:From="Package\Incremental Load - Staging\Remove duplicates"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Incremental Load - Staging\Truncate Staging" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -6351,14 +6375,40 @@ where AuditID = ?
         <NodeLayout
           Size="141.142857142858,42.8571428571429"
           Id="Package\Incremental Load - Staging\Load Staging"
-          TopLeft="14.9285714285714,108.357142857143" />
+          TopLeft="18.9285714285715,211.214285714286" />
         <NodeLayout
           Size="160,42.8571428571429"
           Id="Package\Incremental Load - Staging\Truncate Staging"
-          TopLeft="5.50000000000001,5.50000000000002" />
+          TopLeft="9.50000000000003,108.357142857143" />
         <EdgeLayout
           Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
-          TopLeft="85.5,48.3571428571429">
+          TopLeft="89.5,151.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42.8571428571429"
+          Id="Package\Incremental Load - Staging\Remove duplicates"
+          TopLeft="5.50000000000001,5.50000000000002" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
+          TopLeft="89.5,48.3571428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6381,8 +6431,8 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="170.857142857143,206.285714285715"
-          Size="170.857142857143,249.142857142858"
+          PanelSize="178.857142857143,309.142857142858"
+          Size="178.857142857143,352"
           Id="Package\Incremental Load - Staging"
           TopLeft="566.035701738086,512.935064211739" />
         <NodeLayout
@@ -6546,18 +6596,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="736.892844595229,636.454111609681">
+          TopLeft="744.892844595229,688.935064211739">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="833.17990958068,0"
+              EndConnector="825.179909580681,-53.5333337755452"
               Start="0,0"
-              End="825.67990958068,0">
+              End="817.679909580681,-53.5333337755452">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="825.67990958068,0" />
+                    End="408.589954790341,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="408.589954790341,0"
+                    Point2="412.589954790341,0"
+                    Point3="412.589954790341,-4" />
+                  <mssgle:LineSegment
+                    End="412.589954790341,-49.5333337755452" />
+                  <mssgle:CubicBezierSegment
+                    Point1="412.589954790341,-49.5333337755452"
+                    Point2="412.589954790341,-53.5333337755452"
+                    Point3="416.589954790341,-53.5333337755452" />
+                  <mssgle:LineSegment
+                    End="817.679909580681,-53.5333337755452" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6568,18 +6630,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="295.273784399286,641.499568501672">
+          TopLeft="295.273784399286,645.492644220177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="270.761917338801,0"
+              EndConnector="270.7619173388,43.4424199915625"
               Start="0,0"
-              End="263.261917338801,0">
+              End="263.2619173388,43.4424199915625">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="263.261917338801,0" />
+                    End="131.3809586694,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.3809586694,0"
+                    Point2="135.3809586694,0"
+                    Point3="135.3809586694,4" />
+                  <mssgle:LineSegment
+                    End="135.3809586694,39.4424199915625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135.3809586694,39.4424199915625"
+                    Point2="135.3809586694,43.4424199915625"
+                    Point3="139.3809586694,43.4424199915625" />
+                  <mssgle:LineSegment
+                    End="263.2619173388,43.4424199915625" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
