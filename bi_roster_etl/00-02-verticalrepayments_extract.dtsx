@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-verticalrepayments_extract"
-  DTS:VersionBuild="265"
-  DTS:VersionGUID="{8F9DD997-7722-48CA-9665-AF5FFCB781B9}">
+  DTS:VersionBuild="266"
+  DTS:VersionGUID="{09BDEDA6-A2D6-4EAB-84DF-AA7A634574ED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8308,7 +8308,7 @@ where AuditID = ?
         <NodeLayout
           Size="297.142857142858,42.2857142857143"
           Id="Package\Repayments - Landing\Truncate Table Landing_VerticalRepayments"
-          TopLeft="143.5,211.214285714286" />
+          TopLeft="128.357142857143,211.214285714286" />
         <EdgeLayout
           Id="Package\Repayments - Landing.PrecedenceConstraints[Constraint 2]"
           TopLeft="68.9285714285715,48.3571428571429">
@@ -8379,30 +8379,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Repayments - Landing.PrecedenceConstraints[Constraint 4]"
-          TopLeft="276.928571428571,151.214285714286">
+          TopLeft="276.928571428572,151.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15.1428571428571,60.0000000000002"
+              EndConnector="0,60"
               Start="0,0"
-              End="15.1428571428571,52.5000000000002">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0000000000001"
-                    Point2="0,30.0000000000001"
-                    Point3="4,30.0000000000001" />
-                  <mssgle:LineSegment
-                    End="11.1428571428571,30.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.1428571428571,30.0000000000001"
-                    Point2="15.1428571428571,30.0000000000001"
-                    Point3="15.1428571428571,34.0000000000001" />
-                  <mssgle:LineSegment
-                    End="15.1428571428571,52.5000000000002" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8414,24 +8402,24 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="445.714285714286,308.571428571429"
-          Size="445.714285714286,351.428571428572"
+          PanelSize="430.857142857143,308.571428571429"
+          Size="430.857142857143,351.428571428572"
           Id="Package\Repayments - Landing"
           TopLeft="283.369027742258,23.7056266395462" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="699.369027742258,196.850648715453">
+          TopLeft="714.226170599401,196.850648715453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="139.784433641156,0"
+              EndConnector="124.927290784013,0"
               Start="0,0"
-              End="132.284433641156,0">
+              End="117.427290784013,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="132.284433641156,0" />
+                    End="117.427290784013,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
