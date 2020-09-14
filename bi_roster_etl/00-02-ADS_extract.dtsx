@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ADS_extract"
-  DTS:VersionBuild="274"
-  DTS:VersionGUID="{261E340C-CC87-46F6-AF88-DC36C47577C6}">
+  DTS:VersionBuild="275"
+  DTS:VersionGUID="{C9B3A66E-7F9A-4A3D-8557-18F7454DF754}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5088,79 +5088,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load Production\Get Audit Parameters\DC AuditID 1"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="DC AuditID 1"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output].Columns[AuditID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output].Columns[AuditID]"
-                          name="AuditID"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[User::AuditId]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[User::AuditId]</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -5340,423 +5267,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load Production\Get Audit Parameters\Merge Join"
-                  componentClassID="Microsoft.MergeJoin"
-                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-                  name="Merge Join"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of join to perform."
-                      name="JoinType"
-                      typeConverter="JoinType">2</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the number of columns in the ordering key."
-                      name="NumKeyColumns">1</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the null values are treated as equal values."
-                      name="TreatNullsAsEqual">true</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Indicates the requested maximum buffers per input before blocking."
-                      name="MaxBuffersPerInput">5</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input]"
-                      hasSideEffects="true"
-                      name="Merge Join Left Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input].Columns[AuditID]"
-                          cachedDataType="i4"
-                          cachedName="AuditID"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[AuditID]" />
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input].Columns[RowsInserted]"
-                          cachedDataType="i4"
-                          cachedName="RowsInserted"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[RowsInserted]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Right Input]"
-                      hasSideEffects="true"
-                      name="Merge Join Right Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Right Input].Columns[AuditID]"
-                          cachedDataType="i4"
-                          cachedName="AuditID"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[AuditID]" />
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Right Input].Columns[RowsWithErrors]"
-                          cachedDataType="i4"
-                          cachedName="RowsWithErrors"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[RowsWithErrors]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output]"
-                      isSorted="true"
-                      name="Merge Join Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[AuditID]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[AuditID]"
-                          name="AuditID"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input].Columns[AuditID]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsInserted]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsInserted]"
-                          name="RowsInserted">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input].Columns[RowsInserted]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsWithErrors]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsWithErrors]"
-                          name="RowsWithErrors">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Right Input].Columns[RowsWithErrors]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load Production\Get Audit Parameters\Rows Inserted"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="Rows Inserted"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsInserted from cls.staging_ADS</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]"
-                          name="RowsInserted"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].ExternalColumns[RowsInserted]"
-                          dataType="i4"
-                          name="RowsInserted" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[RowsInserted]"
-                          name="RowsInserted" />
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load Production\Get Audit Parameters\Sort"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Load Production\Get Audit Parameters\Sort.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort.Inputs[Sort Input].Columns[RowsInserted]"
-                          cachedDataType="i4"
-                          cachedName="RowsInserted"
-                          lineageId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort.Inputs[Sort Input].Columns[AuditID]"
-                          cachedDataType="i4"
-                          cachedName="AuditID"
-                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output].Columns[AuditID]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[RowsInserted]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[RowsInserted]"
-                          name="RowsInserted">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output].Columns[RowsInserted]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[AuditID]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output].Columns[AuditID]"
-                          name="AuditID"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output].Columns[AuditID]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load Production\Get Audit Parameters\Sort 1"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort 1"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Load Production\Get Audit Parameters\Sort 1.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort 1.Inputs[Sort Input].Columns[AuditID]"
-                          cachedDataType="i4"
-                          cachedName="AuditID"
-                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output].Columns[AuditID]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort 1.Inputs[Sort Input].Columns[RowsWithErrors]"
-                          cachedDataType="i4"
-                          cachedName="RowsWithErrors"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[AuditID]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[AuditID]"
-                          name="AuditID"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output].Columns[AuditID]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[RowsWithErrors]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output].Columns[RowsWithErrors]"
-                          name="RowsWithErrors">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Load Production\Get Audit Parameters\Update AuditDimension"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -5778,7 +5288,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
 
 set 
 PackageName = ?,
-RowsInserted = ?,
 RowsWithErrors = ?
 
 where AuditID = ?
@@ -5812,24 +5321,17 @@ where AuditID = ?
                           externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           lineageId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]" />
                         <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsInserted]"
+                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsWithErrors]"
                           cachedDataType="i4"
-                          cachedName="RowsInserted"
+                          cachedName="RowsWithErrors"
                           externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsInserted]" />
+                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]" />
                         <inputColumn
                           refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
-                          cachedSortKeyPosition="1"
-                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[AuditID]" />
-                        <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsWithErrors]"
-                          cachedDataType="i4"
-                          cachedName="RowsWithErrors"
                           externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output].Columns[RowsWithErrors]" />
+                          lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5860,17 +5362,6 @@ where AuditID = ?
                           refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="i4"
                           name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="i4"
-                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -5922,39 +5413,14 @@ where AuditID = ?
                   startId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1]" />
                 <path
                   refId="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
-                  endId="Package\Load Production\Get Audit Parameters\Sort.Inputs[Sort Input]"
-                  name="Derived Column Output"
-                  startId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output1]"
-                  endId="Package\Load Production\Get Audit Parameters\Sort 1.Inputs[Sort Input]"
+                  endId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
                   name="Derived Column Output"
                   startId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[Merge Join Output]"
-                  endId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
-                  name="Merge Join Output"
-                  startId="Package\Load Production\Get Audit Parameters\Merge Join.Outputs[Merge Join Output]" />
-                <path
                   refId="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
-                  endId="Package\Load Production\Get Audit Parameters\DC AuditID 1.Inputs[Derived Column Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Load Production\Get Audit Parameters\Rows Inserted.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output1]"
                   endId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[Sort Output]"
-                  endId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\Load Production\Get Audit Parameters\Sort.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[Sort Output1]"
-                  endId="Package\Load Production\Get Audit Parameters\Merge Join.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Load Production\Get Audit Parameters\Sort 1.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -6385,6 +5851,10 @@ where AuditID = ?
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="18.9285714285715,211.214285714286" />
         <NodeLayout
+          Size="168,42.8571428571429"
+          Id="Package\Incremental Load - Staging\Remove duplicates"
+          TopLeft="5.50000000000001,5.50000000000002" />
+        <NodeLayout
           Size="160,42.8571428571429"
           Id="Package\Incremental Load - Staging\Truncate Staging"
           TopLeft="9.50000000000003,108.357142857143" />
@@ -6410,10 +5880,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42.8571428571429"
-          Id="Package\Incremental Load - Staging\Remove duplicates"
-          TopLeft="5.50000000000001,5.50000000000002" />
         <EdgeLayout
           Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
           TopLeft="89.5,48.3571428571429">
@@ -7076,7 +6542,7 @@ where AuditID = ?
     design-time-name="Package\Load Production\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151.428571428572,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
@@ -7086,157 +6552,13 @@ where AuditID = ?
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
           TopLeft="136.336732625061,468.735622926513" />
         <NodeLayout
-          Size="99.4285714285715,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\Sort"
-          TopLeft="90.8968276590687,149.68181661929" />
-        <NodeLayout
-          Size="148.571428571429,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\Rows Inserted"
-          TopLeft="29.8333333333333,5.50000000000004" />
-        <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\Merge Join"
-          TopLeft="187.087306397723,217.811106910819" />
-        <NodeLayout
           Size="133.142857142858,42.8571428571429"
           Id="Package\Load Production\Get Audit Parameters\Error Count"
           TopLeft="360.928571428571,8.35714285714286" />
         <NodeLayout
-          Size="142.857142857143,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\DC AuditID 1"
-          TopLeft="54.2857157237947,76.6493498186856" />
-        <NodeLayout
-          Size="99.4285714285715,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\Sort 1"
-          TopLeft="334.063499977139,144.988874356367" />
-        <NodeLayout
           Size="200.571428571429,42.8571428571429"
           Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
           TopLeft="150.715418525594,296.311378163968" />
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="104.119047619048,47.7857142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21.5952395333185,28.8636355329713"
-              Start="0,0"
-              End="21.5952395333185,21.3636355329713">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.4318177664857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.4318177664857"
-                    Point2="0,14.4318177664857"
-                    Point3="4,14.4318177664857" />
-                  <mssgle:LineSegment
-                    End="17.5952395333185,14.4318177664857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5952395333185,14.4318177664857"
-                    Point2="21.5952395333185,14.4318177664857"
-                    Point3="21.5952395333185,18.4318177664857" />
-                  <mssgle:LineSegment
-                    End="21.5952395333185,21.3636355329713" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Merge Join Output]"
-          TopLeft="252.32993389023,260.096821196533">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.214556967435"
-              Start="0,0"
-              End="0,28.714556967435">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.714556967435" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output1]"
-          TopLeft="398.880960151632,117.281082847504">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-15.1031744602075,27.7077915088627"
-              Start="0,0"
-              End="-15.1031744602075,20.2077915088627">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.85389575443133" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.85389575443133"
-                    Point2="0,13.8538957544313"
-                    Point3="-4,13.8538957544313" />
-                  <mssgle:LineSegment
-                    End="-11.1031744602075,13.8538957544313" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11.1031744602075,13.8538957544313"
-                    Point2="-15.1031744602075,13.8538957544313"
-                    Point3="-15.1031744602075,17.8538957544313" />
-                  <mssgle:LineSegment
-                    End="-15.1031744602075,20.2077915088627" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
-          TopLeft="125.714287152366,118.9350641044">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.8968262209884,30.7467525148898"
-              Start="0,0"
-              End="14.8968262209884,23.2467525148898">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.3733762574449" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3733762574449"
-                    Point2="0,15.3733762574449"
-                    Point3="4,15.3733762574449" />
-                  <mssgle:LineSegment
-                    End="10.8968262209884,15.3733762574449" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.8968262209884,15.3733762574449"
-                    Point2="14.8968262209884,15.3733762574449"
-                    Point3="14.8968262209884,19.3733762574449" />
-                  <mssgle:LineSegment
-                    End="14.8968262209884,23.2467525148898" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
           TopLeft="251.001132811308,339.168521021111">
@@ -7272,75 +6594,7 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output1]"
-          TopLeft="383.777785691425,187.274588642081">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.261907865131,30.5365182687376"
-              Start="0,0"
-              End="-109.261907865131,23.0365182687376">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.1043479812108" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1043479812108"
-                    Point2="0,18.1043479812108"
-                    Point3="-4,18.1043479812108" />
-                  <mssgle:LineSegment
-                    End="-105.261907865131,18.1043479812108" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-105.261907865131,18.1043479812108"
-                    Point2="-109.261907865131,18.1043479812108"
-                    Point3="-109.261907865131,22.1043479812108" />
-                  <mssgle:LineSegment
-                    End="-109.261907865131,23.0365182687376" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Sort Output]"
-          TopLeft="140.611113373354,191.967530905004">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.1904787386538,25.8435760058149"
-              Start="0,0"
-              End="92.1904787386538,18.3435760058149">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.3220183444144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3220183444144"
-                    Point2="0,15.3220183444144"
-                    Point3="4,15.3220183444144" />
-                  <mssgle:LineSegment
-                    End="88.1904787386538,15.3220183444144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.1904787386538,15.3220183444144"
-                    Point2="92.1904787386538,15.3220183444144"
-                    Point3="92.1904787386538,19.3220183444144" />
-                  <mssgle:LineSegment
-                    End="92.1904787386538,18.3435760058149" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output1]"
+          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
           TopLeft="427.5,51.2142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7373,17 +6627,43 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
+          TopLeft="398.880960151633,117.281082847504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.879827340324,179.030295316464"
+              Start="0,0"
+              End="-147.879827340324,171.530295316464">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.5151476582318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,85.5151476582318"
+                    Point2="0,89.5151476582318"
+                    Point3="-4,89.5151476582318" />
+                  <mssgle:LineSegment
+                    End="-143.879827340324,89.5151476582318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.879827340324,89.5151476582318"
+                    Point2="-147.879827340324,89.5151476582318"
+                    Point3="-147.879827340324,93.5151476582318" />
+                  <mssgle:LineSegment
+                    End="-147.879827340324,171.530295316464" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Production\Get Audit Parameters\Rows Inserted">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Production\Get Audit Parameters\Error Count">
     <Properties>
