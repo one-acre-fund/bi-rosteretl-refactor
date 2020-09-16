@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="260"
-  DTS:VersionGUID="{27903618-5206-49CE-864E-C530A722A051}">
+  DTS:VersionBuild="263"
+  DTS:VersionGUID="{9464AA4A-0A96-456A-B61A-3D5CFD3243DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -408,7 +408,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -429,7 +429,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3899,18 +3899,18 @@ public class Variables
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:DisplayName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:DisplayName>
 		<msb:ProjectId>{6B00E8D6-45D4-4B7C-B2BF-50E3CDC77FD9}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_34e3a63733f5404eab8a30c3f72000e9.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
@@ -4107,7 +4107,7 @@ namespace SC_34e3a63733f5404eab8a30c3f72000e9.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGPgWF8AAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAEkAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAF+7YV8AAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAEkAA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMA/AABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4244,7 +4244,7 @@ cABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAu
 ACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0A
 bgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwAzADQAZQAzAGEANgAz
 ADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAwAGMAMwBmADcAMgAwADAAMABlADkALgBQAHIA
-bwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAGj8+qsrAidJvCmiJlh+Q/wABCAB
+bwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAJDEpRZmhdlDrbFXXMv8aJYABCAB
 AQgDIAABBSABARERBCABAQ4FIAEBEWEGBwMODhI5AyAADgUAAQ4dDgcHAx0FEj0IBAAAEn0FIAEd
 BQ4GIAEdBR0FBCABDg4FIAESPQ4JIAMBEkUdCBJJAwYSRQMGHQgEIAEOCAQgAQIIBSACAQgcAyAA
 AgcgAgIOEYCNBSABHQgICAABEoCREYCVBSAAEoCZByACAQ4SgJkIt3pcVhk04IkIiYRdzYCAzJED
@@ -6502,7 +6502,7 @@ where AuditID = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="225.714285714286,308"
+          PanelSize="246.857142857143,308"
           Size="246.857142857143,350.857142857143"
           Id="Package\Get the files - Load to Landing"
           TopLeft="839.153461383414,18.8528136485018" />
@@ -6683,7 +6683,7 @@ where AuditID = ?
           PanelSize="212,514.857142857143"
           Size="212,557.714285714286"
           Id="Package\Load Production"
-          TopLeft="1241.50131690031,298.1030296315" />
+          TopLeft="1211.02512561678,300.129003635518" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="699.369027742258,196.850648715453">
@@ -6742,18 +6742,18 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="569.527760478598,574.980086509317">
+          TopLeft="569.527760478598,575.993073511326">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="671.973556421715,0"
+              EndConnector="641.497365138178,0"
               Start="0,0"
-              End="664.473556421715,0">
+              End="633.997365138178,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="664.473556421715,0" />
+                    End="633.997365138178,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6871,7 +6871,7 @@ where AuditID = ?
     design-time-name="Package\Collect Errors\Gather errors">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="182.285714285715,42.2857142857143"
           Id="Package\Collect Errors\Gather errors\ClientBundles_Errors"
@@ -6911,9 +6911,7 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7212,10 +7210,6 @@ where AuditID = ?
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.428571428572,42.2857142857143"
-          Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
-          TopLeft="353.333341104013,129.49536856179" />
-        <NodeLayout
           Size="193.714285714286,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
           TopLeft="166.503399291727,523.235622926513" />
@@ -7227,40 +7221,10 @@ where AuditID = ?
           Size="200.571428571429,42.8571428571429"
           Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
           TopLeft="180.882085192261,350.811378163968" />
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="281.167799477975,393.668521021111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.8072573291049,129.567101905402"
-              Start="0,0"
-              End="-17.8072573291049,122.067101905402">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.783550952701" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.783550952701"
-                    Point2="0,64.783550952701"
-                    Point3="-4,64.783550952701" />
-                  <mssgle:LineSegment
-                    End="-13.8072573291049,64.783550952701" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.8072573291049,64.783550952701"
-                    Point2="-17.8072573291049,64.783550952701"
-                    Point3="-17.8072573291049,68.783550952701" />
-                  <mssgle:LineSegment
-                    End="-17.8072573291049,122.067101905402" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="151.428571428572,42.2857142857143"
+          Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
+          TopLeft="353.333341104013,129.49536856179" />
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
           TopLeft="457.666666666666,105.714285714286">
@@ -7321,6 +7285,40 @@ where AuditID = ?
                     Point3="-147.879827340323,93.5151476582319" />
                   <mssgle:LineSegment
                     End="-147.879827340323,171.530295316464" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
+          TopLeft="281.167799477975,393.668521021111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.8072573291049,129.567101905402"
+              Start="0,0"
+              End="-17.8072573291049,122.067101905402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.783550952701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60.783550952701"
+                    Point2="0,64.783550952701"
+                    Point3="-4,64.783550952701" />
+                  <mssgle:LineSegment
+                    End="-13.8072573291049,64.783550952701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.8072573291049,64.783550952701"
+                    Point2="-17.8072573291049,64.783550952701"
+                    Point3="-17.8072573291049,68.783550952701" />
+                  <mssgle:LineSegment
+                    End="-17.8072573291049,122.067101905402" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
