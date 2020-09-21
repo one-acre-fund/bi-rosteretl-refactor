@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="roster_prod"
+  DTS:DTSID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID="+@[$Project::ServiceAccount]  +";Initial Catalog="+ @[$Project::Roster_Production] +";Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=NewRosterDatawarehouse;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAAA5LgeYoN4/ypW+rZHnwx7NuN5LpwnSnhEkqDzy0i+4AgAAAAAOgAAAAAIAACAAAAA1Jnj9Sj3drWG7qEFNJFUPhIoyvsC/F4M+PlwUzZQ73oAAAAA/niVjBR4HuoPMzibu7MbSrnB21Tu/labLvY7rPJcW9mzzv5hoUFBcm6QKNdkisMqygi2/eSFoFit9SocE2qQKn9kDgB2PEMaa4OvHMYbUp6LVLgeyVMqMddcIeV36M1mMXXgP9ItSPTfQUJDvgv4WrDnYr/IADTjBqcBp4EXmFkAAAABqZirVoyUOONTvTUhnLXa0EXVPgbhaqYkZYFWXgpTGShqpmlLdAqJV0JTZ9KDwDLDSadJ6Kk+w6UUVGKjc+GB1</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

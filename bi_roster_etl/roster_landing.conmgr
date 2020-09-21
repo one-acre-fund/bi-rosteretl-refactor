@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="roster_landing"
+  DTS:DTSID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID="+ @[$Project::ServiceAccount] +";Initial Catalog="+ @[$Project::Roster_LandingArea] +";Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=RosterDatawarehouse_LandingArea;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAABbDALrJKJUClnV0zgWSJUmhS6Sag3zy8kGDOeNOm5RdwAAAAAOgAAAAAIAACAAAAAuPScO3pjaz069YDPnN7IGAFxLODbxvuXM6fBsNB1Qg4AAAADY/RzOTbOsajm6BhSLx21/cAPBHtLjmg7EcyLIX/Y9QideOE2CoTXCzBpelwdkeao7JmnXVvk0jNcIpFSYPXyEQ9PW/4uPM6K1j5S3GjfKO4194OqyjugzuQTSRvIywOA7F+H8S88Vk1SB6gbxhW9AYYvtkRJuHW7aDip8/YiaA0AAAACwsSPNVbD2kj7LWDRGf1A9g3jtWaaqR5lZjLwMLhHP4CX9T80HiL02E5g5NxuDXx/XZGIL1DOoe6j/R4KNayEb</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

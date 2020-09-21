@@ -1,0 +1,2716 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/15/2020 4:27:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SIRMANDELA"
+  DTS:CreatorName="SIRMANDELA\SIRMANDELA"
+  DTS:DTSID="{6B2E1CCB-0B50-4692-AFBF-BD9592F406A7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="01-20-ADS-transform 1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{25BFD2C7-8E8F-4E2F-BAED-A529FCC18E98}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AE640AC9-4519-4926-B8B0-50400F747FDE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentDistrict">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F3AE33E0-00E4-47D2-B807-D90459689889}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentSeason">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CAEC81CD-CB2C-4EC1-8BA7-3561DD503E5F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="District_SeasonID_List">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{58662A44-9B04-4C42-9127-0DE459FE7330}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractEndTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/15/2020 4:29:33 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E7F135C2-2A5A-4E88-86C6-E221780564D9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/15/2020 4:29:26 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02A5068C-00FB-44DA-B582-008A5CAEABE9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowcountExtract">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A88CDF12-0CEF-479D-AE86-8F9C256F0092}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowcountInsert">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{44ACFBA7-C026-468D-ACE8-BC95159A782E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TableName">
+      <DTS:VariableValue
+        DTS:DataType="8">staging_ADS</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{05255623-6DAB-4496-8385-A1144D28EEA9}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{E9A87086-7FB6-4EC6-93F9-E4DB181D46CF}"
+        DTS:ObjectName="{E9A87086-7FB6-4EC6-93F9-E4DB181D46CF}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::District_SeasonID_List" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Get ADS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DD86A19C-84DB-4886-AC42-D8D55BABA041}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get ADS"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+              SQLTask:SqlStatementSource="INSERT INTO staging_ADS (DistrictName ,&#xA;    DeliveryName ,&#xA;    Item_ID ,&#xA;    Credit,&#xA;    Quantity ,&#xA;    ProductName ,&#xA;    GlobalProductName ,&#xA;    FinanceID ,&#xA;    DeliveryDate ,&#xA;    UnitTypeID ,&#xA;    BookingMechanism ,&#xA;    ClientID  ,&#xA;    DistrictID ,&#xA;    SeasonID )&#xA;&#xA;EXEC  sp_AccountingDeliverySummary_Seasonless_ByClient ?;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::CurrentSeason"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{03337EC5-F5AC-4F1E-8E50-21AAC073F7EC}"
+          DTS:ObjectName="{03337EC5-F5AC-4F1E-8E50-21AAC073F7EC}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CurrentSeason" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get  ExportStart time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D3ECCEC9-2E32-4253-9BEE-D75725FEC6C0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get  ExportStart time"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="Select GetDate()"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ExtractStartTime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get extract end time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DF0BCDE2-1549-440B-AF39-37FB31EA3A1E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get extract end time"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="select GetDate()"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ExtractEndTime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get season ids"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D1946079-0737-4F43-B1F0-3B900CB8A40F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get season ids"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="select seasonID=SeasonID &#xA;from (&#xA;select distinct SeasonID from staging_Seasons&#xA;&#xA;) a order by SeasonID asc"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::District_SeasonID_List" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load ADS to staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{13F4778C-B44A-403C-B489-E6C51D663A94}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load ADS to staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load ADS to staging\Get ADS data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Get ADS data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+        LiveFieldLockedAuditLockedQuantities.DistrictID,LiveFieldLockedAuditLockedQuantities.DeliveryID,  DistrictName,DeliveryName, 
+        DropName AS DistributionPointName, 
+		TruckNumber, Day,  
+        InputName,
+		LiveData_InventoryItemId, FieldLocked_InventoryItemID, AuditLocked_InventoryItemID,
+			LiveFieldLockedAuditLockedQuantities.InputID, LiveFieldLockedAuditLockedQuantities.KgPerUnit, 
+        LiveData_UnitsNeeded_ExcludingBuffer, 
+			LiveData_UnitsNeeded_IncludingBuffer, 
+            LiveData_TotalKgs, 
+		LiveData_TotalBuffer, InputCategory, 
+        LiveData_BaleSize, DropOrder,
+			FieldLocked_Date,  
+			FieldLocked_UnitsNeeded_ExcludingBuffer, 
+			FieldLocked_UnitsNeeded_IncludingBuffer, 
+        FieldLocked_TotalKgs, 
+		FieldLocked_TotalBuffer,
+		FieldLocked_BaleSize
+		,
+					
+			AuditLocked_Date,  
+			AuditLocked_UnitsNeeded_ExcludingBuffer, 
+			AuditLocked_UnitsNeeded_IncludingBuffer, 
+        AuditLocked_TotalKgs, 
+		AuditLocked_TotalBuffer,
+		AuditLocked_BaleSize
+FROM  
+(
+SELECT  DistrictID, DeliveryID, InputID, KgPerUnit, DropID,
+		MAX(LiveData_InventoryItemID) AS LiveData_InventoryItemID,
+		MAX(FieldLocked_InventoryItemID) AS FieldLocked_InventoryItemID,
+		MAX(AuditLocked_InventoryItemID) AS AuditLocked_InventoryItemID,
+		MAX(LiveData_UnitsNeeded_ExcludingBuffer) AS LiveData_UnitsNeeded_ExcludingBuffer,
+		MAX(LiveData_UnitsNeeded_IncludingBuffer) AS LiveData_UnitsNeeded_IncludingBuffer,
+		MAX(LiveData_TotalKgs) AS LiveData_TotalKgs,
+		MAX( LiveData_TotalBuffer) AS  LiveData_TotalBuffer,
+		MAX(LiveData_BaleSize) AS LiveData_BaleSize,
+		MAX(FieldLocked_Date) AS FieldLocked_Date,
+		MAX( FieldLocked_UnitsNeeded_ExcludingBuffer) AS  FieldLocked_UnitsNeeded_ExcludingBuffer,
+		MAX(FieldLocked_UnitsNeeded_IncludingBuffer) AS FieldLocked_UnitsNeeded_IncludingBuffer,
+		MAX( FieldLocked_TotalKgs) AS  FieldLocked_TotalKgs,
+		MAX( FieldLocked_TotalBuffer) AS  FieldLocked_TotalBuffer,
+		MAX(FieldLocked_BaleSize) AS FieldLocked_BaleSize
+		,
+		MAX(AuditLocked_Date) AS AuditLocked_Date,
+		MAX(AuditLocked_UnitsNeeded_ExcludingBuffer) AS AuditLocked_UnitsNeeded_ExcludingBuffer,
+		MAX(AuditLocked_UnitsNeeded_IncludingBuffer) AS AuditLocked_UnitsNeeded_IncludingBuffer,
+		MAX( AuditLocked_TotalKgs) AS  AuditLocked_TotalKgs,
+		MAX( AuditLocked_TotalBuffer) AS  AuditLocked_TotalBuffer,
+		MAX(AuditLocked_BaleSize) AS AuditLocked_BaleSize
+FROM
+	((
+		Select Logistics_DeliveryDropBagQuantities.DistrictID, Logistics_DeliveryDropBagQuantities.DeliveryID, 
+				Logistics_DeliveryDropBagQuantities.InputID, KgPerUnit, DropID,
+				SeasonInputSizes.InventoryItemID as LiveData_InventoryItemID,Null AS FieldLocked_InventoryItemID, null AS AuditLocked_InventoryItemID,
+				UnitsNeeded_ExcludingBuffer  AS LiveData_UnitsNeeded_ExcludingBuffer, 
+				UnitsNeeded_IncludingBuffer AS LiveData_UnitsNeeded_IncludingBuffer, TotalKgs AS LiveData_TotalKgs, TotalBuffer AS LiveData_TotalBuffer,
+				Logistics_DeliveryDropBagQuantities.BaleSize AS LiveData_BaleSize,
+				Null AS  FieldLocked_Date,Null AS FieldLocked_UnitsNeeded_ExcludingBuffer, 
+				Null AS FieldLocked_UnitsNeeded_IncludingBuffer, 
+				Null AS FieldLocked_TotalKgs, 
+				Null AS FieldLocked_TotalBuffer, Null AS FieldLocked_BaleSize,
+				Null AS AuditLocked_Date,  
+				Null AS AuditLocked_UnitsNeeded_ExcludingBuffer, 
+				Null  AS AuditLocked_UnitsNeeded_IncludingBuffer, 
+				Null AS AuditLocked_TotalKgs, 
+				Null AS AuditLocked_TotalBuffer,
+				Null AS AuditLocked_BaleSize
+		From v_Logistics_DeliveryDropBagQuantities	Logistics_DeliveryDropBagQuantities LEFT OUTER  JOIN staging_SeasonInputSizes SeasonInputSizes ON 
+				Logistics_DeliveryDropBagQuantities.DistrictID = SeasonInputSizes.DistrictID AND
+				Logistics_DeliveryDropBagQuantities.DeliveryID = SeasonInputSizes.DeliveryID AND
+				Logistics_DeliveryDropBagQuantities.InputID	 = SeasonInputSizes.InputID AND
+				Logistics_DeliveryDropBagQuantities.KgPerUnit = SeasonInputSizes.UnitWeight AND
+				Logistics_DeliveryDropBagQuantities.BaleSize = SeasonInputSizes.BaleSize AND
+				Logistics_DeliveryDropBagQuantities.BufferPerDrop = SeasonInputSizes.BufferPerDrop AND
+				Logistics_DeliveryDropBagQuantities.BufferPerDrop_Percent = SeasonInputSizes.BufferPerDrop_Percent
+				
+					  
+            )
+			UNION ALL
+		(Select DeliveryDropInputAuditLogs.DistrictID, DeliveryDropInputAuditLogs.DeliveryID
+				, DeliveryDropInputAuditLogs.InputID, KgPerUnit, DropID,
+				Null as LiveData_InventoryItemID,SeasonInputSizes.InventoryItemID AS FieldLocked_InventoryItemID, null AS AuditLocked_InventoryItemID,
+				Null AS LiveData_UnitsNeeded_ExcludingBuffer, Null AS LiveData_UnitsNeeded_IncludingBuffer, Null AS LiveData_TotalKgs, Null AS LiveData_TotalBuffer,
+				Null AS LiveData_BaleSize,
+				LoggedDate AS  FieldLocked_Date,NumberOfUnits_ExcludingBuffer AS FieldLocked_UnitsNeeded_ExcludingBuffer, 
+				NumberOfUnits_ExcludingBuffer + TotalBuffer  AS FieldLocked_UnitsNeeded_IncludingBuffer, 
+				(NumberOfUnits_ExcludingBuffer + TotalBuffer) * KgPerUnit AS FieldLocked_TotalKgs, 
+				TotalBuffer AS FieldLocked_TotalBuffer, PacketsPerBale AS FieldLocked_BaleSize,
+				Null AS AuditLocked_Date,  
+				Null AS AuditLocked_UnitsNeeded_ExcludingBuffer, 
+				Null  AS AuditLocked_UnitsNeeded_IncludingBuffer, 
+				Null AS AuditLocked_TotalKgs, 
+				Null AS AuditLocked_TotalBuffer,
+				Null AS AuditLocked_BaleSize
+			From staging_DeliveryDropInputAuditLogs DeliveryDropInputAuditLogs LEFT OUTER  JOIN staging_SeasonInputSizes SeasonInputSizes ON 
+			DeliveryDropInputAuditLogs.DistrictID = SeasonInputSizes.DistrictID AND
+			DeliveryDropInputAuditLogs.SeasonInputSizeID = SeasonInputSizes.SeasonInputSizeID 
+				                 WHERE DeliveryStage = 'FIELD_CHANGES' ) 
+					                  UNION ALL
+				                (Select DeliveryDropInputAuditLogs.DistrictID, DeliveryDropInputAuditLogs.DeliveryID, DeliveryDropInputAuditLogs.InputID, KgPerUnit, DropID,
+				                Null as LiveData_InventoryItemID,Null AS FieldLocked_InventoryItemID, SeasonInputSizes.InventoryItemID AS AuditLocked_InventoryItemID,
+				                 Null AS LiveData_UnitsNeeded_ExcludingBuffer, Null AS LiveData_UnitsNeeded_IncludingBuffer, Null AS LiveData_TotalKgs, Null AS LiveData_TotalBuffer,
+				                 Null AS LiveData_BaleSize,
+				                Null AS  FieldLocked_Date,
+				                Null AS FieldLocked_UnitsNeeded_ExcludingBuffer, 
+					                Null  AS FieldLocked_UnitsNeeded_IncludingBuffer, 
+                                    Null AS FieldLocked_TotalKgs, 
+					                Null AS FieldLocked_TotalBuffer, Null AS FieldLocked_BaleSize,
+					                LoggedDate AS AuditLocked_Date,  
+					                NumberOfUnits_ExcludingBuffer AS AuditLocked_UnitsNeeded_ExcludingBuffer, 
+					                NumberOfUnits_ExcludingBuffer + TotalBuffer  AS AuditLocked_UnitsNeeded_IncludingBuffer, 
+                                    (NumberOfUnits_ExcludingBuffer + TotalBuffer) * KgPerUnit AS AuditLocked_TotalKgs, 
+					                TotalBuffer AS AuditLocked_TotalBuffer,
+					                PacketsPerBale AS AuditLocked_BaleSize  From staging_DeliveryDropInputAuditLogs DeliveryDropInputAuditLogs
+					                LEFT OUTER  JOIN staging_SeasonInputSizes SeasonInputSizes ON 
+                                    DeliveryDropInputAuditLogs.DistrictID = SeasonInputSizes.DistrictID AND
+                                    DeliveryDropInputAuditLogs.SeasonInputSizeID = SeasonInputSizes.SeasonInputSizeID 
+				                 WHERE DeliveryStage = 'AUDIT_CHANGES_ONLY' )
+				
+				                ) AS temp
+				                GROUP BY 
+				                 DistrictID, DeliveryID, InputID, KgPerUnit, DropID)
+				 
+				                 AS LiveFieldLockedAuditLockedQuantities
+                                Left  JOIN staging_DropAssignments DropAssignments ON
+					                 LiveFieldLockedAuditLockedQuantities.DistrictID = DropAssignments.DistrictID AND
+                                    LiveFieldLockedAuditLockedQuantities.DeliveryID = DropAssignments.DeliveryID AND
+					                LiveFieldLockedAuditLockedQuantities.DropID =  DropAssignments.DropID
+				                INNER JOIN staging_Drops Drops On 
+					                LiveFieldLockedAuditLockedQuantities.DistrictID = Drops.DistrictID AND
+					                LiveFieldLockedAuditLockedQuantities.DropID = Drops.DropID
+				                INNER JOIN staging_Inputs Inputs ON 
+					                LiveFieldLockedAuditLockedQuantities.InputID = Inputs.InputID
+				                INNER JOIN  staging_Districts Districts ON
+					                LiveFieldLockedAuditLockedQuantities.DistrictID = Districts.DistrictID
+				                INNER JOIN staging_Deliveries Deliveries On 
+					                LiveFieldLockedAuditLockedQuantities.DistrictID = Deliveries.DistrictID AND
+					                LiveFieldLockedAuditLockedQuantities.DeliveryID = Deliveries.DeliveryID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ADS to staging\Get ADS data.Connections[OleDbConnection]"
+                  connectionManagerID="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}:invalid"
+                  connectionManagerRefId="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      name="DistrictID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryID]"
+                      name="DeliveryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                      length="50"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                      name="DistrictName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryName]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryName]"
+                      name="DeliveryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistributionPointName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistributionPointName]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistributionPointName]"
+                      name="DistributionPointName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[TruckNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[TruckNumber]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[TruckNumber]"
+                      name="TruckNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[Day]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputName]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputName]"
+                      name="InputName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_InventoryItemId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_InventoryItemId]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_InventoryItemId]"
+                      name="LiveData_InventoryItemId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_InventoryItemID]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_InventoryItemID]"
+                      name="FieldLocked_InventoryItemID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_InventoryItemID]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_InventoryItemID]"
+                      name="AuditLocked_InventoryItemID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputID]"
+                      name="InputID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[KgPerUnit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[KgPerUnit]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[KgPerUnit]"
+                      name="KgPerUnit"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      name="LiveData_UnitsNeeded_ExcludingBuffer"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      name="LiveData_UnitsNeeded_IncludingBuffer"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalKgs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalKgs]"
+                      name="LiveData_TotalKgs"
+                      precision="38"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalBuffer]"
+                      name="LiveData_TotalBuffer"
+                      precision="38"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputCategory]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputCategory]"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputCategory]"
+                      name="InputCategory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_BaleSize]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_BaleSize]"
+                      name="LiveData_BaleSize"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DropOrder]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DropOrder]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DropOrder]"
+                      name="DropOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_Date]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_Date]"
+                      name="FieldLocked_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      name="FieldLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      name="FieldLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalKgs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalKgs]"
+                      name="FieldLocked_TotalKgs"
+                      precision="38"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalBuffer]"
+                      name="FieldLocked_TotalBuffer"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_BaleSize]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_BaleSize]"
+                      name="FieldLocked_BaleSize"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_Date]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_Date]"
+                      name="AuditLocked_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      name="AuditLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      name="AuditLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalKgs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalKgs]"
+                      name="AuditLocked_TotalKgs"
+                      precision="38"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalBuffer]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalBuffer]"
+                      name="AuditLocked_TotalBuffer"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_BaleSize]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_BaleSize]"
+                      name="AuditLocked_BaleSize"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryID]"
+                      dataType="i4"
+                      name="DeliveryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DistrictName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DeliveryName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DistributionPointName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DistributionPointName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[TruckNumber]"
+                      dataType="i4"
+                      name="TruckNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="dbTimeStamp"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputName]"
+                      dataType="wstr"
+                      length="255"
+                      name="InputName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_InventoryItemId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LiveData_InventoryItemId" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FieldLocked_InventoryItemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="AuditLocked_InventoryItemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputID]"
+                      dataType="i4"
+                      name="InputID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[KgPerUnit]"
+                      dataType="numeric"
+                      name="KgPerUnit"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="LiveData_UnitsNeeded_ExcludingBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="LiveData_UnitsNeeded_IncludingBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_TotalKgs]"
+                      dataType="numeric"
+                      name="LiveData_TotalKgs"
+                      precision="38"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_TotalBuffer]"
+                      dataType="numeric"
+                      name="LiveData_TotalBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[InputCategory]"
+                      dataType="wstr"
+                      length="255"
+                      name="InputCategory" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[LiveData_BaleSize]"
+                      dataType="i4"
+                      name="LiveData_BaleSize" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[DropOrder]"
+                      dataType="i4"
+                      name="DropOrder" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_Date]"
+                      dataType="dbTimeStamp"
+                      name="FieldLocked_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_TotalKgs]"
+                      dataType="numeric"
+                      name="FieldLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_TotalBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[FieldLocked_BaleSize]"
+                      dataType="numeric"
+                      name="FieldLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_Date]"
+                      dataType="dbTimeStamp"
+                      name="AuditLocked_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_TotalKgs]"
+                      dataType="numeric"
+                      name="AuditLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_TotalBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].ExternalColumns[AuditLocked_BaleSize]"
+                      dataType="numeric"
+                      name="AuditLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      name="DistrictID" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DeliveryID]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DeliveryID]"
+                      name="DeliveryID" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                      name="DistrictName" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DeliveryName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DeliveryName]"
+                      name="DeliveryName" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistributionPointName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DistributionPointName]"
+                      name="DistributionPointName" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[TruckNumber]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[TruckNumber]"
+                      name="TruckNumber" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputName]"
+                      name="InputName" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_InventoryItemId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_InventoryItemId]"
+                      name="LiveData_InventoryItemId" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_InventoryItemID]"
+                      name="FieldLocked_InventoryItemID" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_InventoryItemID]"
+                      name="AuditLocked_InventoryItemID" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputID]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputID]"
+                      name="InputID" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[KgPerUnit]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[KgPerUnit]"
+                      name="KgPerUnit"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      name="LiveData_UnitsNeeded_ExcludingBuffer"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      name="LiveData_UnitsNeeded_IncludingBuffer"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_TotalKgs]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_TotalKgs]"
+                      name="LiveData_TotalKgs"
+                      precision="38"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_TotalBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_TotalBuffer]"
+                      name="LiveData_TotalBuffer"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputCategory]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[InputCategory]"
+                      name="InputCategory" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_BaleSize]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[LiveData_BaleSize]"
+                      name="LiveData_BaleSize" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DropOrder]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[DropOrder]"
+                      name="DropOrder" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_Date]"
+                      name="FieldLocked_Date" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      name="FieldLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      name="FieldLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_TotalKgs]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_TotalKgs]"
+                      name="FieldLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_TotalBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_TotalBuffer]"
+                      name="FieldLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_BaleSize]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[FieldLocked_BaleSize]"
+                      name="FieldLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_Date]"
+                      name="AuditLocked_Date" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      name="AuditLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      name="AuditLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_TotalKgs]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_TotalKgs]"
+                      name="AuditLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_TotalBuffer]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_TotalBuffer]"
+                      name="AuditLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_BaleSize]"
+                      dataType="numeric"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[AuditLocked_BaleSize]"
+                      name="AuditLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ADS to staging\Look up Geograhy"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Look up Geograhy"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select CountryID, RegionID, LocationID, RosterDistrictID
+from DimLocations where RosterDistrictID is not null</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select CountryID, RegionID, LocationID, RosterDistrictID
+from DimLocations where RosterDistrictID is not null) [refTable]
+where [refTable].[RosterDistrictID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CountryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocationID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RosterDistrictID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ADS to staging\Look up Geograhy.Connections[OleDbConnection]"
+                  connectionManagerID="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  connectionManagerRefId="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input].Columns[DistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DistrictID"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">RosterDistrictID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimCountryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimCountryID]"
+                      name="DimCountryID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CountryID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimRegionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimRegionID]"
+                      name="DimRegionID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">RegionID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimDistrictID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimDistrictID]"
+                      name="DimDistrictID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">LocationID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ADS to staging\Lookup input"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup input"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select InputID, RosterInputID from DimInputs</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select InputID, RosterInputID from DimInputs) [refTable]
+where [refTable].[RosterInputID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="InputID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RosterInputID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ADS to staging\Lookup input.Connections[OleDbConnection]"
+                  connectionManagerID="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  connectionManagerRefId="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input].Columns[InputID]"
+                      cachedDataType="i4"
+                      cachedName="InputID"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">RosterInputID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Match Output].Columns[DimInputID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Match Output].Columns[DimInputID]"
+                      name="DimInputID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">InputID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ADS to staging\RowCountExtract"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RowCountExtract">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowcountExtract</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load ADS to staging\RowCountExtract.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\RowCountExtract.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load ADS to staging\RowCountExtract.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ADS to staging\RowCountInsert"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RowCountInsert">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowcountInsert</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load ADS to staging\RowCountInsert.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\RowCountInsert.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load ADS to staging\RowCountInsert.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ADS to staging\staging_TruckManagementSheet"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging_TruckManagementSheet"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging_TruckManagementSheet]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ADS to staging\staging_TruckManagementSheet.Connections[OleDbConnection]"
+                  connectionManagerID="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}:invalid"
+                  connectionManagerRefId="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DimRegionID]"
+                      cachedDataType="i4"
+                      cachedName="DimRegionID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimRegionID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DistrictID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DeliveryID]"
+                      cachedDataType="i4"
+                      cachedName="DeliveryID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DistrictName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistrictName"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DeliveryName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DeliveryName"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryName]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DeliveryName]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DistributionPointName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DistributionPointName"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistributionPointName]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DistributionPointName]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[TruckNumber]"
+                      cachedDataType="i4"
+                      cachedName="TruckNumber"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[TruckNumber]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[TruckNumber]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[Day]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Day"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[InputName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="InputName"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputName]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputName]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_InventoryItemId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LiveData_InventoryItemId"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_InventoryItemId]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_InventoryItemId]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_InventoryItemID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="FieldLocked_InventoryItemID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_InventoryItemID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_InventoryItemID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_InventoryItemID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="AuditLocked_InventoryItemID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_InventoryItemID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_InventoryItemID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[InputID]"
+                      cachedDataType="i4"
+                      cachedName="InputID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputID]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[KgPerUnit]"
+                      cachedDataType="numeric"
+                      cachedName="KgPerUnit"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[KgPerUnit]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[KgPerUnit]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="LiveData_UnitsNeeded_ExcludingBuffer"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_ExcludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="LiveData_UnitsNeeded_IncludingBuffer"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_UnitsNeeded_IncludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_TotalKgs]"
+                      cachedDataType="numeric"
+                      cachedName="LiveData_TotalKgs"
+                      cachedPrecision="38"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalKgs]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_TotalBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="LiveData_TotalBuffer"
+                      cachedPrecision="38"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_TotalBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[InputCategory]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="InputCategory"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputCategory]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[InputCategory]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[LiveData_BaleSize]"
+                      cachedDataType="i4"
+                      cachedName="LiveData_BaleSize"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[LiveData_BaleSize]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DropOrder]"
+                      cachedDataType="i4"
+                      cachedName="DropOrder"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DropOrder]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[DropOrder]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FieldLocked_Date"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_Date]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_Date]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="FieldLocked_UnitsNeeded_ExcludingBuffer"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_ExcludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="FieldLocked_UnitsNeeded_IncludingBuffer"
+                      cachedPrecision="19"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_UnitsNeeded_IncludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_TotalKgs]"
+                      cachedDataType="numeric"
+                      cachedName="FieldLocked_TotalKgs"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalKgs]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_TotalBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="FieldLocked_TotalBuffer"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_TotalBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[FieldLocked_BaleSize]"
+                      cachedDataType="numeric"
+                      cachedName="FieldLocked_BaleSize"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[FieldLocked_BaleSize]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="AuditLocked_Date"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_Date]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_Date]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="AuditLocked_UnitsNeeded_ExcludingBuffer"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_ExcludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="AuditLocked_UnitsNeeded_IncludingBuffer"
+                      cachedPrecision="19"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_UnitsNeeded_IncludingBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_TotalKgs]"
+                      cachedDataType="numeric"
+                      cachedName="AuditLocked_TotalKgs"
+                      cachedPrecision="38"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_TotalKgs]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalKgs]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_TotalBuffer]"
+                      cachedDataType="numeric"
+                      cachedName="AuditLocked_TotalBuffer"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_TotalBuffer]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_TotalBuffer]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[AuditLocked_BaleSize]"
+                      cachedDataType="numeric"
+                      cachedName="AuditLocked_BaleSize"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_BaleSize]"
+                      lineageId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output].Columns[AuditLocked_BaleSize]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DimCountryID]"
+                      cachedDataType="i4"
+                      cachedName="DimCountryID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimCountryID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DimDistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DimDistrictID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                      lineageId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output].Columns[DimDistrictID]" />
+                    <inputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].Columns[DimInputID]"
+                      cachedDataType="i4"
+                      cachedName="DimInputID"
+                      externalMetadataColumnId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimInputID]"
+                      lineageId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Match Output].Columns[DimInputID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                      dataType="i4"
+                      name="DimDistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                      dataType="i4"
+                      name="DimRegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                      dataType="i4"
+                      name="DimCountryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryID]"
+                      dataType="i4"
+                      name="DeliveryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DistrictName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DeliveryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DistributionPointName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DistributionPointName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[TruckNumber]"
+                      dataType="i4"
+                      name="TruckNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      dataType="dbTimeStamp"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputName]"
+                      dataType="wstr"
+                      length="255"
+                      name="InputName" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_InventoryItemId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LiveData_InventoryItemId" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FieldLocked_InventoryItemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_InventoryItemID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="AuditLocked_InventoryItemID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputID]"
+                      dataType="i4"
+                      name="InputID" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[KgPerUnit]"
+                      dataType="numeric"
+                      name="KgPerUnit"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="LiveData_UnitsNeeded_ExcludingBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="LiveData_UnitsNeeded_IncludingBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_TotalKgs]"
+                      dataType="numeric"
+                      name="LiveData_TotalKgs"
+                      precision="38"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_TotalBuffer]"
+                      dataType="numeric"
+                      name="LiveData_TotalBuffer"
+                      precision="38" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[InputCategory]"
+                      dataType="wstr"
+                      length="255"
+                      name="InputCategory" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[LiveData_BaleSize]"
+                      dataType="i4"
+                      name="LiveData_BaleSize" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DropOrder]"
+                      dataType="i4"
+                      name="DropOrder" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_Date]"
+                      dataType="dbTimeStamp"
+                      name="FieldLocked_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_TotalKgs]"
+                      dataType="numeric"
+                      name="FieldLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_TotalBuffer]"
+                      dataType="numeric"
+                      name="FieldLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[FieldLocked_BaleSize]"
+                      dataType="numeric"
+                      name="FieldLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_Date]"
+                      dataType="dbTimeStamp"
+                      name="AuditLocked_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_UnitsNeeded_ExcludingBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_UnitsNeeded_ExcludingBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_UnitsNeeded_IncludingBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_UnitsNeeded_IncludingBuffer"
+                      precision="19"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_TotalKgs]"
+                      dataType="numeric"
+                      name="AuditLocked_TotalKgs"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_TotalBuffer]"
+                      dataType="numeric"
+                      name="AuditLocked_TotalBuffer"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[AuditLocked_BaleSize]"
+                      dataType="numeric"
+                      name="AuditLocked_BaleSize"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input].ExternalColumns[DimInputID]"
+                      dataType="i4"
+                      name="DimInputID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ADS to staging\staging_TruckManagementSheet.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\staging_TruckManagementSheet.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ADS to staging\staging_TruckManagementSheet.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ADS to staging\staging_TruckManagementSheet.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load ADS to staging.Paths[Lookup Match Output]"
+              endId="Package\Load ADS to staging\Lookup input.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Load ADS to staging\Look up Geograhy.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load ADS to staging.Paths[Lookup Match Output1]"
+              endId="Package\Load ADS to staging\RowCountInsert.Inputs[Row Count Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Load ADS to staging\Lookup input.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Load ADS to staging.Paths[OLE DB Source Output]"
+              endId="Package\Load ADS to staging\RowCountExtract.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Load ADS to staging\Get ADS data.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load ADS to staging.Paths[Row Count Output 1]"
+              endId="Package\Load ADS to staging\Look up Geograhy.Inputs[Lookup Input]"
+              name="Row Count Output 1"
+              startId="Package\Load ADS to staging\RowCountExtract.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load ADS to staging.Paths[Row Count Output 11]"
+              endId="Package\Load ADS to staging\staging_TruckManagementSheet.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Load ADS to staging\RowCountInsert.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Record ETL start"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1BAFE55B-E069-452F-9D74-0BDF595219BA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Record ETL start"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="insert into ETL_LoadLog_Staging (&#xA;  TableName,&#xA;  ExportStartDate,&#xA;  ExportEndDate,&#xA;  RowExtractCount,&#xA;  RowInsertCount,&#xA;  RowUpdateCount&#xA; )&#xA;Values(?, ?,Null,0,0,0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ExtractStartTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TableName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Record extract end"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F716560E-F3E5-4E44-98DF-F7535EF45538}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Record extract end"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="Update ETL_LoadLog_Staging&#xA;&#xA;set &#xA;ExportEndDate = ?,&#xA;RowExtractCount = ?,&#xA;RowInsertCount = ?,&#xA;Truncate_Load = 1,&#xA;Incremental_Load = 0&#xA;&#xA;where TableName = ? and ExportEndDate  is Null&#xA;and RowExtractCount = 0 and RowInsertCount = 0 and RowUpdateCount = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ExtractEndTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::RowcountExtract"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::RowcountInsert"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::TableName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE ADS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1E6D487D-2D65-4685-A2E6-97D582A68C36}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE ADS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging_ADS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1AB0A4AD-9CF0-48D6-8C3F-72A4157391E9}"
+      DTS:From="Package\Get season ids"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2B9A62F-0268-4E48-A07F-99145E842400}"
+      DTS:From="Package\Record ETL start"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\TRUNCATE TABLE ADS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1EC6E7ED-8901-4F9E-8216-C2318FC95597}"
+      DTS:From="Package\Get  ExportStart time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1"
+      DTS:To="Package\Record ETL start" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3E966936-52E8-4DAA-92C2-D6194E159F4D}"
+      DTS:From="Package\Load ADS to staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get extract end time" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2B42EEF-544F-48E4-816F-8DD5B85FC22A}"
+      DTS:From="Package\Foreach Loop Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Load ADS to staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{1FBCEDB3-8A75-42A0-A2B7-9E85597F4183}"
+      DTS:From="Package\Get extract end time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Record extract end" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122.285714285715,42.2857142857143"
+          Id="Package\Foreach Loop Container\Get ADS"
+          TopLeft="38.7301581667003,49.5324676459064" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="219.428571428572,157.142857142858"
+          Size="219.428571428572,200"
+          Id="Package\Foreach Loop Container"
+          TopLeft="284.388895482193,83.4480514284289" />
+        <NodeLayout
+          Size="178.857142857143,42.2857142857143"
+          Id="Package\Get  ExportStart time"
+          TopLeft="32.3809516492975,25.826088714239" />
+        <NodeLayout
+          Size="186.857142857143,42.2857142857143"
+          Id="Package\Get season ids"
+          TopLeft="20.0396770817051,130.876623460788" />
+        <NodeLayout
+          Size="176,42.2857142857143"
+          Id="Package\Get extract end time"
+          TopLeft="321.182546561778,288.032746820739" />
+        <NodeLayout
+          Size="178.857142857143,42.2857142857143"
+          Id="Package\Load ADS to staging"
+          TopLeft="51.7301555176048,279.770756020823" />
+        <NodeLayout
+          Size="157.714285714286,42.2857142857143"
+          Id="Package\Record ETL start"
+          TopLeft="338.619054708531,23.8260860190725" />
+        <NodeLayout
+          Size="168,42.2857142857143"
+          Id="Package\Record extract end"
+          TopLeft="624.547633857326,257.698469987665" />
+        <NodeLayout
+          Size="201.142857142858,42.2857142857143"
+          Id="Package\TRUNCATE TABLE ADS"
+          TopLeft="611.11112571057,24.5652210155501" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="206.896819938848,151.733766016037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.492075543345,0"
+              Start="0,0"
+              End="69.992075543345,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.992075543345,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="496.333340422817,45.3385106601684">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.777785287753,0"
+              Start="0,0"
+              End="107.277785287753,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="107.277785287753,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="211.23809450644,45.9689445095129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.380960202091,0"
+              Start="0,0"
+              End="119.880960202091,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.880960202091,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="230.587298374748,300.913613163681">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.5952481870303,8.26199079991562"
+              Start="0,0"
+              End="83.0952481870303,8.26199079991562">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.2976240935151,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.2976240935151,0"
+                    Point2="45.2976240935151,0"
+                    Point3="45.2976240935151,4" />
+                  <mssgle:LineSegment
+                    End="45.2976240935151,4.26199079991562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.2976240935151,4.26199079991562"
+                    Point2="45.2976240935151,8.26199079991562"
+                    Point3="49.2976240935151,8.26199079991562" />
+                  <mssgle:LineSegment
+                    End="83.0952481870303,8.26199079991562" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="284.388895482193,215.448051428429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-53.8015971074453,79.7512760209655"
+              Start="0,0"
+              End="-46.3015971074453,79.7512760209655">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-21.9518440035147,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.9518440035147,0"
+                    Point2="-25.9518440035147,0"
+                    Point3="-25.9518440035147,4" />
+                  <mssgle:LineSegment
+                    End="-25.9518440035147,75.7512760209655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.9518440035147,75.7512760209655"
+                    Point2="-25.9518440035147,79.7512760209655"
+                    Point3="-29.9518440035147,79.7512760209655" />
+                  <mssgle:LineSegment
+                    End="-46.3015971074453,79.7512760209655" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="497.182546561778,309.175603963596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.365087295549,-30.3342768330737"
+              Start="0,0"
+              End="119.865087295549,-30.3342768330737">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.6825436477743,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.6825436477743,0"
+                    Point2="63.6825436477743,0"
+                    Point3="63.6825436477743,-4" />
+                  <mssgle:LineSegment
+                    End="63.6825436477743,-26.3342768330737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.6825436477743,-26.3342768330737"
+                    Point2="63.6825436477743,-30.3342768330737"
+                    Point3="67.6825436477743,-30.3342768330737" />
+                  <mssgle:LineSegment
+                    End="119.865087295549,-30.3342768330737" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load ADS to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,42.2857142857143"
+          Id="Package\Load ADS to staging\RowCountExtract"
+          TopLeft="274.444443502544,21.0496891313007" />
+        <NodeLayout
+          Size="165.142857142858,42.2857142857143"
+          Id="Package\Load ADS to staging\Look up Geograhy"
+          TopLeft="541.810105729463,20.9863934208451" />
+        <NodeLayout
+          Size="140.571428571429,42.2857142857143"
+          Id="Package\Load ADS to staging\Lookup input"
+          TopLeft="817.317482001541,20.7602680194554" />
+        <NodeLayout
+          Size="233.142857142858,42.2857142857143"
+          Id="Package\Load ADS to staging\staging_TruckManagementSheet"
+          TopLeft="723.782887532334,120.221089653391" />
+        <NodeLayout
+          Size="146.285714285715,42.2857142857143"
+          Id="Package\Load ADS to staging\Get ADS data"
+          TopLeft="18.8095249148903,19.0759506835281" />
+        <NodeLayout
+          Size="154.857142857143,42.2857142857143"
+          Id="Package\Load ADS to staging\RowCountInsert"
+          TopLeft="56.9160922740804,117.618453113878" />
+        <EdgeLayout
+          Id="Package\Load ADS to staging.Paths[Row Count Output 11]"
+          TopLeft="211.773235131223,140.062628526492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="512.009652401111,0"
+              Start="0,0"
+              End="504.509652401111,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="504.509652401111,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS to staging.Paths[Row Count Output 1]"
+          TopLeft="434.444443502544,42.1608984189301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.365662226919,0"
+              Start="0,0"
+              End="99.8656622269187,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="99.8656622269187,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS to staging.Paths[OLE DB Source Output]"
+          TopLeft="165.095239200605,41.2056770502715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.349204301939,0"
+              Start="0,0"
+              End="101.849204301939,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="101.849204301939,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS to staging.Paths[Lookup Match Output1]"
+          TopLeft="887.603196287255,63.0459823051697">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-753.258532584604,54.5724708087083"
+              Start="0,0"
+              End="-753.258532584604,47.0724708087083">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2862354043542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2862354043542"
+                    Point2="0,27.2862354043542"
+                    Point3="-4,27.2862354043542" />
+                  <mssgle:LineSegment
+                    End="-749.258532584604,27.2862354043542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-749.258532584604,27.2862354043542"
+                    Point2="-753.258532584604,27.2862354043542"
+                    Point3="-753.258532584604,31.2862354043542" />
+                  <mssgle:LineSegment
+                    End="-753.258532584604,47.0724708087083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-424.820653011052,32.2862354043542,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ADS to staging.Paths[Lookup Match Output]"
+          TopLeft="706.95296287232,42.0161878630074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.364519129221,0"
+              Start="0,0"
+              End="102.864519129221,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="102.864519129221,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.2408728458606,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="w"
+          ParentId="Package\Load ADS to staging"
+          FontInfo="{assembly:Null}"
+          Size="37.7142857142858,40"
+          Id="4226386c-55cb-4ae9-a44f-86c3836e9598"
+          TopLeft="11.4523809776104,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ADS to staging\Look up Geograhy">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ADS to staging\Lookup input">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ADS to staging\staging_TruckManagementSheet">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ADS to staging\Get ADS data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
