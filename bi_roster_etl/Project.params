@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">mtama.oneacrefund.org,6543</SSIS:Property>
+        SSIS:Name="Value">newndizi.oneacrefund.org,6543</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -100,7 +100,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Rosterreporting_Staging</SSIS:Property>
+        SSIS:Name="Value">RosterDatawarehouse_StagingArea</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -121,7 +121,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">RosterDatawarehouse</SSIS:Property>
+        SSIS:Name="Value">NewRosterDatawarehouse</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -164,9 +164,51 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1QuSO9qFDUmsWpvk0A2+3AAAAAACAAAAAAAQZgAAAAEAACAAAACFvjtye+VHaALfz2NvqJNWJVBknJDhQvaJA8pARDcwfwAAAAAOgAAAAAIAACAAAADAcNLyD0iaXtr9jI0SiINvnFzMO6KKcBBVLHUuhtagAZAAAABmGJGyatrmkA+8k16mwkGFNGex7Pw3aIFh1eFO03UvCRYWlYDILKbEk7s+O6k4yzWTeFJAPVk0qmm+nKVCyG+Ed7pd6zjc0N+78bknjrYADviQGxGjxDY92Ppqsae2MfuNqX0I0OlmvOJa1jCWTi1/fbJbM5j6+H17l2EjdU5h4SQFwunQktuef1TS6gkzOX9AAAAAnj9z7ocAJZSs+ymuaN87gk4CRnKftqbNXa0MrCt1/26VDMhW6n9kpyGNrq39u/CykLuHH9XoRhpBlxAx4AEiNA==</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlHmixRhvdUifYeZg0CGNOQAAAAACAAAAAAAQZgAAAAEAACAAAAD4VsvllFzc8f/MvDRaU/RDnVwsA96F1CTQ6/gpS9jr5gAAAAAOgAAAAAIAACAAAAC9Suudrrcs2MTErNqah4566MmEIUeti3yWiK2ZzaUOwJAAAACQ8p2/MVRiNoy/qJ5GgGvm01z1WGpyHr76M2UJ5pMDpW/HOEUQCSm+q5M1+DYzuLnvw18Lko+xe+BBMtSN8dVqVRTO9d0igBEiyYxctH7kx39SWAQ280nzUFHvUXealljmrRUN/cJpUwKaAsEspSiSpCcFPVMFml/JN3WMlKd2l86H6ZKJ1Pf9gN1WQtCiyf5AAAAAQ65656oci6vyxEp6vKJwtELbncTGbVQEyjcZDpXdw65pkM4mGXCk8yAjeIS4O3PRIMPpYnIiEiD5Bt1GFgD0hw==</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="BIBUSINESSINTEL">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{f885a671-4792-4e5f-b5d7-1619b486aa24}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=bibusinessintell,6543;User ID=BOSUser001;Password=Shauchii0t;Initial Catalog=RosterReporting;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="OperationalYear">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{4ab3c5b9-3475-4a58-bb95-5db9373e454f}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">2020</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">9</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
 </SSIS:Parameters>

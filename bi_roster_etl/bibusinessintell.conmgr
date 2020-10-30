@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="bibusinessintell"
+  DTS:DTSID="{2F93D81D-B7B5-48CF-84DF-E41516254DD1}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::BIBUSINESSINTEL]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=bibusinessintell,6543;User ID=BOSUser001;Initial Catalog=RosterReporting;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlHmixRhvdUifYeZg0CGNOQAAAAACAAAAAAAQZgAAAAEAACAAAAAh+d/9K3+3z0zNbqG9ei+quCekrB4DiWDOIiHREy9TmwAAAAAOgAAAAAIAACAAAAAc20pOKl1rSVZkrmXjddH7wJYjXbX3iPLfRWf8xBpG84AAAACqKTpH+hK9sj074fOu/aVIcZCpx/GOuUL0ogtnGfqUGQ66ZOO3aqGRVf0dYj66xQYtv7H3tmJoqLWArJLFCzemrw8LvBk2HvMVtMDKkNRFt+qfXbc9g6d/riyQSkxaPkjk6xh5ez4DMjPVk97IuDxfvDBFTbySSymfzo91Pma8REAAAAAIRWqy4EbcSmzPNzC/6LjEAYYjdNQLrTpptO+a2QIK+NVvDBDVUVMvQD0Dftq2FMcicGu+XtTLM95VJNtaFHzM</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
