@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-verticalrepayments_extract"
-  DTS:VersionBuild="271"
-  DTS:VersionGUID="{05A2F6A5-2C90-46D3-AA42-47E27A1C2055}">
+  DTS:VersionBuild="273"
+  DTS:VersionGUID="{64861414-589F-4AA3-B47C-195821D3CDB6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -456,7 +456,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false', 1,0)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -498,7 +498,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false')</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false', 1,0)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -8105,6 +8105,14 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Collect Errors\Gather errors\VerticalRepayments_Errors">
     <Properties>
