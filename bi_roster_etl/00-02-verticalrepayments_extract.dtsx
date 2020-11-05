@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-verticalrepayments_extract"
-  DTS:VersionBuild="273"
-  DTS:VersionGUID="{64861414-589F-4AA3-B47C-195821D3CDB6}">
+  DTS:VersionBuild="275"
+  DTS:VersionGUID="{C04CEFD9-4783-484B-9067-B894766997C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3539,6 +3539,22 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Incremental Load - Staging\Fix data types"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c8fd478b-211a-4393-acbe-39beed32e36e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fix data types"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+              SQLTask:SqlStatementSource="UPDATE cls.staging_VerticalRepayments set Amount=Null where ISNUMERIC(Amount)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Incremental Load - Staging\Load Staging"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
@@ -6711,33 +6727,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               SQLTask:SqlStatementSource="Truncate table cls.staging_VerticalRepayments;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\Update surrogate keys"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{caeec996-fdd1-429e-9cea-5bbae994165f}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Update surrogate keys"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
-              SQLTask:SqlStatementSource="Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimCountryID = geo.CountryID,&#xA;    DimRegionID = geo.RegionID,&#xA;    DimDistrictID = geo.DistrictID,&#xA;    DimSectorID = geo.SectorID,&#xA;    DimSiteID = geo.SiteID,&#xA;    DimGroupID = geo.GroupID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            RegionID,&#xA;            DistrictID,&#xA;            SectorID,&#xA;            SiteID,&#xA;            GroupID,&#xA;            DistrictName,&#xA;            SiteName,&#xA;            GroupName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimGroup&#xA;        where&#xA;            isDeleted = 0&#xA;    ) geo&#xA;where&#xA;    geo.DistrictName = cls.staging_VerticalRepayments.District&#xA;    and geo.GroupName = staging_VerticalRepayments.GroupAtTimeOfRepayment&#xA;    and cls.staging_VerticalRepayments.SiteAtTimeOfRepayment = geo.SiteName&#xA;    and cls.staging_VerticalRepayments.DimCountryID is null&#xA;Update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimSeasonID = s.SeasonID&#xA;from&#xA;    (&#xA;        select&#xA;            CountryID,&#xA;            SeasonID,&#xA;            RosterSeasonID,&#xA;            SeasonName&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimSeasons&#xA;        where&#xA;            RosterSeasonID is not null&#xA;            and isDeleted = 0&#xA;    ) s&#xA;where&#xA;    s.SeasonName = cls.staging_VerticalRepayments.SeasonName&#xA;    and s.CountryID = cls.staging_VerticalRepayments.DimCountryID&#xA;    and cls.staging_VerticalRepayments.DimSeasonID is null&#xA;update&#xA;    cls.staging_VerticalRepayments&#xA;set&#xA;    DimClientID = client.DimClientID&#xA;from&#xA;    (&#xA;        SELECT&#xA;            cs.GlobalClientID,&#xA;            cs.ClientID DimClientID&#xA;        from&#xA;            OAF_SHARED_DIMENSIONS.dbo.DimRosterClient cs&#xA;    ) client&#xA;where&#xA;    client.GlobalClientID = cls.staging_VerticalRepayments.GlobalClientID&#xA;    and cls.staging_VerticalRepayments.DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{55f2357e-a96f-4502-9267-8f2fef701faa}"
+          DTS:DTSID="{25BF33D4-C6D8-4E6C-9406-B94AC66814A3}"
           DTS:From="Package\Incremental Load - Staging\Load Staging"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Incremental Load - Staging\Update surrogate keys" />
+          DTS:To="Package\Incremental Load - Staging\Fix data types" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -7589,32 +7588,6 @@ where AuditID = ?
           Size="160,42.8571428571429"
           Id="Package\Incremental Load - Staging\Truncate Staging"
           TopLeft="19.7857142857143,5.50000000000002" />
-        <NodeLayout
-          Size="188.571428571429,42.2857142857143"
-          Id="Package\Incremental Load - Staging\Update surrogate keys"
-          TopLeft="5.50000000000003,211.214285714286" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
-          TopLeft="99.7857142857143,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
           TopLeft="99.7857142857143,48.3571428571429">
@@ -7637,11 +7610,37 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="146.857142857143,42.2857142857143"
+          Id="Package\Incremental Load - Staging\Fix data types"
+          TopLeft="19.7857142857143,211.214285714286" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="96.5,151.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="199.428571428572,308.571428571429"
-          Size="199.428571428572,351.428571428572"
+          PanelSize="209.714285714286,308.571428571429"
+          Size="209.714285714286,351.428571428572"
           Id="Package\Incremental Load - Staging"
           TopLeft="798.30689940433,471.683980864692" />
         <NodeLayout
@@ -7934,9 +7933,9 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="213.900832054431,32.238955282901"
+              EndConnector="213.900832054431,32.2389552829011"
               Start="0,0"
-              End="206.400832054431,32.238955282901">
+              End="206.400832054431,32.2389552829011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -7947,13 +7946,13 @@ where AuditID = ?
                     Point2="106.950416027216,0"
                     Point3="106.950416027216,4" />
                   <mssgle:LineSegment
-                    End="106.950416027216,28.238955282901" />
+                    End="106.950416027216,28.2389552829011" />
                   <mssgle:CubicBezierSegment
-                    Point1="106.950416027216,28.238955282901"
-                    Point2="106.950416027216,32.238955282901"
-                    Point3="110.950416027216,32.238955282901" />
+                    Point1="106.950416027216,28.2389552829011"
+                    Point2="106.950416027216,32.2389552829011"
+                    Point3="110.950416027216,32.2389552829011" />
                   <mssgle:LineSegment
-                    End="206.400832054431,32.238955282901" />
+                    End="206.400832054431,32.2389552829011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8020,30 +8019,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="997.735470832902,647.398266578978">
+          TopLeft="1008.02118511862,647.398266578978">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="259.427222143669,101.003464051769"
+              EndConnector="249.141507857954,101.003464051769"
               Start="0,0"
-              End="251.927222143669,101.003464051769">
+              End="241.641507857954,101.003464051769">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="125.713611071834,0" />
+                    End="120.570753928977,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="125.713611071834,0"
-                    Point2="129.713611071834,0"
-                    Point3="129.713611071834,4" />
+                    Point1="120.570753928977,0"
+                    Point2="124.570753928977,0"
+                    Point3="124.570753928977,4" />
                   <mssgle:LineSegment
-                    End="129.713611071834,97.0034640517694" />
+                    End="124.570753928977,97.0034640517692" />
                   <mssgle:CubicBezierSegment
-                    Point1="129.713611071834,97.0034640517694"
-                    Point2="129.713611071834,101.003464051769"
-                    Point3="133.713611071834,101.003464051769" />
+                    Point1="124.570753928977,97.0034640517692"
+                    Point2="124.570753928977,101.003464051769"
+                    Point3="128.570753928977,101.003464051769" />
                   <mssgle:LineSegment
-                    End="251.927222143669,101.003464051769" />
+                    End="241.641507857954,101.003464051769" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

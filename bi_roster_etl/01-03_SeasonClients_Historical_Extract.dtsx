@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_SeasonClients_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{9BC942B0-3CEC-4BC3-B763-4C3F2E917424}">
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{7652CB65-63D2-4B7E-AFF4-036D5D96465E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -593,7 +593,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -614,7 +614,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -694,7 +694,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="delete from  cls.Landing_SeasonClients_Historical &#xA;where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="delete from  cls.Landing_SeasonClients_Historical &#xA;where ISNUMERIC(DistrictID)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2710,7 +2710,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-          SQLTask:SqlStatementSource="SELECT COUNT(*) FROM CLS.Landing_ClientBundles_Historical "
+          SQLTask:SqlStatementSource="SELECT COUNT(*) FROM CLS.Landing_SeasonClients_Historical "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -4582,6 +4582,14 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           cachedName="SiteProjectCode"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].ExternalColumns[SiteProjectCode]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source.Outputs[Flat File Source Output].Columns[SiteProjectCode]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].Columns[% Repaid]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="% Repaid"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].ExternalColumns[PercentRepaid]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source.Outputs[Flat File Source Output].Columns[% Repaid]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5273,7 +5281,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) as RowsWithErrors from [cls].ClientBundles_Errors  where AuditID = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) as RowsWithErrors from [cls].SeasonClients_Errors  where AuditID = ?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -5496,7 +5504,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsInserted from cls.landing_ClientBundles_Historical</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) RowsInserted from cls.landing_SeasonClients_Historical</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -6662,6 +6670,14 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Collect Errors\Gather errors\SeasonClients_Errors">
     <Properties>
       <Property>
@@ -6674,19 +6690,15 @@ where AuditID = ?
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Row Count"
+          TopLeft="176.5079411838,223.870127444003" />
         <NodeLayout
           Size="245.142857142858,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical"
@@ -6699,10 +6711,6 @@ where AuditID = ?
           Size="155.428571428572,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source"
           TopLeft="124.018521658187,11.1277055667171" />
-        <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Row Count"
-          TopLeft="176.5079411838,223.870127444003" />
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients.Paths[Row Count Output 1]"
           TopLeft="243.079369755229,266.155841729717">
