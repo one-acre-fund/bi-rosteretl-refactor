@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="151"
-  DTS:VersionGUID="{70F8822F-6F43-4B94-89B0-AFB61EA78452}">
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{E1A5975F-456D-4B96-A23A-A178E63F6748}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -425,7 +425,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments_Historical where dropped not in ('true', 'false', 0, 1)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments_Historical where cast(dropped as varchar(5)) not in ('true', 'false','1','0')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -467,7 +467,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments_Historical where dropped not in ('true', 'false',1,0)</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments_Historical where cast(dropped as varchar(5)) not in ('true', 'false','1','0')</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -831,6 +831,16 @@
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
                           name="RosterCountryID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1012,6 +1022,11 @@
                           dataType="str"
                           length="50"
                           name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1227,6 +1242,12 @@
                           dataType="i4"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2798,6 +2819,29 @@
                               name="FriendlyExpression">@[User::AuditId]</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3136,6 +3180,13 @@
                           cachedName="CountryID"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3317,6 +3368,11 @@
                           dataType="str"
                           length="50"
                           name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_VerticalRepayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>

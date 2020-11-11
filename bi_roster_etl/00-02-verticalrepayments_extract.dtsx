@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-verticalrepayments_extract"
-  DTS:VersionBuild="275"
-  DTS:VersionGUID="{C04CEFD9-4783-484B-9067-B894766997C2}">
+  DTS:VersionBuild="281"
+  DTS:VersionGUID="{87AF242E-5D71-4B64-A563-56E836E8D04A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -456,7 +456,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false', 1,0)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Delete from  cls.Landing_VerticalRepayments where cast(dropped as varchar(5)) not in ('true', 'false','1','0')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -498,7 +498,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments where dropped not in ('true', 'false', 1,0)</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from  cls.Landing_VerticalRepayments where cast(dropped as varchar(5)) not in ('true', 'false','1','0')</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -772,7 +772,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
-                          length="250"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]"
                           name="SeasonName"
                           truncationRowDisposition="FailComponent" />
@@ -861,6 +861,16 @@
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RosterCountryID]"
                           name="RosterCountryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -995,7 +1005,7 @@
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           name="SeasonName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
@@ -1043,6 +1053,11 @@
                           dataType="str"
                           length="50"
                           name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1201,7 +1216,7 @@
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           name="SeasonName" />
                         <outputColumn
@@ -1258,6 +1273,12 @@
                           dataType="i4"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1519,7 +1540,7 @@
                           refId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].Columns[SeasonName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="250"
+                          cachedLength="50"
                           cachedName="SeasonName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\VerticalRepayments_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]" />
@@ -2829,6 +2850,29 @@
                               name="FriendlyExpression">@[User::AuditId]</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3167,13 +3211,16 @@
                           cachedName="CountryID"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Flat File Source.Outputs[Flat File Source Output].Columns[CountryID]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
-                          dataType="i4"
-                          name="AuditID" />
                         <externalMetadataColumn
                           refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
                           codePage="1252"
@@ -3298,7 +3345,7 @@
                           refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           name="SeasonName" />
                         <externalMetadataColumn
                           refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[PrimaryID]"
@@ -3348,6 +3395,15 @@
                           dataType="str"
                           length="50"
                           name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="i4"
+                          name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_Repayments\Landing_VerticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5232,7 +5288,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[SeasonName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="250"
+                          cachedLength="50"
                           cachedName="SeasonName"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[SeasonName]" />
                         <inputColumn
@@ -5605,7 +5661,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
-                          length="250"
+                          length="50"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[SeasonName]"
                           name="SeasonName"
                           truncationRowDisposition="FailComponent" />
@@ -5694,6 +5750,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[AuditID]"
                           name="AuditID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -5828,7 +5894,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           name="SeasonName" />
                         <externalMetadataColumn
                           refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[RosterSeasonID]"
@@ -5876,6 +5942,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
                           dataType="i4"
                           name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6034,7 +6105,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           name="SeasonName" />
                         <outputColumn
@@ -6091,6 +6162,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="i4"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -6344,7 +6421,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].Columns[SeasonName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="250"
+                          cachedLength="50"
                           cachedName="SeasonName"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[SeasonName]" />
@@ -6432,6 +6509,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedName="RosterCountryID"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[RosterCountryID]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[RosterCountryID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments.Outputs[OLE DB Source Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6662,6 +6746,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="str"
                           length="50"
                           name="RosterCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7331,7 +7420,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7352,7 +7441,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7581,6 +7670,10 @@ where AuditID = ?
           Id="Package\Get the files - Load to Landing"
           TopLeft="1464.5503033476,10.7489176324293" />
         <NodeLayout
+          Size="146.857142857143,42.2857142857143"
+          Id="Package\Incremental Load - Staging\Fix data types"
+          TopLeft="19.7857142857143,211.214285714286" />
+        <NodeLayout
           Size="141.142857142858,42.8571428571429"
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="29.2142857142858,108.357142857143" />
@@ -7589,8 +7682,8 @@ where AuditID = ?
           Id="Package\Incremental Load - Staging\Truncate Staging"
           TopLeft="19.7857142857143,5.50000000000002" />
         <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
-          TopLeft="99.7857142857143,48.3571428571429">
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="96.5,151.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7610,13 +7703,9 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="146.857142857143,42.2857142857143"
-          Id="Package\Incremental Load - Staging\Fix data types"
-          TopLeft="19.7857142857143,211.214285714286" />
         <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint]"
-          TopLeft="96.5,151.214285714286">
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
+          TopLeft="99.7857142857143,48.3571428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8354,6 +8443,32 @@ where AuditID = ?
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_verticalRepayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\landing Vertical Repayments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load Production\Get Audit Parameters">
     <LayoutInfo>

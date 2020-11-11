@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="136"
-  DTS:VersionGUID="{3B0C70BB-2F5A-4F47-BD33-F8FB0221093F}">
+  DTS:VersionBuild="137"
+  DTS:VersionGUID="{98C5DB56-82BE-40A4-BB15-07E6A81C823E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2324,6 +2324,28 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                               name="FriendlyExpression">@[User::AuditId]</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2598,6 +2620,12 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           cachedName="ClientBundleChoices"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[ClientBundleChoices]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Flat File Source.Outputs[Flat File Source Output].Columns[ClientBundleChoices]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2731,6 +2759,11 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="str"
                           length="50"
                           name="ClientBundleChoices" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4571,6 +4604,44 @@ where AuditID = ?
           Size="155.428571428572,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Flat File Source"
           TopLeft="124.018521658187,11.1277055667171" />
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Row Count"
+          TopLeft="176.5079411838,223.870127444003" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Row Count Output 1]"
+          TopLeft="243.079369755229,266.155841729717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.235475172372,64.0194838775141"
+              Start="0,0"
+              End="-46.235475172372,56.5194838775141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.009741938757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.009741938757"
+                    Point2="0,32.009741938757"
+                    Point3="-4,32.009741938757" />
+                  <mssgle:LineSegment
+                    End="-42.235475172372,32.009741938757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.235475172372,32.009741938757"
+                    Point2="-46.235475172372,32.009741938757"
+                    Point3="-46.235475172372,36.009741938757" />
+                  <mssgle:LineSegment
+                    End="-46.235475172372,56.5194838775141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Flat File Source Output]"
           TopLeft="201.732807372473,53.4134198524313">
@@ -4605,10 +4676,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Row Count"
-          TopLeft="176.5079411838,223.870127444003" />
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Derived Column Output]"
           TopLeft="213.1031539991,171.093075600819">
@@ -4635,40 +4702,6 @@ where AuditID = ?
                     Point3="29.976215756129,30.3885259215919" />
                   <mssgle:LineSegment
                     End="29.976215756129,45.2770518431838" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Row Count Output 1]"
-          TopLeft="243.079369755229,266.155841729717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-46.235475172372,64.0194838775141"
-              Start="0,0"
-              End="-46.235475172372,56.5194838775141">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.009741938757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.009741938757"
-                    Point2="0,32.009741938757"
-                    Point3="-4,32.009741938757" />
-                  <mssgle:LineSegment
-                    End="-42.235475172372,32.009741938757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-42.235475172372,32.009741938757"
-                    Point2="-46.235475172372,32.009741938757"
-                    Point3="-46.235475172372,36.009741938757" />
-                  <mssgle:LineSegment
-                    End="-46.235475172372,56.5194838775141" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
