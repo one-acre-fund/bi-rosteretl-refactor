@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_SeasonClients_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="153"
-  DTS:VersionGUID="{0C760831-B3CE-47A6-A851-4A4A2CB96C4A}">
+  DTS:VersionBuild="154"
+  DTS:VersionGUID="{19401C4A-6C59-4317-92DA-671D4177A821}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4678,6 +4678,14 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].Columns[DroppedDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DroppedDate"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source.Outputs[Flat File Source Output].Columns[DroppedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4960,6 +4968,12 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="wstr"
                           length="250"
                           name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DroppedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6789,13 +6803,13 @@ where AuditID = ?
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="245.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical"
-          TopLeft="101.129608868571,330.175325607231" />
-        <NodeLayout
           Size="135.428571428572,42.8571428571429"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Get AuditID"
           TopLeft="145.388868284814,128.235932743676" />
+        <NodeLayout
+          Size="245.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients_Historical"
+          TopLeft="101.129608868571,330.175325607231" />
         <NodeLayout
           Size="133.142857142858,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Row Count"
@@ -6804,6 +6818,40 @@ where AuditID = ?
           Size="155.428571428572,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source"
           TopLeft="124.018521658187,11.1277055667171" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients.Paths[Row Count Output 1]"
+          TopLeft="243.079369755229,266.155841729717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.378332315229,64.0194838775137"
+              Start="0,0"
+              End="-19.378332315229,56.5194838775137">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0097419387569"
+                    Point2="0,32.0097419387569"
+                    Point3="-4,32.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-15.378332315229,32.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.378332315229,32.0097419387569"
+                    Point2="-19.378332315229,32.0097419387569"
+                    Point3="-19.378332315229,36.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-19.378332315229,56.5194838775137" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients.Paths[Flat File Source Output]"
           TopLeft="201.732807372473,53.4134198524313">
@@ -6864,40 +6912,6 @@ where AuditID = ?
                     Point3="29.976215756129,30.3885259215919" />
                   <mssgle:LineSegment
                     End="29.976215756129,45.2770518431838" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients.Paths[Row Count Output 1]"
-          TopLeft="243.079369755229,266.155841729717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.378332315229,64.0194838775137"
-              Start="0,0"
-              End="-19.378332315229,56.5194838775137">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0097419387569"
-                    Point2="0,32.0097419387569"
-                    Point3="-4,32.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-15.378332315229,32.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.378332315229,32.0097419387569"
-                    Point2="-19.378332315229,32.0097419387569"
-                    Point3="-19.378332315229,36.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-19.378332315229,56.5194838775137" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

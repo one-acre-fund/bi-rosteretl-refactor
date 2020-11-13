@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ClientBundles_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{98C5DB56-82BE-40A4-BB15-07E6A81C823E}">
+  DTS:VersionBuild="138"
+  DTS:VersionGUID="{FFA4EE72-11CD-4377-A627-85E6B74A5E54}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2329,6 +2329,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="250"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -2623,6 +2624,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                         <inputColumn
                           refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].Columns[FileName]"
                           cachedDataType="wstr"
+                          cachedLength="250"
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
@@ -4609,6 +4611,40 @@ where AuditID = ?
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Row Count"
           TopLeft="176.5079411838,223.870127444003" />
         <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,171.093075600819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.976215756129,52.7770518431838"
+              Start="0,0"
+              End="29.976215756129,45.2770518431838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3885259215919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.3885259215919"
+                    Point2="0,26.3885259215919"
+                    Point3="4,26.3885259215919" />
+                  <mssgle:LineSegment
+                    End="25.976215756129,26.3885259215919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.976215756129,26.3885259215919"
+                    Point2="29.976215756129,26.3885259215919"
+                    Point3="29.976215756129,30.3885259215919" />
+                  <mssgle:LineSegment
+                    End="29.976215756129,45.2770518431838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Row Count Output 1]"
           TopLeft="243.079369755229,266.155841729717">
           <EdgeLayout.Curve>
@@ -4668,40 +4704,6 @@ where AuditID = ?
                     Point3="11.3703466266272,41.4112564456222" />
                   <mssgle:LineSegment
                     End="11.3703466266272,67.3225128912445" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles.Paths[Derived Column Output]"
-          TopLeft="213.1031539991,171.093075600819">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.976215756129,52.7770518431838"
-              Start="0,0"
-              End="29.976215756129,45.2770518431838">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.3885259215919" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.3885259215919"
-                    Point2="0,26.3885259215919"
-                    Point3="4,26.3885259215919" />
-                  <mssgle:LineSegment
-                    End="25.976215756129,26.3885259215919" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.976215756129,26.3885259215919"
-                    Point2="29.976215756129,26.3885259215919"
-                    Point3="29.976215756129,30.3885259215919" />
-                  <mssgle:LineSegment
-                    End="29.976215756129,45.2770518431838" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

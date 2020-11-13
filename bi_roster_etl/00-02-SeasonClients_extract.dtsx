@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-SeasonClients_extract"
-  DTS:VersionBuild="296"
-  DTS:VersionGUID="{A2167631-0D6B-4825-B16A-52CF398E9FB3}">
+  DTS:VersionBuild="301"
+  DTS:VersionGUID="{DEA69D8C-A0E8-43A6-A70D-A9916FAA4C2A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4584,6 +4584,14 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[DroppedDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DroppedDate"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source.Outputs[Flat File Source Output].Columns[DroppedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4866,6 +4874,12 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="wstr"
                           length="250"
                           name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DroppedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7826,6 +7840,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[DroppedDate]"
+                          name="DroppedDate"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8108,6 +8133,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           dataType="wstr"
                           length="250"
                           name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DroppedDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -8441,6 +8472,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           length="250"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FileName]"
                           name="FileName" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
+                          name="DroppedDate" />
                         <outputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -8918,6 +8956,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[DroppedDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DroppedDate"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[DroppedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -9210,6 +9256,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           dataType="wstr"
                           length="250"
                           name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DroppedDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11143,17 +11195,17 @@ where AuditID = ?
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Row Count"
-          TopLeft="167.301591733566,223.038959154413" />
+          Size="135.428571428572,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
         <NodeLayout
           Size="194.285714285715,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Landing_SeasonClients"
           TopLeft="101.129608868571,330.175325607231" />
         <NodeLayout
-          Size="135.428571428572,42.2857142857143"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Get AuditID"
-          TopLeft="145.388868284814,128.235932743676" />
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Row Count"
+          TopLeft="167.301591733566,223.038959154413" />
         <NodeLayout
           Size="155.428571428572,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients\Flat File Source"
@@ -11282,13 +11334,13 @@ where AuditID = ?
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="194.285714285715,42.2857142857143"
-          Id="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients"
-          TopLeft="41.2499997330208,8.1333332713445" />
-        <NodeLayout
           Size="190.857142857143,42.2857142857143"
           Id="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients"
           TopLeft="35.3333328987162,338.600001387" />
+        <NodeLayout
+          Size="194.285714285715,42.2857142857143"
+          Id="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients"
+          TopLeft="41.2499997330208,8.1333332713445" />
         <NodeLayout
           Size="139.428571428572,42.8571428571429"
           Id="Package\Incremental Load - Staging\Load Staging\DC - AuditID"
