@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBundles_extract"
-  DTS:VersionBuild="263"
-  DTS:VersionGUID="{9464AA4A-0A96-456A-B61A-3D5CFD3243DB}">
+  DTS:VersionBuild="266"
+  DTS:VersionGUID="{C3ADFAC4-72B9-4812-8BAC-CBBA452AD94B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -408,7 +408,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -429,7 +429,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1235,6 +1235,16 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientBundleChoices]"
                           name="ClientBundleChoices"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1368,6 +1378,11 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="str"
                           length="50"
                           name="ClientBundleChoices" />
+                        <externalMetadataColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1527,6 +1542,12 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="i4"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2355,6 +2376,29 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                               name="FriendlyExpression">@[User::AuditId]</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::FileName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::FileName]</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2629,6 +2673,13 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           cachedName="ClientBundleChoices"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[ClientBundleChoices]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Flat File Source.Outputs[Flat File Source Output].Columns[ClientBundleChoices]" />
+                        <inputColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2762,6 +2813,11 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           dataType="str"
                           length="50"
                           name="ClientBundleChoices" />
+                        <externalMetadataColumn
+                          refId="Package\Get the files - Load to Landing\DFT - Landing_ClientBundles\Landing_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4829,6 +4885,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].Columns[ClientBundleChoices]"
                           name="ClientBundleChoices"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4962,6 +5028,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="str"
                           length="50"
                           name="ClientBundleChoices" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5121,6 +5192,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="i4"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -5398,6 +5475,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           cachedName="AuditDateCreated"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[AuditDateCreated]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output].Columns[AuditDateCreated]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ClientBundles.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_ClientBundles.Outputs[OLE DB Source Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5577,6 +5661,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\staging_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[AuditDateCreated]"
                           dataType="dbTimeStamp"
                           name="AuditDateCreated" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_ClientBundles.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6683,7 +6772,7 @@ where AuditID = ?
           PanelSize="212,514.857142857143"
           Size="212,557.714285714286"
           Id="Package\Load Production"
-          TopLeft="1211.02512561678,300.129003635518" />
+          TopLeft="841.864118104927,394.266295558661" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="699.369027742258,196.850648715453">
@@ -6742,18 +6831,30 @@ where AuditID = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="569.527760478598,575.993073511326">
+          TopLeft="569.527760478598,573.000000529991">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="641.497365138178,0"
+              EndConnector="272.336357626329,100.123437885813"
               Start="0,0"
-              End="633.997365138178,0">
+              End="264.836357626329,100.123437885813">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="633.997365138178,0" />
+                    End="132.168178813164,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="132.168178813164,0"
+                    Point2="136.168178813164,0"
+                    Point3="136.168178813164,4" />
+                  <mssgle:LineSegment
+                    End="136.168178813164,96.1234378858128" />
+                  <mssgle:CubicBezierSegment
+                    Point1="136.168178813164,96.1234378858128"
+                    Point2="136.168178813164,100.123437885813"
+                    Point3="140.168178813164,100.123437885813" />
+                  <mssgle:LineSegment
+                    End="264.836357626329,100.123437885813" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
