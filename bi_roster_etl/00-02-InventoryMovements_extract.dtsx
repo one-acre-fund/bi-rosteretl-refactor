@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-InventoryMovements_extract"
-  DTS:VersionBuild="307"
-  DTS:VersionGUID="{EA61C815-24A4-41BC-AECA-3127CEF6323D}">
+  DTS:VersionBuild="311"
+  DTS:VersionGUID="{BCC84E54-63F3-471F-9583-BF7DD75D7BAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2457,18 +2457,18 @@ public class Variables
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:CodeName>
 		<msb:DisplayName>SC_34e3a63733f5404eab8a30c3f72000e9</msb:DisplayName>
 		<msb:ProjectId>{6B00E8D6-45D4-4B7C-B2BF-50E3CDC77FD9}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_34e3a63733f5404eab8a30c3f72000e9.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
@@ -2665,7 +2665,7 @@ namespace SC_34e3a63733f5404eab8a30c3f72000e9.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDADeMrl8AAAAAAAAAAOAAIiALATAAACAAAAAIAAAAAAAAzj4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKhjsl8AAAAAAAAAAOAAIiALATAAACAAAAAIAAAAAAAAzj4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHw+AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2796,7 +2796,7 @@ ZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0
 AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAA
 MAAAcVMAQwBfADMANABlADMAYQA2ADMANwAzADMAZgA1ADQAMAA0AGUAYQBiADgAYQAzADAAYwAz
 AGYANwAyADAAMAAwAGUAOQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
-cwAAidxpumaYXUG0Q2CiggRbSQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQsHBg4OEjkIET0R
+cwAAKD+JuhRkPUKdOEGBas+YZgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQsHBg4OEjkIET0R
 QQMgAA4FAAEOHQ4HBwMdBRJFCAUAABKAiQUgAR0FDgYgAR0FHQUEIAEODgUgARJFDgkgAwESTR0I
 ElEDBhJNAwYdCAQgAQ4IBCABAggEIAEICAUgARE9CAUgARFBCAUgAgEIHAMgAAIHIAICDhGAmQUg
 AR0ICAgAARKAnRGAoQUgABKApQcgAgEOEoClCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJV
@@ -3874,411 +3874,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               SQLTask:SqlStatementSource="Truncate table cls.staging_InventoryMovements" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Incremental Load - Staging\update clientids"
-          DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{5E1FC1A0-C644-40AB-B72D-7A6531CBD8F3}"
-          DTS:ExecutableType="Microsoft.Pipeline"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="update clientids"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <pipeline
-              version="1">
-              <components>
-                <component
-                  refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="Add new ClientIDs"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[ClientIDs]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Connections[OleDbConnection]"
-                      connectionManagerID="{BF3B16C1-CD0A-4E61-B2DE-811E58B38130}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[shared_dims]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
-                          cachedDataType="guid"
-                          cachedName="GlobalClientID"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                          dataType="i4"
-                          name="ID" />
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
-                          dataType="guid"
-                          name="GlobalClientID" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Incremental Load - Staging\update clientids\Check if exists"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Check if exists"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.ClientIDs</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select distinct GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.ClientIDs) [refTable]
-where [refTable].[GlobalClientID] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GlobalClientID" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Incremental Load - Staging\update clientids\Check if exists.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input].Columns[GlobalClientID]"
-                          cachedDataType="guid"
-                          cachedName="GlobalClientID"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">GlobalClientID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="Get GlobalIDs"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select cast(GlobalClientID as uniqueidentifier) GlobalClientID from cls.staging_SeasonClients where Dropped in ('false',0)</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Connections[OleDbConnection]"
-                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
-                          name="GlobalClientID"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
-                          dataType="guid"
-                          name="GlobalClientID" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
-                          dataType="guid"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
-                          name="GlobalClientID" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-              </components>
-              <paths>
-                <path
-                  refId="Package\Incremental Load - Staging\update clientids.Paths[Lookup No Match Output]"
-                  endId="Package\Incremental Load - Staging\update clientids\Add new ClientIDs.Inputs[OLE DB Destination Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Incremental Load - Staging\update clientids\Check if exists.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Incremental Load - Staging\update clientids.Paths[OLE DB Source Output]"
-                  endId="Package\Incremental Load - Staging\update clientids\Check if exists.Inputs[Lookup Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Incremental Load - Staging\update clientids\Get GlobalIDs.Outputs[OLE DB Source Output]" />
-              </paths>
-            </pipeline>
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{09377758-8347-43E3-B9DC-F9E73E2B6624}"
-          DTS:From="Package\Incremental Load - Staging\Load Staging"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Incremental Load - Staging\update clientids" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -4418,7 +4015,6 @@ where [refTable].[GlobalClientID] = ?</property>
       DTS:refId="Package\Load Production"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{8E6DFE55-A753-4D11-A32B-2ACE852E0DE3}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -4438,7 +4034,8 @@ where [refTable].[GlobalClientID] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="exec [cls].[sp_IncrementalLoad_SeasonClients] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="&#xA;&#xA;EXEC [cls].[sp_IncrementalLoad_InventoryMovements] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::AuditId"
@@ -4992,6 +4589,10 @@ where AuditID = ?
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="255.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements"
+          TopLeft="589.682555303793,169.816015475686" />
+        <NodeLayout
           Size="141.142857142858,42.8571428571429"
           Id="Package\Incremental Load - Staging\Load Staging"
           TopLeft="14.9285714285715,108.357142857143" />
@@ -4999,32 +4600,6 @@ where AuditID = ?
           Size="160,42.8571428571429"
           Id="Package\Incremental Load - Staging\Truncate Staging"
           TopLeft="5.50000000000001,5.50000000000002" />
-        <NodeLayout
-          Size="154.857142857143,42.2857142857143"
-          Id="Package\Incremental Load - Staging\update clientids"
-          TopLeft="8.0714285714286,211.214285714286" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 1]"
-          TopLeft="85.5,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
           TopLeft="85.5,48.3571428571429">
@@ -5054,6 +4629,119 @@ where AuditID = ?
           Size="170.857142857143,351.428571428572"
           Id="Package\Incremental Load - Staging"
           TopLeft="925.824071057583,18.5411301756501" />
+        <NodeLayout
+          Size="126.857142857143,42.8571428571429"
+          Id="Package\InventoryMovements - Landing\ETL Begin"
+          TopLeft="213.5,108.357142857143" />
+        <NodeLayout
+          Size="126.857142857143,42.8571428571429"
+          Id="Package\InventoryMovements - Landing\Get AuditID"
+          TopLeft="5.50000000000004,5.50000000000002" />
+        <NodeLayout
+          Size="168,42.8571428571429"
+          Id="Package\InventoryMovements - Landing\Get LoadStartTime"
+          TopLeft="192.928571428571,5.50000000000002" />
+        <NodeLayout
+          Size="300.571428571429,42.2857142857143"
+          Id="Package\InventoryMovements - Landing\Truncate Table Landing_InventoryMovements"
+          TopLeft="126.642857142857,211.214285714286" />
+        <EdgeLayout
+          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 2]"
+          TopLeft="68.9285714285715,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.190476190476,60"
+              Start="0,0"
+              End="188.190476190476,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5516014234876"
+                    Point2="0,35.5516014234876"
+                    Point3="4,35.5516014234876" />
+                  <mssgle:LineSegment
+                    End="184.190476190476,35.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.190476190476,35.5516014234876"
+                    Point2="188.190476190476,35.5516014234876"
+                    Point3="188.190476190476,39.5516014234876" />
+                  <mssgle:LineSegment
+                    End="188.190476190476,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 3]"
+          TopLeft="276.928571428571,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.8095238095239,60"
+              Start="0,0"
+              End="19.8095238095239,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5516014234876"
+                    Point2="0,35.5516014234876"
+                    Point3="4,35.5516014234876" />
+                  <mssgle:LineSegment
+                    End="15.8095238095239,35.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.8095238095239,35.5516014234876"
+                    Point2="19.8095238095239,35.5516014234876"
+                    Point3="19.8095238095239,39.5516014234876" />
+                  <mssgle:LineSegment
+                    End="19.8095238095239,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 4]"
+          TopLeft="276.928571428572,151.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="432.571428571429,308.571428571429"
+          Size="432.571428571429,351.428571428572"
+          Id="Package\InventoryMovements - Landing"
+          TopLeft="15.1150523819863,11.8874449494405" />
         <NodeLayout
           Size="201.142857142858,42.8571428571429"
           Id="Package\Load Production\Exec SP_IncrementalLoad"
@@ -5169,157 +4857,6 @@ where AuditID = ?
           Size="212,557.714285714286"
           Id="Package\Load Production"
           TopLeft="95.6811807263406,395.496968960791" />
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\InventoryMovements - Landing\ETL Begin"
-          TopLeft="213.5,108.357142857143" />
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\InventoryMovements - Landing\Get AuditID"
-          TopLeft="5.50000000000004,5.50000000000002" />
-        <NodeLayout
-          Size="168,42.8571428571429"
-          Id="Package\InventoryMovements - Landing\Get LoadStartTime"
-          TopLeft="192.928571428571,5.50000000000002" />
-        <NodeLayout
-          Size="300.571428571429,42.2857142857143"
-          Id="Package\InventoryMovements - Landing\Truncate Table Landing_InventoryMovements"
-          TopLeft="126.642857142857,211.214285714286" />
-        <EdgeLayout
-          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 2]"
-          TopLeft="68.9285714285715,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="188.190476190476,60"
-              Start="0,0"
-              End="188.190476190476,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="184.190476190476,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="184.190476190476,35.5516014234876"
-                    Point2="188.190476190476,35.5516014234876"
-                    Point3="188.190476190476,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="188.190476190476,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 3]"
-          TopLeft="276.928571428571,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.8095238095239,60"
-              Start="0,0"
-              End="19.8095238095239,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="15.8095238095239,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.8095238095239,35.5516014234876"
-                    Point2="19.8095238095239,35.5516014234876"
-                    Point3="19.8095238095239,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="19.8095238095239,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\InventoryMovements - Landing.PrecedenceConstraints[Constraint 4]"
-          TopLeft="276.928571428572,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="432.571428571429,308.571428571429"
-          Size="432.571428571429,351.428571428572"
-          Id="Package\InventoryMovements - Landing"
-          TopLeft="15.1150523819863,11.8874449494405" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1011.25264248615,369.969701604222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-809.571461759814,25.5272673565698"
-              Start="0,0"
-              End="-809.571461759814,18.0272673565698">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.76363367828489" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.76363367828489"
-                    Point2="0,12.7636336782849"
-                    Point3="-4,12.7636336782849" />
-                  <mssgle:LineSegment
-                    End="-805.571461759814,12.7636336782849" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-805.571461759814,12.7636336782849"
-                    Point2="-809.571461759814,12.7636336782849"
-                    Point3="-809.571461759814,16.7636336782849" />
-                  <mssgle:LineSegment
-                    End="-809.571461759814,18.0272673565698" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="255.428571428572,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements"
-          TopLeft="589.682555303793,169.816015475686" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="447.686480953415,189.280301641135">
@@ -5364,14 +4901,225 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1011.25264248615,369.969701604222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-809.571461759814,25.5272673565698"
+              Start="0,0"
+              End="-809.571461759814,18.0272673565698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.76363367828489" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.76363367828489"
+                    Point2="0,12.7636336782849"
+                    Point3="-4,12.7636336782849" />
+                  <mssgle:LineSegment
+                    End="-805.571461759814,12.7636336782849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-805.571461759814,12.7636336782849"
+                    Point2="-809.571461759814,12.7636336782849"
+                    Point3="-809.571461759814,16.7636336782849" />
+                  <mssgle:LineSegment
+                    End="-809.571461759814,18.0272673565698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Landing_InventoryMovements">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141.714285714286,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements\Row Count 1"
+          TopLeft="154.357142857143,341.785714285714" />
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements\Row Count"
+          TopLeft="167.301591733566,239.610387725842" />
+        <NodeLayout
+          Size="215.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements\Inventorymovements source"
+          TopLeft="47.7857142857143,18.0714285714286" />
+        <NodeLayout
+          Size="225.142857142858,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements\Landing_InventoryMovements"
+          TopLeft="114.843894582857,454.175325607231" />
+        <NodeLayout
+          Size="135.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_InventoryMovements\Get AuditID"
+          TopLeft="145.388868284814,144.807361315105" />
+        <EdgeLayout
+          Id="Package\DFT - Landing_InventoryMovements.Paths[OLE DB Source Output]"
+          TopLeft="155.5,60.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.6031539990997,84.4502184579617"
+              Start="0,0"
+              End="57.6031539990997,76.9502184579617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2251092289808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.2251092289808"
+                    Point2="0,42.2251092289808"
+                    Point3="4,42.2251092289808" />
+                  <mssgle:LineSegment
+                    End="53.6031539990997,42.2251092289808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.6031539990997,42.2251092289808"
+                    Point2="57.6031539990997,42.2251092289808"
+                    Point3="57.6031539990997,46.2251092289808" />
+                  <mssgle:LineSegment
+                    End="57.6031539990997,76.9502184579617" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_InventoryMovements.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,187.093075600819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.7698663058948,52.5173121250227"
+              Start="0,0"
+              End="20.7698663058948,45.0173121250227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2586560625114"
+                    Point2="0,26.2586560625114"
+                    Point3="4,26.2586560625114" />
+                  <mssgle:LineSegment
+                    End="16.7698663058948,26.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.7698663058948,26.2586560625114"
+                    Point2="20.7698663058948,26.2586560625114"
+                    Point3="20.7698663058948,30.2586560625114" />
+                  <mssgle:LineSegment
+                    End="20.7698663058948,45.0173121250227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_InventoryMovements.Paths[Row Count Output 11]"
+          TopLeft="226.314804434286,384.071428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.1038970358025"
+              Start="0,0"
+              End="0,62.6038970358025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.6038970358025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_InventoryMovements.Paths[Row Count Output 1]"
+          TopLeft="233.873020304995,281.896102011556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.65873459070883,59.8896122741584"
+              Start="0,0"
+              End="-8.65873459070883,52.3896122741584">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9448061370792" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9448061370792"
+                    Point2="0,29.9448061370792"
+                    Point3="-4,29.9448061370792" />
+                  <mssgle:LineSegment
+                    End="-4.65873459070883,29.9448061370792" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.65873459070883,29.9448061370792"
+                    Point2="-8.65873459070883,29.9448061370792"
+                    Point3="-8.65873459070883,33.9448061370792" />
+                  <mssgle:LineSegment
+                    End="-8.65873459070883,52.3896122741584" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_InventoryMovements\Inventorymovements source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_InventoryMovements\Landing_InventoryMovements">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Incremental Load - Staging\Load Staging">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.142857142858,42.2857142857143"
+          Id="Package\Incremental Load - Staging\Load Staging\Landing_InventoryMovements"
+          TopLeft="5.5,16.9285714285714" />
         <NodeLayout
           Size="221.142857142858,42.2857142857143"
           Id="Package\Incremental Load - Staging\Load Staging\staging_InventoryMovements"
@@ -5384,54 +5132,6 @@ where AuditID = ?
           Size="152,42.8571428571429"
           Id="Package\Incremental Load - Staging\Load Staging\Get Hash Value"
           TopLeft="76.7499993853271,136.895239621713" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
-          TopLeft="148.999999441206,179.56190628838">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.5333333953213"
-              Start="0,0"
-              End="0,49.0333333953213">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.0333333953213" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
-          TopLeft="145.601190007425,278.952382540844">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71.0761902747272"
-              Start="0,0"
-              End="0,63.5761902747272">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5761902747272" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="225.142857142858,42.2857142857143"
-          Id="Package\Incremental Load - Staging\Load Staging\Landing_InventoryMovements"
-          TopLeft="5.5,16.9285714285714" />
         <EdgeLayout
           Id="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
           TopLeft="118.071428571429,59.2142857142857">
@@ -5466,9 +5166,66 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Derived Column Output]"
+          TopLeft="145.601190007425,278.952382540844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.0761902747272"
+              Start="0,0"
+              End="0,63.5761902747272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5761902747272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
+          TopLeft="148.999999441206,179.56190628838">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5333333953213"
+              Start="0,0"
+              End="0,49.0333333953213">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.0333333953213" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_InventoryMovements">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Incremental Load - Staging\Load Staging\staging_InventoryMovements">
     <Properties>
@@ -5483,144 +5240,10 @@ where AuditID = ?
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Incremental Load - Staging\update clientids">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="147.428571428572,42.2857142857143"
-          Id="Package\Incremental Load - Staging\update clientids\Get GlobalIDs"
-          TopLeft="32.9285714285714,15.7857142857143" />
-        <NodeLayout
-          Size="168.571428571429,42.2857142857143"
-          Id="Package\Incremental Load - Staging\update clientids\Add new ClientIDs"
-          TopLeft="89.7142857142857,229.714285714286" />
-        <NodeLayout
-          Size="149.142857142858,42.2857142857143"
-          Id="Package\Incremental Load - Staging\update clientids\Check if exists"
-          TopLeft="220.642857142857,98.3571428571429" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\update clientids.Paths[OLE DB Source Output]"
-          TopLeft="106.642857142857,58.0714285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="188.571428571428,40.2857142857143"
-              Start="0,0"
-              End="188.571428571428,32.7857142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.1428571428572" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.1428571428572"
-                    Point2="0,20.1428571428572"
-                    Point3="4,20.1428571428572" />
-                  <mssgle:LineSegment
-                    End="184.571428571428,20.1428571428572" />
-                  <mssgle:CubicBezierSegment
-                    Point1="184.571428571428,20.1428571428572"
-                    Point2="188.571428571428,20.1428571428572"
-                    Point3="188.571428571428,24.1428571428572" />
-                  <mssgle:LineSegment
-                    End="188.571428571428,32.7857142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\update clientids.Paths[Lookup No Match Output]"
-          TopLeft="295.214285714286,140.642857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.214285714286,89.0714285714286"
-              Start="0,0"
-              End="-121.214285714286,81.5714285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5357142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40.5357142857143"
-                    Point2="0,44.5357142857143"
-                    Point3="-4,44.5357142857143" />
-                  <mssgle:LineSegment
-                    End="-117.214285714286,44.5357142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-117.214285714286,44.5357142857143"
-                    Point2="-121.214285714286,44.5357142857143"
-                    Point3="-121.214285714286,48.5357142857143" />
-                  <mssgle:LineSegment
-                    End="-121.214285714286,81.5714285714286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-116.413529575893,49.5357142857143,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\update clientids\Get GlobalIDs">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\update clientids\Add new ClientIDs">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\update clientids\Check if exists">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Load Production\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="193.714285714286,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
@@ -5668,7 +5291,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5702,7 +5327,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5736,7 +5363,9 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5747,192 +5376,6 @@ where AuditID = ?
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DFT - Landing_InventoryMovements">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="135.428571428572,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements\Get AuditID"
-          TopLeft="145.388868284814,144.807361315105" />
-        <NodeLayout
-          Size="133.142857142858,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements\Row Count"
-          TopLeft="167.301591733566,239.610387725842" />
-        <NodeLayout
-          Size="225.142857142858,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements\Landing_InventoryMovements"
-          TopLeft="114.843894582857,454.175325607231" />
-        <EdgeLayout
-          Id="Package\DFT - Landing_InventoryMovements.Paths[Derived Column Output]"
-          TopLeft="213.1031539991,187.093075600819">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.7698663058948,52.5173121250227"
-              Start="0,0"
-              End="20.7698663058948,45.0173121250227">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.2586560625114" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.2586560625114"
-                    Point2="0,26.2586560625114"
-                    Point3="4,26.2586560625114" />
-                  <mssgle:LineSegment
-                    End="16.7698663058948,26.2586560625114" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.7698663058948,26.2586560625114"
-                    Point2="20.7698663058948,26.2586560625114"
-                    Point3="20.7698663058948,30.2586560625114" />
-                  <mssgle:LineSegment
-                    End="20.7698663058948,45.0173121250227" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="215.428571428572,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements\Inventorymovements source"
-          TopLeft="47.7857142857143,18.0714285714286" />
-        <EdgeLayout
-          Id="Package\DFT - Landing_InventoryMovements.Paths[OLE DB Source Output]"
-          TopLeft="155.5,60.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57.6031539990997,84.4502184579617"
-              Start="0,0"
-              End="57.6031539990997,76.9502184579617">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.2251092289808" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.2251092289808"
-                    Point2="0,42.2251092289808"
-                    Point3="4,42.2251092289808" />
-                  <mssgle:LineSegment
-                    End="53.6031539990997,42.2251092289808" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.6031539990997,42.2251092289808"
-                    Point2="57.6031539990997,42.2251092289808"
-                    Point3="57.6031539990997,46.2251092289808" />
-                  <mssgle:LineSegment
-                    End="57.6031539990997,76.9502184579617" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="141.714285714286,42.2857142857143"
-          Id="Package\DFT - Landing_InventoryMovements\Row Count 1"
-          TopLeft="154.357142857143,341.785714285714" />
-        <EdgeLayout
-          Id="Package\DFT - Landing_InventoryMovements.Paths[Row Count Output 1]"
-          TopLeft="233.873020304995,281.896102011556">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.65873459070883,59.8896122741584"
-              Start="0,0"
-              End="-8.65873459070883,52.3896122741584">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.9448061370792" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.9448061370792"
-                    Point2="0,29.9448061370792"
-                    Point3="-4,29.9448061370792" />
-                  <mssgle:LineSegment
-                    End="-4.65873459070883,29.9448061370792" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.65873459070883,29.9448061370792"
-                    Point2="-8.65873459070883,29.9448061370792"
-                    Point3="-8.65873459070883,33.9448061370792" />
-                  <mssgle:LineSegment
-                    End="-8.65873459070883,52.3896122741584" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Landing_InventoryMovements.Paths[Row Count Output 11]"
-          TopLeft="226.314804434286,384.071428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.1038970358025"
-              Start="0,0"
-              End="0,62.6038970358025">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.6038970358025" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Landing_InventoryMovements\Landing_InventoryMovements">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - Landing_InventoryMovements\Inventorymovements source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_InventoryMovements">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
