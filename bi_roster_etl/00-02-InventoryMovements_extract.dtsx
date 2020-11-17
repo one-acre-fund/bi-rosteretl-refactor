@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-InventoryMovements_extract"
-  DTS:VersionBuild="311"
-  DTS:VersionGUID="{BCC84E54-63F3-471F-9583-BF7DD75D7BAF}">
+  DTS:VersionBuild="312"
+  DTS:VersionGUID="{188D177E-5758-428C-A70B-1B03C02A8347}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3933,7 +3933,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3954,7 +3954,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4172,112 +4172,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load Production\Get Audit Parameters\Error Count"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="Error Count"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select count(*) as RowsWithErrors from [cls].SeasonClients_Errors  where AuditID = ?</property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">2</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"Parameter0:Input",{26E31274-2744-482C-BBFC-0B06CD5C261C};</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Load Production\Get Audit Parameters\Error Count.Connections[OleDbConnection]"
-                      connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]"
-                          name="RowsWithErrors"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].ExternalColumns[RowsWithErrors]"
-                          dataType="i4"
-                          name="RowsWithErrors" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[RowsWithErrors]"
-                          name="RowsWithErrors" />
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Load Production\Get Audit Parameters\Update AuditDimension"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -4298,8 +4192,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update cls.AuditDimension
 
 set 
-PackageName = ?,
-RowsWithErrors = ?
+PackageName = ?
 
 where AuditID = ?
 </property>
@@ -4332,16 +4225,10 @@ where AuditID = ?
                           externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           lineageId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Outputs[Audit Output 1].Columns[PackageName]" />
                         <inputColumn
-                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[RowsWithErrors]"
-                          cachedDataType="i4"
-                          cachedName="RowsWithErrors"
-                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output].Columns[RowsWithErrors]" />
-                        <inputColumn
                           refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].Columns[AuditID]"
                           cachedDataType="i4"
                           cachedName="AuditID"
-                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -4362,17 +4249,6 @@ where AuditID = ?
                           refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="i4"
                           name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Load Production\Get Audit Parameters\Update AuditDimension.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="i4"
-                          name="Param_2">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -4427,11 +4303,6 @@ where AuditID = ?
                   endId="Package\Load Production\Get Audit Parameters\Audit - Get PackageName.Inputs[Audit Input 1]"
                   name="Derived Column Output"
                   startId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
-                  endId="Package\Load Production\Get Audit Parameters\DC AuditID 1 1.Inputs[Derived Column Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Load Production\Get Audit Parameters\Error Count.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -4449,7 +4320,7 @@ where AuditID = ?
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.SeasonClients;"
+              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.InventoryMovements;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -5243,141 +5114,89 @@ where AuditID = ?
     design-time-name="Package\Load Production\Get Audit Parameters">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="193.714285714286,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\Update AuditDimension"
-          TopLeft="166.503399291727,523.235622926513" />
-        <NodeLayout
-          Size="133.142857142858,42.8571428571429"
-          Id="Package\Load Production\Get Audit Parameters\Error Count"
-          TopLeft="391.095238095238,62.8571428571428" />
+          TopLeft="81.1065716326582,361.495364939066" />
         <NodeLayout
           Size="200.571428571429,42.8571428571429"
           Id="Package\Load Production\Get Audit Parameters\Audit - Get PackageName"
-          TopLeft="180.882085192261,350.811378163968" />
+          TopLeft="176.437640630079,224.188002912835" />
         <NodeLayout
           Size="151.428571428572,42.2857142857143"
           Id="Package\Load Production\Get Audit Parameters\DC AuditID 1 1"
-          TopLeft="353.333341104013,129.49536856179" />
-        <EdgeLayout
-          Id="Package\Load Production\Get Audit Parameters.Paths[OLE DB Source Output]"
-          TopLeft="457.666666666666,105.714285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-28.6190398483673,23.7810828475044"
-              Start="0,0"
-              End="-28.6190398483673,16.2810828475044">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.89054142375222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.89054142375222"
-                    Point2="0,11.8905414237522"
-                    Point3="-4,11.8905414237522" />
-                  <mssgle:LineSegment
-                    End="-24.6190398483673,11.8905414237522" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.6190398483673,11.8905414237522"
-                    Point2="-28.6190398483673,11.8905414237522"
-                    Point3="-28.6190398483673,15.8905414237522" />
-                  <mssgle:LineSegment
-                    End="-28.6190398483673,16.2810828475044" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="91.4285722611442,43.7291357250228" />
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[Derived Column Output]"
-          TopLeft="429.047626818299,171.781082847504">
+          TopLeft="167.14285797543,86.014850010737">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-147.879827340323,179.030295316464"
+              EndConnector="109.580496940363,138.173152902098"
               Start="0,0"
-              End="-147.879827340323,171.530295316464">
+              End="109.580496940363,130.673152902098">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,85.5151476582319" />
+                    End="0,65.0865764510491" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,85.5151476582319"
-                    Point2="0,89.5151476582319"
-                    Point3="-4,89.5151476582319" />
+                    Point1="0,65.0865764510491"
+                    Point2="0,69.0865764510491"
+                    Point3="4,69.0865764510491" />
                   <mssgle:LineSegment
-                    End="-143.879827340323,89.5151476582319" />
+                    End="105.580496940363,69.0865764510491" />
                   <mssgle:CubicBezierSegment
-                    Point1="-143.879827340323,89.5151476582319"
-                    Point2="-147.879827340323,89.5151476582319"
-                    Point3="-147.879827340323,93.5151476582319" />
+                    Point1="105.580496940363,69.0865764510491"
+                    Point2="109.580496940363,69.0865764510491"
+                    Point3="109.580496940363,73.0865764510491" />
                   <mssgle:LineSegment
-                    End="-147.879827340323,171.530295316464" />
+                    End="109.580496940363,130.673152902098" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Production\Get Audit Parameters.Paths[Audit Output 1]"
-          TopLeft="281.167799477975,393.668521021111">
+          TopLeft="276.723354915793,267.045145769978">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.8072573291049,129.567101905402"
+              EndConnector="-98.7596404259922,94.450219169088"
               Start="0,0"
-              End="-17.8072573291049,122.067101905402">
+              End="-98.7596404259922,86.950219169088">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.783550952701" />
+                    End="0,43.225109584544" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,60.783550952701"
-                    Point2="0,64.783550952701"
-                    Point3="-4,64.783550952701" />
+                    Point1="0,43.225109584544"
+                    Point2="0,47.225109584544"
+                    Point3="-4,47.225109584544" />
                   <mssgle:LineSegment
-                    End="-13.8072573291049,64.783550952701" />
+                    End="-94.7596404259922,47.225109584544" />
                   <mssgle:CubicBezierSegment
-                    Point1="-13.8072573291049,64.783550952701"
-                    Point2="-17.8072573291049,64.783550952701"
-                    Point3="-17.8072573291049,68.783550952701" />
+                    Point1="-94.7596404259922,47.225109584544"
+                    Point2="-98.7596404259922,47.225109584544"
+                    Point3="-98.7596404259922,51.225109584544" />
                   <mssgle:LineSegment
-                    End="-17.8072573291049,122.067101905402" />
+                    End="-98.7596404259922,86.950219169088" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Production\Get Audit Parameters\Error Count">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
