@@ -1,0 +1,2480 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2019 10:31:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SIRMANDELA"
+  DTS:CreatorName="SIRMANDELA\SIRMANDELA"
+  DTS:DTSID="{69A80C89-929C-4A25-9F2C-EA9BEA8CC41F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="00-22-clients-extract"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{41BC817A-D550-47E9-8CA9-CF36A3D83ABA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CB89586F-6349-4BDF-ABBD-4E5C5AC29AB8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CreateIndexStatement">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{796750F9-4CE3-4814-B960-A35696E12848}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DropIndexStatement">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6BB4856E-790A-4E22-BEDC-C0DB658DCB2E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractEndTime">
+      <DTS:VariableValue
+        DTS:DataType="7">9/1/2019 10:27:26 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{765CBFE6-7FAE-4832-A330-3E28E0528246}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">9/1/2019 10:27:20 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CB446C9-4183-46DE-B8C0-4BA1DD08A76D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IndexList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{493E878B-F54D-493F-AA70-1A46E8D8BBD3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowcountExtract">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5060E12D-F5D8-461E-8BC2-E887E2BFA6C3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowcountInsert">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EC8F4380-D415-485E-A3AA-26197164ABD1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;staging_clients&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TableName">
+      <DTS:VariableValue
+        DTS:DataType="8">staging_clients</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Drop table indexes"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Drop each index"
+      DTS:DTSID="{41F3BC68-B63F-42A8-BA4B-13DCC35ECA2A}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop table indexes">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{356B0848-6ECD-42DD-B552-ED826A15CC3C}"
+        DTS:ObjectName="{777D1901-45B2-49E3-AC3C-DAC69EF3EBE5}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::IndexList" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Drop table indexes\Drop table indexes"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Drop Index"
+          DTS:DTSID="{104D160B-7F68-4004-B168-E187C63D3DCF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Drop table indexes"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::DropIndexStatement" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{85F1FFCF-1CF6-44FB-ABF1-6BD6C21EF80A}"
+          DTS:ObjectName="{F9CA3F9D-A09B-449F-A3AD-EFA3E49A2B1B}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::DropIndexStatement" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get  ExportStart time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{26ECF74C-447A-4ADB-A8B3-BA81FC0E536A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get  ExportStart time"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="Select GetDate()"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ExtractStartTime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get extract end time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D53C4C4D-47B9-404B-9AB7-9FEA163879A3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get extract end time"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="select GetDate()"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ExtractEndTime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get table indexes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9C621E17-8172-4579-B82E-A4F069B386D0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get table indexes"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+          SQLTask:SqlStatementSource="Select * &#xA;FROM (&#xA;  SELECT SchemaName = SCHEMA_NAME (o.SCHEMA_ID)        &#xA;    ,ObjectName = CONCAT('staging_',o.name)        &#xA;    ,IndexName = i.name        &#xA;    ,DropIndexStatement = 'DROP INDEX [' + i.Name + '] ON [' + SCHEMA_NAME (o.SCHEMA_ID)        &#xA;    + '].[' + o.name + ']'        &#xA;    ,CreateIndexStatement = 'CREATE ' + (CASE i.is_unique WHEN 1 THEN 'UNIQUE ' ELSE '' END)        &#xA;    + 'NONCLUSTERED INDEX ['        &#xA;    + i.name + '] ON [' + SCHEMA_NAME (o.SCHEMA_ID) + '].[' + 'staging_' + o.name + '] ( '        &#xA;    + LEFT(list, ISNULL(splitter-1,LEN(list))) + ' ) '        &#xA;    + ISNULL('INCLUDE ( ' + SUBSTRING(list, indCol.splitter +1, 1000 ) + ' ) ','')        &#xA;    + ISNULL('WHERE ' + i.filter_definition,'')        &#xA; FROM sys.indexes i        &#xA; JOIN sys.objects o ON i.OBJECT_ID = o.OBJECT_ID        &#xA; CROSS APPLY        &#xA; (SELECT splitter = NULLIF(CHARINDEX('|',indexCols.list),0)        &#xA;  , list        &#xA;  FROM (SELECT list=CAST((        &#xA;    SELECT CASE WHEN sc.is_included_column = 1 AND sc.ColPos = 1 THEN '|' ELSE '' END +        &#xA;   CASE WHEN sc.ColPos  &gt; 1 THEN ', ' ELSE '' END + name +        &#xA;    CASE WHEN sc.is_descending_key=1 THEN ' DESC' ELSE '' END        &#xA;    FROM (SELECT sc.is_descending_key        &#xA;     , sc.is_included_column        &#xA;     , index_column_id        &#xA;     , name = '[' + name + ']'        &#xA;     , ColPos = ROW_NUMBER() OVER (PARTITION BY sc.is_included_column        &#xA;      ORDER BY sc.index_column_id)        &#xA;    FROM sys.index_columns  sc        &#xA;    JOIN sys.columns c ON sc.OBJECT_ID = c.OBJECT_ID        &#xA;      AND sc.column_id = c.column_id        &#xA;    WHERE sc.index_id = i.index_id        &#xA;      AND sc.OBJECT_ID = i.OBJECT_ID ) sc        &#xA;      ORDER BY sc.is_included_column, ColPos        &#xA;        FOR XML PATH (''), TYPE) AS VARCHAR(MAX))        &#xA;    )indexCols        &#xA; ) indCol        &#xA; WHERE i.is_primary_key=0     &#xA; AND i.is_unique_constraint=0        &#xA; AND i.type_desc=N'NONCLUSTERED'        &#xA; AND o.TYPE=N'U'  &#xA; AND i.name not like 'msmerge%'&#xA;) a where ObjectName in (?)&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::IndexList" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TableName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load clients to staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E0FF6F8A-17B9-4DCC-B849-A1160A9CD929}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load clients to staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load clients to staging\get clients"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="get clients"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select getdate() ExtractDate,
+	  DistrictID
+	, FirstName
+	, LastName
+	, EnrollmentDate
+	, ISNULL(Deceased,0) as Deceased
+	, DeceasedDate
+	, ISNULL(Ban,0) as Ban
+	, ClientID
+	, GlobalClientID
+	, LastActiveSeasonID
+	, NationalID
+	, FirstSeasonID
+	, Date_Created,BannedDate
+	, OldGlobalClientID
+	, ParentGlobalClientID
+	, AccountNumber
+	, ValidationCode
+	, rowguid
+	, CanEnrollAsNewMember
+	, CASE 
+		WHEN DistrictID%1000=646 and  NationalID = '' THEN null
+		WHEN DistrictID%1000=646 and NationalID like '%.%' then Null
+		ELSE RIGHT(LEFT(NationalID,5),4) END as ClientBirthYear
+	, CASE 
+		WHEN DistrictID%1000=646 and RIGHT(LEFT(NationalID,6),1)=  8 THEN 'm'
+		WHEN DistrictID%1000=646 and RIGHT(LEFT(NationalID,6),1)=  7 THEN 'f'
+		ELSE null END as Gender
+FROM  Clients</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load clients to staging\get clients.Connections[OleDbConnection]"
+                  connectionManagerID="{8DCA3B78-D740-46AD-A203-BB1FB0B3DF58}:invalid"
+                  connectionManagerRefId="{8DCA3B78-D740-46AD-A203-BB1FB0B3DF58}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      name="DistrictID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      name="rowguid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
+                      name="ExtractDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[EnrollmentDate]"
+                      name="EnrollmentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]"
+                      name="Deceased"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]"
+                      name="Ban"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      name="GlobalClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
+                      name="LastActiveSeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
+                      name="DeceasedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[NationalID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
+                      length="255"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[NationalID]"
+                      name="NationalID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                      name="Date_Created"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
+                      name="BannedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
+                      name="OldGlobalClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
+                      name="ParentGlobalClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      name="AccountNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                      length="10"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                      name="ValidationCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
+                      name="CanEnrollAsNewMember"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
+                      length="4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
+                      name="ClientBirthYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
+                      dataType="dbTimeStamp"
+                      name="ExtractDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      name="EnrollmentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                      dataType="bool"
+                      name="Deceased" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
+                      dataType="bool"
+                      name="Ban" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
+                      dataType="i4"
+                      name="LastActiveSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
+                      dataType="dbTimeStamp"
+                      name="DeceasedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      name="NationalID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      name="Date_Created" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
+                      dataType="dbTimeStamp"
+                      name="BannedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
+                      dataType="guid"
+                      name="OldGlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
+                      dataType="guid"
+                      name="ParentGlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AccountNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ValidationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
+                      dataType="bool"
+                      name="CanEnrollAsNewMember" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
+                      dataType="wstr"
+                      length="4"
+                      name="ClientBirthYear" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
+                      name="ExtractDate" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      name="DistrictID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[EnrollmentDate]"
+                      name="EnrollmentDate" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                      dataType="bool"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                      name="Deceased" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
+                      dataType="bool"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
+                      name="Ban" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      name="ClientID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      name="GlobalClientID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
+                      name="LastActiveSeasonID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
+                      name="DeceasedDate" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[NationalID]"
+                      name="NationalID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                      name="Date_Created" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
+                      name="BannedDate" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
+                      dataType="guid"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
+                      name="OldGlobalClientID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
+                      dataType="guid"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
+                      name="ParentGlobalClientID" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      name="AccountNumber" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                      name="ValidationCode" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
+                      dataType="bool"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
+                      name="CanEnrollAsNewMember" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
+                      name="ClientBirthYear" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load clients to staging\load to staging_clients"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="load to staging_clients"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[staging_Clients]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load clients to staging\load to staging_clients.Connections[OleDbConnection]"
+                  connectionManagerID="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}:invalid"
+                  connectionManagerRefId="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DistrictID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[rowguid]"
+                      cachedDataType="guid"
+                      cachedName="rowguid"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[EnrollmentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EnrollmentDate"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[EnrollmentDate]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Deceased]"
+                      cachedDataType="bool"
+                      cachedName="Deceased"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Ban]"
+                      cachedDataType="bool"
+                      cachedName="Ban"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Ban]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ClientID]"
+                      cachedDataType="i4"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="GlobalClientID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[LastActiveSeasonID]"
+                      cachedDataType="i4"
+                      cachedName="LastActiveSeasonID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[LastActiveSeasonID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[DeceasedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DeceasedDate"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DeceasedDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[NationalID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NationalID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[NationalID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[NationalID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[FirstSeasonID]"
+                      cachedDataType="i4"
+                      cachedName="FirstSeasonID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Date_Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date_Created"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[BannedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="BannedDate"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[BannedDate]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[OldGlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="OldGlobalClientID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[OldGlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ParentGlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="ParentGlobalClientID"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ParentGlobalClientID]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AccountNumber"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ValidationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ValidationCode"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[CanEnrollAsNewMember]"
+                      cachedDataType="bool"
+                      cachedName="CanEnrollAsNewMember"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[CanEnrollAsNewMember]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ClientBirthYear]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="ClientBirthYear"
+                      externalMetadataColumnId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientBirthYear]"
+                      lineageId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      name="EnrollmentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
+                      dataType="bool"
+                      name="Deceased" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Ban]"
+                      dataType="bool"
+                      name="Ban" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[LastActiveSeasonID]"
+                      dataType="i4"
+                      name="LastActiveSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DeceasedDate]"
+                      dataType="dbTimeStamp"
+                      name="DeceasedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      name="NationalID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      name="Date_Created" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[BannedDate]"
+                      dataType="dbTimeStamp"
+                      name="BannedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[OldGlobalClientID]"
+                      dataType="guid"
+                      name="OldGlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ParentGlobalClientID]"
+                      dataType="guid"
+                      name="ParentGlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AccountNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ValidationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[CanEnrollAsNewMember]"
+                      dataType="bool"
+                      name="CanEnrollAsNewMember" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientBirthYear]"
+                      dataType="wstr"
+                      length="10"
+                      name="ClientBirthYear" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                      dataType="i4"
+                      name="DimCountryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                      dataType="i4"
+                      name="DimRegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                      dataType="i4"
+                      name="DimDistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimClientID]"
+                      dataType="i4"
+                      name="DimClientID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load clients to staging\load to staging_clients.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\load to staging_clients.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load clients to staging\load to staging_clients.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load clients to staging\load to staging_clients.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load clients to staging\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowcountInsert</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load clients to staging\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load clients to staging\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load clients to staging\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load clients to staging\Row Count 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowcountExtract</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load clients to staging\Row Count 1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load clients to staging\Row Count 1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Load clients to staging\Row Count 1.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load clients to staging.Paths[OLE DB Source Output]"
+              endId="Package\Load clients to staging\Row Count 1.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Load clients to staging\get clients.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load clients to staging.Paths[Row Count Output 1]"
+              endId="Package\Load clients to staging\Row Count.Inputs[Row Count Input 1]"
+              name="Row Count Output 1"
+              startId="Package\Load clients to staging\Row Count 1.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Load clients to staging.Paths[Row Count Output 11]"
+              endId="Package\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Load clients to staging\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Record ETL start"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED7BE4F9-8133-4AEA-A5CF-C57CE77780C6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Record ETL start"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="insert into ETL_LoadLog_Staging (&#xA;  TableName,&#xA;  ExportStartDate,&#xA;  ExportEndDate,&#xA;  RowExtractCount,&#xA;  RowInsertCount,&#xA;  RowUpdateCount&#xA; )&#xA;Values(?, ?,Null,0,0,0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ExtractStartTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TableName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Record extract end"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D4327D46-DBF4-453E-AC9A-7268073D9D5D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Record extract end"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E62F8E0A-D544-4B58-A1A6-63CC5BE023FA}"
+          SQLTask:SqlStatementSource="Update ETL_LoadLog_Staging&#xA;&#xA;set &#xA;ExportEndDate = ?,&#xA;RowExtractCount = ?,&#xA;RowInsertCount = ?,&#xA;Truncate_Load = 1,&#xA;Incremental_Load = 0&#xA;&#xA;where TableName = ? and ExportEndDate  is Null&#xA;and RowExtractCount = 0 and RowInsertCount = 0 and RowUpdateCount = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ExtractEndTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::RowcountExtract"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::RowcountInsert"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::TableName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Recreate indexes on table"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Create each index"
+      DTS:DTSID="{1A881A92-99C8-4821-830B-7C8170A2226E}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Recreate indexes on table">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{97EB8B47-4B89-4206-A0F2-7BF5E8045835}"
+        DTS:ObjectName="{D637AA3D-167A-4EA2-BE0F-3D935E3209B6}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::IndexList" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Recreate indexes on table\recreate table indexes"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Create index"
+          DTS:DTSID="{99FF40CD-A408-4DC7-BD1E-9588E8B4D3B0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="recreate table indexes"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+              SQLTask:SqlStmtSourceType="Variable"
+              SQLTask:SqlStatementSource="User::CreateIndexStatement" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{3BA62847-2629-4A91-A95D-F8E6C1907BD2}"
+          DTS:ObjectName="{1647606E-A564-4FA0-BCE4-8FE0B4A8863A}"
+          DTS:ValueIndex="4"
+          DTS:VariableName="User::CreateIndexStatement" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncating staging_clients"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{60F7B7AC-8978-4075-B08E-C2F96805F4CC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncating staging_clients"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging_clients " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update ClientIDs"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C272A407-C7F6-42EE-8A72-9B14FB114443}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update ClientIDs"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update ClientIDs\ClientIDs"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ClientIDs"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ClientIDs]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update ClientIDs\ClientIDs.Connections[OleDbConnection]"
+                  connectionManagerID="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  connectionManagerRefId="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="GlobalClientID"
+                      externalMetadataColumnId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update ClientIDs\ClientIDs.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update ClientIDs\ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update ClientIDs\ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\ClientIDs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update ClientIDs\Get unique IDs"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Get unique IDs"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct GlobalClientID from staging_clients</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update ClientIDs\Get unique IDs.Connections[OleDbConnection]"
+                  connectionManagerID="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}:invalid"
+                  connectionManagerRefId="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      name="GlobalClientID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      name="GlobalClientID" />
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update ClientIDs\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select GlobalClientID from ClientIDs</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select GlobalClientID from ClientIDs) [refTable]
+where [refTable].[GlobalClientID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GlobalClientID" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update ClientIDs\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  connectionManagerRefId="{C249B771-8021-4369-900D-B273477E9DB1}:invalid"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input].Columns[GlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="GlobalClientID"
+                      lineageId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output].Columns[GlobalClientID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">GlobalClientID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update ClientIDs\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update ClientIDs\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update ClientIDs\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update ClientIDs\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update ClientIDs\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update ClientIDs.Paths[Lookup No Match Output]"
+              endId="Package\Update ClientIDs\ClientIDs.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Update ClientIDs\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Update ClientIDs.Paths[OLE DB Source Output]"
+              endId="Package\Update ClientIDs\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Update ClientIDs\Get unique IDs.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DimClientID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2B81C358-5162-4910-8EAA-76C4AA92C50B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DimClientID"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+          SQLTask:SqlStatementSource="update staging_Clients &#xA;&#x9;set DimClientID=c.ID &#xA;from OAF_SHARED_DIMENSIONS.dbo.ClientIDs c &#xA;where staging_Clients.GlobalClientID=c.GlobalClientID&#xA;and DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update geography surrogate keys"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B9E00628-1918-4A9F-8009-3754EE567F3D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update geography surrogate keys"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4E9627EF-1D60-4636-ACDD-822BDBD0733F}"
+          SQLTask:SqlStatementSource="WITH DimGroup AS (&#xA; select distinct&#xA;    g.CountryID DimCountryID&#xA;  , g.RegionID  DimRegionID&#xA;  , g.LocationID DimDistrictID&#xA;  , g.RosterDistrictID&#xA; from OAF_SHARED_DIMENSIONS..DimLocations g&#xA; Where g.RosterDistrictID is not null)&#xA;&#xA;update OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients &#xA; set DimCountryID=DimGroup.DimCountryID,&#xA;  DimRegionID=DimGroup.DimRegionID,&#xA;  DimDistrictID=DimGroup.DimDistrictID&#xA; from DimGroup &#xA; where Dimgroup.RosterDistrictID=OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients.DistrictID&#xA;and OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients.DimCountryID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9DC8CB34-49FC-4CA2-BC1C-39ED1DD7CEFF}"
+      DTS:From="Package\truncating staging_clients"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load clients to staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E9A6FE1-AC5D-45F1-9C78-47DD84B1CCB8}"
+      DTS:From="Package\Get  ExportStart time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Record ETL start" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{D448A484-1F75-40F7-8735-EA91550EE8C3}"
+      DTS:From="Package\Record ETL start"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\truncating staging_clients" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{75C2A3DA-85B1-4317-9E09-00E38305A724}"
+      DTS:From="Package\Update geography surrogate keys"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update ClientIDs" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{012B12D8-E359-45FA-BE23-FEA77FF30A17}"
+      DTS:From="Package\get table indexes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 1"
+      DTS:To="Package\Drop table indexes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D6621830-27AC-43D6-9F28-17BE8A40D90A}"
+      DTS:From="Package\Get extract end time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Record extract end" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{45AE02E0-2932-4D28-AB84-8B8C6ABB71A6}"
+      DTS:From="Package\Load clients to staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Recreate indexes on table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F02CB23-B454-4CC2-A84E-2BA073BD07D8}"
+      DTS:From="Package\Drop table indexes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Get  ExportStart time" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{5F97A40A-0E3E-4650-B047-91885B7FE257}"
+      DTS:From="Package\Recreate indexes on table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Update geography surrogate keys" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A191D05-46EA-4856-B10B-6AF67AF47B77}"
+      DTS:From="Package\Update ClientIDs"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Update DimClientID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{CEED3DA7-61E8-4925-BD4A-821EC14D10C1}"
+      DTS:From="Package\Update DimClientID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Get extract end time" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.714285714286,42.2857142857143"
+          Id="Package\Drop table indexes\Drop table indexes"
+          TopLeft="5.5,5.49999999999997" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="192.571428571429,103.428571428572"
+          Size="192.571428571429,146.285714285715"
+          Id="Package\Drop table indexes"
+          TopLeft="287.959191566692,5.17350736425647" />
+        <NodeLayout
+          Size="179.428571428572,42.2857142857143"
+          Id="Package\Get  ExportStart time"
+          TopLeft="554.512486344894,50.4073549372664" />
+        <NodeLayout
+          Size="176,42.2857142857143"
+          Id="Package\Get extract end time"
+          TopLeft="686.806140603395,402.728393442624" />
+        <NodeLayout
+          Size="161.142857142858,42.2857142857143"
+          Id="Package\get table indexes"
+          TopLeft="0.181405900496983,62.1260754628395" />
+        <NodeLayout
+          Size="185.142857142858,42.2857142857143"
+          Id="Package\Load clients to staging"
+          TopLeft="13.7868484377883,182.262164409261" />
+        <NodeLayout
+          Size="157.714285714286,42.2857142857143"
+          Id="Package\Record ETL start"
+          TopLeft="797.848093406717,56.6412800008743" />
+        <NodeLayout
+          Size="168,42.2857142857143"
+          Id="Package\Record extract end"
+          TopLeft="999.241522923804,400.216173588706" />
+        <NodeLayout
+          Size="186.285714285715,42.2857142857143"
+          Id="Package\Recreate indexes on table\recreate table indexes"
+          TopLeft="44,21" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="242.857142857143,127.428571428572"
+          Size="242.857142857143,170.285714285715"
+          Id="Package\Recreate indexes on table"
+          TopLeft="421.661387732279,160.613850109496" />
+        <NodeLayout
+          Size="200,42.2857142857143"
+          Id="Package\truncating staging_clients"
+          TopLeft="1017.82315621481,54.8858607272199" />
+        <NodeLayout
+          Size="157.714285714286,42.2857142857143"
+          Id="Package\Update ClientIDs"
+          TopLeft="24.2176877163793,410.503818703148" />
+        <NodeLayout
+          Size="175.428571428572,42.2857142857143"
+          Id="Package\Update DimClientID"
+          TopLeft="340.136063432297,410.500923195101" />
+        <NodeLayout
+          Size="238.857142857143,42.2857142857143"
+          Id="Package\Update geography surrogate keys"
+          TopLeft="696.507954959099,183.283040836316" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1117.82315621481,97.1715750129342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1011.46487920559,85.090589396327"
+              Start="0,0"
+              End="-1011.46487920559,77.590589396327">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5452946981635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5452946981635"
+                    Point2="0,42.5452946981635"
+                    Point3="-4,42.5452946981635" />
+                  <mssgle:LineSegment
+                    End="-1007.46487920559,42.5452946981635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-1007.46487920559,42.5452946981635"
+                    Point2="-1011.46487920559,42.5452946981635"
+                    Point3="-1011.46487920559,46.5452946981635" />
+                  <mssgle:LineSegment
+                    End="-1011.46487920559,77.590589396327" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="733.941057773465,74.6671746119275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.9070356332513,0"
+              Start="0,0"
+              End="56.4070356332513,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.4070356332513,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="955.562379121003,76.9064275069042">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.2607770938064,0"
+              Start="0,0"
+              End="54.7607770938064,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.7607770938064,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="815.93652638767,225.568755122031">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-712.861695814148,184.935063581118"
+              Start="0,0"
+              End="-712.861695814148,177.435063581118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.4675317905588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,88.4675317905588"
+                    Point2="0,92.4675317905588"
+                    Point3="-4,92.4675317905588" />
+                  <mssgle:LineSegment
+                    End="-708.861695814148,92.4675317905588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-708.861695814148,92.4675317905588"
+                    Point2="-712.861695814148,92.4675317905588"
+                    Point3="-712.861695814148,96.4675317905588" />
+                  <mssgle:LineSegment
+                    End="-712.861695814148,177.435063581118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 1]"
+          TopLeft="161.324263043354,80.7926485564051">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.634928523338,0"
+              Start="0,0"
+              End="119.134928523338,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.134928523338,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="862.806140603395,422.615140658522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136.435382320408,0"
+              Start="0,0"
+              End="128.935382320408,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="128.935382320408,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="198.929705580645,203.405021552118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="222.731682151634,42.3516857002352"
+              Start="0,0"
+              End="215.231682151634,42.3516857002352">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="107.365841075817,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.365841075817,0"
+                    Point2="111.365841075817,0"
+                    Point3="111.365841075817,4" />
+                  <mssgle:LineSegment
+                    End="111.365841075817,38.3516857002352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="111.365841075817,38.3516857002352"
+                    Point2="111.365841075817,42.3516857002352"
+                    Point3="115.365841075817,42.3516857002352" />
+                  <mssgle:LineSegment
+                    End="215.231682151634,42.3516857002352" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="480.530620138121,74.9332882936186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.981866206773,0"
+              Start="0,0"
+              End="66.481866206773,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.481866206773,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="664.518530589422,245.756707252354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.9894243696767,-41.33080927318"
+              Start="0,0"
+              End="24.4894243696767,-41.33080927318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="11.9947121848384,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.9947121848384,0"
+                    Point2="15.9947121848384,0"
+                    Point3="15.9947121848384,-4" />
+                  <mssgle:LineSegment
+                    End="15.9947121848384,-37.33080927318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9947121848384,-37.33080927318"
+                    Point2="15.9947121848384,-41.33080927318"
+                    Point3="19.9947121848384,-41.33080927318" />
+                  <mssgle:LineSegment
+                    End="24.4894243696767,-41.33080927318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="181.931973430665,431.645228091982">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158.204090001632,0"
+              Start="0,0"
+              End="150.704090001632,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="150.704090001632,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="515.564634860869,427.75751546172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171.241505742527,0"
+              Start="0,0"
+              End="163.741505742527,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="163.741505742527,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load clients to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,42.2857142857143"
+          Id="Package\Load clients to staging\Row Count 1"
+          TopLeft="244.388894422555,49.0652177428478" />
+        <NodeLayout
+          Size="130.857142857143,42.2857142857143"
+          Id="Package\Load clients to staging\Row Count"
+          TopLeft="93.1190499401598,172.80435216179" />
+        <NodeLayout
+          Size="185.142857142858,42.2857142857143"
+          Id="Package\Load clients to staging\load to staging_clients"
+          TopLeft="302.222230228377,171.826091409406" />
+        <NodeLayout
+          Size="126.857142857143,42.2857142857143"
+          Id="Package\Load clients to staging\get clients"
+          TopLeft="61.2698428929378,42.9565228523514" />
+        <EdgeLayout
+          Id="Package\Load clients to staging.Paths[Row Count Output 11]"
+          TopLeft="223.976192797303,193.458078928455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.2460374310743,0"
+              Start="0,0"
+              End="70.7460374310743,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.7460374310743,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load clients to staging.Paths[Row Count Output 1]"
+          TopLeft="314.388894422555,91.3509320285621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-155.841273053824,81.4534201332276"
+              Start="0,0"
+              End="-155.841273053824,73.9534201332276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7267100666138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.7267100666138"
+                    Point2="0,40.7267100666138"
+                    Point3="-4,40.7267100666138" />
+                  <mssgle:LineSegment
+                    End="-151.841273053824,40.7267100666138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-151.841273053824,40.7267100666138"
+                    Point2="-155.841273053824,40.7267100666138"
+                    Point3="-155.841273053824,44.7267100666138" />
+                  <mssgle:LineSegment
+                    End="-155.841273053824,73.9534201332276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load clients to staging.Paths[OLE DB Source Output]"
+          TopLeft="188.126985750081,67.1537274404567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.2619086724741,0"
+              Start="0,0"
+              End="48.7619086724741,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.7619086724741,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load clients to staging\load to staging_clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load clients to staging\get clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update ClientIDs">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="114.285714285715,42.2857142857143"
+          Id="Package\Update ClientIDs\Lookup"
+          TopLeft="273.5,146.5" />
+        <NodeLayout
+          Size="123.428571428572,42.2857142857143"
+          Id="Package\Update ClientIDs\ClientIDs"
+          TopLeft="297.5,248.5" />
+        <NodeLayout
+          Size="149.142857142858,42.2857142857143"
+          Id="Package\Update ClientIDs\Get unique IDs"
+          TopLeft="33.5476184925705,24.7142859558006" />
+        <EdgeLayout
+          Id="Package\Update ClientIDs.Paths[OLE DB Source Output]"
+          TopLeft="108.119047063999,67.0000002415149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="222.523810078858,79.4999997584851"
+              Start="0,0"
+              End="222.523810078858,71.9999997584851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7499998792425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.7499998792425"
+                    Point2="0,39.7499998792425"
+                    Point3="4,39.7499998792425" />
+                  <mssgle:LineSegment
+                    End="218.523810078858,39.7499998792425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="218.523810078858,39.7499998792425"
+                    Point2="222.523810078858,39.7499998792425"
+                    Point3="222.523810078858,43.7499998792425" />
+                  <mssgle:LineSegment
+                    End="222.523810078858,71.9999997584851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update ClientIDs.Paths[Lookup No Match Output]"
+          TopLeft="330.642857142857,188.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.5714285714286,59.7142857142858"
+              Start="0,0"
+              End="28.5714285714286,52.2142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8571428571429"
+                    Point2="0,29.8571428571429"
+                    Point3="4,29.8571428571429" />
+                  <mssgle:LineSegment
+                    End="24.5714285714286,29.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.5714285714286,29.8571428571429"
+                    Point2="28.5714285714286,29.8571428571429"
+                    Point3="28.5714285714286,33.8571428571429" />
+                  <mssgle:LineSegment
+                    End="28.5714285714286,52.2142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.5206724330357,34.8571428571429,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

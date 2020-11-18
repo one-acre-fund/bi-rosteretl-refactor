@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="shared_dims_staging"
+  DTS:DTSID="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source="+ @[$Project::ServerName] +";User ID="+ @[$Project::ServiceAccount] +";Initial Catalog=OAF_SHARED_DIMENSIONS_STAGING;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;"</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::Password]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=CSSSIS0001;Initial Catalog=OAF_SHARED_DIMENSIONS_STAGING;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=0;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlHmixRhvdUifYeZg0CGNOQAAAAACAAAAAAAQZgAAAAEAACAAAADJ6RIchfsZLI0fWwLm9gX/Ge5tSX/6dHzXjbRryjr0ZwAAAAAOgAAAAAIAACAAAABkLriRR9Wd17SzevtOZxJ6ZG/dz29lmcoTX2cuX1+kboAAAAD2oeEp8wW8V1QR8JI8n1nxiNb+vBEIiDEiy1zuq4Ohce7kdI+I4Q3lpKUacrS941ZVUeLY6I5lwO4N33hrp6T//Ki9UqWSm97Xg21PJhQx8oYseqN9U33bovAI8a3u5b4oBsKMuaqgnINkrOaTstuD25sGrbEWTw9gD2kL5+GCgEAAAADf9+d28J/qqXM8/8mMsNCMSEFMZ4m41FAJRLfDf9vQabiZlmxoDYJuLkCSQVzjtUO4qgRa6YH2NdMhZKSTJUkN</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
