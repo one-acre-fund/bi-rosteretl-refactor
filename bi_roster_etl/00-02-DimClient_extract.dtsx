@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-DimClient_extract"
-  DTS:VersionBuild="315"
-  DTS:VersionGUID="{3E5DE326-B4CE-4682-92DD-2E49222A7E74}">
+  DTS:VersionBuild="321"
+  DTS:VersionGUID="{3442A053-3FC0-4616-AE17-BC980D244807}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -590,7 +590,6 @@
       DTS:refId="Package\Load Production"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{C1F26CF9-4CFA-4815-B594-B021C00B7619}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -2929,7 +2928,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
 		) dt
 		JOIN OAF_SHARED_DIMENSIONS..ClientIDs id on id.GlobalClientID=dt.GlobalClientID
 		
-	where  RowNumber=1 --and dt.GlobalClientID='11521F61-A16F-E811-873C-001E101F0000'</property>
+	where  RowNumber=1</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3717,23 +3716,6 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Load Production\TRUNCATE Roster Client Table"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{a60811fc-36dd-4b8f-a90b-2f778b454b91}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="TRUNCATE Roster Client Table"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{BF3B16C1-CD0A-4E61-B2DE-811E58B38130}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE DimRosterClient;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Load Production\Update AuditDimension"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -3770,14 +3752,6 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
         </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Load Production.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{EE61463C-1ECB-4F24-9BC9-DEAE6D1712ED}"
-          DTS:From="Package\Load Production\TRUNCATE Roster Client Table"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Load Production\DFT Load to Warehouse" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Production.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
@@ -4885,6 +4859,149 @@ FROM  Clients</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Sequence Container\Load clients to staging\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select distinct cast(GlobalClientID as uniqueidentifier) GlobalClientID 
+from cls.SeasonClients where Dropped=0 and GlobalClientID not in (Select GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.DimRosterClient)</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select distinct cast(GlobalClientID as uniqueidentifier) GlobalClientID 
+from cls.SeasonClients where Dropped=0 and GlobalClientID not in (Select GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.DimRosterClient)) [refTable]
+where [refTable].[GlobalClientID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GlobalClientID" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Load clients to staging\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_prod]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input].Columns[GlobalClientID]"
+                          cachedDataType="guid"
+                          cachedName="GlobalClientID"
+                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">GlobalClientID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Sequence Container\Load clients to staging\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -4945,8 +5062,13 @@ FROM  Clients</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
+                  refId="Package\Sequence Container\Load clients to staging.Paths[Lookup Match Output]"
                   endId="Package\Sequence Container\Load clients to staging\Row Count 1.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence Container\Load clients to staging\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
                   startId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output]" />
                 <path
@@ -6248,6 +6370,165 @@ FROM  Clients</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Sequence Container\Load extended clients info to staging\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select distinct RosterDistrictID DistrictID, cast(OAFID as int) ClientID 
+from cls.SeasonClients where Dropped=0 and GlobalClientID not in (Select GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.DimRosterClient)</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (Select distinct RosterDistrictID DistrictID, cast(OAFID as int) ClientID 
+from cls.SeasonClients where Dropped=0 and GlobalClientID not in (Select GlobalClientID from OAF_SHARED_DIMENSIONS.dbo.DimRosterClient)) [refTable]
+where [refTable].[DistrictID] = ? and [refTable].[ClientID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DistrictID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ClientID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[DistrictID]};#{Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[ClientID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_prod]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input].Columns[DistrictID]"
+                          cachedDataType="i4"
+                          cachedName="DistrictID"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[DistrictID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">DistrictID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input].Columns[ClientID]"
+                          cachedDataType="i4"
+                          cachedName="ClientID"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[ClientID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ClientID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Sequence Container\Load extended clients info to staging\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -6979,8 +7260,13 @@ FROM  Clients</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Sequence Container\Load extended clients info to staging.Paths[OLE DB Source Output]"
+                  refId="Package\Sequence Container\Load extended clients info to staging.Paths[Lookup Match Output]"
                   endId="Package\Sequence Container\Load extended clients info to staging\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence Container\Load extended clients info to staging\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence Container\Load extended clients info to staging.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\Load extended clients info to staging\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
                   startId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output]" />
                 <path
@@ -7491,6 +7777,10 @@ where [refTable].[GlobalClientId] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="193.142857142858,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse"
+          TopLeft="26.9285714285714,107.785714285714" />
+        <NodeLayout
           Size="162.857142857143,42.8571428571429"
           Id="Package\Load Production\Get LoadEndTime"
           TopLeft="42.0714285714286,210.071428571428" />
@@ -7498,58 +7788,6 @@ where [refTable].[GlobalClientId] = ?</property>
           Size="189.142857142858,42.8571428571429"
           Id="Package\Load Production\Update AuditDimension"
           TopLeft="28.9285714285715,312.928571428571" />
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint 3]"
-          TopLeft="123.5,252.928571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="236,42.2857142857143"
-          Id="Package\Load Production\TRUNCATE Roster Client Table"
-          TopLeft="5.5,5.49999999999997" />
-        <NodeLayout
-          Size="193.142857142858,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse"
-          TopLeft="26.9285714285714,107.785714285714" />
-        <EdgeLayout
-          Id="Package\Load Production.PrecedenceConstraints[Constraint]"
-          TopLeft="123.5,47.7857142857142">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Production.PrecedenceConstraints[Constraint 1]"
           TopLeft="123.5,150.071428571428">
@@ -7572,10 +7810,32 @@ where [refTable].[GlobalClientId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production.PrecedenceConstraints[Constraint 3]"
+          TopLeft="123.5,252.928571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="246.857142857143,410.857142857143"
+          PanelSize="246.857142857143,411.428571428572"
           Size="246.857142857143,454.285714285715"
           Id="Package\Load Production"
           TopLeft="1120.23147241792,21.7913455280266" />
@@ -7595,6 +7855,32 @@ where [refTable].[GlobalClientId] = ?</property>
           Size="233.142857142858,42.2857142857143"
           Id="Package\SeasonClients - Landing\Truncate Table Landing_Clients"
           TopLeft="160.357142857143,211.214285714286" />
+        <NodeLayout
+          Size="297.142857142858,42.2857142857143"
+          Id="Package\SeasonClients - Landing\Truncate Table Landing_ExtendedClientsInfo"
+          TopLeft="128.357142857143,313.5" />
+        <EdgeLayout
+          Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint]"
+          TopLeft="276.928571428572,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 2]"
           TopLeft="68.9285714285714,48.3571428571429">
@@ -7685,13 +7971,36 @@ where [refTable].[GlobalClientId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="430.857142857143,410.857142857143"
+          Size="430.857142857143,453.714285714286"
+          Id="Package\SeasonClients - Landing"
+          TopLeft="19.8769572700385,31.8095226556187" />
         <NodeLayout
-          Size="297.142857142858,42.2857142857143"
-          Id="Package\SeasonClients - Landing\Truncate Table Landing_ExtendedClientsInfo"
-          TopLeft="128.357142857143,313.5" />
+          Size="187.428571428572,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging"
+          TopLeft="39.5,5.49999999999997" />
+        <NodeLayout
+          Size="255.428571428572,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging"
+          TopLeft="5.50000000000001,107.785714285714" />
+        <NodeLayout
+          Size="157.714285714286,42.2857142857143"
+          Id="Package\Sequence Container\Update ClientIDs"
+          TopLeft="54.3571428571429,312.357142857143" />
+        <NodeLayout
+          Size="175.428571428572,42.2857142857143"
+          Id="Package\Sequence Container\Update DimClientID"
+          TopLeft="45.5000000000001,414.642857142857" />
+        <NodeLayout
+          Size="238.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Update geography surrogate keys"
+          TopLeft="13.7857142857143,210.071428571428" />
         <EdgeLayout
-          Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint]"
-          TopLeft="276.928571428572,253.5">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="133.214285714286,252.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7711,25 +8020,6 @@ where [refTable].[GlobalClientId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="430.857142857143,410.857142857143"
-          Size="430.857142857143,453.714285714286"
-          Id="Package\SeasonClients - Landing"
-          TopLeft="19.8769572700385,31.8095226556187" />
-        <NodeLayout
-          Size="187.428571428572,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging"
-          TopLeft="39.5,5.49999999999997" />
-        <NodeLayout
-          Size="255.428571428572,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging"
-          TopLeft="5.50000000000001,107.785714285714" />
-        <NodeLayout
-          Size="238.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Update geography surrogate keys"
-          TopLeft="13.7857142857143,210.071428571428" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
           TopLeft="133.214285714286,47.7857142857142">
@@ -7774,39 +8064,9 @@ where [refTable].[GlobalClientId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157.714285714286,42.2857142857143"
-          Id="Package\Sequence Container\Update ClientIDs"
-          TopLeft="54.3571428571429,312.357142857143" />
-        <NodeLayout
-          Size="175.428571428572,42.2857142857143"
-          Id="Package\Sequence Container\Update DimClientID"
-          TopLeft="45.5000000000001,414.642857142857" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 8]"
           TopLeft="133.214285714286,354.642857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="133.214285714286,252.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7905,276 +8165,60 @@ where [refTable].[GlobalClientId] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Sequence Container\Load clients to staging">
+    design-time-name="Package\Load Production\DFT Load to Warehouse">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\Row Count"
-          TopLeft="93.1190499401598,172.80435216179" />
+          Size="154.285714285715,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient 1"
+          TopLeft="317.904753478116,351.445652912535" />
         <NodeLayout
-          Size="185.142857142858,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\load to staging_clients"
-          TopLeft="302.222230228377,171.826091409406" />
+          Size="230.857142857143,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\Roster DW stage clients source"
+          TopLeft="12.1732386296399,28" />
         <NodeLayout
-          Size="140,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\Row Count 1"
-          TopLeft="244.388894422555,49.0652177428478" />
+          Size="162.857142857143,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient 2"
+          TopLeft="564.317453968041,339.681677296901" />
         <NodeLayout
-          Size="126.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\get clients"
-          TopLeft="61.2698428929378,42.9565228523514" />
+          Size="156,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\Data Conversion"
+          TopLeft="23.4481158665896,209.987146284175" />
+        <NodeLayout
+          Size="224,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\Lookup Lookup Shared Season"
+          TopLeft="524.730166113987,31.9440975374638" />
+        <NodeLayout
+          Size="125.142857142858,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\RC Insert"
+          TopLeft="558.093411154072,122.057426126322" />
+        <NodeLayout
+          Size="198.857142857143,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\Balanced Data Distributor"
+          TopLeft="337.968247980457,208.594720306437" />
+        <NodeLayout
+          Size="154.285714285715,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient"
+          TopLeft="63.6056403074913,342.062684448116" />
+        <NodeLayout
+          Size="128,42.2857142857143"
+          Id="Package\Load Production\DFT Load to Warehouse\RC Extract"
+          TopLeft="42.8328320773103,118.80145975923" />
         <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 1]"
-          TopLeft="314.388894422555,91.3509320285621">
+          Id="Package\Load Production\DFT Load to Warehouse.Paths[Row Count Output 11]"
+          TopLeft="170.83283207731,141.572300085633">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-155.841273053824,81.4534201332276"
+              EndConnector="387.260579076762,0"
               Start="0,0"
-              End="-155.841273053824,73.9534201332276">
+              End="379.760579076762,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.7267100666138" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.7267100666138"
-                    Point2="0,40.7267100666138"
-                    Point3="-4,40.7267100666138" />
-                  <mssgle:LineSegment
-                    End="-151.841273053824,40.7267100666138" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-151.841273053824,40.7267100666138"
-                    Point2="-155.841273053824,40.7267100666138"
-                    Point3="-155.841273053824,44.7267100666138" />
-                  <mssgle:LineSegment
-                    End="-155.841273053824,73.9534201332276" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
-          TopLeft="188.126985750081,67.1537274404567">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="56.2619086724741,0"
-              Start="0,0"
-              End="48.7619086724741,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48.7619086724741,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 11]"
-          TopLeft="223.976192797303,193.458078928455">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78.2460374310743,0"
-              Start="0,0"
-              End="70.7460374310743,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="70.7460374310743,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Load extended clients info to staging">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="213.714285714286,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo"
-          TopLeft="302.222230228377,171.826091409406" />
-        <NodeLayout
-          Size="130.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\Row Count"
-          TopLeft="342.960326399963,40.7049698564384" />
-        <NodeLayout
-          Size="194.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\get extended clients info"
-          TopLeft="61.2698428929378,42.9565228523514" />
-        <NodeLayout
-          Size="140,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\Row Count 1"
-          TopLeft="77.7222233407292,146.60559294142" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Load extended clients info to staging.Paths[Row Count Output 11]"
-          TopLeft="217.722223340729,167.748450084277">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84.5000068876477,25.220498467986"
-              Start="0,0"
-              End="77.0000068876477,25.220498467986">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.2500034438239,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.2500034438239,0"
-                    Point2="42.2500034438239,0"
-                    Point3="42.2500034438239,4" />
-                  <mssgle:LineSegment
-                    End="42.2500034438239,21.220498467986" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.2500034438239,21.220498467986"
-                    Point2="42.2500034438239,25.220498467986"
-                    Point3="46.2500034438239,25.220498467986" />
-                  <mssgle:LineSegment
-                    End="77.0000068876477,25.220498467986" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Load extended clients info to staging.Paths[Row Count Output 1]"
-          TopLeft="408.388897828535,82.9906841421527">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-260.666674487805,63.6149087992675"
-              Start="0,0"
-              End="-260.666674487805,56.1149087992675">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.8074543996338" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.8074543996338"
-                    Point2="0,31.8074543996338"
-                    Point3="-4,31.8074543996338" />
-                  <mssgle:LineSegment
-                    End="-256.666674487805,31.8074543996338" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-256.666674487805,31.8074543996338"
-                    Point2="-260.666674487805,31.8074543996338"
-                    Point3="-260.666674487805,35.8074543996338" />
-                  <mssgle:LineSegment
-                    End="-260.666674487805,56.1149087992675" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Load extended clients info to staging.Paths[OLE DB Source Output]"
-          TopLeft="256.126985750081,62.973603497252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.8333406498825,0"
-              Start="0,0"
-              End="79.3333406498825,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="79.3333406498825,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Update ClientIDs">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="114.285714285715,42.2857142857143"
-          Id="Package\Sequence Container\Update ClientIDs\Lookup"
-          TopLeft="273.5,146.5" />
-        <NodeLayout
-          Size="123.428571428572,42.2857142857143"
-          Id="Package\Sequence Container\Update ClientIDs\ClientIDs"
-          TopLeft="297.5,248.5" />
-        <NodeLayout
-          Size="149.142857142858,42.2857142857143"
-          Id="Package\Sequence Container\Update ClientIDs\Get unique IDs"
-          TopLeft="33.5476184925705,24.7142859558006" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Update ClientIDs.Paths[OLE DB Source Output]"
-          TopLeft="108.119047063999,67.0000002415149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="222.523810078858,79.4999997584851"
-              Start="0,0"
-              End="222.523810078858,71.9999997584851">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.7499998792425" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.7499998792425"
-                    Point2="0,39.7499998792425"
-                    Point3="4,39.7499998792425" />
-                  <mssgle:LineSegment
-                    End="218.523810078858,39.7499998792425" />
-                  <mssgle:CubicBezierSegment
-                    Point1="218.523810078858,39.7499998792425"
-                    Point2="222.523810078858,39.7499998792425"
-                    Point3="222.523810078858,43.7499998792425" />
-                  <mssgle:LineSegment
-                    End="222.523810078858,71.9999997584851" />
+                    End="379.760579076762,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8184,129 +8228,97 @@ where [refTable].[GlobalClientId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Update ClientIDs.Paths[Lookup No Match Output]"
-          TopLeft="330.642857142857,188.785714285714">
+          Id="Package\Load Production\DFT Load to Warehouse.Paths[Row Count Output 1]"
+          TopLeft="620.6648397255,164.343140412037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.5714285714286,59.7142857142858"
+              EndConnector="-519.216723858911,45.6440058721383"
               Start="0,0"
-              End="28.5714285714286,52.2142857142858">
+              End="-519.216723858911,38.1440058721383">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.8571428571429" />
+                    End="0,18.8220029360692" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.8571428571429"
-                    Point2="0,29.8571428571429"
-                    Point3="4,29.8571428571429" />
+                    Point1="0,18.8220029360692"
+                    Point2="0,22.8220029360692"
+                    Point3="-4,22.8220029360692" />
                   <mssgle:LineSegment
-                    End="24.5714285714286,29.8571428571429" />
+                    End="-515.216723858911,22.8220029360692" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.5714285714286,29.8571428571429"
-                    Point2="28.5714285714286,29.8571428571429"
-                    Point3="28.5714285714286,33.8571428571429" />
+                    Point1="-515.216723858911,22.8220029360692"
+                    Point2="-519.216723858911,22.8220029360692"
+                    Point3="-519.216723858911,26.8220029360692" />
                   <mssgle:LineSegment
-                    End="28.5714285714286,52.2142857142858" />
+                    End="-519.216723858911,38.1440058721383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\DFT Load to Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="243.030381486783,51.114905911589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="281.699784627204,0"
+              Start="0,0"
+              End="274.199784627204,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="274.199784627204,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Production\DFT Load to Warehouse.Paths[Lookup Match Output]"
+          TopLeft="636.730166113987,74.2298118231781">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-529.897334036676,44.5716479360519"
+              Start="0,0"
+              End="-529.897334036676,37.0716479360519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.285823968026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.285823968026"
+                    Point2="0,22.285823968026"
+                    Point3="-4,22.285823968026" />
+                  <mssgle:LineSegment
+                    End="-525.897334036676,22.285823968026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-525.897334036676,22.285823968026"
+                    Point2="-529.897334036676,22.285823968026"
+                    Point3="-529.897334036676,26.285823968026" />
+                  <mssgle:LineSegment
+                    End="-529.897334036676,37.0716479360519" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-41.5206724330357,34.8571428571429,111.6127734375,11.609375"
+              BoundingBox="-313.140053737088,27.285823968026,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Update ClientIDs\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Update ClientIDs\ClientIDs">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Update ClientIDs\Get unique IDs">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Production\DFT Load to Warehouse">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="154.285714285715,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient"
-          TopLeft="63.6056403074913,342.062684448116" />
-        <NodeLayout
-          Size="125.142857142858,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\RC Insert"
-          TopLeft="558.093411154072,122.057426126322" />
-        <NodeLayout
-          Size="128,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\RC Extract"
-          TopLeft="42.8328320773103,118.80145975923" />
-        <NodeLayout
-          Size="154.285714285715,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient 1"
-          TopLeft="317.904753478116,351.445652912535" />
-        <NodeLayout
-          Size="156,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\Data Conversion"
-          TopLeft="23.4481158665896,209.987146284175" />
-        <NodeLayout
-          Size="162.857142857143,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\DimRosterClient 2"
-          TopLeft="564.317453968041,339.681677296901" />
-        <NodeLayout
-          Size="198.857142857143,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\Balanced Data Distributor"
-          TopLeft="337.968247980457,208.594720306437" />
-        <NodeLayout
-          Size="230.857142857143,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\Roster DW stage clients source"
-          TopLeft="12.1732386296399,28" />
-        <NodeLayout
-          Size="224,42.2857142857143"
-          Id="Package\Load Production\DFT Load to Warehouse\Lookup Lookup Shared Season"
-          TopLeft="524.730166113987,31.9440975374638" />
         <EdgeLayout
           Id="Package\Load Production\DFT Load to Warehouse.Paths[Data Conversion Output]"
           TopLeft="179.44811586659,230.433790438163">
@@ -8437,151 +8449,11 @@ where [refTable].[GlobalClientId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\DFT Load to Warehouse.Paths[Row Count Output 1]"
-          TopLeft="620.6648397255,164.343140412037">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-519.216723858911,45.6440058721383"
-              Start="0,0"
-              End="-519.216723858911,38.1440058721383">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.8220029360692" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.8220029360692"
-                    Point2="0,22.8220029360692"
-                    Point3="-4,22.8220029360692" />
-                  <mssgle:LineSegment
-                    End="-515.216723858911,22.8220029360692" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-515.216723858911,22.8220029360692"
-                    Point2="-519.216723858911,22.8220029360692"
-                    Point3="-519.216723858911,26.8220029360692" />
-                  <mssgle:LineSegment
-                    End="-519.216723858911,38.1440058721383" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\DFT Load to Warehouse.Paths[OLE DB Source Output]"
-          TopLeft="243.030381486783,51.114905911589">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="281.699784627204,0"
-              Start="0,0"
-              End="274.199784627204,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="274.199784627204,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\DFT Load to Warehouse.Paths[Lookup Match Output]"
-          TopLeft="636.730166113987,74.2298118231781">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-529.897334036676,44.5716479360519"
-              Start="0,0"
-              End="-529.897334036676,37.0716479360519">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.285823968026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.285823968026"
-                    Point2="0,22.285823968026"
-                    Point3="-4,22.285823968026" />
-                  <mssgle:LineSegment
-                    End="-525.897334036676,22.285823968026" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-525.897334036676,22.285823968026"
-                    Point2="-529.897334036676,22.285823968026"
-                    Point3="-529.897334036676,26.285823968026" />
-                  <mssgle:LineSegment
-                    End="-529.897334036676,37.0716479360519" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-313.140053737088,27.285823968026,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Production\DFT Load to Warehouse.Paths[Row Count Output 11]"
-          TopLeft="170.83283207731,141.572300085633">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="387.260579076762,0"
-              Start="0,0"
-              End="379.760579076762,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="379.760579076762,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Production\DFT Load to Warehouse\DimRosterClient">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Production\DFT Load to Warehouse\DimRosterClient 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Production\DFT Load to Warehouse\DimRosterClient 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8602,7 +8474,497 @@ where [refTable].[GlobalClientId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Production\DFT Load to Warehouse\DimRosterClient 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Production\DFT Load to Warehouse\Lookup Lookup Shared Season">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Production\DFT Load to Warehouse\DimRosterClient">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Load clients to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Row Count 1"
+          TopLeft="249.785719962347,106.467814523361" />
+        <NodeLayout
+          Size="130.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Row Count"
+          TopLeft="81.6904782088346,213.661494576155" />
+        <NodeLayout
+          Size="185.142857142858,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\load to staging_clients"
+          TopLeft="388.571438865056,207.280636479723" />
+        <NodeLayout
+          Size="126.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\get clients"
+          TopLeft="23.4920641143906,13.9175621280916" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 11]"
+          TopLeft="212.547621065977,231.613922670796">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.023817799079,0"
+              Start="0,0"
+              End="168.523817799079,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="168.523817799079,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 1]"
+          TopLeft="319.785719962347,148.753528809076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-172.666670324941,64.9079657670799"
+              Start="0,0"
+              End="-172.666670324941,57.4079657670799">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.45398288354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.45398288354"
+                    Point2="0,32.45398288354"
+                    Point3="-4,32.45398288354" />
+                  <mssgle:LineSegment
+                    End="-168.666670324941,32.45398288354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.666670324941,32.45398288354"
+                    Point2="-172.666670324941,32.45398288354"
+                    Point3="-172.666670324941,36.45398288354" />
+                  <mssgle:LineSegment
+                    End="-172.666670324941,57.4079657670799" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="114.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Lookup"
+          TopLeft="264.547625910037,15.6298700200906" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
+          TopLeft="150.349206971534,35.9165732169483">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.198418938504,0"
+              Start="0,0"
+              End="106.698418938504,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="106.698418938504,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[Lookup Match Output]"
+          TopLeft="320.880958650478,57.9155843058049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5522302175564"
+              Start="0,0"
+              End="0,41.0522302175564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0522302175564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.7214276087782,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Load extended clients info to staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="213.714285714286,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo"
+          TopLeft="417.07937308552,288.968948552263" />
+        <NodeLayout
+          Size="130.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Row Count"
+          TopLeft="401.246040685677,139.562112713581" />
+        <NodeLayout
+          Size="194.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\get extended clients info"
+          TopLeft="61.2698428929378,42.9565228523514" />
+        <NodeLayout
+          Size="140,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Row Count 1"
+          TopLeft="238.293651912158,214.034164369991" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Load extended clients info to staging.Paths[Row Count Output 11]"
+          TopLeft="308.293651912158,256.319878655706">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="215.642864030505,32.6490698965574"
+              Start="0,0"
+              End="215.642864030505,25.1490698965574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.3245349482787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.3245349482787"
+                    Point2="0,16.3245349482787"
+                    Point3="4,16.3245349482787" />
+                  <mssgle:LineSegment
+                    End="211.642864030505,16.3245349482787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="211.642864030505,16.3245349482787"
+                    Point2="215.642864030505,16.3245349482787"
+                    Point3="215.642864030505,20.3245349482787" />
+                  <mssgle:LineSegment
+                    End="215.642864030505,25.1490698965574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load extended clients info to staging.Paths[Row Count Output 1]"
+          TopLeft="466.674612114249,181.847826999296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.380960202091,32.1863373706959"
+              Start="0,0"
+              End="-158.380960202091,24.6863373706959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0931686853479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0931686853479"
+                    Point2="0,16.0931686853479"
+                    Point3="-4,16.0931686853479" />
+                  <mssgle:LineSegment
+                    End="-154.380960202091,16.0931686853479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.380960202091,16.0931686853479"
+                    Point2="-158.380960202091,16.0931686853479"
+                    Point3="-158.380960202091,20.0931686853479" />
+                  <mssgle:LineSegment
+                    End="-158.380960202091,24.6863373706959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="114.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Lookup"
+          TopLeft="407.555557178652,31.826091409406" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Load extended clients info to staging.Paths[OLE DB Source Output]"
+          TopLeft="256.126985750081,64.0993799952085">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.428571428571,-11.1304314429454"
+              Start="0,0"
+              End="143.928571428571,-11.1304314429454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.7142857142857,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.7142857142857,0"
+                    Point2="75.7142857142857,0"
+                    Point3="75.7142857142857,-4" />
+                  <mssgle:LineSegment
+                    End="75.7142857142857,-7.13043144294544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.7142857142857,-7.13043144294544"
+                    Point2="75.7142857142857,-11.1304314429454"
+                    Point3="79.7142857142857,-11.1304314429454" />
+                  <mssgle:LineSegment
+                    End="143.928571428571,-11.1304314429454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load extended clients info to staging.Paths[Lookup Match Output]"
+          TopLeft="465.829370360736,74.1118056951202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.450307018461"
+              Start="0,0"
+              End="0,57.950307018461">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.950307018461" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.1704660092305,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Update ClientIDs">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="114.285714285715,42.2857142857143"
+          Id="Package\Sequence Container\Update ClientIDs\Lookup"
+          TopLeft="273.5,146.5" />
+        <NodeLayout
+          Size="123.428571428572,42.2857142857143"
+          Id="Package\Sequence Container\Update ClientIDs\ClientIDs"
+          TopLeft="297.5,248.5" />
+        <NodeLayout
+          Size="149.142857142858,42.2857142857143"
+          Id="Package\Sequence Container\Update ClientIDs\Get unique IDs"
+          TopLeft="33.5476184925705,24.7142859558006" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Update ClientIDs.Paths[OLE DB Source Output]"
+          TopLeft="108.119047063999,67.0000002415149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="222.523810078858,79.4999997584851"
+              Start="0,0"
+              End="222.523810078858,71.9999997584851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7499998792425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.7499998792425"
+                    Point2="0,39.7499998792425"
+                    Point3="4,39.7499998792425" />
+                  <mssgle:LineSegment
+                    End="218.523810078858,39.7499998792425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="218.523810078858,39.7499998792425"
+                    Point2="222.523810078858,39.7499998792425"
+                    Point3="222.523810078858,43.7499998792425" />
+                  <mssgle:LineSegment
+                    End="222.523810078858,71.9999997584851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Update ClientIDs.Paths[Lookup No Match Output]"
+          TopLeft="330.642857142857,188.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.5714285714286,59.7142857142858"
+              Start="0,0"
+              End="28.5714285714286,52.2142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8571428571429"
+                    Point2="0,29.8571428571429"
+                    Point3="4,29.8571428571429" />
+                  <mssgle:LineSegment
+                    End="24.5714285714286,29.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.5714285714286,29.8571428571429"
+                    Point2="28.5714285714286,29.8571428571429"
+                    Point3="28.5714285714286,33.8571428571429" />
+                  <mssgle:LineSegment
+                    End="28.5714285714286,52.2142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.5206724330357,34.8571428571429,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Update ClientIDs\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Update ClientIDs\ClientIDs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Update ClientIDs\Get unique IDs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load clients to staging\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load extended clients info to staging\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
