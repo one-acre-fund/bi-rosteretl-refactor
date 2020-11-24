@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-DimClient_extract"
-  DTS:VersionBuild="322"
-  DTS:VersionGUID="{D3D3EB37-4ACC-45FB-898E-AF01E0233CB4}">
+  DTS:VersionBuild="325"
+  DTS:VersionGUID="{0FFA753F-1C73-4EE6-89E5-33A796902E57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2954,8 +2954,8 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load Production\DFT Load to Warehouse\Roster DW stage clients source.Connections[OleDbConnection]"
-                      connectionManagerID="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[shared_dims_staging]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3817,7 +3817,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3838,7 +3838,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3855,7 +3855,6 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:refId="Package\SeasonClients - Landing\Truncate Table Landing_Clients"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{18B8E7B0-AC71-4FF4-91D1-3E497990B389}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -3864,7 +3863,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}"
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
               SQLTask:SqlStatementSource="Truncate table staging_Clients" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -3872,7 +3871,6 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:refId="Package\SeasonClients - Landing\Truncate Table Landing_ExtendedClientsInfo"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{f84530e4-b37e-4ff0-b3af-401918a71597}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -3881,7 +3879,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}"
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
               SQLTask:SqlStatementSource="TRUNCATE TABLE staging_extendedclientsinfo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -4521,7 +4519,7 @@ FROM  Clients</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[staging_Clients]</property>
+                      name="OpenRowset">[dbo].[staging_clients]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4564,8 +4562,8 @@ FROM  Clients</property>
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Connections[OleDbConnection]"
-                      connectionManagerID="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[shared_dims_staging]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4705,13 +4703,11 @@ FROM  Clients</property>
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[CanEnrollAsNewMember]"
                           lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Gender]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="Gender"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]" />
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ExtractDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ExtractDate"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ExtractDate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[ClientBirthYear]"
                           cachedDataType="wstr"
@@ -4719,6 +4715,14 @@ FROM  Clients</property>
                           cachedName="ClientBirthYear"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientBirthYear]"
                           lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].Columns[Gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4810,28 +4814,20 @@ FROM  Clients</property>
                           dataType="bool"
                           name="CanEnrollAsNewMember" />
                         <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ExtractDate]"
+                          dataType="dbTimeStamp"
+                          name="ExtractDate" />
+                        <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[ClientBirthYear]"
                           dataType="wstr"
-                          length="10"
+                          length="4"
                           name="ClientBirthYear" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="1"
                           name="Gender" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
-                          dataType="i4"
-                          name="DimCountryID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
-                          dataType="i4"
-                          name="DimRegionID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
-                          dataType="i4"
-                          name="DimDistrictID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6647,8 +6643,8 @@ where [refTable].[DistrictID] = ? and [refTable].[ClientID] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Connections[OleDbConnection]"
-                      connectionManagerID="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[shared_dims_staging]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -6990,6 +6986,70 @@ where [refTable].[DistrictID] = ? and [refTable].[ClientID] = ?</property>
                           cachedName="GovLocationGreatGrandchild"
                           externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationGreatGrandchild]"
                           lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[GovLocationGreatGrandchild]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[SpouseGender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="SpouseGender"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[SpouseGender]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[SpouseGender]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[BeneficiaryGender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="BeneficiaryGender"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryGender]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[BeneficiaryGender]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[SpousePhoneNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="SpousePhoneNumber"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[SpousePhoneNumber]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[SpousePhoneNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[CoinsuredPhoneNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CoinsuredPhoneNumber"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[CoinsuredPhoneNumber]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[CoinsuredPhoneNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[FamilyMember1PhoneNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="FamilyMember1PhoneNumber"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember1PhoneNumber]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[FamilyMember1PhoneNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[FamilyMember2PhoneNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="FamilyMember2PhoneNumber"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember2PhoneNumber]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[FamilyMember2PhoneNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[BeneficiaryRelationship]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BeneficiaryRelationship"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryRelationship]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[BeneficiaryRelationship]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].Columns[FamilyMember2Relationship]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FamilyMember2Relationship"
+                          externalMetadataColumnId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember2Relationship]"
+                          lineageId="Package\Sequence Container\Load extended clients info to staging\get extended clients info.Outputs[OLE DB Source Output].Columns[FamilyMember2Relationship]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -7231,6 +7291,54 @@ where [refTable].[DistrictID] = ? and [refTable].[ClientID] = ?</property>
                           dataType="str"
                           length="255"
                           name="GovLocationGreatGrandchild" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[SpouseGender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="SpouseGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryGender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="BeneficiaryGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[SpousePhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SpousePhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[CoinsuredPhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="CoinsuredPhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember1PhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="FamilyMember1PhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember2PhoneNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="FamilyMember2PhoneNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryRelationship]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BeneficiaryRelationship" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo.Inputs[OLE DB Destination Input].ExternalColumns[FamilyMember2Relationship]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FamilyMember2Relationship" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7467,8 +7575,8 @@ where [refTable].[DistrictID] = ? and [refTable].[ClientID] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Update ClientIDs\Get unique IDs.Connections[OleDbConnection]"
-                      connectionManagerID="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[shared_dims_staging]"
+                      connectionManagerID="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[roster_staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -7691,7 +7799,7 @@ where [refTable].[GlobalClientId] = ?</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}"
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
               SQLTask:SqlStatementSource="update staging_Clients &#xA; set DimClientID=c.ID &#xA;from OAF_SHARED_DIMENSIONS.dbo.ClientIDs c &#xA;where staging_Clients.GlobalClientID=c.GlobalClientID&#xA;and DimClientID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -7707,8 +7815,8 @@ where [refTable].[GlobalClientId] = ?</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ECC89836-18BA-47AE-8960-8CA1AB19A2BF}"
-              SQLTask:SqlStatementSource="WITH DimGroup AS (&#xA; select distinct&#xA;    g.CountryID DimCountryID&#xA;  , g.RegionID  DimRegionID&#xA;  , g.LocationID DimDistrictID&#xA;  , g.RosterDistrictID&#xA; from OAF_SHARED_DIMENSIONS..DimLocations g&#xA; Where g.RosterDistrictID is not null)&#xA;&#xA;update OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients &#xA; set DimCountryID=DimGroup.DimCountryID,&#xA;  DimRegionID=DimGroup.DimRegionID,&#xA;  DimDistrictID=DimGroup.DimDistrictID&#xA; from DimGroup &#xA; where Dimgroup.RosterDistrictID=OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients.DistrictID&#xA;and OAF_SHARED_DIMENSIONS_staging.dbo.staging_Clients.DimCountryID is null;&#xA;&#xA;WITH DimGroup AS (&#xA; select distinct&#xA;    g.CountryID DimCountryID&#xA;  , g.RegionID  DimRegionID&#xA;  , g.LocationID DimDistrictID&#xA;  , g.RosterDistrictID&#xA; from OAF_SHARED_DIMENSIONS..DimLocations g&#xA; Where g.RosterDistrictID is not null)&#xA;&#xA;update OAF_SHARED_DIMENSIONS_staging.dbo.staging_ExtendedClientsInfo &#xA; set DimCountryID=DimGroup.DimCountryID,&#xA;  DimRegionID=DimGroup.DimRegionID,&#xA;  DimDistrictID=DimGroup.DimDistrictID&#xA; from DimGroup &#xA; where Dimgroup.RosterDistrictID=OAF_SHARED_DIMENSIONS_staging.dbo.staging_ExtendedClientsInfo.DistrictID&#xA;and OAF_SHARED_DIMENSIONS_staging.dbo.staging_ExtendedClientsInfo.DimCountryID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{51FC3A5F-B250-4C8F-B5BB-0B9B9DAACA2F}"
+              SQLTask:SqlStatementSource="WITH DimGroup AS (&#xA; select distinct&#xA;    g.CountryID DimCountryID&#xA;  , g.RegionID  DimRegionID&#xA;  , g.LocationID DimDistrictID&#xA;  , g.RosterDistrictID&#xA; from OAF_SHARED_DIMENSIONS..DimLocations g&#xA; Where g.RosterDistrictID is not null)&#xA;&#xA;update staging_Clients &#xA; set DimCountryID=DimGroup.DimCountryID,&#xA;  DimRegionID=DimGroup.DimRegionID,&#xA;  DimDistrictID=DimGroup.DimDistrictID&#xA; from DimGroup &#xA; where Dimgroup.RosterDistrictID=staging_Clients.DistrictID&#xA;and staging_Clients.DimCountryID is null;&#xA;&#xA;WITH DimGroup AS (&#xA; select distinct&#xA;    g.CountryID DimCountryID&#xA;  , g.RegionID  DimRegionID&#xA;  , g.LocationID DimDistrictID&#xA;  , g.RosterDistrictID&#xA; from OAF_SHARED_DIMENSIONS..DimLocations g&#xA; Where g.RosterDistrictID is not null)&#xA;&#xA;update staging_ExtendedClientsInfo &#xA; set DimCountryID=DimGroup.DimCountryID,&#xA;  DimRegionID=DimGroup.DimRegionID,&#xA;  DimDistrictID=DimGroup.DimDistrictID&#xA; from DimGroup &#xA; where Dimgroup.RosterDistrictID=staging_ExtendedClientsInfo.DistrictID&#xA;and staging_ExtendedClientsInfo.DimCountryID is null&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -8677,6 +8785,19 @@ where [refTable].[GlobalClientId] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load clients to staging\load to staging_clients">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Sequence Container\Load extended clients info to staging">
     <LayoutInfo>
@@ -8687,17 +8808,21 @@ where [refTable].[GlobalClientId] = ?</property>
           Id="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo"
           TopLeft="417.07937308552,288.968948552263" />
         <NodeLayout
-          Size="130.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\Row Count"
-          TopLeft="401.246040685677,139.562112713581" />
+          Size="114.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Lookup"
+          TopLeft="407.555557178652,31.826091409406" />
+        <NodeLayout
+          Size="140,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Row Count 1"
+          TopLeft="238.293651912158,214.034164369991" />
         <NodeLayout
           Size="194.857142857143,42.2857142857143"
           Id="Package\Sequence Container\Load extended clients info to staging\get extended clients info"
           TopLeft="61.2698428929378,42.9565228523514" />
         <NodeLayout
-          Size="140,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\Row Count 1"
-          TopLeft="238.293651912158,214.034164369991" />
+          Size="130.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load extended clients info to staging\Row Count"
+          TopLeft="401.246040685677,139.562112713581" />
         <EdgeLayout
           Id="Package\Sequence Container\Load extended clients info to staging.Paths[Row Count Output 11]"
           TopLeft="308.293651912158,256.319878655706">
@@ -8766,10 +8891,6 @@ where [refTable].[GlobalClientId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="114.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load extended clients info to staging\Lookup"
-          TopLeft="407.555557178652,31.826091409406" />
         <EdgeLayout
           Id="Package\Sequence Container\Load extended clients info to staging.Paths[OLE DB Source Output]"
           TopLeft="256.126985750081,64.0993799952085">
@@ -8851,6 +8972,19 @@ where [refTable].[GlobalClientId] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load extended clients info to staging\staging_ExtendedClientsInfo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
