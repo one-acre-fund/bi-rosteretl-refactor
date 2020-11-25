@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBans_extract"
-  DTS:VersionBuild="317"
-  DTS:VersionGUID="{8FBA68E1-3727-49BB-8BCA-12BA72C18995}">
+  DTS:VersionBuild="319"
+  DTS:VersionGUID="{88AC244E-1B96-46DA-9217-396767FA3D61}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3712,7 +3712,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:refId="Package\Load Production"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{95FB4521-6311-4499-B996-23F017298034}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3733,7 +3732,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
               SQLTask:BypassPrepare="False"
-              SQLTask:SqlStatementSource="&#xA;&#xA;EXEC [cls].[sp_IncrementalLoad_InventoryMovements] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="&#xA;&#xA;EXEC [cls].[sp_IncrementalLoad_ClientBans] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::AuditId"
@@ -4018,7 +4017,7 @@ where AuditID = ?
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.InventoryMovements;"
+              SQLTask:SqlStatementSource="select  ISNULL(max(AuditDateCreated), '') from cls.ClientBans;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
