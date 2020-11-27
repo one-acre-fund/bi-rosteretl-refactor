@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_ADS_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{720358B4-DFFC-4BD7-AEE7-7C7B00C0471B}">
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{ACFAB39C-6A46-4283-935F-C21F80C6C61A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1986,6 +1986,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="250"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID.Outputs[Derived Column Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -2248,6 +2249,7 @@
                         <inputColumn
                           refId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS.Inputs[OLE DB Destination Input].Columns[FileName]"
                           cachedDataType="wstr"
+                          cachedLength="250"
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID.Outputs[Derived Column Output].Columns[FileName]" />
@@ -4199,17 +4201,51 @@ where AuditID = ?
           Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Landing_ADS"
           TopLeft="101.129608868571,330.175325607231" />
         <NodeLayout
-          Size="135.428571428572,42.8571428571429"
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID"
-          TopLeft="145.388868284814,128.235932743676" />
-        <NodeLayout
           Size="133.142857142858,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Row Count"
           TopLeft="176.5079411838,223.870127444003" />
         <NodeLayout
+          Size="135.428571428572,42.8571428571429"
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
+        <NodeLayout
           Size="155.428571428572,42.2857142857143"
           Id="Package\Get the files - Load to Landing\DFT - Landing_ADS\Flat File Source"
           TopLeft="156.507940653981,46.0779218510444" />
+        <EdgeLayout
+          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
+          TopLeft="243.079369755229,266.155841729717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.8069037438004,64.0194838775137"
+              Start="0,0"
+              End="-68.8069037438004,56.5194838775137">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0097419387569"
+                    Point2="0,32.0097419387569"
+                    Point3="-4,32.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-64.8069037438004,32.0097419387569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.8069037438004,32.0097419387569"
+                    Point2="-68.8069037438004,32.0097419387569"
+                    Point3="-68.8069037438004,36.0097419387569" />
+                  <mssgle:LineSegment
+                    End="-68.8069037438004,56.5194838775137" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Flat File Source Output]"
           TopLeft="234.222226368267,88.3636361367587">
@@ -4270,40 +4306,6 @@ where AuditID = ?
                     Point3="29.976215756129,30.3885259215919" />
                   <mssgle:LineSegment
                     End="29.976215756129,45.2770518431838" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Get the files - Load to Landing\DFT - Landing_ADS.Paths[Row Count Output 1]"
-          TopLeft="243.079369755229,266.155841729717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.8069037438004,64.0194838775137"
-              Start="0,0"
-              End="-68.8069037438004,56.5194838775137">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0097419387569"
-                    Point2="0,32.0097419387569"
-                    Point3="-4,32.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-64.8069037438004,32.0097419387569" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.8069037438004,32.0097419387569"
-                    Point2="-68.8069037438004,32.0097419387569"
-                    Point3="-68.8069037438004,36.0097419387569" />
-                  <mssgle:LineSegment
-                    End="-68.8069037438004,56.5194838775137" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
