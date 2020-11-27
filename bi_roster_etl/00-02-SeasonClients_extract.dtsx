@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-SeasonClients_extract"
-  DTS:VersionBuild="314"
-  DTS:VersionGUID="{650A3291-FB34-4264-BEDE-58C0D922BB49}">
+  DTS:VersionBuild="316"
+  DTS:VersionGUID="{3390EDBB-2ABF-4228-A647-C4F0B59A7011}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -588,7 +588,7 @@
       DTS:CreationName=""
       DTS:DTSID="{7D568CD7-EB6E-416D-A8A4-2ADBBD980F8F}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;&#xA;SELECT [DistrictName]&#xA;      ,sc.[DistrictID]&#xA;      ,sc.[SeasonID]&#xA;      ,[RegionID]&#xA;      ,[SectorID]&#xA;      ,[SiteID]&#xA;      ,sc.[GroupID]&#xA;      ,sc.[DistrictID]%1000 [CountryID]&#xA;      ,[SectorName]&#xA;      ,[SiteName]&#xA;      ,[GroupName]&#xA;      ,sc.ClientID [OAFID]&#xA;      ,[GlobalClientID]&#xA;      ,sc.[SeasonName]&#xA;      ,[RegionName]&#xA;      ,[FieldManager]&#xA;      ,[FieldOfficer]&#xA;      ,[LastName]&#xA;      ,[FirstName]&#xA;      ,[NationalID]&#xA;      , sc.EnrollmentDate [FirstSeasonDataEntry]&#xA;      ,[FieldOfficerPayrollID]&#xA;      ,[FieldManagerPayrollID]&#xA;      ,[NewMember]&#xA;      ,[TotalEnrolledSeasons]&#xA;      ,[Facilitator]&#xA;      ,[TotalCredit]&#xA;      ,cr.TotalRepayment [TotalRepaid]&#xA;      ,cr.TotalRemaining [RemainingCredit]&#xA;      ,cr.RepaymentPercent [PercentRepaid]&#xA;      ,cr.FirstRepaymentDate [FirstRepayment]&#xA;      ,cr.NumRepayments [NbOfRepayments]&#xA;      ,cr.LastRepaymentDate LastRepayment &#xA;      ,cr.TotalRepayment_IncludingOverpayments [TotalRepaid_IncludingOverpayments]&#xA;      ,sc.[Dropped]&#xA;      ,[Deceased]&#xA;      ,sc.Date_Created [DataEntry]&#xA;      ,sc.ClientPhoneNumber [ClientPhone]&#xA;      ,sc.AccountNumber [AccountNumber]&#xA;      ,[ValidationCode]&#xA;      ,[GovLocationGrandParent]&#xA;      ,[GovLocationParent]&#xA;      ,[GovLocationChild]&#xA;      ,[GovLocationGrandChild]&#xA;      ,[SiteProjectCode]&#xA;      ,[DroppedDate], OAFOperationalYear OperationalYear&#xA;  FROM SeasonClientsInformation sc left&#xA;  Join ClientRepaymentAllListing cr on sc.DistrictID=cr.DistrictID and sc.SeasonID=cr.SeasonID and sc.ClientID=cr.ClientID&#xA;  left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID&#xA;  join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID&#xA;&#xA;  where sc.Date_Created &gt;= '&quot; + (DT_WSTR,30)  @[User::LatestDate] + &quot;'&quot;"
+      DTS:Expression="&quot;&#xA;SELECT [DistrictName]&#xA;      ,sc.[DistrictID]&#xA;      ,sc.[SeasonID]&#xA;      ,[RegionID]&#xA;      ,[SectorID]&#xA;      ,[SiteID]&#xA;      ,sc.[GroupID]&#xA;      ,sc.[DistrictID]%1000 [CountryID]&#xA;      ,[SectorName]&#xA;      ,[SiteName]&#xA;      ,[GroupName]&#xA;      ,sc.ClientID [OAFID]&#xA;      ,[GlobalClientID]&#xA;      ,sc.[SeasonName]&#xA;      ,[RegionName]&#xA;      ,[FieldManager]&#xA;      ,[FieldOfficer]&#xA;      ,[LastName]&#xA;      ,[FirstName]&#xA;      ,[NationalID]&#xA;      , sc.EnrollmentDate [FirstSeasonDataEntry]&#xA;      ,[FieldOfficerPayrollID]&#xA;      ,[FieldManagerPayrollID]&#xA;      ,[NewMember]&#xA;      ,[TotalEnrolledSeasons]&#xA;      ,[Facilitator]&#xA;      ,[TotalCredit]&#xA;      ,cr.TotalRepayment [TotalRepaid]&#xA;      ,cr.TotalRemaining [RemainingCredit]&#xA;      ,cr.RepaymentPercent [PercentRepaid]&#xA;      ,cr.FirstRepaymentDate [FirstRepayment]&#xA;      ,cr.NumRepayments [NbOfRepayments]&#xA;      ,cr.LastRepaymentDate LastRepayment &#xA;      ,cr.TotalRepayment_IncludingOverpayments [TotalRepaid_IncludingOverpayments]&#xA;      ,sc.[Dropped]&#xA;      ,[Deceased]&#xA;      ,sc.Date_Created [DataEntry]&#xA;      ,sc.ClientPhoneNumber [ClientPhone]&#xA;      ,sc.AccountNumber [AccountNumber]&#xA;      ,[ValidationCode]&#xA;      ,[GovLocationGrandParent]&#xA;      ,[GovLocationParent]&#xA;      ,[GovLocationChild]&#xA;      ,[GovLocationGrandChild]&#xA;      ,[SiteProjectCode]&#xA;      ,[DroppedDate], OAFOperationalYear OperationalYear&#xA;  FROM SeasonClientsInformation sc left&#xA;  Join ClientRepaymentAllListing cr on sc.DistrictID=cr.DistrictID and sc.SeasonID=cr.SeasonID and sc.ClientID=cr.ClientID&#xA;  left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID&#xA;  join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID&#xA;&#xA;  where cr.LastRepaymentDate &gt;= '&quot; + (DT_WSTR,30)  @[User::LatestDate] + &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Source_Query">
@@ -645,7 +645,7 @@ SELECT [DistrictName]
   left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID
   join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID
 
-  where sc.Date_Created &gt;= '11/26/2020 2:17:52 PM'</DTS:VariableValue>
+  where cr.LastRepaymentDate &gt;= '11/26/2020 2:17:52 PM'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2537,7 +2537,7 @@ SELECT [DistrictName]
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-          SQLTask:SqlStatementSource="select ISNULL(max(CONVERT(DATE, dataentry)),'1900-01-01') LatestDate from cls.SeasonClients where DataEntry &lt;=convert(date, getdate())"
+          SQLTask:SqlStatementSource="select ISNULL(max(CONVERT(DATE, LastRepayment)),'1900-01-01') LatestDate from cls.SeasonClients "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"

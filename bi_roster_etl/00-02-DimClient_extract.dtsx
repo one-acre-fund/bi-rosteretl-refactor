@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-DimClient_extract"
-  DTS:VersionBuild="327"
-  DTS:VersionGUID="{1F8F487B-F367-4402-9C4E-6B44D8BFB7FB}">
+  DTS:VersionBuild="328"
+  DTS:VersionGUID="{1C0F54E7-EA92-4E2F-A1CC-E25806D9B45B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3823,7 +3823,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3844,7 +3844,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4834,6 +4834,22 @@ FROM  Clients</property>
                           dataType="str"
                           length="10"
                           name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
+                          dataType="i4"
+                          name="DimCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimRegionID]"
+                          dataType="i4"
+                          name="DimRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
+                          dataType="i4"
+                          name="DimDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\load to staging_clients.Inputs[OLE DB Destination Input].ExternalColumns[DimClientID]"
+                          dataType="i4"
+                          name="DimClientID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
