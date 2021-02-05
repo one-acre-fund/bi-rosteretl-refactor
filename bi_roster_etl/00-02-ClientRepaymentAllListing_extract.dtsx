@@ -1,0 +1,1600 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/20/2020 1:27:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GACHAGUA-PC"
+  DTS:CreatorName="GACHAGUA-PC\watchman"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{18C616BE-3603-44FA-B693-A4148C5D7BC1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="2057"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="00-02-ClientRepaymentAllListing_extract"
+  DTS:VersionBuild="330"
+  DTS:VersionGUID="{E2AEF947-9D6B-47C3-96D9-C28E51D98097}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9FEFA520-CFFE-41E9-BE5D-654CC428A90E}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=denis.gachagua;Initial Catalog=RosterDatawarehouse_LandingArea;Provider=SQLNCLI11;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B9D6AC2F-1C9D-413B-B370-92D4E9D9AF54}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeasonName"
+              DTS:DTSID="{09C6B8DA-D39B-487B-A516-FC9BBDE67094}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{EEA259CB-EED7-40DC-8725-B30FBC6B1A83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistrictName"
+              DTS:DTSID="{E5125527-E83F-4757-85AB-6046EA263636}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SectorName"
+              DTS:DTSID="{F20AF868-6C23-4E75-BE87-CC517280C505}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldManager"
+              DTS:DTSID="{A6735376-4A31-4EDC-87C8-44FA6929BE86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteName"
+              DTS:DTSID="{80ACBCF3-0ABF-42F9-B5EE-FC4CD8456A11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldOfficer"
+              DTS:DTSID="{BB5484D1-F731-45D7-9AE9-4B504036C3A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupName"
+              DTS:DTSID="{38B87FFD-8193-4F2D-8565-C59CC193B3DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{6885A773-2D66-4B7D-85EB-8FCCDF7842CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{8C9AB9E6-9719-41D0-893D-FD1BF6C690F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OAFID"
+              DTS:DTSID="{9551FE0D-7176-4921-81BE-E279E81984C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NationalID"
+              DTS:DTSID="{14566F7A-A638-4B96-833F-627EFBDE7926}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstSeasonDataEntry"
+              DTS:DTSID="{C4417C33-358E-4EE4-B332-98A3C1B66863}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldOfficerPayrollID"
+              DTS:DTSID="{9B27A1E2-A218-4F54-9D3B-E7F520C0A1C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldManagerPayrollID"
+              DTS:DTSID="{1ED38BBD-B62A-488B-98FF-4441C3D0D7F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NewMember"
+              DTS:DTSID="{6FA3281C-8E19-41B4-A49A-78B8F10F83A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalEnrolledSeasons"
+              DTS:DTSID="{ACB584BB-FB0B-46AD-883A-6DA44D150A3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Facilitator"
+              DTS:DTSID="{E0505159-C7A6-47DB-ADB8-57B4EF5A23AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCredit"
+              DTS:DTSID="{95F5F929-FC6D-42BC-A5AC-BC966F2E4E4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRepaid"
+              DTS:DTSID="{5D3636CC-6C6E-4283-8164-EF39950ECDA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RemainingCredit"
+              DTS:DTSID="{7C6AF84F-515C-499F-8AE8-3CD94B7B2AA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Repaid"
+              DTS:DTSID="{E70E11AF-3521-4A0B-A333-35F90C8FB94C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstRepayment"
+              DTS:DTSID="{0B29CBFC-3B50-4144-8EA5-4372904D3E0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NbOfRepayments"
+              DTS:DTSID="{CFD673BB-CF3E-4D41-80AA-0668BE2387AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastRepayment"
+              DTS:DTSID="{A2B86009-91E8-46F0-9439-3B13066BC20E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRepaid_IncludingOverpayments"
+              DTS:DTSID="{DC2F6412-6C37-439C-98BA-3740043AFD4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropped"
+              DTS:DTSID="{7C211D2A-0788-4529-B70B-1B85A873D414}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DroppedDate"
+              DTS:DTSID="{4261D938-A04A-4FDE-B1E8-A34A8D8F0758}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deceased"
+              DTS:DTSID="{373BE483-B370-4EFF-9294-14A5C4D8E51A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataEntry"
+              DTS:DTSID="{E8F63EAF-FA52-4D78-BE9F-2A9E7D10FE0B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClientPhone"
+              DTS:DTSID="{6D5B1B7C-0A99-47E1-9641-1AF861246E52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AccountNumber"
+              DTS:DTSID="{E0222FEA-00EC-44EE-83DA-05E9D68B0478}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValidationCode"
+              DTS:DTSID="{380D94AB-1C8C-4551-A0C4-7240CF0D93F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationGrandParent"
+              DTS:DTSID="{D32C8E41-95A9-4EC1-8824-36705915564E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationParent"
+              DTS:DTSID="{1F48444A-9CE3-4E22-BDC5-89DD4BD834DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationChild"
+              DTS:DTSID="{598C6BC4-0185-46C5-A008-8DF380B6BA0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationGrandChild"
+              DTS:DTSID="{A12AF3BC-4B53-4481-8408-D81CD392F255}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteProjectCode"
+              DTS:DTSID="{645DD6D1-3AA5-4D08-8271-9E846BFABB54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeasonID"
+              DTS:DTSID="{E0DEEA7C-371A-4859-986F-DFE395302FEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionID"
+              DTS:DTSID="{353A6EFF-46A4-48D5-8DF8-EE249779E96F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistrictID"
+              DTS:DTSID="{898E163A-A95B-486F-B3DB-C82363261D20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryID"
+              DTS:DTSID="{C785F444-9B2F-4509-9BD4-86696ABE6726}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SectorID"
+              DTS:DTSID="{3F7A8B32-939B-4BBB-940E-58C9FD0F2EC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteID"
+              DTS:DTSID="{8ACE705A-1BD3-4E7D-9295-EED5E40161FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupID"
+              DTS:DTSID="{0DA1E82C-07E3-418A-87E3-B0D5DE3BB398}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GlobalClientID"
+              DTS:DTSID="{957369E7-DC21-48A8-8160-03A83F5E13EA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionExcel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{187933D6-DC5B-4795-9BF7-EEAFE2B172E4}"
+      DTS:ObjectName="SourceConnectionExcel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\watchman\Desktop\VerticalRepayments.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFCA0776-9683-461C-BD49-6C0C9DE9E665}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AuditId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B5DF1BB-D27C-420D-B6F4-C0F3FE8A8489}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AD130665-F9A1-4DC9-8929-939F42844E54}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNameList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9A7F1F04-C817-458B-8523-663ECAA15412}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePattern">
+      <DTS:VariableValue
+        DTS:DataType="8">SeasonClients</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43D48F92-3B6D-4776-8899-EFF6F8D7A06C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestAuditID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53F2D8CA-2F4B-4712-8C45-B51F474828FB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDataEntry">
+      <DTS:VariableValue
+        DTS:DataType="7">11/30/2020 1:42:25 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{92F1738B-A549-479D-8D93-D9FD710D8DD2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDate">
+      <DTS:VariableValue
+        DTS:DataType="7">11/26/2020 2:17:52 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EFA8B05F-4F08-48BF-A827-3998D1D2C880}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDateCreated">
+      <DTS:VariableValue
+        DTS:DataType="7">3/24/2020 12:33:09 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{23D7BF2B-9AF5-4F57-AB5C-C65CD9E9C924}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadEndTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/24/2020 12:34:00 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C89D9B29-4C72-4EC3-B437-A5BA23FACB46}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/23/2020 6:24:16 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C99A91F8-8287-489C-AFFF-5B59074F4AAA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCountExtract">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6FA7E3AC-DA17-47A0-AAC6-5D9F9F784E12}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsExtracted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E881D28-0A84-4C0B-840F-88A22E446781}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT SC.*, S.OAFOperationalYear OperationalYear &#xA;FROM ClientRepaymentAllListing SC &#xA;join Seasons s on SC.DistrictID=S.DistrictID and SC.SeasonID=S.SeasonID  where  s.OAFOperationalYear &gt;= &quot;+(DT_WSTR,30) @[$Project::OperationalYear]+&quot;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source_Query">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT SC.*, S.OAFOperationalYear OperationalYear 
+FROM ClientRepaymentAllListing SC 
+join Seasons s on SC.DistrictID=S.DistrictID and SC.SeasonID=S.SeasonID  where  s.OAFOperationalYear &gt;= 2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF1F539E-AC98-4918-B421-09C8CAAB13F5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarFolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\rosterdata\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Landing_ClientRepaymentAllListing"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{B7607C86-9443-41AD-B113-2D9156632904}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Landing_ClientRepaymentAllListing"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CR Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Source_Query</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Connections[OleDbConnection]"
+                  connectionManagerID="{2F93D81D-B7B5-48CF-84DF-E41516254DD1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bibusinessintell]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      name="DistrictID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                      name="SeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      name="GroupID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[Dropped]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[Dropped]"
+                      name="Dropped"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[OperationalYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[OperationalYear]"
+                      name="OperationalYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalCredit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalCredit]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalCredit]"
+                      name="TotalCredit"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRepayment]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment]"
+                      name="TotalRepayment"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment_IncludingOverpayments]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRepayment_IncludingOverpayments]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment_IncludingOverpayments]"
+                      name="TotalRepayment_IncludingOverpayments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRemaining]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRemaining]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRemaining]"
+                      name="TotalRemaining"
+                      precision="20"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[RepaymentPercent]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[RepaymentPercent]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[RepaymentPercent]"
+                      name="RepaymentPercent"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[FirstRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[FirstRepaymentDate]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[FirstRepaymentDate]"
+                      name="FirstRepaymentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[LastRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[LastRepaymentDate]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[LastRepaymentDate]"
+                      name="LastRepaymentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[NumRepayments]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[NumRepayments]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[NumRepayments]"
+                      name="NumRepayments"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                      dataType="i4"
+                      name="SeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      dataType="i4"
+                      name="GroupID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                      dataType="bool"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
+                      dataType="i4"
+                      name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalCredit]"
+                      dataType="numeric"
+                      name="TotalCredit"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRepayment]"
+                      dataType="numeric"
+                      name="TotalRepayment"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRepayment_IncludingOverpayments]"
+                      dataType="cy"
+                      name="TotalRepayment_IncludingOverpayments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[TotalRemaining]"
+                      dataType="numeric"
+                      name="TotalRemaining"
+                      precision="20"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[RepaymentPercent]"
+                      dataType="numeric"
+                      name="RepaymentPercent"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[FirstRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      name="FirstRepaymentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[LastRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      name="LastRepaymentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].ExternalColumns[NumRepayments]"
+                      dataType="i4"
+                      name="NumRepayments" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      name="DistrictID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      name="ClientID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                      name="SeasonID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalCredit]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalCredit]"
+                      name="TotalCredit"
+                      precision="18"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRepayment]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRepayment]"
+                      name="TotalRepayment"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRepayment_IncludingOverpayments]"
+                      dataType="cy"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRepayment_IncludingOverpayments]"
+                      name="TotalRepayment_IncludingOverpayments" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRemaining]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[TotalRemaining]"
+                      name="TotalRemaining"
+                      precision="20"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[RepaymentPercent]"
+                      dataType="numeric"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[RepaymentPercent]"
+                      name="RepaymentPercent"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      name="GroupID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                      name="Dropped" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[FirstRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[FirstRepaymentDate]"
+                      name="FirstRepaymentDate" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[LastRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[LastRepaymentDate]"
+                      name="LastRepaymentDate" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[NumRepayments]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[NumRepayments]"
+                      name="NumRepayments" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
+                      name="OperationalYear" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get AuditID"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                      name="AuditID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::AuditId]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::AuditId]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Landing_ClientRepaymentAllListing"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[cls].[Landing_ClientRepaymentAllListing]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Connections[OleDbConnection]"
+                  connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                      cachedDataType="i4"
+                      cachedName="AuditID"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DistrictID"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[SeasonID]"
+                      cachedDataType="i4"
+                      cachedName="SeasonID"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[SeasonID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[GroupID]"
+                      cachedDataType="i4"
+                      cachedName="GroupID"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[GroupID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[Dropped]"
+                      cachedDataType="bool"
+                      cachedName="Dropped"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[Dropped]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[OperationalYear]"
+                      cachedDataType="i4"
+                      cachedName="OperationalYear"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[OperationalYear]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[ClientID]"
+                      cachedDataType="i4"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[TotalCredit]"
+                      cachedDataType="numeric"
+                      cachedName="TotalCredit"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalCredit]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalCredit]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[TotalRepayment]"
+                      cachedDataType="numeric"
+                      cachedName="TotalRepayment"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepayment]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[TotalRepayment_IncludingOverpayments]"
+                      cachedDataType="cy"
+                      cachedName="TotalRepayment_IncludingOverpayments"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepayment_IncludingOverpayments]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRepayment_IncludingOverpayments]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[TotalRemaining]"
+                      cachedDataType="numeric"
+                      cachedName="TotalRemaining"
+                      cachedPrecision="20"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRemaining]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[TotalRemaining]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[RepaymentPercent]"
+                      cachedDataType="numeric"
+                      cachedName="RepaymentPercent"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPercent]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[RepaymentPercent]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[FirstRepaymentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FirstRepaymentDate"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[FirstRepaymentDate]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[FirstRepaymentDate]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[LastRepaymentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastRepaymentDate"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[LastRepaymentDate]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[LastRepaymentDate]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].Columns[NumRepayments]"
+                      cachedDataType="i4"
+                      cachedName="NumRepayments"
+                      externalMetadataColumnId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[NumRepayments]"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output].Columns[NumRepayments]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                      dataType="i4"
+                      name="AuditID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                      dataType="i4"
+                      name="SeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                      dataType="i4"
+                      name="GroupID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      dataType="bool"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
+                      dataType="i4"
+                      name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalCredit]"
+                      dataType="numeric"
+                      name="TotalCredit"
+                      precision="18"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepayment]"
+                      dataType="numeric"
+                      name="TotalRepayment"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepayment_IncludingOverpayments]"
+                      dataType="cy"
+                      name="TotalRepayment_IncludingOverpayments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[TotalRemaining]"
+                      dataType="numeric"
+                      name="TotalRemaining"
+                      precision="20"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[RepaymentPercent]"
+                      dataType="numeric"
+                      name="RepaymentPercent"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[FirstRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      name="FirstRepaymentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[LastRepaymentDate]"
+                      dataType="dbTimeStamp"
+                      name="LastRepaymentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input].ExternalColumns[NumRepayments]"
+                      dataType="i4"
+                      name="NumRepayments" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowCountExtract</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Landing_ClientRepaymentAllListing.Paths[Derived Column Output]"
+              endId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_ClientRepaymentAllListing.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Landing_ClientRepaymentAllListing\CR Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT - Landing_ClientRepaymentAllListing.Paths[Row Count Output 1]"
+              endId="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT - Landing_ClientRepaymentAllListing\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table Landing_ClientRepaymentAllListing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3EE7D390-62A5-40CD-B2F6-76EC316FBC89}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table Landing_ClientRepaymentAllListing"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+          SQLTask:SqlStatementSource="Truncate table [cls].[Landing_ClientRepaymentAllListing]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{20CA1B4B-E3CF-437E-B80C-37B277AF9D4D}"
+      DTS:From="Package\Truncate Table Landing_ClientRepaymentAllListing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - Landing_ClientRepaymentAllListing" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="281.714285714286,42.2857142857143"
+          Id="Package\DFT - Landing_ClientRepaymentAllListing"
+          TopLeft="662.22618047674,73.6874543422521" />
+        <NodeLayout
+          Size="326.857142857143,42.2857142857143"
+          Id="Package\Truncate Table Landing_ClientRepaymentAllListing"
+          TopLeft="39.4364971719299,70.5389630589044" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="366.293640029073,93.2560658434354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="295.932540447667,0"
+              Start="0,0"
+              End="288.432540447667,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="288.432540447667,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Landing_ClientRepaymentAllListing">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\DFT - Landing_ClientRepaymentAllListing\Row Count"
+          TopLeft="167.301591733566,223.038959154413" />
+        <NodeLayout
+          Size="251.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing"
+          TopLeft="101.129608868571,330.175325607231" />
+        <NodeLayout
+          Size="132.571428571429,42.2857142857143"
+          Id="Package\DFT - Landing_ClientRepaymentAllListing\CR Source"
+          TopLeft="5.5,30.9092900964066" />
+        <NodeLayout
+          Size="135.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_ClientRepaymentAllListing\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
+        <EdgeLayout
+          Id="Package\DFT - Landing_ClientRepaymentAllListing.Paths[Row Count Output 1]"
+          TopLeft="230.358457443926,265.324673440127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.8506521671037"
+              Start="0,0"
+              End="0,57.3506521671037">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.3506521671037" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_ClientRepaymentAllListing.Paths[OLE DB Source Output]"
+          TopLeft="71.7857142857143,73.1950043821209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.317439713385,55.0409283615551"
+              Start="0,0"
+              End="141.317439713385,47.5409283615551">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5204641807776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5204641807776"
+                    Point2="0,27.5204641807776"
+                    Point3="4,27.5204641807776" />
+                  <mssgle:LineSegment
+                    End="137.317439713385,27.5204641807776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.317439713385,27.5204641807776"
+                    Point2="141.317439713385,27.5204641807776"
+                    Point3="141.317439713385,31.5204641807776" />
+                  <mssgle:LineSegment
+                    End="141.317439713385,47.5409283615551" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_ClientRepaymentAllListing.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,170.52164702939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.7698663058948,52.5173121250227"
+              Start="0,0"
+              End="20.7698663058948,45.0173121250227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2586560625114"
+                    Point2="0,26.2586560625114"
+                    Point3="4,26.2586560625114" />
+                  <mssgle:LineSegment
+                    End="16.7698663058948,26.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.7698663058948,26.2586560625114"
+                    Point2="20.7698663058948,26.2586560625114"
+                    Point3="20.7698663058948,30.2586560625114" />
+                  <mssgle:LineSegment
+                    End="20.7698663058948,45.0173121250227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_ClientRepaymentAllListing\Landing_ClientRepaymentAllListing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_ClientRepaymentAllListing\CR Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
