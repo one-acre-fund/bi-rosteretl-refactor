@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-SeasonClients_extract"
-  DTS:VersionBuild="316"
-  DTS:VersionGUID="{3390EDBB-2ABF-4228-A647-C4F0B59A7011}">
+  DTS:VersionBuild="326"
+  DTS:VersionGUID="{62E9C63F-F7A3-44DC-8927-770CEEF66196}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -532,6 +532,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{A2120DCA-42A0-407E-A520-31BB88DC9593}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDataEntry">
+      <DTS:VariableValue
+        DTS:DataType="7">11/30/2020 1:42:25 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{746E298F-3CF4-4AA5-BF0E-D6BD588B7F62}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -588,7 +597,7 @@
       DTS:CreationName=""
       DTS:DTSID="{7D568CD7-EB6E-416D-A8A4-2ADBBD980F8F}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;&#xA;SELECT [DistrictName]&#xA;      ,sc.[DistrictID]&#xA;      ,sc.[SeasonID]&#xA;      ,[RegionID]&#xA;      ,[SectorID]&#xA;      ,[SiteID]&#xA;      ,sc.[GroupID]&#xA;      ,sc.[DistrictID]%1000 [CountryID]&#xA;      ,[SectorName]&#xA;      ,[SiteName]&#xA;      ,[GroupName]&#xA;      ,sc.ClientID [OAFID]&#xA;      ,[GlobalClientID]&#xA;      ,sc.[SeasonName]&#xA;      ,[RegionName]&#xA;      ,[FieldManager]&#xA;      ,[FieldOfficer]&#xA;      ,[LastName]&#xA;      ,[FirstName]&#xA;      ,[NationalID]&#xA;      , sc.EnrollmentDate [FirstSeasonDataEntry]&#xA;      ,[FieldOfficerPayrollID]&#xA;      ,[FieldManagerPayrollID]&#xA;      ,[NewMember]&#xA;      ,[TotalEnrolledSeasons]&#xA;      ,[Facilitator]&#xA;      ,[TotalCredit]&#xA;      ,cr.TotalRepayment [TotalRepaid]&#xA;      ,cr.TotalRemaining [RemainingCredit]&#xA;      ,cr.RepaymentPercent [PercentRepaid]&#xA;      ,cr.FirstRepaymentDate [FirstRepayment]&#xA;      ,cr.NumRepayments [NbOfRepayments]&#xA;      ,cr.LastRepaymentDate LastRepayment &#xA;      ,cr.TotalRepayment_IncludingOverpayments [TotalRepaid_IncludingOverpayments]&#xA;      ,sc.[Dropped]&#xA;      ,[Deceased]&#xA;      ,sc.Date_Created [DataEntry]&#xA;      ,sc.ClientPhoneNumber [ClientPhone]&#xA;      ,sc.AccountNumber [AccountNumber]&#xA;      ,[ValidationCode]&#xA;      ,[GovLocationGrandParent]&#xA;      ,[GovLocationParent]&#xA;      ,[GovLocationChild]&#xA;      ,[GovLocationGrandChild]&#xA;      ,[SiteProjectCode]&#xA;      ,[DroppedDate], OAFOperationalYear OperationalYear&#xA;  FROM SeasonClientsInformation sc left&#xA;  Join ClientRepaymentAllListing cr on sc.DistrictID=cr.DistrictID and sc.SeasonID=cr.SeasonID and sc.ClientID=cr.ClientID&#xA;  left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID&#xA;  join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID&#xA;&#xA;  where cr.LastRepaymentDate &gt;= '&quot; + (DT_WSTR,30)  @[User::LatestDate] + &quot;'&quot;"
+      DTS:Expression="&quot;&#xA;SELECT [DistrictName]&#xA;      ,sc.[DistrictID]&#xA;      ,sc.[SeasonID]&#xA;      ,[RegionID]&#xA;      ,[SectorID]&#xA;      ,[SiteID]&#xA;      ,sc.[GroupID]&#xA;      ,sc.[DistrictID]%1000 [CountryID]&#xA;      ,[SectorName]&#xA;      ,[SiteName]&#xA;      ,[GroupName]&#xA;      ,sc.ClientID [OAFID]&#xA;      ,[GlobalClientID]&#xA;      ,sc.[SeasonName]&#xA;      ,[RegionName]&#xA;      ,[FieldManager]&#xA;      ,[FieldOfficer]&#xA;      ,[LastName]&#xA;      ,[FirstName]&#xA;      ,[NationalID]&#xA;      , sc.EnrollmentDate [FirstSeasonDataEntry]&#xA;      ,[FieldOfficerPayrollID]&#xA;      ,[FieldManagerPayrollID]&#xA;      ,[NewMember]&#xA;      ,[TotalEnrolledSeasons]&#xA;      ,[Facilitator]&#xA;      ,[TotalCredit]&#xA;      ,cr.TotalRepayment [TotalRepaid]&#xA;      ,cr.TotalRemaining [RemainingCredit]&#xA;      ,cr.RepaymentPercent [PercentRepaid]&#xA;      ,cr.FirstRepaymentDate [FirstRepayment]&#xA;      ,cr.NumRepayments [NbOfRepayments]&#xA;      ,cr.LastRepaymentDate LastRepayment &#xA;      ,cr.TotalRepayment_IncludingOverpayments [TotalRepaid_IncludingOverpayments]&#xA;      ,sc.[Dropped]&#xA;      ,[Deceased]&#xA;      ,sc.Date_Created [DataEntry]&#xA;      ,sc.ClientPhoneNumber [ClientPhone]&#xA;      ,sc.AccountNumber [AccountNumber]&#xA;      ,[ValidationCode]&#xA;      ,[GovLocationGrandParent]&#xA;      ,[GovLocationParent]&#xA;      ,[GovLocationChild]&#xA;      ,[GovLocationGrandChild]&#xA;      ,[SiteProjectCode]&#xA;      ,[DroppedDate], OAFOperationalYear OperationalYear,  sc.GroupActive,sc.SiteActive, sc.SectorActive, sc.FirstSeasonID, sc.FirstSeasonID_IncludingDropped, Gender&#xA;,FirstSeasonName  FROM SeasonClientsInformation sc left&#xA;  Join ClientRepaymentAllListing cr on sc.DistrictID=cr.DistrictID and sc.SeasonID=cr.SeasonID and sc.ClientID=cr.ClientID&#xA;  left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID&#xA;  join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID&#xA;&#xA;  where  s.OAFOperationalYear &gt;= &quot;+(DT_WSTR,30) @[$Project::OperationalYear]+&quot;&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Source_Query">
@@ -639,13 +648,13 @@ SELECT [DistrictName]
       ,[GovLocationChild]
       ,[GovLocationGrandChild]
       ,[SiteProjectCode]
-      ,[DroppedDate], OAFOperationalYear OperationalYear
-  FROM SeasonClientsInformation sc left
+      ,[DroppedDate], OAFOperationalYear OperationalYear,  sc.GroupActive,sc.SiteActive, sc.SectorActive, sc.FirstSeasonID, sc.FirstSeasonID_IncludingDropped, Gender
+,FirstSeasonName  FROM SeasonClientsInformation sc left
   Join ClientRepaymentAllListing cr on sc.DistrictID=cr.DistrictID and sc.SeasonID=cr.SeasonID and sc.ClientID=cr.ClientID
   left join ExtendedClientsInfo c on sc.DistrictID=c.DistrictID and sc.ClientID=c.ClientID
   join Seasons s on sc.SeasonID=s.SeasonID and sc.DistrictID=s.DistrictID
 
-  where cr.LastRepaymentDate &gt;= '11/26/2020 2:17:52 PM'</DTS:VariableValue>
+  where  s.OAFOperationalYear &gt;= 2020</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1149,6 +1158,51 @@ SELECT [DistrictName]
                       cachedName="OperationalYear"
                       externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
                       lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[OperationalYear]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[GroupActive]"
+                      cachedDataType="bool"
+                      cachedName="GroupActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[GroupActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[SiteActive]"
+                      cachedDataType="bool"
+                      cachedName="SiteActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SiteActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[SectorActive]"
+                      cachedDataType="bool"
+                      cachedName="SectorActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SectorActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonID]"
+                      cachedDataType="i4"
+                      cachedName="FirstSeasonID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonID_IncludingDropped]"
+                      cachedDataType="i4"
+                      cachedName="FirstSeasonID_IncludingDropped"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstSeasonName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1386,6 +1440,37 @@ SELECT [DistrictName]
                       refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
                       dataType="i4"
                       name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                      dataType="bool"
+                      name="GroupActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                      dataType="bool"
+                      name="SiteActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                      dataType="bool"
+                      name="SectorActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\Landing_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstSeasonName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1969,6 +2054,72 @@ SELECT [DistrictName]
                       lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[OperationalYear]"
                       name="OperationalYear"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                      name="GroupActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                      name="SiteActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                      name="SectorActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                      name="FirstSeasonID_IncludingDropped"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                      name="FirstSeasonName"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2202,6 +2353,37 @@ SELECT [DistrictName]
                       refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
                       dataType="i4"
                       name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                      dataType="bool"
+                      name="GroupActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                      dataType="bool"
+                      name="SiteActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                      dataType="bool"
+                      name="SectorActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstSeasonName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2487,6 +2669,44 @@ SELECT [DistrictName]
                       lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
                       name="OperationalYear" />
                     <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                      name="GroupActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                      name="SiteActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                      name="SectorActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                      name="FirstSeasonName" />
+                    <outputColumn
                       refId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\DFT - Landing_SeasonClients\SC Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -2532,16 +2752,37 @@ SELECT [DistrictName]
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="get latest date"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+          SQLTask:SqlStatementSource="select '1900-01-01'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::LatestDate" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\get latest DE date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1b2f6fb4-47b0-4426-8f27-05e3c81861bf}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="get latest DE date"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-          SQLTask:SqlStatementSource="select ISNULL(max(CONVERT(DATE, LastRepayment)),'1900-01-01') LatestDate from cls.SeasonClients "
+          SQLTask:SqlStatementSource="SELECT '1900-01-01'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::LatestDate" />
+            SQLTask:DtsVariableName="User::LatestDataEntry" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3032,6 +3273,16 @@ public class ScriptMain : UserComponent
                 (Row.GovLocationChild_IsNull ? "" : Row.GovLocationChild.ToString()) + Separator +
                 (Row.GovLocationGrandChild_IsNull ? "" : Row.GovLocationGrandChild.ToString()) + Separator +
                 (Row.SiteProjectCode_IsNull ? "" : Row.SiteProjectCode.ToString()) + Separator +
+
+                (Row.DroppedDate_IsNull ? "" : Row.DroppedDate.ToString()) + Separator +
+                (Row.OperationalYear_IsNull ? "" : Row.OperationalYear.ToString()) + Separator +
+
+                (Row.GroupActive_IsNull ? "" : Row.GroupActive.ToString()) + Separator +
+                (Row.SiteActive_IsNull ? "" : Row.SiteActive.ToString()) + Separator +
+                (Row.SectorActive_IsNull ? "" : Row.SectorActive.ToString()) + Separator +
+                (Row.FirstSeasonID_IsNull ? "" : Row.FirstSeasonID.ToString()) + Separator +
+                (Row.FirstSeasonName_IsNull ? "" : Row.FirstSeasonName.ToString()) + Separator +
+                (Row.Gender_IsNull ? "" : Row.Gender.ToString()) + Separator +
 
                 (Row.AccountNumber_IsNull ? "" : Row.AccountNumber.ToString()
                 ))
@@ -3764,11 +4015,146 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
+    public DateTime DroppedDate
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[45]);
+        }
+    }
+    public bool DroppedDate_IsNull
+    {
+        get
+        {
+            return IsNull(45);
+        }
+    }
+
+    public Int32 OperationalYear
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[46]);
+        }
+    }
+    public bool OperationalYear_IsNull
+    {
+        get
+        {
+            return IsNull(46);
+        }
+    }
+
+    public Boolean GroupActive
+    {
+        get
+        {
+            return Buffer.GetBoolean(BufferColumnIndexes[47]);
+        }
+    }
+    public bool GroupActive_IsNull
+    {
+        get
+        {
+            return IsNull(47);
+        }
+    }
+
+    public Boolean SiteActive
+    {
+        get
+        {
+            return Buffer.GetBoolean(BufferColumnIndexes[48]);
+        }
+    }
+    public bool SiteActive_IsNull
+    {
+        get
+        {
+            return IsNull(48);
+        }
+    }
+
+    public Boolean SectorActive
+    {
+        get
+        {
+            return Buffer.GetBoolean(BufferColumnIndexes[49]);
+        }
+    }
+    public bool SectorActive_IsNull
+    {
+        get
+        {
+            return IsNull(49);
+        }
+    }
+
+    public Int32 FirstSeasonID
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[50]);
+        }
+    }
+    public bool FirstSeasonID_IsNull
+    {
+        get
+        {
+            return IsNull(50);
+        }
+    }
+
+    public Int32 FirstSeasonIDIncludingDropped
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[51]);
+        }
+    }
+    public bool FirstSeasonIDIncludingDropped_IsNull
+    {
+        get
+        {
+            return IsNull(51);
+        }
+    }
+
+    public String Gender
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[52]);
+        }
+    }
+    public bool Gender_IsNull
+    {
+        get
+        {
+            return IsNull(52);
+        }
+    }
+
+    public String FirstSeasonName
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[53]);
+        }
+    }
+    public bool FirstSeasonName_IsNull
+    {
+        get
+        {
+            return IsNull(53);
+        }
+    }
+
     public String Hash
     {
         set
         {
-            this[45] = value;
+            this[54] = value;
         }
     }
     public bool Hash_IsNull
@@ -3777,7 +4163,7 @@ public class Input0Buffer: ScriptBuffer
         {
             if (value)
             {
-                SetNull(45);
+                SetNull(54);
             }
             else
             {
@@ -4119,15 +4505,15 @@ namespace SC_34e3a63733f5404eab8a30c3f72000e9.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDANWdv18AAAAAAAAAAOAAIiALATAAADIAAAAIAAAAAAAAslAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABERyl8AAAAAAAAAAOAAIiALATAAADgAAAAIAAAAAAAAZlYA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGBQAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABRWAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAuDAAAAAgAAAAMgAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAA0AAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAIAAAAACAAAAOgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACU
-UAAAAAAAAEgAAAACAAUAPC4AAGwhAAABAAAAAAAAAKhPAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAkAuAYAAAEAABFyAQAAcApy
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAbDYAAAAgAAAAOAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAA6AAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAQAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABI
+VgAAAAAAAEgAAAACAAUAjDAAANAkAAABAAAAAAAAAFxVAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAkA5gcAAAEAABFyAQAAcApy
 BQAAcAtzEgAACgwDCB8pjSAAAAElFgNvDgAABi0QA28NAAAGDRIDKBMAAAorBXIFAABwoiUXBqIl
 GANvEAAABi0XA28PAAAGEwQSBP4WDwAAAW8UAAAKKwVyBQAAcKIlGQaiJRoDbyIAAAYtDQNvIQAA
 Bm8UAAAKKwVyBQAAcKIlGwaiJRwDbwwAAAYtEANvCwAABg0SAygTAAAKKwVyBQAAcKIlHQaiJR4D
@@ -4141,7 +4527,7 @@ HQAABm8UAAAKKwVyBQAAcKIlHxsGoiUfHANvIAAABi0NA28fAAAGbxQAAAorBXIFAABwoiUfHQai
 JR8eA28mAAAGLQ0DbyUAAAZvFAAACisFcgUAAHCiJR8fBqIlHyADbygAAAYtDQNvJwAABm8UAAAK
 KwVyBQAAcKIlHyEGoiUfIgNvLAAABi0NA28rAAAGbxQAAAorBXIFAABwoiUfIwaiJR8kA28qAAAG
 LQ0DbykAAAZvFAAACisFcgUAAHCiJR8lBqIlHyYDby4AAAYtDQNvLQAABm8UAAAKKwVyBQAAcKIl
-HycGoiUfKANvMAAABjqWAwAAHzGNIAAAASUWA28vAAAGEwUSBSgVAAAKoiUXBqIlGANvMgAABi0N
+HycGoiUfKANvMAAABjrEBAAAH0GNIAAAASUWA28vAAAGEwUSBSgVAAAKoiUXBqIlGANvMgAABi0N
 A28xAAAGbxQAAAorBXIFAABwoiUZBqIlGgNvNAAABi0NA28zAAAGbxQAAAorBXIFAABwoiUbBqIl
 HANvNgAABi0RA281AAAGEwYSBigWAAAKKwVyBQAAcKIlHQaiJR4DbzgAAAYtEANvNwAABg0SAygT
 AAAKKwVyBQAAcKIlHwkGoiUfCgNvOgAABi0RA285AAAGEwYSBigWAAAKKwVyBQAAcKIlHwsGoiUf
@@ -4156,237 +4542,264 @@ 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
-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
-APkAVwsGAAkBBAUqALkABAUqAIEABAUqABEBBAUqAIkABAUqAAEBzgwuABkBBAMGACEByAE8ACEB
-MwxCACkBMwVIAJEAVwsGADEBBAVPAJEAigFUAJkAVwtaAJkAGwtkAJkAPAxoAKEADQVsAJkA4Alx
-AKEACAB2AKEAUwF7AKEAggKBAKEAGQpxAKEAPwWHAJkA7wmNAJkA5wkBADkBVwsQAJkAFw6TAJkA
-3AyTALEAVwsGAAEBagyXALEAUAyfALkAVwsGAEkB8gGlAEkBPA6uAMkAVwu0AOkAVwsGAC4ACwBe
-AS4AEwBnAS4AGwCGAS4AIwCPAS4AKwC4AS4AMwC4AS4AOwC4AS4AQwCPAS4ASwC+AS4AUwC4AS4A
-WwDVAUMAYwAfAuEAewAfAuMAawAfAqkLcwCGAckLcwCGARsANAADAAEABwBdAAgAXwAAAFACNAEA
-AM8HOAEAAM0APAEAAFYGOAEAAKcAPAEAABsGOAEAAEIAPAEAAIwFOAEAANwAQAEAAGwGOAEAAJoA
-PAEAAAcGOAEAAMAAPAEAAEIGOAEAAEwAPAEAAJ0FOAEAALQAPAEAAC8GOAEAAPcAPAEAAIYGOAEA
-AEECNAEAALkHOAEAAAgCNAEAAGQHOAEAADMCNAEAAKQHOAEAACQCNAEAAI4HOAEAABUCNAEAAHgH
-OAEAACYLNAEAAH0IOAEAAN4KNAEAAGUIOAEAAGECNAEAAOcHOAEAAG4CNAEAAPsHOAEAAFcANAEA
-AK8FOAEAAFsORQEAAMsJOAEAAGYANAEAAMUFOAEAAIAANAEAAOYFOAEAAL4KOAEAADcIOAEAAIEM
-PAEAAKwIOAEAAEsLOAEAAJUIOAEAAAANSgEAAC0JOAEAADUBSgEAAMIGOAEAAOwMSgEAABIJOAEA
-AEUBSgEAANkGOAEAAC4NRQEAAF0JOAEAAJoMPAEAAMwIOAEAABwNRQEAAEQJOAEAAK0MSgEAAOYI
-OAEAABwBOAEAAJsGOAEAACgBOAEAAK4GOAEAAGYORQEAANYJOAEAALMCNAEAABAIOAEAAMwKNAEA
-AEwIOAEAAKUBNAEAAC8HOAEAAG8NNAEAAHcJOAEAAIoNNAEAAJkJOAEAAHkBNAEAABMHOAEAAF8B
-NAEAAPIGOAEAALgBNAEAAEkHOAEAADoFNAEAACcIOAEAADcLTwEAAOQCVAEAABANWQECAAcAAwAC
-AAgABQACAAkABwACAAoACQACAAsACwACAAwADQACAA0ADwACAA4AEQACAA8AEwACABAAFQACABEA
-FwACABIAGQACABMAGwACABQAHQACABUAHwACABYAIQACABcAIwACABgAJQACABkAJwACABoAKQAC
-ABsAKwACABwALQACAB0ALwACAB4AMQACAB8AMwACACAANQACACEANwACACIAOQACACMAOwACACQA
-PQACACUAPwACACYAQQACACcAQwACACgARQACACkARwACACoASQACACsASwACACwATQACAC0ATwAC
-AC4AUQACAC8AUwACADAAVQACADEAVwACADIAWQACADMAWwACADQAXQACADUAXwACADYAYQACADcA
-YwACADgAZQACADkAZwACADoAaQACADsAawACADwAbQACAD0AbwACAD4AcQACAD8AcwACAEAAdQAC
-AEEAdwACAEIAeQACAEMAewACAEQAfQACAEUAfwACAEYAgQACAEcAgwACAEgAhQACAEkAhwACAEoA
-iQACAEsAiwACAEwAjQACAE0AjwACAE4AkQACAE8AkwACAFAAlQACAFEAlwACAFIAmQACAFMAmwAC
-AFQAnQACAFUAnwACAFYAoQACAFcAowACAFgApQACAFkApwACAFoAqQACAFsAqwACAFwArQACAF0A
-rwACAF4AsQACAF8AswACAGAAtQABAGEAtwABAGIAuQACAGwAuwACAG0AvQABAG4AvQACAG8AvwAE
-gAAAAQAAAAAAAAAAAAAAAAARAAAABAAAAAAAAAAAAAAAvAABAQAAAAANAAAAAAAAAAAAAADFAJwN
-AAAAAA0AAAAAAAAAAAAAAMUAuQ0AAAAABAAAAAAAAAAAAAAAvAD4CQAAAAAAAAAAAQAAAKgLAAAA
-AABTSEE1MTIAR2V0SW50MzIAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTkAPE1v
-ZHVsZT4AZ2V0X09BRklEAGdldF9TaXRlSUQAZ2V0X05hdGlvbmFsSUQAZ2V0X0ZpZWxkT2ZmaWNl
-clBheXJvbGxJRABnZXRfRmllbGRNYW5hZ2VyUGF5cm9sbElEAGdldF9SZWdpb25JRABnZXRfU2Vh
-c29uSUQAZ2V0X0dyb3VwSUQAZ2V0X1NlY3RvcklEAGdldF9EaXN0cmljdElEAGdldF9HbG9iYWxD
-bGllbnRJRABJbnB1dElEAGdldF9Db3VudHJ5SUQAbXNjb3JsaWIAU0hBNTEyTWFuYWdlZABnZXRf
-RHJvcHBlZABnZXRfRGVjZWFzZWQAZ2V0X1RvdGFsUmVwYWlkAGdldF9QZXJjZW50UmVwYWlkAEdl
-dEd1aWQAZ2V0X0dvdkxvY2F0aW9uR3JhbmRDaGlsZABnZXRfR292TG9jYXRpb25DaGlsZABBcHBl
-bmQAZGVmYXVsdEluc3RhbmNlAGdldF9WYWxpZGF0aW9uQ29kZQBnZXRfU2l0ZVByb2plY3RDb2Rl
-AGdldF9Vbmljb2RlAElEaXNwb3NhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFu
-ZGxlAGdldF9TaXRlTmFtZQBnZXRfUmVnaW9uTmFtZQBnZXRfU2Vhc29uTmFtZQBnZXRfR3JvdXBO
-YW1lAGdldF9TZWN0b3JOYW1lAGdldF9EaXN0cmljdE5hbWUAZ2V0X0xhc3ROYW1lAGdldF9GaXJz
-dE5hbWUASW5wdXROYW1lAEdldERhdGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVs
-aW5lAGdldF9DbGllbnRQaG9uZQBUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNl
-Q3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAEVkaXRvckJyb3dzYWJsZVN0
-YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1
-dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlU
-aXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtB
-dHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRp
-b25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1
-Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVu
-dEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21w
-YXRpYmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAQnl0ZQB2YWx1ZQBFbmNv
-ZGluZwBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAEdldFN0cmluZwBzZXRfSGFz
-aABHZXRTaGFIYXNoAHNoYUhhc2gAQ29tcHV0ZUhhc2gAR2V0RGVjaW1hbABTeXN0ZW0uQ29tcG9u
-ZW50TW9kZWwAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTkuZGxsAGdldF9PQUZJ
-RF9Jc051bGwAZ2V0X1NpdGVJRF9Jc051bGwAZ2V0X05hdGlvbmFsSURfSXNOdWxsAGdldF9GaWVs
-ZE9mZmljZXJQYXlyb2xsSURfSXNOdWxsAGdldF9GaWVsZE1hbmFnZXJQYXlyb2xsSURfSXNOdWxs
-AGdldF9SZWdpb25JRF9Jc051bGwAZ2V0X1NlYXNvbklEX0lzTnVsbABnZXRfR3JvdXBJRF9Jc051
-bGwAZ2V0X1NlY3RvcklEX0lzTnVsbABnZXRfRGlzdHJpY3RJRF9Jc051bGwAZ2V0X0dsb2JhbENs
-aWVudElEX0lzTnVsbABnZXRfQ291bnRyeUlEX0lzTnVsbABnZXRfRHJvcHBlZF9Jc051bGwAZ2V0
-X0RlY2Vhc2VkX0lzTnVsbABnZXRfVG90YWxSZXBhaWRfSXNOdWxsAGdldF9QZXJjZW50UmVwYWlk
-X0lzTnVsbABnZXRfR292TG9jYXRpb25HcmFuZENoaWxkX0lzTnVsbABnZXRfR292TG9jYXRpb25D
-aGlsZF9Jc051bGwAZ2V0X1ZhbGlkYXRpb25Db2RlX0lzTnVsbABnZXRfU2l0ZVByb2plY3RDb2Rl
-X0lzTnVsbABnZXRfU2l0ZU5hbWVfSXNOdWxsAGdldF9SZWdpb25OYW1lX0lzTnVsbABnZXRfU2Vh
-c29uTmFtZV9Jc051bGwAZ2V0X0dyb3VwTmFtZV9Jc051bGwAZ2V0X1NlY3Rvck5hbWVfSXNOdWxs
-AGdldF9EaXN0cmljdE5hbWVfSXNOdWxsAGdldF9MYXN0TmFtZV9Jc051bGwAZ2V0X0ZpcnN0TmFt
-ZV9Jc051bGwAZ2V0X0NsaWVudFBob25lX0lzTnVsbABzZXRfSGFzaF9Jc051bGwAZ2V0X05ld01l
-bWJlcl9Jc051bGwAZ2V0X0FjY291bnROdW1iZXJfSXNOdWxsAGdldF9GaWVsZE9mZmljZXJfSXNO
-dWxsAGdldF9GaWVsZE1hbmFnZXJfSXNOdWxsAGdldF9GYWNpbGl0YXRvcl9Jc051bGwAZ2V0X1Rv
-dGFsRW5yb2xsZWRTZWFzb25zX0lzTnVsbABnZXRfTmJPZlJlcGF5bWVudHNfSXNOdWxsAGdldF9U
-b3RhbFJlcGFpZEluY2x1ZGluZ092ZXJwYXltZW50c19Jc051bGwAZ2V0X1JlbWFpbmluZ0NyZWRp
-dF9Jc051bGwAZ2V0X1RvdGFsQ3JlZGl0X0lzTnVsbABnZXRfTGFzdFJlcGF5bWVudF9Jc051bGwA
-Z2V0X0ZpcnN0UmVwYXltZW50X0lzTnVsbABnZXRfR292TG9jYXRpb25HcmFuZFBhcmVudF9Jc051
-bGwAZ2V0X0dvdkxvY2F0aW9uUGFyZW50X0lzTnVsbABnZXRfRGF0YUVudHJ5X0lzTnVsbABnZXRf
-Rmlyc3RTZWFzb25EYXRhRW50cnlfSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAEhhc2hB
-bGdvcml0aG0AcmVzb3VyY2VNYW4AR2V0Qm9vbGVhbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1
-cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRPcGVy
-YXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFw
-AE91dHB1dE1hcABnZXRfTmV3TWVtYmVyAGdldF9BY2NvdW50TnVtYmVyAGdldF9GaWVsZE9mZmlj
-ZXIAU3RyaW5nQnVpbGRlcgBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVy
-AGdldF9GaWVsZE1hbmFnZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBnZXRfRmFjaWxpdGF0b3IALmN0
-b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZp
-Y2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTku
-UHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDXzM0ZTNhNjM3
-MzNmNTQwNGVhYjhhMzBjM2Y3MjAwMGU5LlByb3BlcnRpZXMAVmFyaWFibGVzAEdldEJ5dGVzAEJ1
-ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAQ29ubmVj
-dGlvbnMAZ2V0X1RvdGFsRW5yb2xsZWRTZWFzb25zAGdldF9OYk9mUmVwYXltZW50cwBnZXRfVG90
-YWxSZXBhaWRJbmNsdWRpbmdPdmVycGF5bWVudHMAQ29uY2F0AE9iamVjdABFbmRPZlJvd3NldABn
-ZXRfUmVtYWluaW5nQ3JlZGl0AGdldF9Ub3RhbENyZWRpdABnZXRfRGVmYXVsdABnZXRfTGFzdFJl
-cGF5bWVudABnZXRfRmlyc3RSZXBheW1lbnQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQA
-U2NyaXB0Q29tcG9uZW50AGdldF9Hb3ZMb2NhdGlvbkdyYW5kUGFyZW50AGdldF9Hb3ZMb2NhdGlv
-blBhcmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
-UGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNzSW5wdXQAaW5wdXQAU3lzdGVtLlRleHQASW5wdXQw
-X1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AFN5c3RlbS5TZWN1cml0eS5DcnlwdG9ncmFwaHkAZ2V0
-X0Fzc2VtYmx5AGdldF9EYXRhRW50cnkAZ2V0X0ZpcnN0U2Vhc29uRGF0YUVudHJ5AAADfAAAAQAF
-eAAyAACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUA
-IABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBl
-ACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUA
-dAAgADAAAHFTAEMAXwAzADQAZQAzAGEANgAzADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAw
-AGMAMwBmADcAMgAwADAAMABlADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
-YwBlAHMAAAE7uoIZ/KVErQ2IIROnjwUABCABAQgDIAABBSABARERBCABAQ4FIAEBEW0OBwgODhI5
-CBE9EUECEUUDIAAOBQABDh0OBwcDHQUSSQgFAAASgJEFIAEdBQ4GIAEdBR0FBCABDg4FIAESSQ4J
-IAMBElEdCBJVAwYSUQMGHQgEIAEOCAQgAQIIBCABCAgFIAERPQgFIAERQQgFIAERRQgFIAIBCBwD
-IAACByACAg4RgKEFIAEdCAgIAAESgKURgKkFIAASgK0HIAIBDhKArQi3elxWGTTgiQiJhF3NgIDM
-kQMGEhQDBhIYAwYSWQMGEmUDBhJpAwYSIAUgAQESDAYAAg4SOQ4DIAAIBCAAET0EIAARQQQgABFF
-BCABAQIJIAQBCA4SURJVBSABARJZBAAAEmUEAAASaQUAAQESaQQAABIgAwAAAQMoAA4DKAACAygA
-CAQoABE9BCgAEUEEKAARRQQIABJlBAgAEmkECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4
-Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcy
-MDAwZTkAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVy
-c2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUEAQAA
-ALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3Js
-aWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdh
-NWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAA
-AAAAUEFEUEFEULQAAACIUAAAAAAAAAAAAACiUAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlFAA
-AAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAGAAAgAAA
-AAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAADsAwAAAAAA
-AAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAAAQAAAAEA
-AAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYAaQBs
-AGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAETAMAAAEA
-UwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAAMAAwADQAYgAwAAAAGgAB
-AAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAAAAAA
-AAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwAzADQAZQAz
-AGEANgAzADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAwAGMAMwBmADcAMgAwADAAMABlADkA
-AAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAAAABwACgAAQBJ
-AG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADMANABlADMAYQA2ADMANwAzADMAZgA1ADQA
-MAA0AGUAYQBiADgAYQAzADAAYwAzAGYANwAyADAAMAAwAGUAOQAuAGQAbABsAAAASAASAAEATABl
-AGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAA
-MgAwAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBP
-AHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AMwA0AGUAMwBhADYAMwA3ADMA
-MwBmADUANAAwADQAZQBhAGIAOABhADMAMABjADMAZgA3ADIAMAAwADAAZQA5AC4AZABsAGwAAABo
-ACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADMANABlADMAYQA2ADMANwAzADMA
-ZgA1ADQAMAA0AGUAYQBiADgAYQAzADAAYwAzAGYANwAyADAAMAAwAGUAOQAAADQACAABAFAAcgBv
-AGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0A
-YgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-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
+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
+AIYIuAeTAAcAQi4AAAAAhgjoASoABwBYLgAAAACGCA8IkwAHAGIuAAAAAIYIVAP8AAcAeC4AAAAA
+hggICZMABwCCLgAAAACGCCgM8wAHAJguAAAAAIYIdAmTAAcAoi4AAAAAhghIBZMABwC4LgAAAACG
+CDUJkwAHAMIuAAAAAIYIOQWTAAcA2C4AAAAAhggfCZMABwDiLgAAAACGCFgFkwAHAPguAAAAAIYI
+TAmTAAcAAi8AAAAAhgiwAPMABwAYLwAAAACGCLMGkwAHACIvAAAAAIYINgHzAAcAOC8AAAAAhghL
+B5MABwBCLwAAAACGCHsMKgAHAFgvAAAAAIYI1QmTAAcAYi8AAAAAhghjAioABwB4LwAAAACGCGoI
+kwAHAIIvAAAAAIYInwUQAAcAjS8AAAAAhghkCQYBCAClLwAAAACGAKQPkwAJAK0vAAAAAIYAaQ6T
+AAkAtS8AAAAAhhjkDAYACQDVLwAAAADGAG4PCwEJAPovAAAAAMYBZw/mAA0ADTAAAAAAxgGND+YA
+DgAPMAAAAACGGOQMFQEPAB4wAAAAAIYY5AwVARAALTAAAAAAgxjkDAYAEQA1MAAAAACTCMAMGwER
+AGEwAAAAAJMIDAMgAREAaDAAAAAAkwgYAyUBEQBwMAAAAACWCJkOKwESAHcwAAAAAIYY5AwGABIA
+fzAAAAAAkRjqDDABEgAAAAEAqA8AAAEAswUAAAIAew8AAAEAqAwAAAIAyQ0AAAMAHgwAAAEAMwUA
+AAEAMwUAAAEA/QAAAAIAwAIAAAMAqAwAAAQAHgwAAAEAqAwAAAEAqA8AAAEA7g4AAAEA7g4AAAEA
+MwUJAOQMAQARAOQMBgAZAOQMCgApAOQMEAAxAOQMEAA5AOQMEABBAOQMEABJAOQMEABRAOQMEABZ
+AOQMEABhAOQMEABpAOQMBgDBAOQMBgDhAOQMFQDxAOQMBgCxABcFBgCxACIFBgD5AOQMBgAJAYwF
+KgC5AIwFKgCBAIwFKgARAYwFKgCJAIwFKgABAVsOLgAZAUwDBgAhAfwBPAAhAcANQgApAbsFSACR
+AOQMBgAxAYwFTwCRAL4BVACZAOQMWgCZAKgMZACZAMkNaAChAJUFbACZAE4LcQChAAgAdgChAIcB
+ewChAMoCgQChAIcLcQChAMcFhwCZAF0LjQCZAFULAQA5AeQMEACZAKQPkwCZAGkOkwCxAOQMBgAB
+AfcNlwCxAN0NnwC5AOQMBgBJASYCpQBJAckPrgDJAOQMtADpAOQMBgAuAAsAXgEuABMAZwEuABsA
+hgEuACMAjwEuACsAuAEuADMAuAEuADsAuAEuAEMAjwEuAEsAvgEuAFMAuAEuAFsA1QFDAGMAHwLh
+AHsAHwLjAGsAHwLpDXMAhgEJDnMAhgEbADQAAwABAAcAbwAIAHEAAACYAjQBAAC0CDgBAADfADwB
+AAD3BjgBAAC5ADwBAAC8BjgBAABCADwBAAAUBjgBAADuAEABAAANBzgBAACaADwBAACPBjgBAADS
+ADwBAADjBjgBAABMADwBAAAlBjgBAADGADwBAADQBjgBAAAJATwBAAAnBzgBAACJAjQBAACeCDgB
+AAA8AjQBAAAuCDgBAAB7AjQBAACJCDgBAABsAjQBAABzCDgBAABJAjQBAABCCDgBAACzDDQBAADr
+CTgBAABgDDQBAADBCTgBAACpAjQBAADMCDgBAAC2AjQBAADgCDgBAABXADQBAAA3BjgBAADoD0UB
+AAA5CzgBAABmADQBAABNBjgBAACAADQBAABuBjgBAABADDgBAACTCTgBAAAODjwBAAAaCjgBAADY
+DDgBAAADCjgBAACNDkoBAACbCjgBAABpAUoBAACMBzgBAAB5DkoBAACACjgBAAB5AUoBAACjBzgB
+AAC7DkUBAADLCjgBAAAnDjwBAAA6CjgBAACpDkUBAACyCjgBAAA6DkoBAABUCjgBAABQATgBAABl
+BzgBAABcATgBAAB4BzgBAADzD0UBAABECzgBAAD7AjQBAAD1CDgBAABODDQBAACoCTgBAADZATQB
+AAD5BzgBAAD8DjQBAADlCjgBAAAXDzQBAAAHCzgBAACtATQBAADdBzgBAACTATQBAAC8BzgBAADs
+ATQBAAATCDgBAABYA0UBAAAMCTgBAAAsDDwBAAB4CTgBAABMBTgBAAA5CTgBAAA9BTgBAAAjCTgB
+AABcBTgBAABQCTgBAAC0ADwBAAC3BjgBAAA6ATwBAABPBzgBAAB/DDQBAADZCTgBAABnAjQBAABu
+CDgBAADCBTQBAABoCTgBAADEDE8BAAAsA1QBAACdDlkBAgAHAAMAAgAIAAUAAgAJAAcAAgAKAAkA
+AgALAAsAAgAMAA0AAgANAA8AAgAOABEAAgAPABMAAgAQABUAAgARABcAAgASABkAAgATABsAAgAU
+AB0AAgAVAB8AAgAWACEAAgAXACMAAgAYACUAAgAZACcAAgAaACkAAgAbACsAAgAcAC0AAgAdAC8A
+AgAeADEAAgAfADMAAgAgADUAAgAhADcAAgAiADkAAgAjADsAAgAkAD0AAgAlAD8AAgAmAEEAAgAn
+AEMAAgAoAEUAAgApAEcAAgAqAEkAAgArAEsAAgAsAE0AAgAtAE8AAgAuAFEAAgAvAFMAAgAwAFUA
+AgAxAFcAAgAyAFkAAgAzAFsAAgA0AF0AAgA1AF8AAgA2AGEAAgA3AGMAAgA4AGUAAgA5AGcAAgA6
+AGkAAgA7AGsAAgA8AG0AAgA9AG8AAgA+AHEAAgA/AHMAAgBAAHUAAgBBAHcAAgBCAHkAAgBDAHsA
+AgBEAH0AAgBFAH8AAgBGAIEAAgBHAIMAAgBIAIUAAgBJAIcAAgBKAIkAAgBLAIsAAgBMAI0AAgBN
+AI8AAgBOAJEAAgBPAJMAAgBQAJUAAgBRAJcAAgBSAJkAAgBTAJsAAgBUAJ0AAgBVAJ8AAgBWAKEA
+AgBXAKMAAgBYAKUAAgBZAKcAAgBaAKkAAgBbAKsAAgBcAK0AAgBdAK8AAgBeALEAAgBfALMAAgBg
+ALUAAgBhALcAAgBiALkAAgBjALsAAgBkAL0AAgBlAL8AAgBmAMEAAgBnAMMAAgBoAMUAAgBpAMcA
+AgBqAMkAAgBrAMsAAgBsAM0AAgBtAM8AAgBuANEAAgBvANMAAgBwANUAAgBxANcAAgByANkAAQBz
+ANsAAQB0AN0AAgB+AN8AAgB/AOEAAQCAAOEAAgCBAOMABIAAAAEAAAAAAAAAAAAAAAAAEQAAAAQA
+AAAAAAAAAAAAALwAEwEAAAAADQAAAAAAAAAAAAAAxQApDwAAAAANAAAAAAAAAAAAAADFAEYPAAAA
+AAQAAAAAAAAAAAAAALwAZgsAAAAAAAAAAAEAAAA1DQAAAAAAU0hBNTEyAEdldEludDMyAFNDXzM0
+ZTNhNjM3MzNmNTQwNGVhYjhhMzBjM2Y3MjAwMGU5ADxNb2R1bGU+AGdldF9PQUZJRABnZXRfU2l0
+ZUlEAGdldF9OYXRpb25hbElEAGdldF9GaWVsZE9mZmljZXJQYXlyb2xsSUQAZ2V0X0ZpZWxkTWFu
+YWdlclBheXJvbGxJRABnZXRfUmVnaW9uSUQAZ2V0X1NlYXNvbklEAGdldF9GaXJzdFNlYXNvbklE
+AGdldF9Hcm91cElEAGdldF9TZWN0b3JJRABnZXRfRGlzdHJpY3RJRABnZXRfR2xvYmFsQ2xpZW50
+SUQASW5wdXRJRABnZXRfQ291bnRyeUlEAG1zY29ybGliAFNIQTUxMk1hbmFnZWQAZ2V0X0Ryb3Bw
+ZWQAZ2V0X0ZpcnN0U2Vhc29uSURJbmNsdWRpbmdEcm9wcGVkAGdldF9EZWNlYXNlZABnZXRfVG90
+YWxSZXBhaWQAZ2V0X1BlcmNlbnRSZXBhaWQAR2V0R3VpZABnZXRfR292TG9jYXRpb25HcmFuZENo
+aWxkAGdldF9Hb3ZMb2NhdGlvbkNoaWxkAEFwcGVuZABkZWZhdWx0SW5zdGFuY2UAZ2V0X1ZhbGlk
+YXRpb25Db2RlAGdldF9TaXRlUHJvamVjdENvZGUAZ2V0X1VuaWNvZGUASURpc3Bvc2FibGUAUnVu
+dGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAZ2V0X1NpdGVOYW1lAGdldF9SZWdpb25O
+YW1lAGdldF9TZWFzb25OYW1lAGdldF9GaXJzdFNlYXNvbk5hbWUAZ2V0X0dyb3VwTmFtZQBnZXRf
+U2VjdG9yTmFtZQBnZXRfRGlzdHJpY3ROYW1lAGdldF9MYXN0TmFtZQBnZXRfRmlyc3ROYW1lAElu
+cHV0TmFtZQBHZXREYXRlVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBnZXRf
+Q2xpZW50UGhvbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUA
+QXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARGlzcG9zZQBnZXRfRHJvcHBlZERhdGUARWRpdG9yQnJv
+d3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29k
+ZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBB
+c3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZy
+YW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlE
+ZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2Vt
+Ymx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0
+Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVu
+dGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBCeXRlAHZh
+bHVlAGdldF9TaXRlQWN0aXZlAGdldF9Hcm91cEFjdGl2ZQBnZXRfU2VjdG9yQWN0aXZlAEVuY29k
+aW5nAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcAR2V0U3RyaW5nAHNldF9IYXNo
+AEdldFNoYUhhc2gAc2hhSGFzaABDb21wdXRlSGFzaABHZXREZWNpbWFsAFN5c3RlbS5Db21wb25l
+bnRNb2RlbABTQ18zNGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNmNzIwMDBlOS5kbGwAZ2V0X09BRklE
+X0lzTnVsbABnZXRfU2l0ZUlEX0lzTnVsbABnZXRfTmF0aW9uYWxJRF9Jc051bGwAZ2V0X0ZpZWxk
+T2ZmaWNlclBheXJvbGxJRF9Jc051bGwAZ2V0X0ZpZWxkTWFuYWdlclBheXJvbGxJRF9Jc051bGwA
+Z2V0X1JlZ2lvbklEX0lzTnVsbABnZXRfU2Vhc29uSURfSXNOdWxsAGdldF9GaXJzdFNlYXNvbklE
+X0lzTnVsbABnZXRfR3JvdXBJRF9Jc051bGwAZ2V0X1NlY3RvcklEX0lzTnVsbABnZXRfRGlzdHJp
+Y3RJRF9Jc051bGwAZ2V0X0dsb2JhbENsaWVudElEX0lzTnVsbABnZXRfQ291bnRyeUlEX0lzTnVs
+bABnZXRfRHJvcHBlZF9Jc051bGwAZ2V0X0ZpcnN0U2Vhc29uSURJbmNsdWRpbmdEcm9wcGVkX0lz
+TnVsbABnZXRfRGVjZWFzZWRfSXNOdWxsAGdldF9Ub3RhbFJlcGFpZF9Jc051bGwAZ2V0X1BlcmNl
+bnRSZXBhaWRfSXNOdWxsAGdldF9Hb3ZMb2NhdGlvbkdyYW5kQ2hpbGRfSXNOdWxsAGdldF9Hb3ZM
+b2NhdGlvbkNoaWxkX0lzTnVsbABnZXRfVmFsaWRhdGlvbkNvZGVfSXNOdWxsAGdldF9TaXRlUHJv
+amVjdENvZGVfSXNOdWxsAGdldF9TaXRlTmFtZV9Jc051bGwAZ2V0X1JlZ2lvbk5hbWVfSXNOdWxs
+AGdldF9TZWFzb25OYW1lX0lzTnVsbABnZXRfRmlyc3RTZWFzb25OYW1lX0lzTnVsbABnZXRfR3Jv
+dXBOYW1lX0lzTnVsbABnZXRfU2VjdG9yTmFtZV9Jc051bGwAZ2V0X0Rpc3RyaWN0TmFtZV9Jc051
+bGwAZ2V0X0xhc3ROYW1lX0lzTnVsbABnZXRfRmlyc3ROYW1lX0lzTnVsbABnZXRfQ2xpZW50UGhv
+bmVfSXNOdWxsAGdldF9Ecm9wcGVkRGF0ZV9Jc051bGwAZ2V0X1NpdGVBY3RpdmVfSXNOdWxsAGdl
+dF9Hcm91cEFjdGl2ZV9Jc051bGwAZ2V0X1NlY3RvckFjdGl2ZV9Jc051bGwAc2V0X0hhc2hfSXNO
+dWxsAGdldF9PcGVyYXRpb25hbFllYXJfSXNOdWxsAGdldF9OZXdNZW1iZXJfSXNOdWxsAGdldF9B
+Y2NvdW50TnVtYmVyX0lzTnVsbABnZXRfRmllbGRPZmZpY2VyX0lzTnVsbABnZXRfR2VuZGVyX0lz
+TnVsbABnZXRfRmllbGRNYW5hZ2VyX0lzTnVsbABnZXRfRmFjaWxpdGF0b3JfSXNOdWxsAGdldF9U
+b3RhbEVucm9sbGVkU2Vhc29uc19Jc051bGwAZ2V0X05iT2ZSZXBheW1lbnRzX0lzTnVsbABnZXRf
+VG90YWxSZXBhaWRJbmNsdWRpbmdPdmVycGF5bWVudHNfSXNOdWxsAGdldF9SZW1haW5pbmdDcmVk
+aXRfSXNOdWxsAGdldF9Ub3RhbENyZWRpdF9Jc051bGwAZ2V0X0xhc3RSZXBheW1lbnRfSXNOdWxs
+AGdldF9GaXJzdFJlcGF5bWVudF9Jc051bGwAZ2V0X0dvdkxvY2F0aW9uR3JhbmRQYXJlbnRfSXNO
+dWxsAGdldF9Hb3ZMb2NhdGlvblBhcmVudF9Jc051bGwAZ2V0X0RhdGFFbnRyeV9Jc051bGwAZ2V0
+X0ZpcnN0U2Vhc29uRGF0YUVudHJ5X0lzTnVsbABTZXROdWxsAHNldF9JdGVtAFN5c3RlbQBIYXNo
+QWxnb3JpdGhtAHJlc291cmNlTWFuAEdldEJvb2xlYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmln
+dXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBJbnZhbGlkT3Bl
+cmF0aW9uRXhjZXB0aW9uAFN0cmluZ0NvbXBhcmlzb24AQ3VsdHVyZUluZm8AT3V0cHV0TmFtZU1h
+cABPdXRwdXRNYXAAZ2V0X09wZXJhdGlvbmFsWWVhcgBnZXRfTmV3TWVtYmVyAGdldF9BY2NvdW50
+TnVtYmVyAGdldF9GaWVsZE9mZmljZXIAU3RyaW5nQnVpbGRlcgBnZXRfR2VuZGVyAElucHV0MEJ1
+ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X0ZpZWxkTWFuYWdlcgBnZXRfUmVz
+b3VyY2VNYW5hZ2VyAGdldF9GYWNpbGl0YXRvcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0
+aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ18z
+NGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNmNzIwMDBlOS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNv
+dXJjZXMARGVidWdnaW5nTW9kZXMAU0NfMzRlM2E2MzczM2Y1NDA0ZWFiOGEzMGMzZjcyMDAwZTku
+UHJvcGVydGllcwBWYXJpYWJsZXMAR2V0Qnl0ZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1
+bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBnZXRfVG90YWxFbnJvbGxlZFNl
+YXNvbnMAZ2V0X05iT2ZSZXBheW1lbnRzAGdldF9Ub3RhbFJlcGFpZEluY2x1ZGluZ092ZXJwYXlt
+ZW50cwBDb25jYXQAT2JqZWN0AEVuZE9mUm93c2V0AGdldF9SZW1haW5pbmdDcmVkaXQAZ2V0X1Rv
+dGFsQ3JlZGl0AGdldF9EZWZhdWx0AGdldF9MYXN0UmVwYXltZW50AGdldF9GaXJzdFJlcGF5bWVu
+dABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQAZ2V0X0dvdkxv
+Y2F0aW9uR3JhbmRQYXJlbnQAZ2V0X0dvdkxvY2F0aW9uUGFyZW50AE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nl
+c3NJbnB1dABpbnB1dABTeXN0ZW0uVGV4dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cA
+U3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBoeQBnZXRfQXNzZW1ibHkAZ2V0X0RhdGFFbnRyeQBn
+ZXRfRmlyc3RTZWFzb25EYXRhRW50cnkAAAAAAAN8AAABAAV4ADIAAICbSQBzAE4AdQBsAGwAIABw
+AHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwA
+cwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBs
+AHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADMANABlADMA
+YQA2ADMANwAzADMAZgA1ADQAMAA0AGUAYQBiADgAYQAzADAAYwAzAGYANwAyADAAMAAwAGUAOQAu
+AFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAod7Pwa0D8U6PJAamRRLK
+LAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERbQ4HCA4OEjkIET0RQQIRRQMgAA4FAAEOHQ4HBwMd
+BRJJCAUAABKAkQUgAR0FDgYgAR0FHQUEIAEODgUgARJJDgkgAwESUR0IElUDBhJRAwYdCAQgAQ4I
+BCABAggEIAEICAUgARE9CAUgARFBCAUgARFFCAUgAgEIHAMgAAIHIAICDhGAoQUgAR0ICAgAARKA
+pRGAqQUgABKArQcgAgEOEoCtCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJZAwYSZQMGEmkD
+BhIgBSABARIMBgACDhI5DgMgAAgEIAARPQQgABFBBCAAEUUEIAEBAgkgBAEIDhJRElUFIAEBElkE
+AAASZQQAABJpBQABARJpBAAAEiADAAABAygADgMoAAIDKAAIBCgAET0EKAARQQQoABFFBAgAEmUE
+CAASaQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAA
+ACgBACNTQ18zNGUzYTYzNzMzZjU0MDRlYWI4YTMwYzNmNzIwMDBlOQAABQEAAAAAFgEAEUNvcHly
+aWdodCBAICAyMDIwAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29y
+a0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQQBAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAADxWAAAAAAAA
+AAAAAFZWAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIVgAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAGAAAgAAAAAAA
+AAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAAAFhgAADsAwAAAAAAAAAA
+AADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAAvQTv/gAAAQAAAAEAAAAA
+AAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAABAFYAYQByAEYAaQBsAGUA
+SQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAAAAAAALAETAMAAAEAUwB0
+AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAAMAAwADQAYgAwAAAAGgABAAEA
+QwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAAAAAAAAAA
+AHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwAzADQAZQAzAGEA
+NgAzADcAMwAzAGYANQA0ADAANABlAGEAYgA4AGEAMwAwAGMAMwBmADcAMgAwADAAMABlADkAAAAw
+AAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAAAABwACgAAQBJAG4A
+dABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADMANABlADMAYQA2ADMANwAzADMAZgA1ADQAMAA0
+AGUAYQBiADgAYQAzADAAYwAzAGYANwAyADAAMAAwAGUAOQAuAGQAbABsAAAASAASAAEATABlAGcA
+YQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAw
+AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIA
+aQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AMwA0AGUAMwBhADYAMwA3ADMAMwBm
+ADUANAAwADQAZQBhAGIAOABhADMAMABjADMAZgA3ADIAMAAwADAAZQA5AC4AZABsAGwAAABoACQA
+AQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADMANABlADMAYQA2ADMANwAzADMAZgA1
+ADQAMAA0AGUAYQBiADgAYQAzADAAYwAzAGYANwAyADAAMAAwAGUAOQAAADQACAABAFAAcgBvAGQA
+dQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAMAAAAaDYAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       </arrayElements>
                     </property>
                     <property
@@ -4422,12 +4835,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataChecksum"
-                      typeConverter="NOTBROWSABLE">58a04aace99e02702fc18732b59006f6</property>
+                      typeConverter="NOTBROWSABLE">0649ec4478699dee11cc2eedbabf726a</property>
                     <property
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataShaChecksum"
-                      typeConverter="NOTBROWSABLE">0d9297e4b239f810b437efeb25bc8296837774bc</property>
+                      typeConverter="NOTBROWSABLE">99f64d80f445e6bb5e8634fd14ac82ae3fa8c5b1</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -4710,6 +5123,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedLength="255"
                           cachedName="SiteProjectCode"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SiteProjectCode]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[DroppedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DroppedDate"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[DroppedDate]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[OperationalYear]"
+                          cachedDataType="i4"
+                          cachedName="OperationalYear"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[OperationalYear]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[GroupActive]"
+                          cachedDataType="bool"
+                          cachedName="GroupActive"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[GroupActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[SiteActive]"
+                          cachedDataType="bool"
+                          cachedName="SiteActive"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SiteActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[SectorActive]"
+                          cachedDataType="bool"
+                          cachedName="SectorActive"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SectorActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[FirstSeasonID]"
+                          cachedDataType="i4"
+                          cachedName="FirstSeasonID"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[FirstSeasonID_IncludingDropped]"
+                          cachedDataType="i4"
+                          cachedName="FirstSeasonID_IncludingDropped"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[Gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Inputs[Input 0].Columns[FirstSeasonName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="FirstSeasonName"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonName]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5267,6 +5728,72 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[OperationalYear]"
                           name="OperationalYear"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                          name="GroupActive"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                          name="SiteActive"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                          name="SectorActive"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                          name="FirstSeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                          name="FirstSeasonID_IncludingDropped"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          length="1"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[Gender]"
+                          name="Gender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                          name="FirstSeasonName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5504,6 +6031,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
                           dataType="i4"
                           name="OperationalYear" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                          dataType="bool"
+                          name="GroupActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                          dataType="bool"
+                          name="SiteActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                          dataType="bool"
+                          name="SectorActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                          dataType="i4"
+                          name="FirstSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                          dataType="i4"
+                          name="FirstSeasonID_IncludingDropped" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstSeasonName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5788,6 +6346,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="i4"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
                           name="OperationalYear" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                          dataType="bool"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                          name="GroupActive" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                          dataType="bool"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                          name="SiteActive" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                          dataType="bool"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                          name="SectorActive" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                          dataType="i4"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                          name="FirstSeasonID" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                          dataType="i4"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                          name="FirstSeasonID_IncludingDropped" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          name="Gender" />
+                        <outputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                          name="FirstSeasonName" />
                         <outputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
                           dataType="dbTimeStamp"
@@ -6213,6 +6809,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[OperationalYear]" />
                         <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                          cachedDataType="wstr"
+                          cachedLength="66"
+                          cachedName="AuditID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[GroupActive]"
+                          cachedDataType="bool"
+                          cachedName="GroupActive"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[GroupActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[SiteActive]"
+                          cachedDataType="bool"
+                          cachedName="SiteActive"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SiteActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[SectorActive]"
+                          cachedDataType="bool"
+                          cachedName="SectorActive"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[SectorActive]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonID]"
+                          cachedDataType="i4"
+                          cachedName="FirstSeasonID"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonID_IncludingDropped]"
+                          cachedDataType="i4"
+                          cachedName="FirstSeasonID_IncludingDropped"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[Gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Gender"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[FirstSeasonName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="FirstSeasonName"
+                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                          lineageId="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients.Outputs[OLE DB Source Output].Columns[FirstSeasonName]" />
+                        <inputColumn
                           refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[Hash]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -6220,13 +6868,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedName="Hash"
                           externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[HashKey]"
                           lineageId="Package\Incremental Load - Staging\Load Staging\Get Hash Value.Outputs[Output 0].Columns[Hash]" />
-                        <inputColumn
-                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].Columns[AuditID]"
-                          cachedDataType="wstr"
-                          cachedLength="66"
-                          cachedName="AuditID"
-                          externalMetadataColumnId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
-                          lineageId="Package\Incremental Load - Staging\Load Staging\DC - AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6465,16 +7106,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="i4"
                           name="OperationalYear" />
                         <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                          dataType="wstr"
+                          length="66"
+                          name="AuditID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                          dataType="bool"
+                          name="GroupActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                          dataType="bool"
+                          name="SiteActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                          dataType="bool"
+                          name="SectorActive" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                          dataType="i4"
+                          name="FirstSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                          dataType="i4"
+                          name="FirstSeasonID_IncludingDropped" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstSeasonName" />
+                        <externalMetadataColumn
                           refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[HashKey]"
                           codePage="1252"
                           dataType="str"
                           length="512"
                           name="HashKey" />
-                        <externalMetadataColumn
-                          refId="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
-                          dataType="wstr"
-                          length="66"
-                          name="AuditID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7691,6 +8363,14 @@ where AuditID = ?
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\SeasonClients - Landing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{F1A15911-0325-4010-B574-152CB1647E88}"
+      DTS:From="Package\get latest DE date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\SeasonClients - Landing" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8032,33 +8712,33 @@ where AuditID = ?
           PanelSize="416,308.571428571429"
           Size="416,351.428571428572"
           Id="Package\SeasonClients - Landing"
-          TopLeft="279.559503831816,2.09523726335289" />
+          TopLeft="302.416647294466,2.77056193135894" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="695.559503831816,177.809522977639">
+          TopLeft="718.416647294466,178.484847645645">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.396839579996,-69.4727181324086"
+              EndConnector="102.539696117346,-70.1480428004146"
               Start="0,0"
-              End="117.896839579996,-69.4727181324086">
+              End="95.0396961173456,-70.1480428004146">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="58.6984197899978,0" />
+                    End="47.2698480586728,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="58.6984197899978,0"
-                    Point2="62.6984197899978,0"
-                    Point3="62.6984197899978,-4" />
+                    Point1="47.2698480586728,0"
+                    Point2="51.2698480586728,0"
+                    Point3="51.2698480586728,-4" />
                   <mssgle:LineSegment
-                    End="62.6984197899978,-65.4727181324086" />
+                    End="51.2698480586728,-66.1480428004146" />
                   <mssgle:CubicBezierSegment
-                    Point1="62.6984197899978,-65.4727181324086"
-                    Point2="62.6984197899978,-69.4727181324086"
-                    Point3="66.6984197899978,-69.4727181324086" />
+                    Point1="51.2698480586728,-66.1480428004146"
+                    Point2="51.2698480586728,-70.1480428004146"
+                    Point3="55.2698480586728,-70.1480428004146" />
                   <mssgle:LineSegment
-                    End="117.896839579996,-69.4727181324086" />
+                    End="95.0396961173456,-70.1480428004146" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8163,26 +8843,64 @@ where AuditID = ?
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.518525139855,135.11774826216"
+              EndConnector="125.375668602505,78.5549776920712"
               Start="0,0"
-              End="95.018525139855,135.11774826216">
+              End="117.875668602505,78.5549776920712">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.2592625699275,0" />
+                    End="70.8844637654975,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.2592625699275,0"
-                    Point2="51.2592625699275,0"
-                    Point3="51.2592625699275,4" />
+                    Point1="70.8844637654975,0"
+                    Point2="74.8844637654975,0"
+                    Point3="74.8844637654975,4" />
                   <mssgle:LineSegment
-                    End="51.2592625699275,131.11774826216" />
+                    End="74.8844637654975,74.5549776920712" />
                   <mssgle:CubicBezierSegment
-                    Point1="51.2592625699275,131.11774826216"
-                    Point2="51.2592625699275,135.11774826216"
-                    Point3="55.2592625699275,135.11774826216" />
+                    Point1="74.8844637654975,74.5549776920712"
+                    Point2="74.8844637654975,78.5549776920712"
+                    Point3="78.8844637654975,78.5549776920712" />
                   <mssgle:LineSegment
-                    End="95.018525139855,135.11774826216" />
+                    End="117.875668602505,78.5549776920712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.142857142858,42.2857142857143"
+          Id="Package\get latest DE date"
+          TopLeft="47.390185512118,127.765375871276" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="212.533042654975,148.908233014134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.8836046394913,86.8147098696063"
+              Start="0,0"
+              End="82.3836046394913,86.8147098696063">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.6857399028363,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.6857399028363,0"
+                    Point2="53.6857399028363,0"
+                    Point3="53.6857399028363,4" />
+                  <mssgle:LineSegment
+                    End="53.6857399028363,82.8147098696063" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.6857399028363,82.8147098696063"
+                    Point2="53.6857399028363,86.8147098696063"
+                    Point3="57.6857399028363,86.8147098696063" />
+                  <mssgle:LineSegment
+                    End="82.3836046394913,86.8147098696063" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8363,6 +9081,28 @@ where AuditID = ?
           Id="Package\Incremental Load - Staging\Load Staging\Get Hash Value"
           TopLeft="76.7499993853271,125.466668193142" />
         <EdgeLayout
+          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
+          TopLeft="148.999999441206,168.133334859809">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5333333953213"
+              Start="0,0"
+              End="0,49.0333333953213">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.0333333953213" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Incremental Load - Staging\Load Staging.Paths[OLE DB Source Output]"
           TopLeft="138.392856875878,50.4190475570588">
           <EdgeLayout.Curve>
@@ -8422,28 +9162,6 @@ where AuditID = ?
                     Point3="-14.5357142174173,39.5380951373636" />
                   <mssgle:LineSegment
                     End="-14.5357142174173,63.5761902747272" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging\Load Staging.Paths[Output 0]"
-          TopLeft="148.999999441206,168.133334859809">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.5333333953213"
-              Start="0,0"
-              End="0,49.0333333953213">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.0333333953213" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
