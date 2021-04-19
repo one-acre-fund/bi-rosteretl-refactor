@@ -6,14 +6,14 @@
   DTS:CreatorComputerName="GACHAGUA-PC"
   DTS:CreatorName="GACHAGUA-PC\watchman"
   DTS:Description="SSIS Package Description"
-  DTS:DTSID="{CFAFDE29-6BF1-41FC-9B7B-9A31E1C3D741}"
+  DTS:DTSID="{008DD198-60B1-41E3-814F-C7AE84233F75}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.121"
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
-  DTS:ObjectName="00-02-SeasonClients_extract"
-  DTS:VersionBuild="326"
-  DTS:VersionGUID="{62E9C63F-F7A3-44DC-8927-770CEEF66196}">
+  DTS:ObjectName="old-SeasonClients_extract"
+  DTS:VersionBuild="327"
+  DTS:VersionGUID="{72DA13A8-1A36-48C1-A7BC-C4F7DFA581B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8243,7 +8243,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8264,7 +8264,7 @@ where AuditID = ?
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8392,6 +8392,10 @@ where AuditID = ?
           Size="147.428571428572,42.2857142857143"
           Id="Package\get latest date"
           TopLeft="29.6124072633899,21.5489175726211" />
+        <NodeLayout
+          Size="165.142857142858,42.2857142857143"
+          Id="Package\get latest DE date"
+          TopLeft="47.390185512118,127.765375871276" />
         <NodeLayout
           Size="192.571428571429,42.2857142857143"
           Id="Package\Get RowsExtract Count"
@@ -8871,10 +8875,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.142857142858,42.2857142857143"
-          Id="Package\get latest DE date"
-          TopLeft="47.390185512118,127.765375871276" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="212.533042654975,148.908233014134">
@@ -9174,7 +9174,7 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients">
+    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9187,7 +9187,7 @@ where AuditID = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_SeasonClients">
+    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_SeasonClients">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
