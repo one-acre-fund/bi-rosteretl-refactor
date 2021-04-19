@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-DimClient_extract"
-  DTS:VersionBuild="328"
-  DTS:VersionGUID="{1C0F54E7-EA92-4E2F-A1CC-E25806D9B45B}">
+  DTS:VersionBuild="329"
+  DTS:VersionGUID="{923F57D1-B72C-44B4-81D3-15071B51B849}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3823,7 +3823,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3844,7 +3844,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8660,71 +8660,25 @@ where [refTable].[GlobalClientId] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\Row Count"
-          TopLeft="81.6904782088346,213.661494576155" />
-        <NodeLayout
-          Size="114.857142857143,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\Lookup"
-          TopLeft="264.547625910037,15.6298700200906" />
-        <NodeLayout
           Size="140,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\Row Count 1"
           TopLeft="249.785719962347,106.467814523361" />
         <NodeLayout
-          Size="126.857142857143,42.2857142857143"
+          Size="130.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Row Count"
+          TopLeft="81.6904782088346,213.661494576155" />
+        <NodeLayout
+          Size="128.571428571429,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\get clients"
           TopLeft="23.4920641143906,13.9175621280916" />
         <NodeLayout
           Size="185.142857142858,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\load to staging_clients"
           TopLeft="388.571438865056,207.280636479723" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
-          TopLeft="150.349206971534,35.9165732169483">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.198418938504,0"
-              Start="0,0"
-              End="106.698418938504,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="106.698418938504,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[Lookup Match Output]"
-          TopLeft="320.880958650478,57.9155843058049">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.5522302175564"
-              Start="0,0"
-              End="0,41.0522302175564">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.0522302175564" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.7214276087782,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="114.857142857143,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Lookup"
+          TopLeft="264.547625910037,15.6298700200906" />
         <EdgeLayout
           Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 11]"
           TopLeft="212.547621065977,231.613922670796">
@@ -8779,6 +8733,52 @@ where [refTable].[GlobalClientId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
+          TopLeft="152.063492685819,35.9165732169482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.484133224218,0"
+              Start="0,0"
+              End="104.984133224218,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.984133224218,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[Lookup Match Output]"
+          TopLeft="320.880958650478,57.9155843058049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5522302175564"
+              Start="0,0"
+              End="0,41.0522302175564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0522302175564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.7214276087782,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-ClientBans_extract"
-  DTS:VersionBuild="319"
-  DTS:VersionGUID="{88AC244E-1B96-46DA-9217-396767FA3D61}">
+  DTS:VersionBuild="320"
+  DTS:VersionGUID="{0FAC85CF-4289-4782-964F-86BFC2D616D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -609,7 +609,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, ?, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::AuditId"
@@ -617,10 +617,16 @@
                 SQLTask:DataType="20"
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
+                SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::LoadStartTime"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -4157,47 +4163,6 @@ where AuditID = ?
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207.428571428572,42.2857142857143"
-          Id="Package\DFT - Landing_ClientBans"
-          TopLeft="589.682555303793,169.816015475686" />
-        <NodeLayout
-          Size="141.142857142858,42.8571428571429"
-          Id="Package\Incremental Load - Staging\Load Staging"
-          TopLeft="14.9285714285714,108.357142857143" />
-        <NodeLayout
-          Size="160,42.8571428571429"
-          Id="Package\Incremental Load - Staging\Truncate Staging"
-          TopLeft="5.50000000000001,5.50000000000002" />
-        <EdgeLayout
-          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
-          TopLeft="85.5,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="170.857142857143,206.285714285715"
-          Size="170.857142857143,249.142857142858"
-          Id="Package\Incremental Load - Staging"
-          TopLeft="925.824071057583,18.5411301756501" />
-        <NodeLayout
           Size="126.857142857143,42.8571428571429"
           Id="Package\ClientBans- Landing\ETL Begin"
           TopLeft="213.5,108.357142857143" />
@@ -4322,6 +4287,47 @@ where AuditID = ?
           Size="432.571428571429,351.428571428572"
           Id="Package\ClientBans- Landing"
           TopLeft="15.1150523819863,11.8874449494405" />
+        <NodeLayout
+          Size="207.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_ClientBans"
+          TopLeft="589.682555303793,169.816015475686" />
+        <NodeLayout
+          Size="141.142857142858,42.8571428571429"
+          Id="Package\Incremental Load - Staging\Load Staging"
+          TopLeft="14.9285714285714,108.357142857143" />
+        <NodeLayout
+          Size="160,42.8571428571429"
+          Id="Package\Incremental Load - Staging\Truncate Staging"
+          TopLeft="5.50000000000001,5.50000000000002" />
+        <EdgeLayout
+          Id="Package\Incremental Load - Staging.PrecedenceConstraints[Constraint 2]"
+          TopLeft="85.5,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="170.857142857143,206.285714285715"
+          Size="170.857142857143,249.142857142858"
+          Id="Package\Incremental Load - Staging"
+          TopLeft="925.824071057583,18.5411301756501" />
         <NodeLayout
           Size="201.142857142858,42.8571428571429"
           Id="Package\Load Production\Exec SP_IncrementalLoad"
@@ -4695,14 +4701,6 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - Landing_ClientBans\ClientBans source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DFT - Landing_ClientBans\Landing_ClientBans">
     <Properties>
       <Property>
@@ -4712,6 +4710,14 @@ where AuditID = ?
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_ClientBans\ClientBans source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4830,7 +4836,7 @@ where AuditID = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_ClientBans">
+    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_ClientBans">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4843,7 +4849,7 @@ where AuditID = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Incremental Load - Staging\Load Staging\staging_ClientBans">
+    design-time-name="Package\Incremental Load - Staging\Load Staging\Landing_ClientBans">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

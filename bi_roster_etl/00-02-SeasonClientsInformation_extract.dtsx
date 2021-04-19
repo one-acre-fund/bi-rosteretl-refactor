@@ -1,0 +1,2447 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/20/2020 1:27:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GACHAGUA-PC"
+  DTS:CreatorName="GACHAGUA-PC\watchman"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{3BDC44ED-BB15-4CC3-964D-2C247100C977}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="2057"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="00-02-SeasonClientsInformation_extract"
+  DTS:VersionBuild="328"
+  DTS:VersionGUID="{5B51D976-B798-4002-A46C-D1B16362AF24}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9E9DB129-300C-4715-8D63-AF65C359C003}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=newndizi.oneacrefund.org,6543;User ID=denis.gachagua;Initial Catalog=RosterDatawarehouse_LandingArea;Provider=SQLNCLI11;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4EED8A5A-F1D4-4EC6-957B-840688138F16}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeasonName"
+              DTS:DTSID="{BD01E6B0-4371-4BFF-AEA2-5CE99704A18D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{2A2EAB00-8E30-455D-9607-6963171DA4B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistrictName"
+              DTS:DTSID="{C134C9BE-AF0F-4E12-9597-939BB081099A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SectorName"
+              DTS:DTSID="{B8473626-FD64-478D-96AD-BDE7ADB665F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldManager"
+              DTS:DTSID="{6EAC76DA-A762-4381-A59B-EF51570C63A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteName"
+              DTS:DTSID="{7ECD19CC-A508-4B20-A327-916868394703}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldOfficer"
+              DTS:DTSID="{552EEB66-E760-436C-BD8C-2DC5C2781ED6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupName"
+              DTS:DTSID="{C896E201-0A3B-4DDE-B143-9AAAFA4E233C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{76D798C4-8ADA-450A-9A4D-CE6928B0D89C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{F66B9A17-2C2D-4F2D-B428-F7D7B78F965A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OAFID"
+              DTS:DTSID="{1F860102-96E2-4E6D-B694-E821BFE2FCFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NationalID"
+              DTS:DTSID="{83074E03-DA5F-49B9-B789-B00D2A6C213F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstSeasonDataEntry"
+              DTS:DTSID="{3906BD8C-0ED7-4D97-8C5A-AD48AE9640B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldOfficerPayrollID"
+              DTS:DTSID="{22FDB175-F229-41E9-8131-CFA966DE8630}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldManagerPayrollID"
+              DTS:DTSID="{63ED21CE-BCE5-4FDA-9727-444CD061AB71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NewMember"
+              DTS:DTSID="{EDD7F679-187D-4C13-B26A-D767FC1F46E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalEnrolledSeasons"
+              DTS:DTSID="{7B107CF4-3F77-46EC-AAD5-3A3504971198}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Facilitator"
+              DTS:DTSID="{798816F1-51E5-4EBB-8521-4CDE571E8C2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCredit"
+              DTS:DTSID="{D96501FF-E3FF-46BE-A126-97C34905B101}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRepaid"
+              DTS:DTSID="{7FAE42DE-2A53-4A0C-994E-AE2EBC644530}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RemainingCredit"
+              DTS:DTSID="{224A595C-2F28-439F-BF36-866673AD04D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Repaid"
+              DTS:DTSID="{A1B05ED5-2D13-4CCC-85CB-CAE0FD193012}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstRepayment"
+              DTS:DTSID="{2C2C27B1-BC26-4C95-9B61-BE919C4DEAAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NbOfRepayments"
+              DTS:DTSID="{FE34812F-35CD-4655-B7FB-CCA22A76DCE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastRepayment"
+              DTS:DTSID="{5CEEBBF3-73A1-494F-BF5D-4FC03A9EEC57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalRepaid_IncludingOverpayments"
+              DTS:DTSID="{8FEB7FC3-80B8-4B0C-90A1-C56D35FDC820}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dropped"
+              DTS:DTSID="{F25D57B5-D39D-4AD5-8492-94510D088B38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DroppedDate"
+              DTS:DTSID="{BA6F7980-C3F4-42B5-A956-DC0CBEAECC18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Deceased"
+              DTS:DTSID="{9F824067-AA0E-41AB-AD51-9EF59CFD23C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataEntry"
+              DTS:DTSID="{4B43CB3D-0E09-4E9B-872D-48AF9899F811}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClientPhone"
+              DTS:DTSID="{94126D7A-7DC7-4719-9065-48BD942CB176}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AccountNumber"
+              DTS:DTSID="{C8ED79AC-33F0-4260-9C02-D906F92CE9E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValidationCode"
+              DTS:DTSID="{29CC889D-CA7A-4570-A0D2-A507D17FF593}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationGrandParent"
+              DTS:DTSID="{1A9162F8-91DB-470B-A126-574BAACB379B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationParent"
+              DTS:DTSID="{56F4413F-FA10-4F8E-98A9-763A9C2FC164}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationChild"
+              DTS:DTSID="{6CCE92D5-7187-432C-B929-885AD045DCDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GovLocationGrandChild"
+              DTS:DTSID="{CA56783B-0C53-47A2-9670-7AB041A71BBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteProjectCode"
+              DTS:DTSID="{A8C8F4E5-263A-4358-A269-19EDC29E4A8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeasonID"
+              DTS:DTSID="{1B6E971B-6ABE-474E-872B-C6B3816C40F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionID"
+              DTS:DTSID="{65209722-885C-4BEF-B5BB-D68AAEC1E74B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistrictID"
+              DTS:DTSID="{69A8F3F9-6E22-45AF-8E14-A16CBAE68530}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryID"
+              DTS:DTSID="{C6184939-B3D5-4D9B-BC80-4F0EEB6907AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SectorID"
+              DTS:DTSID="{5B7E4486-4AB9-401E-833D-5DE19B04B9B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SiteID"
+              DTS:DTSID="{4757AC41-A935-46F7-89F6-71FFFC73F422}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupID"
+              DTS:DTSID="{6785EDF9-01EF-4058-B81B-C0B9BC7A1016}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GlobalClientID"
+              DTS:DTSID="{5FD98791-D79D-4B7B-B3D5-5D40A9F4D6A7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionExcel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{6E2F22C2-4EDE-4DED-9EE2-AB60032DDD4F}"
+      DTS:ObjectName="SourceConnectionExcel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\watchman\Desktop\VerticalRepayments.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F593D28-0DE1-416D-8984-C36678562B41}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="AuditId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05A2D549-8C9D-4ADC-961C-E3C3722E0C24}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10019C5E-EEFB-4718-AB3D-68A29312CDA4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNameList">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E97CEBFA-4D11-46A4-B1B2-D4F1BC151DAC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePattern">
+      <DTS:VariableValue
+        DTS:DataType="8">SeasonClients</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E333323-E3B4-4E29-902E-0F0C5AF83EF7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestAuditID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4D29F956-DBBC-4173-87B9-395663BADC10}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDataEntry">
+      <DTS:VariableValue
+        DTS:DataType="7">11/30/2020 1:42:25 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D2E28A42-7637-4836-9547-33DAE7433B7F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDate">
+      <DTS:VariableValue
+        DTS:DataType="7">11/26/2020 2:17:52 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E76F389-81EE-43C0-9F15-79D0CDBA664B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LatestDateCreated">
+      <DTS:VariableValue
+        DTS:DataType="7">3/24/2020 12:33:09 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1FC1B114-4D0F-462F-90EE-A6EA7BECDA3A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadEndTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/24/2020 12:34:00 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{86881B2B-DC88-4F7E-A4D5-5E714FE46FA6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoadStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">3/23/2020 6:24:16 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DA6FD6F5-8CCF-46FA-A83E-662DB3738BD1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowCountExtract">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DCE16BAC-A7E8-4546-A9A7-D489CFCA1793}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsExtracted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E3B8E5CA-0AFD-438F-B84F-5C369CB3CF48}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT SC.*, S.OAFOperationalYear OperationalYear &#xA;FROM SeasonClientsInformation SC&#xA;join Seasons s on SC.DistrictID=S.DistrictID and SC.SeasonID=S.SeasonID  where  s.OAFOperationalYear &gt;= &quot;+(DT_WSTR,30) @[$Project::OperationalYear]+&quot;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source_Query">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT SC.*, S.OAFOperationalYear OperationalYear 
+FROM SeasonClientsInformation SC
+join Seasons s on SC.DistrictID=S.DistrictID and SC.SeasonID=S.SeasonID  where  s.OAFOperationalYear &gt;= 2020</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{80765F14-CCF1-48A6-88EF-8501F17AC7CE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VarFolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\rosterdata\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Landing_SeasonClientsInformation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{14D0B2B0-20C8-4EA5-B95F-6CCF1CB94317}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Landing_SeasonClientsInformation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get AuditID"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]"
+                      name="AuditID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::AuditId]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::AuditId]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Landing_SeasonClientsInformation"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[cls].[Landing_SeasonClientsInformation]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Connections[OleDbConnection]"
+                  connectionManagerID="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[roster_landing]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[AuditID]"
+                      cachedDataType="i4"
+                      cachedName="AuditID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Output].Columns[AuditID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[DistrictName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DistrictName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[DistrictID]"
+                      cachedDataType="i4"
+                      cachedName="DistrictID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SeasonID]"
+                      cachedDataType="i4"
+                      cachedName="SeasonID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[RegionID]"
+                      cachedDataType="i4"
+                      cachedName="RegionID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SectorID]"
+                      cachedDataType="i4"
+                      cachedName="SectorID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SiteID]"
+                      cachedDataType="i4"
+                      cachedName="SiteID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[GroupID]"
+                      cachedDataType="i4"
+                      cachedName="GroupID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SectorName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SectorName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SiteName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SiteName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[GroupName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="GroupName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
+                      cachedDataType="guid"
+                      cachedName="GlobalClientID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SeasonName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SeasonName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[RegionName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="RegionName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FieldManager]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="FieldManager"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldManager]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManager]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FieldOfficer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="FieldOfficer"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficer]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficer]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[NationalID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NationalID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[NationalID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NationalID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FieldOfficerPayrollID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="FieldOfficerPayrollID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficerPayrollID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficerPayrollID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FieldManagerPayrollID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="FieldManagerPayrollID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldManagerPayrollID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManagerPayrollID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[NewMember]"
+                      cachedDataType="bool"
+                      cachedName="NewMember"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[NewMember]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NewMember]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[TotalEnrolledSeasons]"
+                      cachedDataType="i4"
+                      cachedName="TotalEnrolledSeasons"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[TotalEnrolledSeasons]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[Facilitator]"
+                      cachedDataType="bool"
+                      cachedName="Facilitator"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Facilitator]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Facilitator]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[Dropped]"
+                      cachedDataType="bool"
+                      cachedName="Dropped"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Dropped]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[Deceased]"
+                      cachedDataType="bool"
+                      cachedName="Deceased"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Deceased]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AccountNumber"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[ValidationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ValidationCode"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ValidationCode]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SiteProjectCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="SiteProjectCode"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteProjectCode]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteProjectCode]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[DroppedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DroppedDate"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DroppedDate]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[OperationalYear]"
+                      cachedDataType="i4"
+                      cachedName="OperationalYear"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[OperationalYear]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[GroupActive]"
+                      cachedDataType="bool"
+                      cachedName="GroupActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SiteActive]"
+                      cachedDataType="bool"
+                      cachedName="SiteActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[SectorActive]"
+                      cachedDataType="bool"
+                      cachedName="SectorActive"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorActive]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FirstSeasonID]"
+                      cachedDataType="i4"
+                      cachedName="FirstSeasonID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FirstSeasonID_IncludingDropped]"
+                      cachedDataType="i4"
+                      cachedName="FirstSeasonID_IncludingDropped"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[FirstSeasonName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstSeasonName"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[ClientID]"
+                      cachedDataType="i4"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[ClientPhoneNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ClientPhoneNumber"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ClientPhoneNumber]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientPhoneNumber]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[EnrollmentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EnrollmentDate"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDate]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[EnrollmentDate]" />
+                    <inputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].Columns[Date_Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date_Created"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Date_Created]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[AuditID]"
+                      dataType="i4"
+                      name="AuditID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DistrictName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
+                      dataType="i4"
+                      name="SeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                      dataType="i4"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorID]"
+                      dataType="i4"
+                      name="SectorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
+                      dataType="i4"
+                      name="SiteID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
+                      dataType="i4"
+                      name="GroupID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SectorName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SiteName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupName]"
+                      dataType="wstr"
+                      length="50"
+                      name="GroupName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SeasonName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldManager]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="FieldManager" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="FieldOfficer" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      name="NationalID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FieldOfficerPayrollID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FieldManagerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FieldManagerPayrollID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[NewMember]"
+                      dataType="bool"
+                      name="NewMember" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[TotalEnrolledSeasons]"
+                      dataType="i4"
+                      name="TotalEnrolledSeasons" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Facilitator]"
+                      dataType="bool"
+                      name="Facilitator" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
+                      dataType="bool"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
+                      dataType="bool"
+                      name="Deceased" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AccountNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ValidationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteProjectCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SiteProjectCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[DroppedDate]"
+                      dataType="dbTimeStamp"
+                      name="DroppedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[OperationalYear]"
+                      dataType="i4"
+                      name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[GroupActive]"
+                      dataType="bool"
+                      name="GroupActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SiteActive]"
+                      dataType="bool"
+                      name="SiteActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[SectorActive]"
+                      dataType="bool"
+                      name="SectorActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstSeasonName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[ClientPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ClientPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      name="EnrollmentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      name="Date_Created" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_SeasonClientsInformation\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowCountExtract</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT - Landing_SeasonClientsInformation\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SCI Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Source_Query</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Connections[OleDbConnection]"
+                  connectionManagerID="{2F93D81D-B7B5-48CF-84DF-E41516254DD1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bibusinessintell]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                      name="DistrictName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                      name="DistrictID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                      name="SeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionID]"
+                      name="RegionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorID]"
+                      name="SectorID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteID]"
+                      name="SiteID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupID]"
+                      name="GroupID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorName]"
+                      name="SectorName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteName]"
+                      name="SiteName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupName]"
+                      name="GroupName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                      name="GlobalClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SeasonName]"
+                      name="SeasonName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                      length="100"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[RegionName]"
+                      name="RegionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManager]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldManager]"
+                      length="511"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManager]"
+                      name="FieldManager"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficer]"
+                      length="511"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficer]"
+                      name="FieldOfficer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NationalID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NationalID]"
+                      name="NationalID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficerPayrollID]"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldOfficerPayrollID]"
+                      name="FieldOfficerPayrollID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManagerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldManagerPayrollID]"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FieldManagerPayrollID]"
+                      name="FieldManagerPayrollID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NewMember]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[NewMember]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[NewMember]"
+                      name="NewMember"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[TotalEnrolledSeasons]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]"
+                      name="TotalEnrolledSeasons"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Facilitator]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Facilitator]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Facilitator]"
+                      name="Facilitator"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Dropped]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Dropped]"
+                      name="Dropped"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Deceased]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Deceased]"
+                      name="Deceased"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      name="AccountNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                      length="10"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                      name="ValidationCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteProjectCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteProjectCode]"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteProjectCode]"
+                      name="SiteProjectCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DroppedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[DroppedDate]"
+                      name="DroppedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[OperationalYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[OperationalYear]"
+                      name="OperationalYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[GroupActive]"
+                      name="GroupActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SiteActive]"
+                      name="SiteActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[SectorActive]"
+                      name="SectorActive"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonID_IncludingDropped]"
+                      name="FirstSeasonID_IncludingDropped"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[FirstSeasonName]"
+                      name="FirstSeasonName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ClientPhoneNumber]"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[ClientPhoneNumber]"
+                      name="ClientPhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDate]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[EnrollmentDate]"
+                      name="EnrollmentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                      name="Date_Created"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DistrictName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                      dataType="i4"
+                      name="DistrictID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                      dataType="i4"
+                      name="SeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
+                      dataType="i4"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
+                      dataType="i4"
+                      name="SectorID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                      dataType="i4"
+                      name="SiteID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                      dataType="i4"
+                      name="GroupID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SectorName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SiteName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                      dataType="wstr"
+                      length="50"
+                      name="GroupName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                      dataType="guid"
+                      name="GlobalClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SeasonName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RegionName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldManager]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="FieldManager" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="FieldOfficer" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      name="NationalID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FieldOfficerPayrollID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FieldManagerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FieldManagerPayrollID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[NewMember]"
+                      dataType="bool"
+                      name="NewMember" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[TotalEnrolledSeasons]"
+                      dataType="i4"
+                      name="TotalEnrolledSeasons" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Facilitator]"
+                      dataType="bool"
+                      name="Facilitator" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                      dataType="bool"
+                      name="Dropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                      dataType="bool"
+                      name="Deceased" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AccountNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ValidationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteProjectCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SiteProjectCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
+                      dataType="dbTimeStamp"
+                      name="DroppedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
+                      dataType="i4"
+                      name="OperationalYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[GroupActive]"
+                      dataType="bool"
+                      name="GroupActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SiteActive]"
+                      dataType="bool"
+                      name="SiteActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[SectorActive]"
+                      dataType="bool"
+                      name="SectorActive" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID]"
+                      dataType="i4"
+                      name="FirstSeasonID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstSeasonName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                      dataType="i4"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[ClientPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ClientPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      name="EnrollmentDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      name="Date_Created" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                      name="DistrictName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                      name="DistrictID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                      name="ClientID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                      name="SeasonID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ClientPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ClientPhoneNumber]"
+                      name="ClientPhoneNumber" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[RegionID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[RegionID]"
+                      name="RegionID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorID]"
+                      name="SectorID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteID]"
+                      name="SiteID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                      name="GroupID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorName]"
+                      name="SectorName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteName]"
+                      name="SiteName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                      name="GroupName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      dataType="guid"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                      name="GlobalClientID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentDate]"
+                      name="EnrollmentDate" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
+                      name="SeasonName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                      name="RegionName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldManager]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldManager]"
+                      name="FieldManager" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldOfficer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldOfficer]"
+                      name="FieldOfficer" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                      name="Date_Created" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[NationalID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[NationalID]"
+                      name="NationalID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldOfficerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldOfficerPayrollID]"
+                      name="FieldOfficerPayrollID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldManagerPayrollID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FieldManagerPayrollID]"
+                      name="FieldManagerPayrollID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[NewMember]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[NewMember]"
+                      name="NewMember" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[TotalEnrolledSeasons]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[TotalEnrolledSeasons]"
+                      name="TotalEnrolledSeasons" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Facilitator]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Facilitator]"
+                      name="Facilitator" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Dropped]"
+                      name="Dropped" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                      name="Deceased" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      name="AccountNumber" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                      name="ValidationCode" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteProjectCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteProjectCode]"
+                      name="SiteProjectCode" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
+                      name="DroppedDate" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
+                      name="OperationalYear" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[GroupActive]"
+                      name="GroupActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SiteActive]"
+                      name="SiteActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[SectorActive]"
+                      name="SectorActive" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID]"
+                      name="FirstSeasonID" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonID_IncludingDropped]"
+                      name="FirstSeasonID_IncludingDropped" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[FirstSeasonName]"
+                      name="FirstSeasonName" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Landing_SeasonClientsInformation.Paths[Derived Column Output]"
+              endId="Package\DFT - Landing_SeasonClientsInformation\Row Count.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Landing_SeasonClientsInformation.Paths[OLE DB Source Output]"
+              endId="Package\DFT - Landing_SeasonClientsInformation\Get AuditID.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Landing_SeasonClientsInformation\SCI Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT - Landing_SeasonClientsInformation.Paths[Row Count Output 1]"
+              endId="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT - Landing_SeasonClientsInformation\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table Landing_SeasonClientsInformation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F71872A-D2CA-411D-8B14-A5CF01F761E0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table Landing_SeasonClientsInformation"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+          SQLTask:SqlStatementSource="Truncate table [cls].[Landing_SeasonClientsInformation]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8268328-388A-4B20-B995-DAD15406D60A}"
+      DTS:From="Package\Truncate Table Landing_SeasonClientsInformation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - Landing_SeasonClientsInformation" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="278.857142857143,42.2857142857143"
+          Id="Package\DFT - Landing_SeasonClientsInformation"
+          TopLeft="806.353168421785,85.1679736983548" />
+        <NodeLayout
+          Size="324.571428571429,42.2857142857143"
+          Id="Package\Truncate Table Landing_SeasonClientsInformation"
+          TopLeft="39.4364971719299,70.5389630589044" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="364.007925743358,91.6818202017615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="442.345242678427,14.6290106394504"
+              Start="0,0"
+              End="434.845242678427,14.6290106394504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="217.172621339213,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="217.172621339213,0"
+                    Point2="221.172621339213,0"
+                    Point3="221.172621339213,4" />
+                  <mssgle:LineSegment
+                    End="221.172621339213,10.6290106394504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="221.172621339213,10.6290106394504"
+                    Point2="221.172621339213,14.6290106394504"
+                    Point3="225.172621339213,14.6290106394504" />
+                  <mssgle:LineSegment
+                    End="434.845242678427,14.6290106394504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Landing_SeasonClientsInformation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\DFT - Landing_SeasonClientsInformation\Row Count"
+          TopLeft="167.301591733566,223.038959154413" />
+        <NodeLayout
+          Size="248.571428571429,42.2857142857143"
+          Id="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation"
+          TopLeft="101.129608868571,330.175325607231" />
+        <NodeLayout
+          Size="135.428571428572,42.2857142857143"
+          Id="Package\DFT - Landing_SeasonClientsInformation\Get AuditID"
+          TopLeft="145.388868284814,128.235932743676" />
+        <NodeLayout
+          Size="134.857142857143,42.2857142857143"
+          Id="Package\DFT - Landing_SeasonClientsInformation\SCI Source"
+          TopLeft="5.5,30.9092900964066" />
+        <EdgeLayout
+          Id="Package\DFT - Landing_SeasonClientsInformation.Paths[Row Count Output 1]"
+          TopLeft="233.873020304995,265.324673440127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.45769715070924,64.8506521671037"
+              Start="0,0"
+              End="-8.45769715070924,57.3506521671037">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4253260835519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4253260835519"
+                    Point2="0,32.4253260835519"
+                    Point3="-4,32.4253260835519" />
+                  <mssgle:LineSegment
+                    End="-4.45769715070924,32.4253260835519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.45769715070924,32.4253260835519"
+                    Point2="-8.45769715070924,32.4253260835519"
+                    Point3="-8.45769715070924,36.4253260835519" />
+                  <mssgle:LineSegment
+                    End="-8.45769715070924,57.3506521671037" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_SeasonClientsInformation.Paths[OLE DB Source Output]"
+          TopLeft="72.9285714285714,73.1950043821209">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140.174582570528,55.0409283615551"
+              Start="0,0"
+              End="140.174582570528,47.5409283615551">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5204641807776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5204641807776"
+                    Point2="0,27.5204641807776"
+                    Point3="4,27.5204641807776" />
+                  <mssgle:LineSegment
+                    End="136.174582570528,27.5204641807776" />
+                  <mssgle:CubicBezierSegment
+                    Point1="136.174582570528,27.5204641807776"
+                    Point2="140.174582570528,27.5204641807776"
+                    Point3="140.174582570528,31.5204641807776" />
+                  <mssgle:LineSegment
+                    End="140.174582570528,47.5409283615551" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Landing_SeasonClientsInformation.Paths[Derived Column Output]"
+          TopLeft="213.1031539991,170.52164702939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.7698663058948,52.5173121250227"
+              Start="0,0"
+              End="20.7698663058948,45.0173121250227">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2586560625114"
+                    Point2="0,26.2586560625114"
+                    Point3="4,26.2586560625114" />
+                  <mssgle:LineSegment
+                    End="16.7698663058948,26.2586560625114" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.7698663058948,26.2586560625114"
+                    Point2="20.7698663058948,26.2586560625114"
+                    Point3="20.7698663058948,30.2586560625114" />
+                  <mssgle:LineSegment
+                    End="20.7698663058948,45.0173121250227" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_SeasonClientsInformation\Landing_SeasonClientsInformation">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Landing_SeasonClientsInformation\SCI Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
