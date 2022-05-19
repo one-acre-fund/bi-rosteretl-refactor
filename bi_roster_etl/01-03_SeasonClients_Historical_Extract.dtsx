@@ -7,12 +7,12 @@
   DTS:CreatorName="GACHAGUA-PC\watchman"
   DTS:DTSID="{00BDFF55-5AB8-4B32-8A47-A9F778966B66}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_SeasonClients_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="167"
-  DTS:VersionGUID="{CD58372F-F8F8-45FE-8840-2EC7274E6778}">
+  DTS:VersionBuild="170"
+  DTS:VersionGUID="{65F44785-5840-44F0-8340-2C83C8D693FE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1054,131 +1054,6 @@ SELECT [DistrictName]
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\ClientBundles- Landing"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{7A76B335-152A-4090-B273-66B4BFF3480E}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="ClientBundles- Landing">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles- Landing\ETL Begin"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5DF81F7F-7179-4423-8A88-2A1BFE885F89}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="ETL Begin"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::AuditId"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="20"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::LoadStartTime"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles- Landing\Get AuditID"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{356715C9-ED95-4934-B2D7-61B3C48CDE02}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get AuditID"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select isnull(max(AuditID), 0) + 1  from cls.AuditDimension&#xA;"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::AuditId" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles- Landing\Get LoadStartTime"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{417336E4-424B-48B9-9DC0-BCC085A51072}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Get LoadStartTime"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
-              SQLTask:SqlStatementSource="select GetDate()"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::LoadStartTime" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\ClientBundles- Landing\Truncate Table Landing_SeasonClients"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{EE16B037-8EDD-4D56-A6FF-27D7A83DB5B3}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Truncate Table Landing_SeasonClients"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_SeasonClients_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 2]"
-          DTS:CreationName=""
-          DTS:DTSID="{7A229CD0-F387-47E4-873E-06C3746F7C02}"
-          DTS:From="Package\ClientBundles- Landing\Get AuditID"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
-          DTS:To="Package\ClientBundles- Landing\ETL Begin" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 3]"
-          DTS:CreationName=""
-          DTS:DTSID="{988F70A0-8384-4084-B20E-8C5AE65C6B7E}"
-          DTS:From="Package\ClientBundles- Landing\Get LoadStartTime"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 3"
-          DTS:To="Package\ClientBundles- Landing\ETL Begin" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 4]"
-          DTS:CreationName=""
-          DTS:DTSID="{9E6EA0EF-0B7D-421A-8B6D-7E26249CC8D1}"
-          DTS:From="Package\ClientBundles- Landing\ETL Begin"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 4"
-          DTS:To="Package\ClientBundles- Landing\Truncate Table Landing_SeasonClients" />
-      </DTS:PrecedenceConstraints>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Collect Errors"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -1202,7 +1077,7 @@ SELECT [DistrictName]
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
-              SQLTask:SqlStatementSource="delete from  cls.Landing_SeasonClients_Historical &#xA;where ISNUMERIC(DistrictID)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="delete from  cls.Landing_SeasonClients_Historical &#xA;where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1283,19 +1158,23 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]"
                           name="OAFID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
-                          dataType="guid"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
                           name="GlobalClientID"
                           truncationRowDisposition="FailComponent" />
@@ -1310,7 +1189,8 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
@@ -1320,70 +1200,85 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]"
                           name="DistrictID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]"
                           name="SeasonID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]"
                           name="RegionID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]"
                           name="SectorID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]"
                           name="SiteID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]"
                           name="GroupID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]"
                           name="CountryID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
@@ -1393,17 +1288,19 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]"
                           name="SiteName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
@@ -1413,7 +1310,8 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
@@ -1428,7 +1326,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
-                          length="100"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionName]"
                           name="RegionName"
                           truncationRowDisposition="FailComponent" />
@@ -1439,7 +1337,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldManager]"
-                          length="511"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldManager]"
                           name="FieldManager"
                           truncationRowDisposition="FailComponent" />
@@ -1450,13 +1348,14 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficer]"
-                          length="511"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldOfficer]"
                           name="FieldOfficer"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
@@ -1466,7 +1365,8 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
@@ -1476,20 +1376,23 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NationalID]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NationalID]"
                           name="NationalID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstSeasonDataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonDataEntry]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstSeasonDataEntry]"
                           name="FirstSeasonDataEntry"
                           truncationRowDisposition="FailComponent" />
@@ -1500,7 +1403,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficerPayrollID]"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldOfficerPayrollID]"
                           name="FieldOfficerPayrollID"
                           truncationRowDisposition="FailComponent" />
@@ -1511,141 +1414,161 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldManagerPayrollID]"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldManagerPayrollID]"
                           name="FieldManagerPayrollID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NewMember]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NewMember]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NewMember]"
                           name="NewMember"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalEnrolledSeasons]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]"
                           name="TotalEnrolledSeasons"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Facilitator]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Facilitator]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Facilitator]"
                           name="Facilitator"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalCredit]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalCredit]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalCredit]"
                           name="TotalCredit"
-                          precision="18"
-                          scale="3"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalRepaid]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid]"
                           name="TotalRepaid"
-                          precision="19"
-                          scale="4"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RemainingCredit]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RemainingCredit]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RemainingCredit]"
                           name="RemainingCredit"
-                          precision="20"
-                          scale="4"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PercentRepaid]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[PercentRepaid]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PercentRepaid]"
                           name="PercentRepaid"
-                          precision="18"
-                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstRepayment]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstRepayment]"
                           name="FirstRepayment"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NbOfRepayments]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NbOfRepayments]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NbOfRepayments]"
                           name="NbOfRepayments"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastRepayment]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastRepayment]"
                           name="LastRepayment"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid_IncludingOverpayments]"
-                          dataType="cy"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalRepaid_IncludingOverpayments]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid_IncludingOverpayments]"
                           name="TotalRepaid_IncludingOverpayments"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]"
                           name="Dropped"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Deceased]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Deceased]"
                           name="Deceased"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DataEntry]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntry]"
                           name="DataEntry"
                           truncationRowDisposition="FailComponent" />
@@ -1656,7 +1579,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientPhone]"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientPhone]"
                           name="ClientPhone"
                           truncationRowDisposition="FailComponent" />
@@ -1678,7 +1601,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
-                          length="10"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ValidationCode]"
                           name="ValidationCode"
                           truncationRowDisposition="FailComponent" />
@@ -1689,7 +1612,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandParent]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationGrandParent]"
                           name="GovLocationGrandParent"
                           truncationRowDisposition="FailComponent" />
@@ -1700,7 +1623,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationParent]"
                           name="GovLocationParent"
                           truncationRowDisposition="FailComponent" />
@@ -1711,7 +1634,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationChild]"
                           name="GovLocationChild"
                           truncationRowDisposition="FailComponent" />
@@ -1722,7 +1645,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]"
                           name="GovLocationGrandChild"
                           truncationRowDisposition="FailComponent" />
@@ -1733,38 +1656,45 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteProjectCode]"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteProjectCode]"
                           name="SiteProjectCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DroppedDate]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DroppedDate]"
                           name="DroppedDate"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OperationalYear]"
-                          dataType="i4"
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
-                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OperationalYear]"
-                          name="OperationalYear"
+                          externalMetadataColumnId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FileName]"
+                          name="FileName"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OAFID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="OAFID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
-                          dataType="guid"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="GlobalClientID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AuditID]"
@@ -1772,175 +1702,219 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           name="AuditID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="DistrictName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="DistrictID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="SeasonID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="RegionID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="SectorID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="SiteID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="GroupID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[CountryID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="CountryID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SectorName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="SectorName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteName]"
-                          dataType="wstr"
-                          length="255"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="SiteName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="GroupName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SeasonName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="SeasonName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="50"
                           name="RegionName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldManager]"
                           codePage="1252"
                           dataType="str"
-                          length="511"
+                          length="50"
                           name="FieldManager" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficer]"
                           codePage="1252"
                           dataType="str"
-                          length="511"
+                          length="50"
                           name="FieldOfficer" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="LastName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           name="FirstName" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NationalID]"
-                          dataType="wstr"
-                          length="255"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="NationalID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstSeasonDataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="FirstSeasonDataEntry" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldOfficerPayrollID]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="FieldOfficerPayrollID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FieldManagerPayrollID]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="FieldManagerPayrollID" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NewMember]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="NewMember" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalEnrolledSeasons]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="TotalEnrolledSeasons" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Facilitator]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="Facilitator" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalCredit]"
-                          dataType="numeric"
-                          name="TotalCredit"
-                          precision="18"
-                          scale="3" />
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TotalCredit" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalRepaid]"
-                          dataType="numeric"
-                          name="TotalRepaid"
-                          precision="19"
-                          scale="4" />
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TotalRepaid" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[RemainingCredit]"
-                          dataType="numeric"
-                          name="RemainingCredit"
-                          precision="20"
-                          scale="4" />
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="RemainingCredit" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[PercentRepaid]"
-                          dataType="numeric"
-                          name="PercentRepaid"
-                          precision="18"
-                          scale="2" />
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PercentRepaid" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FirstRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="FirstRepayment" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[NbOfRepayments]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="NbOfRepayments" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[LastRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="LastRepayment" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[TotalRepaid_IncludingOverpayments]"
-                          dataType="cy"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="TotalRepaid_IncludingOverpayments" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Dropped]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="Dropped" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="Deceased" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="DataEntry" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ClientPhone]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="ClientPhone" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
@@ -1952,46 +1926,49 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="ValidationCode" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandParent]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="GovLocationGrandParent" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="GovLocationParent" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="GovLocationChild" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="GovLocationGrandChild" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[SiteProjectCode]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           name="SiteProjectCode" />
                         <externalMetadataColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[DroppedDate]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="DroppedDate" />
                         <externalMetadataColumn
-                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[OperationalYear]"
-                          dataType="i4"
-                          name="OperationalYear" />
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].ExternalColumns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          name="FileName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2001,76 +1978,99 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
                           name="DistrictName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
                           name="DistrictID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
                           name="SeasonID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionID]"
                           name="RegionID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorID]"
                           name="SectorID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteID]"
                           name="SiteID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupID]"
                           name="GroupID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CountryID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[CountryID]"
                           name="CountryID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SectorName]"
                           name="SectorName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteName]"
-                          dataType="wstr"
-                          length="255"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteName]"
                           name="SiteName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GroupName]"
                           name="GroupName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OAFID]"
                           name="OAFID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
-                          dataType="guid"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
                           name="GlobalClientID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SeasonName]"
                           name="SeasonName" />
@@ -2078,143 +2078,168 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionName]"
                           codePage="1252"
                           dataType="str"
-                          length="100"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RegionName]"
                           name="RegionName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldManager]"
                           codePage="1252"
                           dataType="str"
-                          length="511"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldManager]"
                           name="FieldManager" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldOfficer]"
                           codePage="1252"
                           dataType="str"
-                          length="511"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldOfficer]"
                           name="FieldOfficer" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastName]"
                           name="LastName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                           name="FirstName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NationalID]"
-                          dataType="wstr"
-                          length="255"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NationalID]"
                           name="NationalID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstSeasonDataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstSeasonDataEntry]"
                           name="FirstSeasonDataEntry" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldOfficerPayrollID]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldOfficerPayrollID]"
                           name="FieldOfficerPayrollID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldManagerPayrollID]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FieldManagerPayrollID]"
                           name="FieldManagerPayrollID" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NewMember]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NewMember]"
                           name="NewMember" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalEnrolledSeasons]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalEnrolledSeasons]"
                           name="TotalEnrolledSeasons" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Facilitator]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Facilitator]"
                           name="Facilitator" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalCredit]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalCredit]"
-                          name="TotalCredit"
-                          precision="18"
-                          scale="3" />
+                          name="TotalCredit" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalRepaid]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalRepaid]"
-                          name="TotalRepaid"
-                          precision="19"
-                          scale="4" />
+                          name="TotalRepaid" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RemainingCredit]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[RemainingCredit]"
-                          name="RemainingCredit"
-                          precision="20"
-                          scale="4" />
+                          name="RemainingCredit" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[PercentRepaid]"
-                          dataType="numeric"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[PercentRepaid]"
-                          name="PercentRepaid"
-                          precision="18"
-                          scale="2" />
+                          name="PercentRepaid" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FirstRepayment]"
                           name="FirstRepayment" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NbOfRepayments]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[NbOfRepayments]"
                           name="NbOfRepayments" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastRepayment]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[LastRepayment]"
                           name="LastRepayment" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalRepaid_IncludingOverpayments]"
-                          dataType="cy"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[TotalRepaid_IncludingOverpayments]"
                           name="TotalRepaid_IncludingOverpayments" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Dropped]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Dropped]"
                           name="Dropped" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Deceased]"
-                          dataType="bool"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[Deceased]"
                           name="Deceased" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DataEntry]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DataEntry]"
                           name="DataEntry" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientPhone]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ClientPhone]"
                           name="ClientPhone" />
                         <outputColumn
@@ -2228,59 +2253,62 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
                           name="ValidationCode" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandParent]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandParent]"
                           name="GovLocationGrandParent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
                           name="GovLocationParent" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
                           name="GovLocationChild" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
                           name="GovLocationGrandChild" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteProjectCode]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[SiteProjectCode]"
                           name="SiteProjectCode" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
-                          dataType="dbTimeStamp"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[DroppedDate]"
                           name="DroppedDate" />
-                        <outputColumn
-                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
-                          dataType="i4"
-                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[OperationalYear]"
-                          name="OperationalYear" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           dataType="i4"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[AuditID]"
                           name="AuditID" />
+                        <outputColumn
+                          refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="250"
+                          lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[FileName]"
+                          name="FileName" />
                         <outputColumn
                           refId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2372,13 +2400,17 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[OAFID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="OAFID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[OAFID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[OAFID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
-                          cachedDataType="guid"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="GlobalClientID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
@@ -2390,77 +2422,96 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[AuditID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[DistrictName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="DistrictName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[DistrictID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="DistrictID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DistrictID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SeasonID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="SeasonID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SeasonID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[RegionID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="RegionID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SectorID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="SectorID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SiteID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="SiteID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GroupID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="GroupID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[CountryID]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="CountryID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[CountryID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SectorName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="SectorName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SectorName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SectorName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SiteName]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="SiteName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GroupName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="GroupName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GroupName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GroupName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SeasonName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="SeasonName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SeasonName]"
@@ -2469,7 +2520,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[RegionName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="100"
+                          cachedLength="50"
                           cachedName="RegionName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RegionName]" />
@@ -2477,7 +2528,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FieldManager]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="511"
+                          cachedLength="50"
                           cachedName="FieldManager"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FieldManager]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldManager]" />
@@ -2485,34 +2536,39 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FieldOfficer]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="511"
+                          cachedLength="50"
                           cachedName="FieldOfficer"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficer]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldOfficer]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[LastName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="LastName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FirstName]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
                           cachedName="FirstName"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstName]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[NationalID]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="NationalID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[NationalID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NationalID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FirstSeasonDataEntry]"
-                          cachedDataType="dbTimeStamp"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="FirstSeasonDataEntry"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FirstSeasonDataEntry]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstSeasonDataEntry]" />
@@ -2520,7 +2576,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FieldOfficerPayrollID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="50"
                           cachedName="FieldOfficerPayrollID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FieldOfficerPayrollID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldOfficerPayrollID]" />
@@ -2528,99 +2584,119 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FieldManagerPayrollID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="50"
                           cachedName="FieldManagerPayrollID"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FieldManagerPayrollID]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FieldManagerPayrollID]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[NewMember]"
-                          cachedDataType="bool"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="NewMember"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[NewMember]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NewMember]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[TotalEnrolledSeasons]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="TotalEnrolledSeasons"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[TotalEnrolledSeasons]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalEnrolledSeasons]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[Facilitator]"
-                          cachedDataType="bool"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="Facilitator"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Facilitator]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Facilitator]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[TotalCredit]"
-                          cachedDataType="numeric"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="TotalCredit"
-                          cachedPrecision="18"
-                          cachedScale="3"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[TotalCredit]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalCredit]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[TotalRepaid]"
-                          cachedDataType="numeric"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="TotalRepaid"
-                          cachedPrecision="19"
-                          cachedScale="4"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepaid]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[RemainingCredit]"
-                          cachedDataType="numeric"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="RemainingCredit"
-                          cachedPrecision="20"
-                          cachedScale="4"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[RemainingCredit]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[RemainingCredit]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[PercentRepaid]"
-                          cachedDataType="numeric"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="PercentRepaid"
-                          cachedPrecision="18"
-                          cachedScale="2"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[PercentRepaid]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[PercentRepaid]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[FirstRepayment]"
-                          cachedDataType="dbTimeStamp"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="FirstRepayment"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[FirstRepayment]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[FirstRepayment]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[NbOfRepayments]"
-                          cachedDataType="i4"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="NbOfRepayments"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[NbOfRepayments]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[NbOfRepayments]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[LastRepayment]"
-                          cachedDataType="dbTimeStamp"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="LastRepayment"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[LastRepayment]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[LastRepayment]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[TotalRepaid_IncludingOverpayments]"
-                          cachedDataType="cy"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="TotalRepaid_IncludingOverpayments"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[TotalRepaid_IncludingOverpayments]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[TotalRepaid_IncludingOverpayments]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[Dropped]"
-                          cachedDataType="bool"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="Dropped"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Dropped]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Dropped]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[Deceased]"
-                          cachedDataType="bool"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="Deceased"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[Deceased]" />
                         <inputColumn
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[DataEntry]"
-                          cachedDataType="dbTimeStamp"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="DataEntry"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[DataEntry]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[DataEntry]" />
@@ -2628,7 +2704,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[ClientPhone]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="50"
                           cachedName="ClientPhone"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ClientPhone]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ClientPhone]" />
@@ -2644,7 +2720,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[ValidationCode]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
+                          cachedLength="50"
                           cachedName="ValidationCode"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[ValidationCode]" />
@@ -2652,7 +2728,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GovLocationGrandParent]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="50"
                           cachedName="GovLocationGrandParent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationGrandParent]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationGrandParent]" />
@@ -2660,7 +2736,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GovLocationParent]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="50"
                           cachedName="GovLocationParent"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationParent]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationParent]" />
@@ -2668,7 +2744,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GovLocationChild]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="50"
                           cachedName="GovLocationChild"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationChild]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationChild]" />
@@ -2676,7 +2752,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[GovLocationGrandChild]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="50"
                           cachedName="GovLocationGrandChild"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationGrandChild]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]" />
@@ -2684,7 +2760,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
                           refId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].Columns[SiteProjectCode]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="50"
                           cachedName="SiteProjectCode"
                           externalMetadataColumnId="Package\Collect Errors\Gather errors\SeasonClients_Errors.Inputs[OLE DB Destination Input].ExternalColumns[SiteProjectCode]"
                           lineageId="Package\Collect Errors\Gather errors\Get bad data.Outputs[OLE DB Source Output].Columns[SiteProjectCode]" />
@@ -3020,6 +3096,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
       DTS:refId="Package\Get Files"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{74fb9e23-3644-41cb-b020-839755901c3c}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3053,6 +3130,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
       DTS:refId="Package\Get RowsExtract Count"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{5FF4E5FC-BAFD-45AE-AD68-DFB80622B14A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3074,6 +3152,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
       DTS:refId="Package\Get the files - Load to Landing"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
       DTS:DTSID="{db8767b8-8d69-4cae-baee-c6a766b44111}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -5399,6 +5478,7 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
           DTS:refId="Package\Get the files - Load to Landing\Record file details"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{ebeb8f17-746c-4205-b0e5-b035d9845724}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -5477,9 +5557,136 @@ where ISNUMERIC(DistrictID)=0 or ISNUMERIC(SeasonID)=0</property>
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\SeasonClients - Landing"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{7A76B335-152A-4090-B273-66B4BFF3480E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SeasonClients - Landing">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients - Landing\ETL Begin"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5DF81F7F-7179-4423-8A88-2A1BFE885F89}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ETL Begin"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="Insert into cls.AuditDimension(&#xA;AuditID,&#xA;PackageName,&#xA;RowsExtracted,&#xA;RowsInserted,&#xA;RowsUpdated,&#xA;LoadStartTime,&#xA;LoadEndTime)&#xA;Values&#xA;( ?, Null, Null, Null,Null, ?, Null&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::AuditId"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="20"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::LoadStartTime"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients - Landing\Get AuditID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{356715C9-ED95-4934-B2D7-61B3C48CDE02}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get AuditID"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select isnull(max(AuditID), 0) + 1  from cls.AuditDimension&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::AuditId" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients - Landing\Get LoadStartTime"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{417336E4-424B-48B9-9DC0-BCC085A51072}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LoadStartTime"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{073AF28A-6735-4E6B-81D2-D754FFC63AC8}"
+              SQLTask:SqlStatementSource="select GetDate()"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LoadStartTime" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SeasonClients - Landing\Truncate Table Landing_SeasonClients"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EE16B037-8EDD-4D56-A6FF-27D7A83DB5B3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Table Landing_SeasonClients"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2DBB2A3-2939-4947-806D-D6C5BC90E4E5}"
+              SQLTask:SqlStatementSource="Truncate table [cls].[Landing_SeasonClients_Historical]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{7A229CD0-F387-47E4-873E-06C3746F7C02}"
+          DTS:From="Package\SeasonClients - Landing\Get AuditID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SeasonClients - Landing\ETL Begin" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{988F70A0-8384-4084-B20E-8C5AE65C6B7E}"
+          DTS:From="Package\SeasonClients - Landing\Get LoadStartTime"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\SeasonClients - Landing\ETL Begin" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{9E6EA0EF-0B7D-421A-8B6D-7E26249CC8D1}"
+          DTS:From="Package\SeasonClients - Landing\ETL Begin"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\SeasonClients - Landing\Truncate Table Landing_SeasonClients" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\update Audit Dimension"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{797117D1-7A53-4A11-A958-5F45EEEA28E7}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -6516,7 +6723,7 @@ where AuditID = ?
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{A2D6F237-E172-40A6-BA01-A7E631E1B157}"
-      DTS:From="Package\ClientBundles- Landing"
+      DTS:From="Package\SeasonClients - Landing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Get the files - Load to Landing" />
@@ -6535,7 +6742,7 @@ where AuditID = ?
       DTS:From="Package\Get Files"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\ClientBundles- Landing" />
+      DTS:To="Package\SeasonClients - Landing" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -6565,119 +6772,6 @@ where AuditID = ?
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\ClientBundles- Landing\ETL Begin"
-          TopLeft="213.5,108.357142857143" />
-        <NodeLayout
-          Size="126.857142857143,42.8571428571429"
-          Id="Package\ClientBundles- Landing\Get AuditID"
-          TopLeft="5.50000000000004,5.50000000000002" />
-        <NodeLayout
-          Size="168,42.8571428571429"
-          Id="Package\ClientBundles- Landing\Get LoadStartTime"
-          TopLeft="192.928571428571,5.50000000000002" />
-        <NodeLayout
-          Size="270.285714285715,42.2857142857143"
-          Id="Package\ClientBundles- Landing\Truncate Table Landing_SeasonClients"
-          TopLeft="143.5,211.214285714286" />
-        <EdgeLayout
-          Id="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 2]"
-          TopLeft="68.9285714285715,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="188.190476190476,60"
-              Start="0,0"
-              End="188.190476190476,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="184.190476190476,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="184.190476190476,35.5516014234876"
-                    Point2="188.190476190476,35.5516014234876"
-                    Point3="188.190476190476,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="188.190476190476,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 3]"
-          TopLeft="276.928571428571,48.3571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.8095238095239,60"
-              Start="0,0"
-              End="19.8095238095239,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5516014234876"
-                    Point2="0,35.5516014234876"
-                    Point3="4,35.5516014234876" />
-                  <mssgle:LineSegment
-                    End="15.8095238095239,35.5516014234876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.8095238095239,35.5516014234876"
-                    Point2="19.8095238095239,35.5516014234876"
-                    Point3="19.8095238095239,39.5516014234876" />
-                  <mssgle:LineSegment
-                    End="19.8095238095239,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ClientBundles- Landing.PrecedenceConstraints[Constraint 4]"
-          TopLeft="277.785714285714,151.214285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000002"
-              Start="0,0"
-              End="0,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="416,308.571428571429"
-          Size="416,351.428571428572"
-          Id="Package\ClientBundles- Landing"
-          TopLeft="156.878309444705,42.9852844587233" />
         <NodeLayout
           Size="193.142857142858,42.8571428571429"
           Id="Package\Collect Errors\Delete Rows with Errors"
@@ -6715,6 +6809,10 @@ where AuditID = ?
           Size="204,249.142857142858"
           Id="Package\Collect Errors"
           TopLeft="183.174606437615,452.089182346537" />
+        <NodeLayout
+          Size="122.857142857143,42.2857142857143"
+          Id="Package\Get Files"
+          TopLeft="0.0529084648534024,158.738538162843" />
         <NodeLayout
           Size="192.571428571429,42.2857142857143"
           Id="Package\Get RowsExtract Count"
@@ -6782,6 +6880,119 @@ where AuditID = ?
           Size="232,350.857142857143"
           Id="Package\Get the files - Load to Landing"
           TopLeft="886.539699334107,36.9073624466689" />
+        <NodeLayout
+          Size="126.857142857143,42.8571428571429"
+          Id="Package\SeasonClients - Landing\ETL Begin"
+          TopLeft="213.5,108.357142857143" />
+        <NodeLayout
+          Size="126.857142857143,42.8571428571429"
+          Id="Package\SeasonClients - Landing\Get AuditID"
+          TopLeft="5.50000000000004,5.50000000000002" />
+        <NodeLayout
+          Size="168,42.8571428571429"
+          Id="Package\SeasonClients - Landing\Get LoadStartTime"
+          TopLeft="192.928571428571,5.50000000000002" />
+        <NodeLayout
+          Size="270.285714285715,42.2857142857143"
+          Id="Package\SeasonClients - Landing\Truncate Table Landing_SeasonClients"
+          TopLeft="143.5,211.214285714286" />
+        <EdgeLayout
+          Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 2]"
+          TopLeft="68.9285714285715,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.190476190476,60"
+              Start="0,0"
+              End="188.190476190476,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5516014234876"
+                    Point2="0,35.5516014234876"
+                    Point3="4,35.5516014234876" />
+                  <mssgle:LineSegment
+                    End="184.190476190476,35.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.190476190476,35.5516014234876"
+                    Point2="188.190476190476,35.5516014234876"
+                    Point3="188.190476190476,39.5516014234876" />
+                  <mssgle:LineSegment
+                    End="188.190476190476,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 3]"
+          TopLeft="276.928571428571,48.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.8095238095239,60"
+              Start="0,0"
+              End="19.8095238095239,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5516014234876"
+                    Point2="0,35.5516014234876"
+                    Point3="4,35.5516014234876" />
+                  <mssgle:LineSegment
+                    End="15.8095238095239,35.5516014234876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.8095238095239,35.5516014234876"
+                    Point2="19.8095238095239,35.5516014234876"
+                    Point3="19.8095238095239,39.5516014234876" />
+                  <mssgle:LineSegment
+                    End="19.8095238095239,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SeasonClients - Landing.PrecedenceConstraints[Constraint 4]"
+          TopLeft="277.785714285714,151.214285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000002"
+              Start="0,0"
+              End="0,52.5000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="416,308.571428571429"
+          Size="416,351.428571428572"
+          Id="Package\SeasonClients - Landing"
+          TopLeft="156.878309444705,42.9852844587233" />
         <NodeLayout
           Size="180,42.8571428571429"
           Id="Package\update Audit Dimension\Get Audit Parameters"
@@ -6928,6 +7139,40 @@ where AuditID = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="122.910051321996,179.8813953057">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.9682581227087,38.8181748673089"
+              Start="0,0"
+              End="26.4682581227087,38.8181748673089">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="12.9841290613544,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.9841290613544,0"
+                    Point2="16.9841290613544,0"
+                    Point3="16.9841290613544,4" />
+                  <mssgle:LineSegment
+                    End="16.9841290613544,34.8181748673089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.9841290613544,34.8181748673089"
+                    Point2="16.9841290613544,38.8181748673089"
+                    Point3="20.9841290613544,38.8181748673089" />
+                  <mssgle:LineSegment
+                    End="26.4682581227087,38.8181748673089" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="387.174606437615,576.660610917966">
           <EdgeLayout.Curve>
@@ -6995,44 +7240,6 @@ where AuditID = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="122.857142857143,42.2857142857143"
-          Id="Package\Get Files"
-          TopLeft="0.0529084648534024,158.738538162843" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="122.910051321996,179.881395305701">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.9682581227084,38.8181748673084"
-              Start="0,0"
-              End="26.4682581227084,38.8181748673084">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="12.9841290613542,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.9841290613542,0"
-                    Point2="16.9841290613542,0"
-                    Point3="16.9841290613542,4" />
-                  <mssgle:LineSegment
-                    End="16.9841290613542,34.8181748673084" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.9841290613542,34.8181748673084"
-                    Point2="16.9841290613542,38.8181748673084"
-                    Point3="20.9841290613542,38.8181748673084" />
-                  <mssgle:LineSegment
-                    End="26.4682581227084,38.8181748673084" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7040,7 +7247,7 @@ where AuditID = ?
     design-time-name="Package\Collect Errors\Gather errors">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141.142857142858,42.8571428571429"
           Id="Package\Collect Errors\Gather errors\Get bad data"
@@ -7080,14 +7287,20 @@ where AuditID = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Collect Errors\Gather errors\Get bad data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Get the files - Load to Landing\DFT - Landing_SeasonClients">
     <LayoutInfo>

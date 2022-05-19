@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="00-02-DimClient_extract"
-  DTS:VersionBuild="333"
-  DTS:VersionGUID="{7D4C81CF-829F-4C92-90BD-05626EAEAAAE}">
+  DTS:VersionBuild="335"
+  DTS:VersionGUID="{1C0815EA-71CB-459B-A225-B7FFD5F0B9B1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3898,11 +3898,11 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
               version="1">
               <components>
                 <component
-                  refId="Package\Sequence Container\Load clients to staging\get clients"
+                  refId="Package\Sequence Container\Load clients to staging\Get Clients"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="get clients"
+                  name="Get Clients"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -4058,7 +4058,7 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\Load clients to staging\get clients.Connections[OleDbConnection]"
+                      refId="Package\Sequence Container\Load clients to staging\Get Clients.Connections[OleDbConnection]"
                       connectionManagerID="{2F93D81D-B7B5-48CF-84DF-E41516254DD1}:external"
                       connectionManagerRefId="Project.ConnectionManagers[bibusinessintell]"
                       description="The OLE DB runtime connection used to access the database."
@@ -4066,833 +4066,832 @@ where [refTable].[RosterSeasonID] = ? and [refTable].[CountryID] = ?</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output]"
+                      refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
-                          name="DistrictID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]"
-                          name="FirstName"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]"
-                          name="LastName"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]"
-                          name="Deceased"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]"
-                          name="Ban"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
-                          name="GlobalClientID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
-                          name="LastActiveSeasonID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
-                          name="DeceasedDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
-                          name="BannedDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
-                          length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
-                          name="AccountNumber"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
-                          length="10"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
-                          name="ValidationCode"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
-                          dataType="bool"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
-                          name="CanEnrollAsNewMember"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
-                          length="4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
-                          name="ClientBirthYear"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
-                          length="1"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]"
-                          name="Gender"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientID]"
                           name="ClientID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DateAdded]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DateAdded]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DateAdded]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DateAdded]"
                           name="DateAdded"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RosterClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[RosterClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RosterClientID]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DistrictID]"
+                          name="DistrictID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RosterClientID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[RosterClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RosterClientID]"
                           name="RosterClientID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]"
+                          name="GlobalClientID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                          name="AccountNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[FirstName]"
+                          name="FirstName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastName]"
+                          name="LastName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Deceased]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Deceased]"
+                          name="Deceased"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[enrollmentdate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]"
+                          name="DeceasedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Ban]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Ban]"
+                          name="Ban"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BannedDate]"
+                          name="BannedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]"
+                          name="ClientBirthYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          length="1"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Gender]"
+                          name="Gender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[enrollmentdate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]"
                           name="enrollmentdate"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[nationalid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[nationalid]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[nationalid]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[nationalid]"
                           length="255"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[nationalid]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[nationalid]"
                           name="nationalid"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[firstseasonid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[firstseasonid]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[firstseasonid]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[firstseasonid]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[firstseasonid]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[firstseasonid]"
                           name="firstseasonid"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                          length="10"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ValidationCode]"
+                          name="ValidationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]"
+                          name="CanEnrollAsNewMember"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]"
+                          name="LastActiveSeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryFirst]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryFirst]"
                           length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]"
                           name="BeneficiaryFirst"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryLast]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryLast]"
                           length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]"
                           name="BeneficiaryLast"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryBirthYear]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryBirthYear]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]"
                           name="BeneficiaryBirthYear"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryNationalID]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryNationalID]"
                           length="255"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]"
                           name="BeneficiaryNationalID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RowNumber]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RowNumber]"
                           dataType="i8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[RowNumber]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RowNumber]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[RowNumber]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RowNumber]"
                           name="RowNumber"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGandParent]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGandParent]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]"
                           name="GovLocationGandParent"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]"
                           name="GovLocationParent"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]"
                           name="GovLocationChild"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]"
                           name="GovLocationGrandChild"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimCountryID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GroupID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimCountryID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimCountryID]"
-                          name="DimCountryID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimDistrictID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]"
-                          name="DimDistrictID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSiteID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimSiteID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSiteID]"
-                          name="DimSiteID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimGroupID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimGroupID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimGroupID]"
-                          name="DimGroupID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimSeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]"
-                          name="DimSeasonID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]"
-                          name="rowguid"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
-                          name="OldGlobalClientID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
-                          dataType="guid"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
-                          name="ParentGlobalClientID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
-                          name="Date_Created"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
-                          name="ExtractDate"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GroupID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GroupID]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GroupID]"
                           name="GroupID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[SeasonID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[SeasonID]"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[SeasonID]"
                           name="SeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimCountryID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimCountryID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimCountryID]"
+                          name="DimCountryID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimDistrictID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]"
+                          name="DimDistrictID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSiteID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimSiteID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSiteID]"
+                          name="DimSiteID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimGroupID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimGroupID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimGroupID]"
+                          name="DimGroupID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimSeasonID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]"
+                          name="DimSeasonID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[rowguid]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[rowguid]"
+                          name="rowguid"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]"
+                          name="OldGlobalClientID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]"
+                          name="ParentGlobalClientID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Date_Created]"
+                          name="Date_Created"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ExtractDate]"
+                          name="ExtractDate"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
+                          dataType="i4"
+                          name="ClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
+                          dataType="i4"
+                          name="DateAdded" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DistrictID]"
                           dataType="i4"
                           name="DistrictID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
-                          dataType="wstr"
-                          length="50"
-                          name="FirstName" />
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[RosterClientID]"
+                          dataType="i4"
+                          name="RosterClientID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                          dataType="wstr"
-                          length="50"
-                          name="LastName" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
-                          dataType="bool"
-                          name="Deceased" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
-                          dataType="bool"
-                          name="Ban" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GlobalClientID]"
                           dataType="guid"
                           name="GlobalClientID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
-                          dataType="i4"
-                          name="LastActiveSeasonID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
-                          dataType="i4"
-                          name="DeceasedDate" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
-                          dataType="i4"
-                          name="BannedDate" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="AccountNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="ValidationCode" />
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                          dataType="wstr"
+                          length="50"
+                          name="FirstName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LastName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Deceased]"
                           dataType="bool"
-                          name="CanEnrollAsNewMember" />
+                          name="Deceased" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DeceasedDate]"
+                          dataType="i4"
+                          name="DeceasedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Ban]"
+                          dataType="bool"
+                          name="Ban" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BannedDate]"
+                          dataType="i4"
+                          name="BannedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ClientBirthYear]"
                           dataType="i4"
                           name="ClientBirthYear" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
                           codePage="1252"
                           dataType="str"
                           length="1"
                           name="Gender" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ClientID]"
-                          dataType="i4"
-                          name="ClientID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DateAdded]"
-                          dataType="i4"
-                          name="DateAdded" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[RosterClientID]"
-                          dataType="i4"
-                          name="RosterClientID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[enrollmentdate]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[enrollmentdate]"
                           dataType="i4"
                           name="enrollmentdate" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[nationalid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[nationalid]"
                           dataType="wstr"
                           length="255"
                           name="nationalid" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[firstseasonid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[firstseasonid]"
                           dataType="i4"
                           name="firstseasonid" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryFirst]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ValidationCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ValidationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[CanEnrollAsNewMember]"
+                          dataType="bool"
+                          name="CanEnrollAsNewMember" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[LastActiveSeasonID]"
+                          dataType="i4"
+                          name="LastActiveSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryFirst]"
                           dataType="wstr"
                           length="50"
                           name="BeneficiaryFirst" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryLast]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryLast]"
                           dataType="wstr"
                           length="50"
                           name="BeneficiaryLast" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryBirthYear]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryBirthYear]"
                           dataType="i4"
                           name="BeneficiaryBirthYear" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryNationalID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[BeneficiaryNationalID]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="BeneficiaryNationalID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[RowNumber]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[RowNumber]"
                           dataType="i8"
                           name="RowNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGandParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGandParent]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="GovLocationGandParent" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationParent]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="GovLocationParent" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationChild]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="GovLocationChild" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GovLocationGrandChild]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="GovLocationGrandChild" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimCountryID]"
-                          dataType="i4"
-                          name="DimCountryID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimDistrictID]"
-                          dataType="i4"
-                          name="DimDistrictID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimSiteID]"
-                          dataType="i4"
-                          name="DimSiteID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimGroupID]"
-                          dataType="i4"
-                          name="DimGroupID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[DimSeasonID]"
-                          dataType="i4"
-                          name="DimSeasonID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
-                          dataType="guid"
-                          name="rowguid" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
-                          dataType="guid"
-                          name="OldGlobalClientID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
-                          dataType="guid"
-                          name="ParentGlobalClientID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
-                          dataType="dbTimeStamp"
-                          name="Date_Created" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
-                          dataType="dbTimeStamp"
-                          name="ExtractDate" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[GroupID]"
                           dataType="i4"
                           name="GroupID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[SeasonID]"
                           dataType="i4"
                           name="SeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimCountryID]"
+                          dataType="i4"
+                          name="DimCountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimDistrictID]"
+                          dataType="i4"
+                          name="DimDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimSiteID]"
+                          dataType="i4"
+                          name="DimSiteID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimGroupID]"
+                          dataType="i4"
+                          name="DimGroupID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[DimSeasonID]"
+                          dataType="i4"
+                          name="DimSeasonID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                          dataType="guid"
+                          name="rowguid" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[OldGlobalClientID]"
+                          dataType="guid"
+                          name="OldGlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ParentGlobalClientID]"
+                          dataType="guid"
+                          name="ParentGlobalClientID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[Date_Created]"
+                          dataType="dbTimeStamp"
+                          name="Date_Created" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].ExternalColumns[ExtractDate]"
+                          dataType="dbTimeStamp"
+                          name="ExtractDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
-                          name="DistrictID" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
+                          name="ClientID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DateAdded]"
                           name="DateAdded" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                          dataType="wstr"
-                          length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                          name="FirstName" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[RosterClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[RosterClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DistrictID]"
+                          name="DistrictID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[RosterClientID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[RosterClientID]"
                           name="RosterClientID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                          dataType="wstr"
-                          length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                          name="LastName" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
-                          dataType="bool"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
-                          name="Deceased" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
-                          dataType="bool"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
-                          name="Ban" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
                           dataType="guid"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GlobalClientID]"
                           name="GlobalClientID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
-                          name="LastActiveSeasonID" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
-                          name="DeceasedDate" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
-                          name="BannedDate" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
                           name="AccountNumber" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
-                          name="ValidationCode" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
-                          dataType="bool"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
-                          name="CanEnrollAsNewMember" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[enrollmentdate]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[enrollmentdate]"
-                          name="enrollmentdate" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[nationalid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                           dataType="wstr"
-                          length="255"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[nationalid]"
-                          name="nationalid" />
+                          length="50"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                          name="FirstName" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[firstseasonid]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[firstseasonid]"
-                          name="firstseasonid" />
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                          name="LastName" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                          dataType="bool"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Deceased]"
+                          name="Deceased" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DeceasedDate]"
+                          name="DeceasedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
+                          dataType="bool"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Ban]"
+                          name="Ban" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BannedDate]"
+                          name="BannedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ClientBirthYear]"
                           name="ClientBirthYear" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Gender]"
                           name="Gender" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[enrollmentdate]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[enrollmentdate]"
+                          name="enrollmentdate" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryFirst]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[nationalid]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[nationalid]"
+                          name="nationalid" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[firstseasonid]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[firstseasonid]"
+                          name="firstseasonid" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ValidationCode]"
+                          name="ValidationCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
+                          dataType="bool"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[CanEnrollAsNewMember]"
+                          name="CanEnrollAsNewMember" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[LastActiveSeasonID]"
+                          name="LastActiveSeasonID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryFirst]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryFirst]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryFirst]"
                           name="BeneficiaryFirst" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryLast]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryLast]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryLast]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryLast]"
                           name="BeneficiaryLast" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryBirthYear]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryBirthYear]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryBirthYear]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryBirthYear]"
                           name="BeneficiaryBirthYear" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryNationalID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryNationalID]"
                           codePage="1252"
                           dataType="str"
                           length="255"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryNationalID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[BeneficiaryNationalID]"
                           name="BeneficiaryNationalID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[RowNumber]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[RowNumber]"
                           dataType="i8"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[RowNumber]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[RowNumber]"
                           name="RowNumber" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGandParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGandParent]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGandParent]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGandParent]"
                           name="GovLocationGandParent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationParent]"
                           name="GovLocationParent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationChild]"
                           name="GovLocationChild" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GovLocationGrandChild]"
                           name="GovLocationGrandChild" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GroupID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[GroupID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[GroupID]"
                           name="GroupID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[SeasonID]"
                           name="SeasonID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimCountryID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimCountryID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimCountryID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimCountryID]"
                           name="DimCountryID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimDistrictID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimDistrictID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimDistrictID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimDistrictID]"
                           name="DimDistrictID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimSiteID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimSiteID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimSiteID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimSiteID]"
                           name="DimSiteID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimGroupID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimGroupID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimGroupID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimGroupID]"
                           name="DimGroupID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimSeasonID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimSeasonID]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[DimSeasonID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[DimSeasonID]"
                           name="DimSeasonID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
                           dataType="guid"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[rowguid]"
                           name="rowguid" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
                           dataType="guid"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[OldGlobalClientID]"
                           name="OldGlobalClientID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
                           dataType="guid"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ParentGlobalClientID]"
                           name="ParentGlobalClientID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[Date_Created]"
                           name="Date_Created" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ExtractDate]"
                           name="ExtractDate" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
-                        <outputColumn
-                          refId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
-                          dataType="i4"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Error Output].Columns[ClientID]"
-                          name="ClientID" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -4957,7 +4956,7 @@ where [refTable].[GlobalClientID] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\Load clients to staging\19:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4984,7 +4983,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           refId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input].Columns[GlobalClientID]"
                           cachedDataType="guid"
                           cachedName="GlobalClientID"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]">
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -5176,87 +5175,87 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedDataType="i4"
                           cachedName="DistrictID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DistrictID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DistrictID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DistrictID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[rowguid]"
                           cachedDataType="guid"
                           cachedName="rowguid"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[rowguid]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[rowguid]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[FirstName]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="FirstName"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[FirstName]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[LastName]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="LastName"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastName]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastName]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[Deceased]"
                           cachedDataType="bool"
                           cachedName="Deceased"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[Deceased]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Deceased]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Deceased]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[Ban]"
                           cachedDataType="bool"
                           cachedName="Ban"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[Ban]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Ban]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Ban]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[ClientID]"
                           cachedDataType="i4"
                           cachedName="ClientID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[ClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GlobalClientID]"
                           cachedDataType="guid"
                           cachedName="GlobalClientID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GlobalClientID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[LastActiveSeasonID]"
                           cachedDataType="i4"
                           cachedName="LastActiveSeasonID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[LastActiveSeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[LastActiveSeasonID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DeceasedDate]"
-                          cachedDataType="dbTimeStamp"
+                          cachedDataType="i4"
                           cachedName="DeceasedDate"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DeceasedDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DeceasedDate]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[Date_Created]"
                           cachedDataType="dbTimeStamp"
                           cachedName="Date_Created"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Date_Created]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Date_Created]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[BannedDate]"
-                          cachedDataType="dbTimeStamp"
+                          cachedDataType="i4"
                           cachedName="BannedDate"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BannedDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BannedDate]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BannedDate]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[OldGlobalClientID]"
                           cachedDataType="guid"
                           cachedName="OldGlobalClientID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[OldGlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[OldGlobalClientID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[ParentGlobalClientID]"
                           cachedDataType="guid"
                           cachedName="ParentGlobalClientID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[ParentGlobalClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ParentGlobalClientID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
                           cachedCodepage="1252"
@@ -5264,7 +5263,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="50"
                           cachedName="AccountNumber"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[ValidationCode]"
                           cachedCodepage="1252"
@@ -5272,26 +5271,25 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="10"
                           cachedName="ValidationCode"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[ValidationCode]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ValidationCode]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ValidationCode]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[CanEnrollAsNewMember]"
                           cachedDataType="bool"
                           cachedName="CanEnrollAsNewMember"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[CanEnrollAsNewMember]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[CanEnrollAsNewMember]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[ExtractDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="ExtractDate"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[ExtractDate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ExtractDate]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ExtractDate]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[ClientBirthYear]"
-                          cachedDataType="wstr"
-                          cachedLength="4"
+                          cachedDataType="i4"
                           cachedName="ClientBirthYear"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[ClientBirthYear]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[ClientBirthYear]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[Gender]"
                           cachedCodepage="1252"
@@ -5299,58 +5297,58 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="1"
                           cachedName="Gender"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[Gender]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[Gender]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DateAdded]"
                           cachedDataType="i4"
                           cachedName="DateAdded"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DateAdded]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DateAdded]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DateAdded]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[RosterClientID]"
                           cachedDataType="i4"
                           cachedName="RosterClientID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[RosterClientID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RosterClientID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RosterClientID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[enrollmentdate]"
                           cachedDataType="i4"
                           cachedName="enrollmentdate"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[enrollmentdate]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[enrollmentdate]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[nationalid]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="nationalid"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[nationalid]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[nationalid]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[nationalid]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[firstseasonid]"
                           cachedDataType="i4"
                           cachedName="firstseasonid"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[firstseasonid]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[firstseasonid]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[firstseasonid]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[BeneficiaryFirst]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="BeneficiaryFirst"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryFirst]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryFirst]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[BeneficiaryLast]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="BeneficiaryLast"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryLast]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryLast]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[BeneficiaryBirthYear]"
                           cachedDataType="i4"
                           cachedName="BeneficiaryBirthYear"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryBirthYear]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryBirthYear]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[BeneficiaryNationalID]"
                           cachedCodepage="1252"
@@ -5358,13 +5356,13 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="255"
                           cachedName="BeneficiaryNationalID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BeneficiaryNationalID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[BeneficiaryNationalID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[RowNumber]"
                           cachedDataType="i8"
                           cachedName="RowNumber"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[RowNumber]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[RowNumber]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[RowNumber]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GovLocationGandParent]"
                           cachedCodepage="1252"
@@ -5372,7 +5370,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="100"
                           cachedName="GovLocationGandParent"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationGandParent]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGandParent]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GovLocationParent]"
                           cachedCodepage="1252"
@@ -5380,7 +5378,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="100"
                           cachedName="GovLocationParent"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationParent]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationParent]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GovLocationChild]"
                           cachedCodepage="1252"
@@ -5388,7 +5386,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="100"
                           cachedName="GovLocationChild"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationChild]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationChild]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GovLocationGrandChild]"
                           cachedCodepage="1252"
@@ -5396,49 +5394,49 @@ where [refTable].[GlobalClientID] = ?</property>
                           cachedLength="100"
                           cachedName="GovLocationGrandChild"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GovLocationGrandChild]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GovLocationGrandChild]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DimCountryID]"
                           cachedDataType="i4"
                           cachedName="DimCountryID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DimCountryID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimCountryID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimCountryID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DimDistrictID]"
                           cachedDataType="i4"
                           cachedName="DimDistrictID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DimDistrictID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimDistrictID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DimSiteID]"
                           cachedDataType="i4"
                           cachedName="DimSiteID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DimSiteID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSiteID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSiteID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DimGroupID]"
                           cachedDataType="i4"
                           cachedName="DimGroupID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DimGroupID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimGroupID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimGroupID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[DimSeasonID]"
                           cachedDataType="i4"
                           cachedName="DimSeasonID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DimSeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[DimSeasonID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[GroupID]"
                           cachedDataType="i4"
                           cachedName="GroupID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[GroupID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[GroupID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[GroupID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].Columns[SeasonID]"
                           cachedDataType="i4"
                           cachedName="SeasonID"
                           externalMetadataColumnId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[SeasonID]"
-                          lineageId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output].Columns[SeasonID]" />
+                          lineageId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output].Columns[SeasonID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5482,7 +5480,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           name="LastActiveSeasonID" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[DeceasedDate]"
-                          dataType="dbTimeStamp"
+                          dataType="i4"
                           name="DeceasedDate" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[Date_Created]"
@@ -5490,7 +5488,7 @@ where [refTable].[GlobalClientID] = ?</property>
                           name="Date_Created" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[BannedDate]"
-                          dataType="dbTimeStamp"
+                          dataType="i4"
                           name="BannedDate" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load clients to staging\staging_DimClient.Inputs[OLE DB Destination Input].ExternalColumns[OldGlobalClientID]"
@@ -5667,7 +5665,7 @@ where [refTable].[GlobalClientID] = ?</property>
                   refId="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
                   endId="Package\Sequence Container\Load clients to staging\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Sequence Container\Load clients to staging\get clients.Outputs[OLE DB Source Output]" />
+                  startId="Package\Sequence Container\Load clients to staging\Get Clients.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 1]"
                   endId="Package\Sequence Container\Load clients to staging\Row Count.Inputs[Row Count Input 1]"
@@ -9240,48 +9238,22 @@ where [refTable].[GlobalClientId] = ?</property>
         <NodeLayout
           Size="140,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\Row Count 1"
-          TopLeft="249.785719962347,106.467814523361" />
+          TopLeft="249.785719962347,116.935346877455" />
         <NodeLayout
           Size="130.857142857143,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\Row Count"
-          TopLeft="81.6904782088346,213.661494576155" />
-        <NodeLayout
-          Size="128.571428571429,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\get clients"
-          TopLeft="22.8571434626503,13.9175621280916" />
-        <NodeLayout
-          Size="168,42.2857142857143"
-          Id="Package\Sequence Container\Load clients to staging\staging_DimClient"
-          TopLeft="388.571438865056,207.280636479723" />
+          TopLeft="81.6904782088346,224.129026930249" />
         <NodeLayout
           Size="114.857142857143,42.2857142857143"
           Id="Package\Sequence Container\Load clients to staging\Lookup"
-          TopLeft="264.547625910037,15.6298700200906" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 11]"
-          TopLeft="212.547621065977,231.613922670796">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.023817799079,0"
-              Start="0,0"
-              End="168.523817799079,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="168.523817799079,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="264.547625910037,26.0974023741842" />
+        <NodeLayout
+          Size="168,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\staging_DimClient"
+          TopLeft="388.571438865056,217.748168833817" />
         <EdgeLayout
           Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 1]"
-          TopLeft="319.785719962347,148.753528809076">
+          TopLeft="319.785719962347,159.22106116317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9314,30 +9286,8 @@ where [refTable].[GlobalClientId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
-          TopLeft="151.428572034079,35.9165732169482">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113.119053875958,0"
-              Start="0,0"
-              End="105.619053875958,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="105.619053875958,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Sequence Container\Load clients to staging.Paths[Lookup Match Output]"
-          TopLeft="320.880958650478,57.9155843058049">
+          TopLeft="320.880958650478,68.3831166598985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9359,32 +9309,69 @@ where [refTable].[GlobalClientId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[Row Count Output 11]"
+          TopLeft="212.547621065977,242.08145502489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.023817799079,0"
+              Start="0,0"
+              End="168.523817799079,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="168.523817799079,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.142857142858,42.2857142857143"
+          Id="Package\Sequence Container\Load clients to staging\Get Clients"
+          TopLeft="9.20634945023417,10.1298700200906" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Load clients to staging.Paths[OLE DB Source Output]"
+          TopLeft="142.349206593091,31.2727271629478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122.198419316946,15.9675323540936"
+              Start="0,0"
+              End="114.698419316946,15.9675323540936">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.0992096584729,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.0992096584729,0"
+                    Point2="61.0992096584729,0"
+                    Point3="61.0992096584729,4" />
+                  <mssgle:LineSegment
+                    End="61.0992096584729,11.9675323540936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.0992096584729,11.9675323540936"
+                    Point2="61.0992096584729,15.9675323540936"
+                    Point3="65.0992096584729,15.9675323540936" />
+                  <mssgle:LineSegment
+                    End="114.698419316946,15.9675323540936" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load clients to staging\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Load clients to staging\staging_DimClient">
     <Properties>
@@ -9399,8 +9386,23 @@ where [refTable].[GlobalClientId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load clients to staging\get clients">
+    design-time-name="Package\Sequence Container\Load clients to staging\Lookup">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -9692,7 +9694,7 @@ where [refTable].[GlobalClientId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -9702,7 +9704,7 @@ where [refTable].[GlobalClientId] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9724,6 +9726,14 @@ where [refTable].[GlobalClientId] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Update ClientIDs\Get unique IDs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load clients to staging\Get Clients">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
