@@ -7,12 +7,12 @@
   DTS:CreatorName="GACHAGUA-PC\watchman"
   DTS:DTSID="{7796BC84-4FC7-4D1C-A49B-8F30245504D6}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
   DTS:LocaleID="2057"
   DTS:ObjectName="01-03_VerticalRepayments_Historical_Extract"
   DTS:PackageType="5"
-  DTS:VersionBuild="155"
-  DTS:VersionGUID="{E1A5975F-456D-4B96-A23A-A178E63F6748}">
+  DTS:VersionBuild="156"
+  DTS:VersionGUID="{66FDE85C-0874-49C7-9FA3-FED0A77A8C77}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -406,6 +406,7 @@
       DTS:refId="Package\Collect Errors"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{19E5C9D9-4CB6-462B-AA10-505033AAF94A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1844,6 +1845,7 @@
       DTS:refId="Package\Get RowsExtract Count"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{25F1DC18-3CAC-4B5A-A748-C95E1203C0DF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1865,6 +1867,7 @@
       DTS:refId="Package\Get the files - Load to Landing"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
       DTS:DTSID="{A4D11FC4-1B9C-4236-9CEC-81534D2C5AD8}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -3557,6 +3560,7 @@
       DTS:refId="Package\Repayments - Landing"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{4AE21180-5DCE-4894-9894-4896F8336369}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3682,6 +3686,7 @@
       DTS:refId="Package\update Audit Dimension"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{e864fbc1-7275-4ac0-b2cf-f908a1d0ea1e}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
